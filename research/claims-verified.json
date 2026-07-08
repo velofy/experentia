@@ -1,0 +1,336 @@
+{
+  "project": "experentia",
+  "generated": "2026-07-09",
+  "method": "deep-research workflow: 5 search angles, 24 sources fetched, 118 claims extracted, top 25 adversarially verified by 3-vote panels (2/3 refutes kill).",
+  "stats": {
+    "angles": 5,
+    "sources": 24,
+    "claimsExtracted": 118,
+    "claimsVerified": 25,
+    "confirmed": 19,
+    "refuted": 0,
+    "unverified": 6
+  },
+  "caveat": "The 6 unverified claims and the synthesis step hit an API session limit mid-run; verification is being resumed. Treat unverified claims as plausible but uncited-grade until then.",
+  "confirmed": [
+    {
+      "id": "C01",
+      "stream": "color",
+      "claim": "Color preferences are caused by people's average affective responses to the objects associated with each color (the ecological valence theory), rather than by purely low-level visual mechanisms.",
+      "source": "https://www.pnas.org/doi/10.1073/pnas.0906172107",
+      "quote": "In this article we articulate an ecological valence theory in which color preferences arise from people's average affective responses to color-associated objects.",
+      "vote": "2-1"
+    },
+    {
+      "id": "C02",
+      "stream": "color",
+      "claim": "A single predictor, the weighted affective valence estimate (WAVE) of color-associated objects, explains 80% of the variance in average color preference ratings.",
+      "source": "https://www.pnas.org/doi/10.1073/pnas.0906172107",
+      "quote": "accounting for 80% of the variance with a single predictor",
+      "vote": "3-0"
+    },
+    {
+      "id": "C03",
+      "stream": "color",
+      "claim": "Average human hue preferences peak broadly at blue and dip most sharply at chartreuse (yellow-green), measured with 48 participants rating 32 chromatic colors.",
+      "source": "https://www.pnas.org/doi/10.1073/pnas.0906172107",
+      "quote": "a broad peak at blue and a narrow trough at chartreuse",
+      "vote": "3-0"
+    },
+    {
+      "id": "C04",
+      "stream": "color",
+      "claim": "The pattern of sex differences in color preference was nearly identical in an industrialized culture (Poland) and a remote nonindustrialized culture (the Yali of Papua): the correlation between the two cultures' sexual contrasts was r = .93, explaining 86% of common variance.",
+      "source": "https://link.springer.com/article/10.3758/s13423-014-0591-8",
+      "quote": "The correlation between the Polish and Papuan sexual contrasts explained 86 % of the common variance, r = .93, p < .01.",
+      "vote": "3-0"
+    },
+    {
+      "id": "C05",
+      "stream": "color",
+      "claim": "Across both cultures, women most preferred red (21%) while men most preferred blue (19%), a sexual dimorphism the authors describe as transcending extreme differences in culture and ecology.",
+      "source": "https://link.springer.com/article/10.3758/s13423-014-0591-8",
+      "quote": "Women preferred red (21 %), while men preferred blue (19 %).",
+      "vote": "3-0"
+    },
+    {
+      "id": "C06",
+      "stream": "color",
+      "claim": "Overall color preferences differed significantly between the two cultures (Polish observers most preferred blue at 17.5%, while Yali observers most preferred red at 15.7% and yellow at 14.8%), which challenges claims of a universal human blue preference in nonindustrialized populations.",
+      "source": "https://link.springer.com/article/10.3758/s13423-014-0591-8",
+      "quote": "Not surprisingly, we found that color preferences clearly differed between the two communities and also between sexes.",
+      "vote": "3-0"
+    },
+    {
+      "id": "C07",
+      "stream": "color",
+      "claim": "U.S. and Japanese color preferences share the same broad structure: preference peaks around blue, troughs around dark-yellow, and a general preference for saturated colors, supporting the cross-cultural robustness of blue-preference and dark-yellow avoidance.",
+      "source": "https://onlinelibrary.wiley.com/doi/10.1111/cogs.12291",
+      "quote": "Japanese and U.S. color preferences have both similarities (e.g., peaks around blue, troughs around dark-yellow, and preferences for saturated colors)",
+      "vote": "3-0"
+    },
+    {
+      "id": "C08",
+      "stream": "color",
+      "claim": "There is a measurable cultural difference in lightness preference: Japanese participants like darker colors less than U.S. participants do.",
+      "source": "https://onlinelibrary.wiley.com/doi/10.1111/cogs.12291",
+      "quote": "and differences (Japanese participants like darker colors less than U.S. participants do)",
+      "vote": "3-0"
+    },
+    {
+      "id": "C09",
+      "stream": "color",
+      "claim": "The Ecological Valence Theory prediction that within-culture WAVE-preference correlations exceed between-culture correlations was tested using Palmer and Schloss's (2010) weighted affective valence estimate (WAVE) procedure and was only partially supported.",
+      "source": "https://onlinelibrary.wiley.com/doi/10.1111/cogs.12291",
+      "quote": "Palmer and Schloss's (2010) weighted affective valence estimate (WAVE) procedure was used to test the Ecological Valence Theory's (EVT's) prediction that within-culture WAVE-preference correlations should be higher than between-culture WAVE-preference correlations. The results supported several, but not all, predictions.",
+      "vote": "3-0"
+    },
+    {
+      "id": "C10",
+      "stream": "accessibility",
+      "claim": "WCAG 2.1 Level AA (Success Criterion 1.4.3) requires text and images of text to have a contrast ratio of at least 4.5:1, while large-scale text (at least 18 point, or 14 point bold) need only reach 3:1.",
+      "source": "https://www.w3.org/TR/WCAG21/",
+      "quote": "The visual presentation of text and images of text has a contrast ratio of at least 4.5:1 ... Large-scale text and images of large-scale text have a contrast ratio of at least 3:1",
+      "vote": "3-0"
+    },
+    {
+      "id": "C11",
+      "stream": "accessibility",
+      "claim": "WCAG 2.1 Level AA (Success Criterion 1.4.11 Non-text Contrast) requires user interface components and meaningful graphical objects to have a contrast ratio of at least 3:1 against adjacent colors.",
+      "source": "https://www.w3.org/TR/WCAG21/",
+      "quote": "The visual presentation of the following have a contrast ratio of at least 3:1 against adjacent color(s): User Interface Components",
+      "vote": "3-0"
+    },
+    {
+      "id": "C12",
+      "stream": "color",
+      "claim": "In a controlled experiment, website colour appeal was a statistically significant determinant of both user trust and satisfaction (H1: t=7.89, p<0.001; H2: t=9.69, p<0.001), and trust and satisfaction in turn significantly predicted e-loyalty (t=4.91 and t=9.53, p<0.001).",
+      "source": "https://www.sciencedirect.com/science/article/abs/pii/S1071581909001116",
+      "quote": "Results reveal that website colour appeal is a significant determinant for website trust and satisfaction with differences noted across cultures.",
+      "vote": "3-0"
+    },
+    {
+      "id": "C13",
+      "stream": "color",
+      "claim": "A yellow website colour scheme was disliked by participants from all three cultures studied (Canada, Germany, Japan); e.g., Canadians rated both grey and blue schemes significantly more appealing than yellow (p<0.01 and p<0.001).",
+      "source": "https://www.sciencedirect.com/science/article/abs/pii/S1071581909001116",
+      "quote": "In terms of colour appeal, it is interesting to note that all three cultures tend to dislike the yellow websites.",
+      "vote": "3-0"
+    },
+    {
+      "id": "C14",
+      "stream": "color",
+      "claim": "Colour preferences varied by culture: German participants showed a pronounced preference for the blue colour scheme, while Canadians found the grey scheme significantly more appealing than Germans did (p<0.001).",
+      "source": "https://www.sciencedirect.com/science/article/abs/pii/S1071581909001116",
+      "quote": "As predicted survey results reveal a pronounced liking of the blue colour scheme among the German participants. ... For the grey colour scheme, Canadians found the colour more appealing than Germans (p<0.001).",
+      "vote": "3-0"
+    },
+    {
+      "id": "C15",
+      "stream": "color",
+      "claim": "Across three studies, blue consistently increased trust more than red, providing empirical support for using blue where trustworthiness matters (e.g., brand logos and interface accents).",
+      "source": "https://www.researchgate.net/publication/334550253_Trustworthy_Blue_or_Untrustworthy_Red_The_Influence_of_Colors_on_Trust",
+      "quote": "The results across three studies consistently show that blue increases trust more than red, contributing to the current literature by providing solid empirical evidence of the relationship between colors and trust and insight for brand managers into brand logo design and redesign.",
+      "vote": "3-0"
+    },
+    {
+      "id": "S01",
+      "stream": "style",
+      "claim": "Visual complexity and prototypicality of a website affect users' aesthetic judgments within the first 50 milliseconds of exposure, based on an experiment using 119 screenshots of real websites rated at 50ms, 500ms, and 1000ms presentation times.",
+      "source": "https://research.google/pubs/the-role-of-visual-complexity-and-prototypicality-regarding-first-impression-of-websites-working-towards-understanding-aesthetic-judgments/",
+      "quote": "119 screenshots of real websites varying in VC (low vs. medium vs. high) and PT (low vs. high) were rated on perceived aesthetics. Screenshot presentation time was varied as a between-subject factor (50 ms vs. 500 ms vs. 1000 ms). Results reveal that VC and PT affect participants' aesthetics ratings within the first 50 ms of exposure.",
+      "vote": "3-0"
+    },
+    {
+      "id": "S02",
+      "stream": "style",
+      "claim": "Websites combining low visual complexity with high prototypicality were rated as the most aesthetically appealing, supporting a design rule favoring simple, conventional layouts.",
+      "source": "https://research.google/pubs/the-role-of-visual-complexity-and-prototypicality-regarding-first-impression-of-websites-working-towards-understanding-aesthetic-judgments/",
+      "quote": "Overall, websites with low VC and high PT were perceived as highly appealing.",
+      "vote": "3-0"
+    },
+    {
+      "id": "S03",
+      "stream": "style",
+      "claim": "Aesthetic perception of websites is affected by visual complexity and prototypicality even at 17ms exposure, with the prototypicality effect weaker than the visual-complexity effect at that duration.",
+      "source": "https://research.google/pubs/the-role-of-visual-complexity-and-prototypicality-regarding-first-impression-of-websites-working-towards-understanding-aesthetic-judgments/",
+      "quote": "In the second study presentation times were shortened to 17, 33 and 50ms. Results suggest that VC and PT affect aesthetic perception even within 17ms, though the effect of PT is less pronounced than the one of VC.",
+      "vote": "3-0"
+    },
+    {
+      "id": "S04",
+      "stream": "style",
+      "claim": "Web page visual appeal can be assessed by viewers within a 50 millisecond exposure, meaning first aesthetic impressions of a site form in about 50 ms.",
+      "source": "https://www.tandfonline.com/doi/abs/10.1080/01449290500330448",
+      "quote": "Thus, visual appeal can be assessed within 50 ms, suggesting that web designers have about 50 ms to make a good first impression.",
+      "vote": "3-0"
+    }
+  ],
+  "unverified": [
+    {
+      "id": "U01",
+      "stream": "style",
+      "claim": "Visual appeal ratings given after 50 ms exposures were highly correlated with ratings given after 500 ms exposures, and ratings were highly reliable across repeated phases, indicating first impressions are stable rather than artifacts of brief viewing.",
+      "source": "https://www.tandfonline.com/doi/abs/10.1080/01449290500330448",
+      "status": "verification-errored (1 supporting vote, 2 verifier errors)"
+    },
+    {
+      "id": "U02",
+      "stream": "style",
+      "claim": "Computational models of a website's perceived visual complexity and colorfulness, combined with demographic variables (education level, age), explain about 48% of the variance in aesthetic appeal ratings that users give after viewing a website screenshot for only 500ms.",
+      "source": "https://dl.acm.org/doi/10.1145/2470654.2481281",
+      "status": "verification-errored (1 supporting vote, 2 verifier errors)"
+    },
+    {
+      "id": "U03",
+      "stream": "style",
+      "claim": "Visual complexity is the dominant driver of first-impression appeal: appeal drops sharply for high-complexity websites and only slightly for low-complexity ones (a weak, asymmetric inverted-U with a moderate-complexity optimum), and complexity matters far more than colorfulness.",
+      "source": "https://dl.acm.org/doi/10.1145/2470654.2481281",
+      "status": "verification-errored (0 votes cast)"
+    },
+    {
+      "id": "U04",
+      "stream": "style",
+      "claim": "Before using the system, participants' perceptions of an ATM interface's aesthetics and its usability were highly correlated (r = 0.66), replicating Kurosu & Kashimura (1995) and Tractinsky (1997).",
+      "source": "https://www.ise.bgu.ac.il/faculty/noam/papers/00_nt_ask_di_iwc.pdf",
+      "status": "verification-errored (0 votes cast)"
+    },
+    {
+      "id": "U05",
+      "stream": "style",
+      "claim": "After actual use, post-experimental perceptions of both aesthetics and usability were driven by the interface's aesthetics level, while the actual (manipulated) usability of the system had no significant effect on any post-use perception; the aesthetics-usability correlation remained high after use (r = 0.71).",
+      "source": "https://www.ise.bgu.ac.il/faculty/noam/papers/00_nt_ask_di_iwc.pdf",
+      "status": "verification-errored (0 votes cast)"
+    },
+    {
+      "id": "U06",
+      "stream": "style",
+      "claim": "The authors conclude that because users treat aesthetically appealing interfaces as a cue that the system is usable, and the interface 'facade' taints perceptions of subsequent interactions, interface design should integrate aesthetics and usability rather than prioritize usability alone.",
+      "source": "https://www.ise.bgu.ac.il/faculty/noam/papers/00_nt_ask_di_iwc.pdf",
+      "status": "verification-errored (0 votes cast)"
+    }
+  ],
+  "refuted": [],
+  "sources": [
+    {
+      "url": "https://www.pnas.org/doi/10.1073/pnas.0906172107",
+      "quality": "primary",
+      "claimCount": 5
+    },
+    {
+      "url": "https://www.cell.com/current-biology/fulltext/S0960-9822(07)01559-X",
+      "quality": "secondary",
+      "claimCount": 5
+    },
+    {
+      "url": "https://link.springer.com/article/10.3758/s13423-014-0591-8",
+      "quality": "primary",
+      "claimCount": 5
+    },
+    {
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/cogs.12291",
+      "quality": "primary",
+      "claimCount": 5
+    },
+    {
+      "url": "https://cxl.com/blog/which-color-converts-the-best/",
+      "quality": "blog",
+      "claimCount": 5
+    },
+    {
+      "url": "https://www.w3.org/TR/WCAG21/",
+      "quality": "primary",
+      "claimCount": 5
+    },
+    {
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S1071581909001116",
+      "quality": "primary",
+      "claimCount": 5
+    },
+    {
+      "url": "https://www.researchgate.net/publication/334550253_Trustworthy_Blue_or_Untrustworthy_Red_The_Influence_of_Colors_on_Trust",
+      "quality": "primary",
+      "claimCount": 4
+    },
+    {
+      "url": "https://www.fastcompany.com/1403230/googles-marissa-mayer-assaults-designers-data",
+      "quality": "secondary",
+      "claimCount": 5
+    },
+    {
+      "url": "https://www.makethingsaccessible.com/guides/contrast-requirements-for-wcag-2-2-level-aa/",
+      "quality": "secondary",
+      "claimCount": 5
+    },
+    {
+      "url": "https://research.google/pubs/the-role-of-visual-complexity-and-prototypicality-regarding-first-impression-of-websites-working-towards-understanding-aesthetic-judgments/",
+      "quality": "primary",
+      "claimCount": 5
+    },
+    {
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/01449290500330448",
+      "quality": "primary",
+      "claimCount": 4
+    },
+    {
+      "url": "https://dl.acm.org/doi/10.1145/2470654.2481281",
+      "quality": "primary",
+      "claimCount": 5
+    },
+    {
+      "url": "https://www.ise.bgu.ac.il/faculty/noam/papers/00_nt_ask_di_iwc.pdf",
+      "quality": "primary",
+      "claimCount": 5
+    },
+    {
+      "url": "https://www.webdesignmuseum.org/web-design-history",
+      "quality": "secondary",
+      "claimCount": 5
+    },
+    {
+      "url": "https://dl.acm.org/doi/fullHtml/10.1145/3411764.3445156",
+      "quality": "primary",
+      "claimCount": 5
+    },
+    {
+      "url": "https://www.versionmuseum.com/",
+      "quality": "secondary",
+      "claimCount": 5
+    },
+    {
+      "url": "https://www.versionmuseum.com/history-of/google-search",
+      "quality": "secondary",
+      "claimCount": 5
+    },
+    {
+      "url": "https://dl.acm.org/doi/10.1145/3232078.3232086",
+      "quality": "primary",
+      "claimCount": 5
+    },
+    {
+      "url": "https://www.viget.com/articles/a-bone-to-pick-with-skeleton-screens",
+      "quality": "primary",
+      "claimCount": 5
+    },
+    {
+      "url": "https://uxdesign.cc/what-you-should-know-about-skeleton-screens-a820c45a571a",
+      "quality": "blog",
+      "claimCount": 5
+    },
+    {
+      "url": "https://web.dev/articles/defining-core-web-vitals-thresholds",
+      "quality": "primary",
+      "claimCount": 5
+    },
+    {
+      "url": "https://www.nngroup.com/articles/hamburger-menus/",
+      "quality": "primary",
+      "claimCount": 5
+    },
+    {
+      "url": "https://www.nngroup.com/articles/mobile-navigation-patterns/",
+      "quality": "secondary",
+      "claimCount": 5
+    }
+  ]
+}
