@@ -1,0 +1,252 @@
+{
+  "name": "dark-cinematic-lab",
+  "version": "1.0.0",
+  "genre": "The contemporary AI-lab landing page: dark cinematic minimalism with terminal affordances. One image carries all emotion; the UI layer stays typographic, hairline, and flat.",
+  "provenance": {
+    "sample": "samples/primeintellect-ai.md",
+    "research": ["research/color.md", "research/style.md", "research/patterns.md"],
+    "checklist": "checklists/pre-ship.md",
+    "evidence_note": "Low visual complexity plus high prototypicality wins the 50ms first impression (style.md). This profile is deliberately prototypical within its genre; the single cinematic image carries the controlled complexity. Dark ground trades broad-audience warmth for in-group developer credibility; treat as an audience parameter, not a universal."
+  },
+  "tokens": {
+    "grounds": {
+      "ground-0": {
+        "value": "#0A0B0A",
+        "role": "page ground; near-black with a green-gray cast, never pure #000"
+      },
+      "ground-1": {
+        "value": "#10120F",
+        "role": "raised panel ground: terminal box, hover fills"
+      },
+      "ground-2": {
+        "value": "#161814",
+        "role": "second raise step; active states; use sparingly"
+      }
+    },
+    "ink": {
+      "value": "#F2F1EC",
+      "role": "primary text and focus ring; warm off-white, never pure #FFF for body text"
+    },
+    "muted": {
+      "value": "#9BA09A",
+      "role": "secondary text, microlabel default, slash separators, numbers"
+    },
+    "hairline": {
+      "value": "#262A26",
+      "role": "decorative 1px borders: boxed nav items, grid cell walls, section rules. Decorative only; carries no meaning alone, so it is exempt from the 3:1 UI floor"
+    },
+    "edge": {
+      "value": "#767D76",
+      "role": "interactive border: outlined buttons and any stroke that must read as a control; holds the 3:1 UI-component floor on every ground"
+    },
+    "cta": {
+      "surface": "#FFFFFF",
+      "ink": "#0A0B0A",
+      "role": "THE one filled surface in the system. Nothing else on the page may be filled. CTA emphasis comes from contrast against the ground, not from hue (patterns.md, isolation effect)"
+    },
+    "scene": {
+      "glow": "#BFD9EA",
+      "sky-horizon": "#16303F",
+      "role": "cold blue-family accent family confined to the generated hero scene; blue is the lowest-risk trust accent (color.md); never chartreuse or dark yellow anywhere"
+    },
+    "contrast_pairs_precomputed": {
+      "ink_on_ground-0": "17.43:1",
+      "ink_on_ground-1": "16.65:1",
+      "ink_on_ground-2": "15.80:1",
+      "muted_on_ground-0": "7.41:1",
+      "muted_on_ground-1": "7.07:1",
+      "muted_on_ground-2": "6.71:1",
+      "cta-ink_on_cta-surface": "19.72:1",
+      "edge_on_ground-0": "4.66:1",
+      "edge_on_ground-1": "4.45:1",
+      "focus-ring_on_ground-0": "17.43:1"
+    }
+  },
+  "type_roles": {
+    "mono_microlabel": {
+      "stack": "ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace",
+      "transform": "uppercase",
+      "weight": 500,
+      "sizes_and_tracking": {
+        "eyebrow": { "size": "0.75rem", "letter_spacing": "0.18em" },
+        "microlabel": { "size": "0.6875rem", "letter_spacing": "0.14em" },
+        "nav_item": { "size": "0.6875rem", "letter_spacing": "0.12em" },
+        "footer_link": { "size": "0.72rem", "letter_spacing": "0.10em" }
+      },
+      "role": "carries ALL wayfinding: ticker, nav, eyebrows, tags, counts, footer. If it navigates or labels, it is mono, uppercase, and tracked"
+    },
+    "terminal": {
+      "stack": "ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace",
+      "transform": "none",
+      "letter_spacing": "0",
+      "size": "0.95rem",
+      "role": "literal shell text; never tracked, never uppercased; the command must be copyable and real"
+    },
+    "display_humanist": {
+      "stack": "Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif",
+      "weight": 600,
+      "letter_spacing": "-0.015em",
+      "case": "sentence case, quiet confidence, no exclamation",
+      "size": "clamp(2.4rem, 5.2vw, 4.25rem)",
+      "role": "the hero headline ONLY; the display face appears nowhere else on the page"
+    },
+    "body_humanist": {
+      "stack": "Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif",
+      "weight": 400,
+      "size": "1rem",
+      "line_height": 1.6,
+      "role": "paragraphs, captions, backer names"
+    },
+    "italic_contrast": {
+      "stack": "Didot, 'Bodoni MT', 'Noto Serif Display', 'URW Palladio L', P052, Sylfaen, Georgia, serif",
+      "style": "italic",
+      "weight": 400,
+      "role": "optional; the second word of the wordmark and at most one partner wordmark; a single serif grace note against the sans system"
+    }
+  },
+  "layout_grammar": {
+    "note": "Ordered top to bottom. Slot names are the section ids. Nav numbering equals document order of the numbered targets: structure as information.",
+    "slots": [
+      {
+        "order": 1,
+        "name": "announcement-ticker",
+        "contract": "One static mono line on ground-0 with a trailing external-link arrow. News as quiet ticker, not banner: no marquee, no dismiss button, no fill, bottom hairline."
+      },
+      {
+        "order": 2,
+        "name": "numbered-nav",
+        "contract": "Left: geometric mark + caps wordmark + italic contrast word. Center: at most 4 primary destinations in hairline boxes, uppercase mono, each suffixed with a muted two-digit order number (01..04) matching document order. Right: mono utilities, then exactly one filled CTA. At phone width the utilities drop, the destinations wrap to a second visible row: never a hamburger, never more than 5 visible items."
+      },
+      {
+        "order": 3,
+        "name": "cinematic-hero",
+        "contract": "The single cinematic image slot of the page: a full-bleed generated scene (gradient/SVG, no external assets) doing all emotional work, nature-meets-artifact metaphor. Copy overlays a bottom scrim: mono eyebrow, humanist sentence-case headline, one two-line paragraph, one outlined button plus one plain arrow link. The filled CTA lives in the nav, so the hero adds no second fill."
+      },
+      {
+        "order": 4,
+        "name": "terminal-affordance",
+        "contract": "A literal shell line in a hairline ground-1 box with a block cursor: $ pip install <package>. Developer-nativeness proven, not claimed. The command must be real or realistically installable; the box gets overflow-x auto."
+      },
+      {
+        "order": 5,
+        "name": "named-backers-strip",
+        "contract": "Mono BACKED BY label, then backer names as plain text separated by muted slashes: funds and individuals, no logos, no links, no images."
+      },
+      {
+        "order": 6,
+        "name": "case-study-grid",
+        "contract": "A 1px-gap hairline grid (cells share walls) of partner cells: mono CASE STUDY tag, a typographic partner wordmark (each in a distinct treatment from the system's faces), mono READ MORE arrow. Whole cell is the link. Header row carries the section number and an honest cell count."
+      },
+      {
+        "order": 7,
+        "name": "footer",
+        "contract": "Top hairline. Brand column with mark, wordmark, one-line mission. Up to three mono link columns with microlabel headers. Bottom hairline row: copyright left, legal links right. Every anchor has an explicit color."
+      }
+    ]
+  },
+  "assertions": {
+    "note": "The sample's genre rules restated as machine-checkable tests, plus the hard floors. Every assertion is phrased so a script or audit can pass or fail it.",
+    "rules": [
+      {
+        "id": "fill-budget",
+        "source": "sample rule 1",
+        "assert": "filled elements per viewport <= 1; count of elements with an opaque non-ground background that are interactive or decorative chrome == 1 for the whole page (the CTA)"
+      },
+      {
+        "id": "ground-near-black",
+        "source": "sample rule 1",
+        "assert": "every tokens.grounds value has relative luminance <= 0.012 and is not #000000"
+      },
+      {
+        "id": "ink-off-white",
+        "source": "sample rule 1",
+        "assert": "body text color is not #FFFFFF and contrast(ink, every ground) >= 4.5"
+      },
+      {
+        "id": "mono-wayfinding",
+        "source": "sample rule 2",
+        "assert": "every nav label, eyebrow, tag, and footer link computes to a monospace family with text-transform uppercase and letter-spacing >= 0.10em"
+      },
+      {
+        "id": "display-scope",
+        "source": "sample rule 2",
+        "assert": "count of elements using the display size/weight role outside the hero headline == 0"
+      },
+      {
+        "id": "one-image",
+        "source": "sample rule 3",
+        "assert": "cinematic image slots per page == 1; all other sections contain zero raster or scenic content"
+      },
+      {
+        "id": "honest-numbers",
+        "source": "sample rule 4",
+        "assert": "every numeric badge binds to a countable fact: nav numbers equal document order of their targets; grid header count equals rendered cell count; role counts bind to a live source, never decoration"
+      },
+      {
+        "id": "textual-proof",
+        "source": "sample rule 5",
+        "assert": "page contains >= 1 literal executable command line AND >= 4 named backers AND >= 3 named customer cells"
+      },
+      {
+        "id": "flat-hairline",
+        "source": "sample rule 6",
+        "assert": "computed box-shadow == none on all elements; border-radius <= 2px on all boxes; decorative border-width == 1px"
+      },
+      {
+        "id": "nav-budget",
+        "source": "patterns.md NN/g",
+        "assert": "primary nav destinations <= 5; hamburger/disclosure menus == 0 at every width including 390px"
+      },
+      {
+        "id": "mobile-truth",
+        "source": "pre-ship.md",
+        "assert": "document.scrollingElement.scrollWidth <= 390 at a true 390px viewport (measured inside an iframe host, not a clamped headless window)"
+      },
+      {
+        "id": "contrast-floors",
+        "source": "color.md WCAG 2.1 AA",
+        "assert": "contrast >= 4.5:1 for all text; >= 3:1 for interactive borders and meaningful graphics"
+      },
+      {
+        "id": "no-chartreuse",
+        "source": "color.md",
+        "assert": "no ground or accent token falls in the chartreuse/dark-yellow hue band (hue 60-90 with lightness < 60%)"
+      },
+      {
+        "id": "self-contained",
+        "source": "patterns.md LCP budget",
+        "assert": "external network requests == 0; @font-face count == 0; all font-family values are system stacks"
+      },
+      {
+        "id": "focus-visible",
+        "source": "pre-ship.md",
+        "assert": "every interactive element paints a visible outline on :focus-visible with contrast >= 3:1 against its surroundings"
+      },
+      {
+        "id": "loader-discipline",
+        "source": "patterns.md loading states",
+        "assert": "page-transition loader appears only after >= 300ms of pending navigation; it is a single centered indeterminate ring on the page ground; under prefers-reduced-motion it is a static mark; it is visibly populated in every animation phase; loaders shown < 300ms == 0"
+      },
+      {
+        "id": "reduced-motion",
+        "source": "pre-ship.md",
+        "assert": "under prefers-reduced-motion: reduce, running animations == 0 and all content renders"
+      },
+      {
+        "id": "no-js-content",
+        "source": "pre-ship.md",
+        "assert": "with scripts stripped, all page content is visible and anchors still navigate"
+      },
+      {
+        "id": "anchor-color",
+        "source": "pre-ship.md",
+        "assert": "count of <a> elements without an explicit color rule in scope == 0"
+      },
+      {
+        "id": "no-emdash",
+        "source": "pre-ship.md",
+        "assert": "count of U+2014 characters in every shipped file == 0"
+      }
+    ]
+  }
+}
