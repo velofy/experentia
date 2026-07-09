@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="800" height="240" role="img" aria-label="experentia">
+  <title>experentia</title>
+  <rect width="800" height="240" rx="18" fill="#0a0a0a"/>
+  <text x="58" y="72" fill="#8c8c8c"
+        font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" font-weight="500"
+        letter-spacing="4.5">THE TASTE LAYER</text>
+  <text x="694" y="72" text-anchor="end" fill="#6f6f6f"
+        font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" font-weight="500"
+        letter-spacing="3">velofy stack</text>
+  <text x="52" y="182" fill="#f5f4f2"
+        font-family="Didot, 'Hoefler Text', 'Playfair Display', Georgia, 'Times New Roman', serif"
+        font-style="italic" font-size="104" letter-spacing="0.5">experentia</text>
+</svg>

@@ -1,4 +1,4 @@
-# experentia
+<img src="assets/experentia-wordmark.png" alt="experentia" width="460">
 
 A taste-engine for frontends. It answers two questions an AI agent cannot answer
 from a component library alone: what does good look like for this audience, and
@@ -8,6 +8,8 @@ readable profiles, and proven with reference templates that pass their own tests
 **Live site:** [velofy.github.io/experentia](https://velofy.github.io/experentia/) (landing page and browsable reference templates).
 
 experentia is one of three layers a velofy agent builds with:
+
+<img src="assets/velofy-wordmark.png" alt="velofy" width="460">
 
 - **summit.js** (velofy/summitjs) is the runtime: performant components, tokens,
   loaders.
