@@ -43,6 +43,7 @@ If you are an agent, start with [AGENTS.md](AGENTS.md). It is the build contract
 
 ## Status
 
-The research layer is complete and committed. The first genre, dark-cinematic-lab,
-ships as a profile and a verified reference template. More genres follow, each as
-a profile plus a template that passes its own assertions.
+The research layer is complete and committed. Five genres ship so far, each as a
+profile plus a verified reference template that passes its own assertions:
+dark-cinematic-lab, warm-light-editorial, app-dashboard, developer-docs, and
+commerce-marketing. More genres follow.

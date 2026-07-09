@@ -54,6 +54,10 @@ first, then follow the flow. Do not skip the verification step.
 | Profile | Template | Audience |
 | --- | --- | --- |
 | `taste/dark-cinematic-lab.json` | `templates/dark-cinematic-lab.html` | Developer-facing AI or infrastructure product. Dark ground, typographic UI, one cinematic image, terminal affordances. Trades broad warmth for in-group credibility. |
+| `taste/warm-light-editorial.json` | `templates/warm-light-editorial.html` | A design-led publication or studio journal. Light warm ground, serif voice, one restrained accent. The light and warm counterpoint to the lab genre. |
+| `taste/app-dashboard.json` | `templates/app-dashboard.html` | A data-dense operator product. Information design leads: sidebar nav, KPI cards with sparklines, a scrolling data table, semantic status colors distinct from the accent, skeleton loaders. |
+| `taste/developer-docs.json` | `templates/developer-docs.html` | Product documentation. High prototypicality: top nav, persistent sidebar, a 65ch prose column, anchored headings, and code blocks that wrap or scroll. |
+| `taste/commerce-marketing.json` | `templates/commerce-marketing.html` | A conversion-focused storefront or landing page. The CTA wins on contrast, not hue; product grid, trust signals, pricing, mobile first. |
 
 More genres are added over time. Each ships as a profile plus a verified
 reference template, and every profile carries its own assertions.
