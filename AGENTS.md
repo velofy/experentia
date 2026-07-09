@@ -8,7 +8,7 @@ first, then follow the flow. Do not skip the verification step.
 
 | Source | Repo | What it gives you |
 | --- | --- | --- |
-| summit.js | velofy/summit | The performant component and technique runtime: tokens, components, loaders. Read its CSS before writing a component's markup, since components have real markup contracts. |
+| summit.js | velofy/summitjs | The performant component and technique runtime: tokens, components, loaders. Read its CSS before writing a component's markup, since components have real markup contracts. |
 | ui-atlas | velofy/ui-atlas | Reference landing pages and templates you can read for layout precedent. |
 | experentia | this repo | Why a design is good (research/), the distilled rules per genre (taste/), the reference implementations (templates/), and the defects to never ship (checklists/). |
 

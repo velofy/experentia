@@ -9,7 +9,7 @@ readable profiles, and proven with reference templates that pass their own tests
 
 experentia is one of three layers a velofy agent builds with:
 
-- **summit.js** (velofy/summit) is the runtime: performant components, tokens,
+- **summit.js** (velofy/summitjs) is the runtime: performant components, tokens,
   loaders.
 - **ui-atlas** (velofy/ui-atlas) is the precedent: reference landing pages and
   templates.
@@ -51,7 +51,7 @@ dark-cinematic-lab, warm-light-editorial, app-dashboard, developer-docs, and
 commerce-marketing. More genres follow.
 
 Alongside them, `templates/supply-chain.html` is the one template wired live on
-[summit.js](https://velofy.github.io/summit/): a neutral operations control tower
+[summit.js](https://velofy.github.io/summitjs/): a neutral operations control tower
 whose shipments table, KPIs, low-stock alerts, and carrier bars all react from a
 single `s-data` source. It shows the same taste rules driving a reactive interface
 rather than a static page. The summit.js runtime is inlined, so the file stays
