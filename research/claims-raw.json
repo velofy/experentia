@@ -1,765 +1,765 @@
 {
-  "note": "Raw claims from the deep-research fetch phase, grouped per source document. URL attribution: see the sources array in claims-verified.json (24 sources); per-group URLs were not persisted by the harness. Claims here are NOT adversarially verified unless they also appear in claims-verified.json.",
-  "sourceGroups": 24,
-  "totalClaims": 118,
-  "groups": [
-    {
-      "publishDate": "2018-09-05",
-      "sourceQuality": "primary",
-      "claimCount": 5,
-      "claims": [
-        {
-          "claim": "In a user test of a fictional news site with two variants (skeleton screens vs. spinners during loading), the skeleton-screen version scored higher on average on both perceived speed and perceived ease of navigation.",
-          "quote": "The results show that the page using skeleton screens, scored higher on average on both perceived speed and ease of navigation.",
-          "importance": "central"
-        },
-        {
-          "claim": "Despite better perception scores for skeleton screens, users on the spinner version were objectively faster at finding a specified article when entering the site for the first time.",
-          "quote": "However, people using the page with spinners were faster at finding the article when entering the site for the first time.",
-          "importance": "central"
-        },
-        {
-          "claim": "None of the measured differences between the skeleton-screen page and the spinner page reached statistical significance, so this study provides only directional (not confirmed) evidence for skeleton screens' perceptual advantage.",
-          "quote": "The results of this paper cannot show any significant differences in any of the comparisons between the web pages.",
-          "importance": "central"
-        },
-        {
-          "claim": "The study's method combined a subjective questionnaire with objective task timing (time to find a specified article on first visit) on a fictional news site, comparing skeleton screens against the long-standing norm of progress bars and spinners.",
-          "quote": "Both a questionnaire and measuring timing while finding a specified article when entering a website for the first time was used.",
-          "importance": "supporting"
-        },
-        {
-          "claim": "The paper is a 4-page peer-reviewed ACM conference paper authored by Thomas Mejtoft, Arvid Långström and Ulrik Söderström (Umeå University Digital Media Lab), published at ECCE'18 (Utrecht) on September 5, 2018 — not by 'Kraft & Hurtienne' as the search-result title suggested.",
-          "quote": "Proceedings of the 36th European Conference on Cognitive Ergonomics ... Authors: Thomas Mejtoft ... Arvid Långström ... Ulrik Söderström ... Published Date: September 5, 2018 ... Pages: 1-4",
-          "importance": "tangential"
-        }
-      ]
-    },
-    {
-      "publishDate": "2017-10-19",
-      "sourceQuality": "primary",
-      "claimCount": 5,
-      "claims": [
-        {
-          "claim": "In a controlled experiment with 136 participants viewing three loading animations of identical duration, the skeleton screen produced the LONGEST average perceived wait time (2.82 seconds) compared to a loading spinner (2.41 s) and a blank screen (2.29 s), contradicting the common assumption that skeleton screens reduce perceived load time.",
-          "quote": "We gave the test to 136 people, and the skeleton screen performed the worst by all metrics. ... Average perceived wait time (seconds): Skeleton screen 2.82, Loading spinner 2.41, Blank screen 2.29",
-          "importance": "central"
-        },
-        {
-          "claim": "Skeleton screens scored lowest on user-perceived speed satisfaction: only 59% of participants agreed the content 'loaded quickly' after a skeleton screen, versus 74% after a loading spinner and 66% after a blank screen.",
-          "quote": "Percentage who agreed with the statement, 'The meals loaded quickly for me.' Skeleton screen 59%, Loading spinner 74%, Blank screen 66%",
-          "importance": "central"
-        },
-        {
-          "claim": "Participants also completed the post-load task slowest after the skeleton screen condition (10.54 s) compared with the spinner (9.49 s) and blank screen (9.50 s), suggesting skeleton screens did not aid post-load orientation in this study.",
-          "quote": "Post-load task completion: Skeleton screen 10.54 sec, Loading spinner 9.49 sec, Blank screen 9.50 sec (the skeleton screen performed the worst by all metrics)",
-          "importance": "supporting"
-        },
-        {
-          "claim": "The authors propose boundary conditions for skeleton screens rather than a blanket recommendation: they may work better in familiar interfaces and only when wait times are very short, and they explicitly caution against treating skeleton screens as a default best practice.",
-          "quote": "Skeleton screens work better in familiar interfaces and can be off-putting in new settings. ... Skeleton screens work best when wait times are very short. ... Either way, skeleton screens aren't a silver bullet for increasing perceived performance and should be used thoughtfully.",
-          "importance": "central"
-        },
-        {
-          "claim": "The study's evidential strength is limited: roughly half the sample (70 of 136) came from Amazon Mechanical Turk (the rest from Viget's social channels), stimuli were animated GIFs tested via Chalkmark, and the authors themselves state the causal explanations are unconfirmed hunches requiring more testing.",
-          "quote": "Roughly half (70) of the participants were sourced through Amazon Mechanical Turk and paid for their participation. ... Our hunch is that each of these reasons has some merit, but more testing is needed to know for certain.",
-          "importance": "supporting"
-        }
-      ]
-    },
-    {
-      "publishDate": "2016-06-26",
-      "sourceQuality": "primary",
-      "claimCount": 5,
-      "claims": [
-        {
-          "claim": "In NN/g's quantitative study of 179 participants completing tasks on 6 live websites (on smartphones and desktops), desktop users engaged with hidden hamburger-style navigation in only 27% of cases, roughly half the usage rate of visible (50%) or combo (48%) navigation.",
-          "quote": "On desktop, people used the hidden menus in only 27% of the cases, while they used visible or combo navigation almost twice as much: in 48% and 50% of the cases, respectively.",
-          "importance": "central"
-        },
-        {
-          "claim": "On mobile, hidden navigation was used in 57% of cases versus 86% for combo (partially visible) navigation, meaning even on small screens fully hiding navigation reduces its use by about 1.5x.",
-          "quote": "On mobile people used the hidden navigation in 57% of the cases, and the combo navigation in 86% of the cases — 1.5 times more.",
-          "importance": "central"
-        },
-        {
-          "claim": "Hiding a site's main navigation reduced content discoverability by more than 20% compared with sites using visible or combo navigation.",
-          "quote": "This measure showed a more than 20% drop in discoverability on sites with hidden navigation, compared with sites with visible or combo navigation.",
-          "importance": "central"
-        },
-        {
-          "claim": "Hidden navigation made tasks measurably slower: at least 39% slower task times on desktop and 15% slower on mobile compared with visible navigation.",
-          "quote": "On the desktop, people were at least 39% slower when the navigation was hidden.",
-          "importance": "supporting"
-        },
-        {
-          "claim": "NN/g's concrete design recommendations: never use hamburger/hidden navigation on desktop, and on mobile show top-level links visibly when there are 4 or fewer; users also rated tasks 21% more difficult with hidden navigation than with visible navigation.",
-          "quote": "Do not use hidden navigation (such as hamburger icons) in desktop user interfaces.",
-          "importance": "central"
-        }
-      ]
-    },
-    {
-      "publishDate": "2025-05-06 (latest republication of WCAG 2.1; originally published 2018-06-05)",
-      "sourceQuality": "primary",
-      "claimCount": 5,
-      "claims": [
-        {
-          "claim": "WCAG 2.1 Level AA (Success Criterion 1.4.3) requires text and images of text to have a contrast ratio of at least 4.5:1, while large-scale text (at least 18 point, or 14 point bold) need only reach 3:1.",
-          "quote": "The visual presentation of text and images of text has a contrast ratio of at least 4.5:1 ... Large-scale text and images of large-scale text have a contrast ratio of at least 3:1",
-          "importance": "central"
-        },
-        {
-          "claim": "WCAG 2.1 Level AA (Success Criterion 1.4.11 Non-text Contrast) requires user interface components and meaningful graphical objects to have a contrast ratio of at least 3:1 against adjacent colors.",
-          "quote": "The visual presentation of the following have a contrast ratio of at least 3:1 against adjacent color(s): User Interface Components",
-          "importance": "central"
-        },
-        {
-          "claim": "WCAG 2.1 (Success Criterion 1.4.1 Use of Color, Level A) prohibits using color as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.",
-          "quote": "Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.",
-          "importance": "supporting"
-        },
-        {
-          "claim": "WCAG 2.1 (Success Criterion 1.4.12 Text Spacing, Level AA) requires content to lose no functionality when users set line height to at least 1.5x font size, paragraph spacing to 2x, letter spacing to 0.12x, and word spacing to 0.16x, which gives concrete minimum typography token values.",
-          "quote": "Line height (line spacing) to at least 1.5 times the font size; Spacing following paragraphs to at least 2 times the font size; Letter spacing (tracking) to at least 0.12 times the font size; Word spacing to at least 0.16 times the font size.",
-          "importance": "supporting"
-        },
-        {
-          "claim": "WCAG 2.1 constrains motion and loaders: any auto-starting moving/blinking content lasting more than five seconds must be pausable/stoppable/hideable (2.2.2, Level A), and interaction-triggered motion animation must be disableable unless essential (2.3.3, Level AAA).",
-          "quote": "For any moving, blinking or scrolling information that (1) starts automatically, (2) lasts more than five seconds, and (3) is presented in parallel with other content, there is a mechanism for the user to pause, stop, or hide it",
-          "importance": "supporting"
-        }
-      ]
-    },
-    {
-      "publishDate": "2018-10-19",
-      "sourceQuality": "blog",
-      "claimCount": 5,
-      "claims": [
-        {
-          "claim": "In the author's study (n=80), skeleton screens used as full-page loading indicators were perceived as shorter in duration than both a blank screen and a spinner, though the margin was small.",
-          "quote": "Skeleton screens (as splash screens), when used to indicate that a screen is loading, are perceived as being shorter in duration when compared against a blank screen (our control) and a spinner — but not by much",
-          "importance": "central"
-        },
-        {
-          "claim": "Left-to-right wave/shimmer animation is perceived as shorter in duration than pulsing animation: 65% of 20 testers judged the wave shorter than the pulse, and 68% judged left-to-right shorter than right-to-left, in fixed 5-second comparisons.",
-          "quote": "Skeleton screens that leverage motion that moves from left to right (e.g. a wave or shimmer like animation) are perceived as shorter in duration than skeletons that pulse",
-          "importance": "central"
-        },
-        {
-          "claim": "Slow, steady skeleton animation is perceived as shorter than fast/rapid animation (60% of 20 testers judged the slow wave shorter), leading to the recommendation of slow shimmer motion like the Google iOS app rather than fast pulses.",
-          "quote": "Skeleton screens using motion that is slow and steady are perceived as shorter in duration than skeleton screens that use fast or rapid motion",
-          "importance": "central"
-        },
-        {
-          "claim": "A 2017 Viget study reached the opposite conclusion, finding skeleton screens performed worst on perceived duration compared with spinners and blank screens, so the evidence base for skeletons is contested.",
-          "quote": "skeleton screens performed the worst in terms of perceived duration of time",
-          "importance": "supporting"
-        },
-        {
-          "claim": "Most skeleton screens in production are static splash screens rather than Luke Wroblewski's original concept of progressive loading, and the author recommends replacing skeleton placeholders with real content as soon as each piece is available; he also concedes his samples are too small for definitive conclusions.",
-          "quote": "The vast majority of skeleton screens in use today are splash screens, and not skeleton screens in the original way described by Luke Wroblewski",
-          "importance": "supporting"
-        }
-      ]
-    },
-    {
-      "publishDate": "2015-11-15",
-      "sourceQuality": "secondary",
-      "claimCount": 5,
-      "claims": [
-        {
-          "claim": "Mobile tab bars and top navigation bars should contain at most 5 navigation options; beyond 5, items cannot be fit while maintaining optimum touch-target size.",
-          "quote": "If your site has more than 5 options, it's hard to fit them in a tab or navigation bar and still keep an optimum touch-target size.",
-          "importance": "central"
-        },
-        {
-          "claim": "Tab bars are persistent (remain visible during scrolling) and platform conventions place them at the bottom of the screen on iOS and at the top on Android.",
-          "quote": "Tab bars are persistent, that is, they are always visible on the screen, whether the user scrolls down the page or not. ... The tab was positioned in accordance with official operating-systems guidelines: at the bottom on iPhone and at the top of the page on Android.",
-          "importance": "central"
-        },
-        {
-          "claim": "Hidden navigation menus (hamburger menus) make navigation options the least discoverable of the mobile navigation patterns and are best suited to content-heavy, browse-mostly sites, because many users simply do not think to open them.",
-          "quote": "The navigation menu makes the navigation options least discoverable and is best suited for content-heavy, browse-mostly sites and apps. ... Many people still simply don't think to open it.",
-          "importance": "central"
-        },
-        {
-          "claim": "Third-party research suggests that labeling the hidden menu with the word 'Menu' performs slightly better with users than using the hamburger icon alone.",
-          "quote": "In fact, third-party research seems to suggest that using the word Menu instead of the hamburger icon is slightly more popular with users.",
-          "importance": "supporting"
-        },
-        {
-          "claim": "Non-sticky top navigation bars typically disappear once the user scrolls down one or more screens, and they consume valuable above-the-fold screen real estate on mobile.",
-          "quote": "Navigation bars usually start out being present at the top of the page but disappear once the user has scrolled one or more screens down. ... It takes up valuable real estate above the fold.",
-          "importance": "supporting"
-        }
-      ]
-    },
-    {
-      "publishDate": "2020-05-21 (last updated 2025-05-07)",
-      "sourceQuality": "primary",
-      "claimCount": 5,
-      "claims": [
-        {
-          "claim": "Google defines the Largest Contentful Paint (LCP) 'good' threshold as 2.5 seconds and the 'poor' threshold as 4 seconds, giving a concrete loading-performance budget for pages.",
-          "quote": "Thus, we conclude that 2.5 seconds is a reasonable \"good\" threshold, and 4 seconds is a reasonable \"poor\" threshold for Largest Contentful Paint.",
-          "importance": "central"
-        },
-        {
-          "claim": "Core Web Vitals thresholds are assessed at the 75th percentile of page loads, meaning a site passes only if at least 3 of 4 visits meet the target, which is the percentile a performance budget should be measured against.",
-          "quote": "By using the 75th percentile, we know that most visits to the site (3 of 4) experienced the target level of performance or better.",
-          "importance": "central"
-        },
-        {
-          "claim": "The Cumulative Layout Shift 'good' threshold of 0.1 is grounded in Chrome's internal perception testing, which found layout shifts of 0.15 and higher consistently disruptive while shifts of 0.1 and lower were noticeable but tolerable; this directly motivates reserving space for content (e.g., skeleton placeholders) instead of letting layout jump.",
-          "quote": "In our internal testing, we found that levels of shift from 0.15 and higher were consistently perceived as disruptive, while shifts of 0.1 and lower were noticeable but not excessively disruptive.",
-          "importance": "central"
-        },
-        {
-          "claim": "Interaction responsiveness has a 'good' threshold of 200 ms and a 'poor' threshold of 500 ms (INP), informed by HCI research such as Nielsen's 0.1-second limit for perceived instantaneous reaction; this bounds acceptable UI response and motion/feedback latency.",
-          "quote": "For this reason we conclude a 200 ms is a reasonable \"good\" threshold for most sites, and greater than 500 ms is a reasonable \"poor\" threshold.",
-          "importance": "central"
-        },
-        {
-          "claim": "The thresholds were not chosen from perception research alone: Google additionally required that each 'good' threshold be achievable by at least 10% of existing origins (verified against CrUX field data), so the budgets are empirically attainable targets rather than aspirational ones.",
-          "quote": "To confirm that a threshold is achievable, we require that at least 10% of origins meet the \"good\" threshold.",
-          "importance": "supporting"
-        }
-      ]
-    },
-    {
-      "publishDate": "2025-05-14",
-      "sourceQuality": "secondary",
-      "claimCount": 5,
-      "claims": [
-        {
-          "claim": "Under WCAG 2.2 Level AA (SC 1.4.3 Contrast Minimum), regular-size text must have a contrast ratio of at least 4.5:1 against its background, applying to all text below 18.66px regardless of weight and to text between 18.66px and 24px that is not bold.",
-          "quote": "Minimum 4.5:1 contrast ratio. This applies to \"all text below 18.66px, irrespective of weight\" or text between 18.66-24px with font-weight lower than bold.",
-          "importance": "supporting"
-        },
-        {
-          "claim": "WCAG 2.2 AA permits a lower 3:1 contrast ratio for 'large text', defined as text at least 18.66px AND bold, or text at least 24px at any font weight.",
-          "quote": "\"Text that is both of a size of at least 18.66px and has a font weight of bold\" ... \"Text that has a font size of at least 24px (any font-weight is permitted)\"",
-          "importance": "supporting"
-        },
-        {
-          "claim": "SC 1.4.11 Non-text Contrast requires a minimum 3:1 contrast ratio against adjacent colors for meaningful non-text elements, including informative icons, component-identifying borders, focus indicators on interactive elements, and data visualizations.",
-          "quote": "Minimum 3:1 against adjacent pixels. Applies to \"icons that provide information or meaning,\" \"borders that are required to identify a component,\" \"focus indicators on interactive elements,\" and \"data visualizations.\"",
-          "importance": "supporting"
-        },
-        {
-          "claim": "Logos, text within inactive (disabled) user interface components, and incidental text in photographs are exempt from WCAG contrast requirements.",
-          "quote": "\"Text that forms part of an inactive user interface component,\" logos (which \"don't have to pass any contrast requirements\"), and incidental text in photographs are exempt.",
-          "importance": "tangential"
-        },
-        {
-          "claim": "Visible focus indicators added to interactive elements must themselves meet the 3:1 non-text contrast minimum under WCAG 2.2 AA.",
-          "quote": "Focus indicators must maintain contrast—the guide states: \"if we are adding something... this is the SC that we need\" to pass 3:1 minimum for visible focus rings or other added graphical features.",
-          "importance": "supporting"
-        }
-      ]
-    },
-    {
-      "publishDate": "2021-04-22 (last updated 2025-03-16; original article circa 2012-2013 per comment timestamps)",
-      "sourceQuality": "blog",
-      "claimCount": 5,
-      "claims": [
-        {
-          "claim": "There is no universally best-converting CTA button color; conversion impact comes from how much the button's color contrasts with its surroundings (visual hierarchy), not from the hue itself.",
-          "quote": "No single color is better than another. Ultimately, what matters is how much a button color contrasts with the area around it.",
-          "importance": "central"
-        },
-        {
-          "claim": "In HubSpot's widely cited A/B test (2,000+ visits on a client site), a red CTA button outperformed a green one by 21%, but the article attributes this to the green button failing to stand out on a green-dominant page rather than to red being inherently better.",
-          "quote": "Their result? The red button outperformed the green button by 21%. ... Green is one of the main colors of the site! And what happens when you add a green button to the mix? It won’t stand out.",
-          "importance": "central"
-        },
-        {
-          "claim": "Blue is the world's most preferred color, ranked as top choice by 57% of men and 35% of women, and is the most common logo color, used by 33% of top brands.",
-          "quote": "Blue is the world’s favorite color—57% of men and 35% of women rank it as their top choice. It’s also the most common logo color, used by 33% of top brands.",
-          "importance": "central"
-        },
-        {
-          "claim": "Bing increased annual revenue by $80 million by optimizing the exact shade of blue used for its links, an effect the article attributes to the power of established web conventions (blue as the historical link color) rather than intrinsic color psychology.",
-          "quote": "Bing increased their revenue by $80 million by finding the exact color of blue for their links. People are used to seeing blue links. When the World Wide Web first came to be, blue was the color of links.",
-          "importance": "supporting"
-        },
-        {
-          "claim": "Consumers form a like/dislike judgment of a product within 90 seconds of first viewing, and up to 90% of that assessment is based on color alone.",
-          "quote": "Studies have shown that consumers decide whether they like a product within 90 seconds of viewing it, with up to 90% of that assessment based on color alone.",
-          "importance": "supporting"
-        }
-      ]
-    },
-    {
-      "publishDate": "2010-04-26",
-      "sourceQuality": "primary",
-      "claimCount": 5,
-      "claims": [
-        {
-          "claim": "Color preferences are caused by people's average affective responses to the objects associated with each color (the ecological valence theory), rather than by purely low-level visual mechanisms.",
-          "quote": "In this article we articulate an ecological valence theory in which color preferences arise from people's average affective responses to color-associated objects.",
-          "importance": "central"
-        },
-        {
-          "claim": "A single predictor, the weighted affective valence estimate (WAVE) of color-associated objects, explains 80% of the variance in average color preference ratings.",
-          "quote": "accounting for 80% of the variance with a single predictor",
-          "importance": "central"
-        },
-        {
-          "claim": "Average human hue preferences peak broadly at blue and dip most sharply at chartreuse (yellow-green), measured with 48 participants rating 32 chromatic colors.",
-          "quote": "a broad peak at blue and a narrow trough at chartreuse",
-          "importance": "central"
-        },
-        {
-          "claim": "People like colors strongly associated with liked objects (blues with clear skies and clean water) and dislike colors strongly associated with disliked objects (browns with feces and rotten food).",
-          "quote": "People like colors strongly associated with objects they like (e.g., blues with clear skies and clean water) and dislike colors strongly associated with objects they dislike (e.g., browns with feces and rotten food).",
-          "importance": "supporting"
-        },
-        {
-          "claim": "Competing theories fit the same color-preference data substantially worse than the WAVE: the cone-contrast model explains 37% of the variance, the color-appearance model 60%, and the color-emotion model 55%.",
-          "quote": "the cone-contrast model accounted for only 37% of the variance",
-          "importance": "supporting"
-        }
-      ]
-    },
-    {
-      "publishDate": "2012",
-      "sourceQuality": "primary",
-      "claimCount": 5,
-      "claims": [
-        {
-          "claim": "Visual complexity and prototypicality of a website affect users' aesthetic judgments within the first 50 milliseconds of exposure, based on an experiment using 119 screenshots of real websites rated at 50ms, 500ms, and 1000ms presentation times.",
-          "quote": "119 screenshots of real websites varying in VC (low vs. medium vs. high) and PT (low vs. high) were rated on perceived aes- thetics. Screenshot presentation time was varied as a between-subject factor (50 ms vs. 500 ms vs. 1000 ms). Results reveal that VC and PT affect participants' aesthet- ics ratings within the first 50 ms of exposure.",
-          "importance": "central"
-        },
-        {
-          "claim": "Websites combining low visual complexity with high prototypicality were rated as the most aesthetically appealing, supporting a design rule favoring simple, conventional layouts.",
-          "quote": "Overall, websites with low VC and high PT were perceived as highly appealing.",
-          "importance": "central"
-        },
-        {
-          "claim": "Aesthetic perception of websites is affected by visual complexity and prototypicality even at 17ms exposure, with the prototypicality effect weaker than the visual-complexity effect at that duration.",
-          "quote": "In the second study presentation times were shortened to 17, 33 and 50ms. Results suggest that VC and PT affect aesthetic perception even within 17ms, though the effect of PT is less pronounced than the one of VC.",
-          "importance": "central"
-        },
-        {
-          "claim": "As presentation time increases, the influence of prototypicality on aesthetic judgment grows until it equals that of visual complexity, consistent with Leder et al.'s (2004) stage model in which complexity is processed earlier than prototypicality.",
-          "quote": "With increasing presentation time the effect of PT becomes as influential as the VC effect. This supports the reasoning of the information-processing stage model of aesthetic processing (Leder et al., 2004), where VC is processed at an earlier stage than PT.",
-          "importance": "supporting"
-        },
-        {
-          "claim": "The study was published in 2012 in the International Journal of Human-Computer Studies (vol. 70, issue 11, pp. 794-811) by Tuch, Presslaber, Stoecklin, Opwis, and Bargas-Avila, with Google-affiliated authorship, making it peer-reviewed primary research.",
-          "quote": "Authors: Alexandre N. Tuch, Eva Presslaber, Markus Stoecklin, Klaus Opwis, Javier Bargas-Avila ... International Journal of Human-Computer Studies, 70(11), pp. 794-811",
-          "importance": "supporting"
-        }
-      ]
-    },
-    {
-      "publishDate": "2015-09-24 (online); print September 2016, Cognitive Science 40(7):1590-1616",
-      "sourceQuality": "primary",
-      "claimCount": 5,
-      "claims": [
-        {
-          "claim": "U.S. and Japanese color preferences share the same broad structure: preference peaks around blue, troughs around dark-yellow, and a general preference for saturated colors, supporting the cross-cultural robustness of blue-preference and dark-yellow avoidance.",
-          "quote": "Japanese and U.S. color preferences have both similarities (e.g., peaks around blue, troughs around dark-yellow, and preferences for saturated colors)",
-          "importance": "central"
-        },
-        {
-          "claim": "There is a measurable cultural difference in lightness preference: Japanese participants like darker colors less than U.S. participants do.",
-          "quote": "and differences (Japanese participants like darker colors less than U.S. participants do)",
-          "importance": "central"
-        },
-        {
-          "claim": "The Ecological Valence Theory prediction that within-culture WAVE-preference correlations exceed between-culture correlations was tested using Palmer and Schloss's (2010) weighted affective valence estimate (WAVE) procedure and was only partially supported.",
-          "quote": "Palmer and Schloss's (2010) weighted affective valence estimate (WAVE) procedure was used to test the Ecological Valence Theory's (EVT's) prediction that within-culture WAVE-preference correlations should be higher than between-culture WAVE-preference correlations. The results supported several, but not all, predictions.",
-          "importance": "central"
-        },
-        {
-          "claim": "Bilingual Japanese-U.S. multicultural participants showed color preferences intermediate between the two monocultural groups, indicating that lifetime culturally specific experience (not fixed innate factors alone) shapes color preferences.",
-          "quote": "Multicultural color preferences were intermediate between U.S. and Japanese preferences, consistent with the hypothesis that culturally specific personal experiences during one's lifetime influence color preferences.",
-          "importance": "supporting"
-        },
-        {
-          "claim": "Gender differences in color preference were complex and did not replicate previously reported gender effects, cautioning against hard-coding simple gender-based color rules.",
-          "quote": "Complex gender differences were also evident that did not conform to previously reported effects.",
-          "importance": "supporting"
-        }
-      ]
-    },
-    {
-      "publishDate": "2014-02-26",
-      "sourceQuality": "primary",
-      "claimCount": 5,
-      "claims": [
-        {
-          "claim": "The pattern of sex differences in color preference was nearly identical in an industrialized culture (Poland) and a remote nonindustrialized culture (the Yali of Papua): the correlation between the two cultures' sexual contrasts was r = .93, explaining 86% of common variance.",
-          "quote": "The correlation between the Polish and Papuan sexual contrasts explained 86 % of the common variance, r = .93, p < .01.",
-          "importance": "central"
-        },
-        {
-          "claim": "Across both cultures, women most preferred red (21%) while men most preferred blue (19%), a sexual dimorphism the authors describe as transcending extreme differences in culture and ecology.",
-          "quote": "Women preferred red (21 %), while men preferred blue (19 %).",
-          "importance": "central"
-        },
-        {
-          "claim": "Overall color preferences differed significantly between the two cultures (Polish observers most preferred blue at 17.5%, while Yali observers most preferred red at 15.7% and yellow at 14.8%), which challenges claims of a universal human blue preference in nonindustrialized populations.",
-          "quote": "Not surprisingly, we found that color preferences clearly differed between the two communities and also between sexes.",
-          "importance": "central"
-        },
-        {
-          "claim": "The observed male-female contrast in color preference was not attributable to biological (low-level) components of color vision, suggesting the sex difference arises from constraints beyond retinal biology.",
-          "quote": "At the same time, this sexual contrast was not specific to biological components of color vision. Our results reveal a pattern of sexual dimorphism that transcends extreme differences in culture and ecology.",
-          "importance": "supporting"
-        },
-        {
-          "claim": "The study directly compared color preferences of men and women from Poland and from the Yali people of Papua, Indonesia (108 Yali participants and 200 Polish participants choosing most- and least-preferred hues from a 12-color wheel), making it one of the few color-preference studies including a remote, non-Western, nonindustrialized sample.",
-          "quote": "The present study compares color preferences of women and men from an industrialized and a remote, nonindustrialized culture. In particular, we investigated preferences in observers from Poland and from the Yali in Papua, respectively.",
-          "importance": "supporting"
-        }
-      ]
-    },
-    {
-      "publishDate": "2009-10-13",
-      "sourceQuality": "secondary",
-      "claimCount": 5,
-      "claims": [
-        {
-          "claim": "Marissa Mayer confirmed at the 2009 AIGA national conference that Google really did test 41 shades of blue: Google had been using two different blues (one on the homepage, one on Gmail), and to pick a single standardized, more effective link color it A/B-tested an imperceptible range of blues between the two; the winning blue was 'not too green, not too red.'",
-          "quote": "About the now-notorious claim that she once tested 41 shades of blue? All true. Turns out Google was using two different colors of blue, one on the homepage, one on the Gmail page. To find out which was more effective so they could standardize it across the system, they tested an imperceptible range of blues between the two. The winning color, according to dozens of charts and graphs, was not too green, not too red.",
-          "importance": "central"
-        },
-        {
-          "claim": "As of 2009, Google's stated design methodology was that visual design decisions were made by user-testing data rather than designer intuition, and Mayer claimed such testing revealed non-intuitive effects on user response.",
-          "quote": "every decision at Google comes from data testing, not the reasoning of a creative mind. ... “It’s interesting to see how you can change the way that people respond to the Web in ways that are not intuitive,” she said.",
-          "importance": "central"
-        },
-        {
-          "claim": "Designer Doug Bowman publicly left Google in 2009 over its data-driven design culture, citing being asked to prove with data whether a border should be 3, 4, or 5 pixels wide.",
-          "quote": "This kind of over-analytical testing was exactly why designer Doug Bowman made a very public break from Google earlier this year. “I had a recent debate over whether a border should be 3, 4, or 5 pixels wide and was asked to prove my case,” he wrote in a post after his departure.",
-          "importance": "supporting"
-        },
-        {
-          "claim": "Google's famously minimal homepage did not originate as a deliberate aesthetic choice: Mayer (keeper of the homepage since 1998) said design was never the primary concern in developing the site, and co-founder Sergey Brin declined to embellish the early homepage, saying 'I don't do HTML.'",
-          "quote": "Mayer acknowledged that design was never the primary concern when developing the site. When she mentioned to founder Sergey Brin that he might want to do something to spiff up the brand-new homepage for users, his response was almost poetically eloquent: “I don’t do HTML.”",
-          "importance": "supporting"
-        },
-        {
-          "claim": "As of October 2009, the most significant recent change to the Google homepage was widening the search box by a few pixels, illustrating how conservatively Google evolved its highest-traffic page.",
-          "quote": "someone won a recent battle to widen the search box by a few pixels, the most major change for the homepage in quite some time.",
-          "importance": "tangential"
-        }
-      ]
-    },
-    {
-      "publishDate": "2019-07-03",
-      "sourceQuality": "primary",
-      "claimCount": 4,
-      "claims": [
-        {
-          "claim": "Across three studies, blue consistently increased trust more than red, providing empirical support for using blue where trustworthiness matters (e.g., brand logos and interface accents).",
-          "quote": "The results across three studies consistently show that blue increases trust more than red, contributing to the current literature by providing solid empirical evidence of the relationship between colors and trust and insight for brand managers into brand logo design and redesign.",
-          "importance": "central"
-        },
-        {
-          "claim": "Blue is the most frequently used color in brand logo designs, with red the second most used.",
-          "quote": "In marketing practice, blue, followed by red, is the most used color in brand logo designs.",
-          "importance": "supporting"
-        },
-        {
-          "claim": "Before this paper, the empirical literature linking blue (vs. red) to trust was mixed/inconclusive, so the blue-trust association should not be treated as long-settled prior to 2019.",
-          "quote": "Academic studies have shown that blue is related more to trust than red, but extant empirical results are somewhat inconclusive.",
-          "importance": "supporting"
-        },
-        {
-          "claim": "The blue-over-red trust advantage was found with both implicit and explicit measurement methods, not just self-report, strengthening the robustness of the effect.",
-          "quote": "This article further explores this notion using both implicit and explicit methods to test the influence of blue and red on trust.",
-          "importance": "tangential"
-        }
-      ]
-    },
-    {
-      "publishDate": "unknown (no dates on page; documented histories extend through 2020, suggesting last major update circa 2020)",
-      "sourceQuality": "secondary",
-      "claimCount": 5,
-      "claims": [
-        {
-          "claim": "Facebook has used blue as its primary brand/interface color continuously since its earliest versions (site documents Facebook's visual history 2004-2020), supporting the pattern that famous sites converge on stable blue-dominant palettes.",
-          "quote": "Facebook's love of the color blue goes back to its earliest versions",
-          "importance": "central"
-        },
-        {
-          "claim": "Yahoo adopted purple as its signature brand color before its acquisition by Verizon, an example of a top-traffic site committing to a single distinctive hue (Yahoo.com visual history documented 1994-2020).",
-          "quote": "discovered a love of the color purple before it was acquired by Verizon",
-          "importance": "supporting"
-        },
-        {
-          "claim": "Version Museum provides screenshot-based visual design histories of the most-visited websites spanning roughly 25 years, e.g. Amazon.com 1995-2020 (34 images), Apple.com 1994-2020 (39 images), Google Search 1996-2020 (41 images), Wikipedia 2001-2020 (17 images), YouTube 2005-2020 (39 images), making it a usable evidence base for tracing layout/palette/navigation evolution of famous sites.",
-          "quote": "showcases the visual history of popular websites, operating systems, applications, and games that have shaped our lives",
-          "importance": "central"
-        },
-        {
-          "claim": "A YouTube design/engineering decision contributed to the phase-out of the Internet Explorer 6 browser, illustrating how flagship sites' frontend choices set de facto web platform baselines.",
-          "quote": "one design decision led to the demise of the IE6 browser",
-          "importance": "supporting"
-        },
-        {
-          "claim": "Google Search predates its brand name, originally operating as 'BackRub' before its 1996-onward documented design evolution toward the famously minimal homepage.",
-          "quote": "Did you know it used to be called BackRub?",
-          "importance": "tangential"
-        }
-      ]
-    },
-    {
-      "publishDate": "2007-08-21",
-      "sourceQuality": "secondary",
-      "claimCount": 5,
-      "claims": [
-        {
-          "claim": "Blue is the single most-preferred (universal favorite) hue across both sexes and across the British and Chinese groups studied, supporting the blue-preference universality relevant to default UI palette choices.",
-          "quote": "The universal favorite color for all people appears to be blue.",
-          "importance": "central"
-        },
-        {
-          "claim": "Women's color preference shifts toward the red end of the red-green axis relative to men, which pulls female preference away from pure blue toward pinks and lilacs; this is a robust gender difference in color preference.",
-          "quote": "Females have a preference for the red end of the red-green axis, and this shifts their color preference slightly away from blue towards red, which tends to make pinks and lilacs the most preferred colors.",
-          "importance": "central"
-        },
-        {
-          "claim": "Preferences map onto the two cone-opponent second-stage mechanisms of color vision: all observers favored the bluish pole of the S-(L+M) axis and the greenish pole of the L-M axis, and the sex difference was concentrated on the L-M (red-green) axis (women reddish, men greenish).",
-          "quote": "preferred colors at the greenish pole of the L-M component and at the bluish pole of the S-(L+M) component ... sexual contrasts were mainly based on the fact that women preferred colors toward the reddish and men toward the greenish pole of the L-M component",
-          "importance": "supporting"
-        },
-        {
-          "claim": "The direction of the male-female color-preference difference was consistent across two very different cultures (171 British Caucasian and a Han Chinese sample, ~208 total), which the authors argue reflects a biological rather than purely cultural component.",
-          "quote": "Although color preferences differed between English and Chinese, the way in which color preferences differed between women and men was similar in both groups.",
-          "importance": "supporting"
-        },
-        {
-          "claim": "The authors propose an evolutionary (hunter-gatherer / ripe-fruit foraging) explanation for the female bias toward reddish hues, framing color preference as partly innate and then amplified by culture.",
-          "quote": "Evolution may have driven females to prefer reddish colors - reddish fruits, healthy, reddish faces. Culture may exploit and compound this natural female preference.",
-          "importance": "tangential"
-        }
-      ]
-    },
-    {
-      "publishDate": "2006-01-03 (online; journal issue March 2006, Behaviour & Information Technology 25(2))",
-      "sourceQuality": "primary",
-      "claimCount": 4,
-      "claims": [
-        {
-          "claim": "Web page visual appeal can be assessed by viewers within a 50 millisecond exposure, meaning first aesthetic impressions of a site form in about 50 ms.",
-          "quote": "Thus, visual appeal can be assessed within 50 ms, suggesting that web designers have about 50 ms to make a good first impression.",
-          "importance": "central"
-        },
-        {
-          "claim": "Visual appeal ratings given after 50 ms exposures were highly correlated with ratings given after 500 ms exposures, and ratings were highly reliable across repeated phases, indicating first impressions are stable rather than artifacts of brief viewing.",
-          "quote": "Throughout, visual appeal ratings were highly correlated from one phase to the next as were the correlations between the 50 ms and 500 ms conditions.",
-          "importance": "central"
-        },
-        {
-          "claim": "Overall visual appeal judgments of homepages were closely related to most of seven specific design dimensions that participants rated in the second study.",
-          "quote": "The second study replicated the first, but participants also rated each web page on seven specific design dimensions. Visual appeal was found to be closely related to most of these.",
-          "importance": "supporting"
-        },
-        {
-          "claim": "The finding rests on three studies in which participants rated real web homepages presented for 500 ms (studies 1-2) plus an added 50 ms condition with the same stimuli (study 3), designed to test whether the first impression is a 'mere exposure effect'.",
-          "quote": "Study 3 again replicated the 500 ms condition as well as adding a 50 ms condition using the same stimuli to determine whether the first impression may be interpreted as a 'mere exposure effect' (Zajonc 1980).",
-          "importance": "supporting"
-        }
-      ]
-    },
-    {
-      "publishDate": null,
-      "sourceQuality": "secondary",
-      "claimCount": 5,
-      "claims": [
-        {
-          "claim": "Google's 1998 logo (which still included an exclamation point) already established the primary-color scheme (blue/red/yellow/green letterforms) that Google continues to use, making the primary palette a stable brand token for roughly 25+ years.",
-          "quote": "This logo showcased the hallmark primary color scheme still very much in use today. But naturally, the exclamation point at the end sticks out like a sore thumb.",
-          "importance": "central"
-        },
-        {
-          "claim": "Google adopted the modern foundation of its logo, based on the serif Catull typeface, on May 31, 1999, with designer Ruth Kedar briefed to create a simple, playful, approachable design.",
-          "quote": "Google transitioned to the modern foundation of the logo based on the Catull font on May 31, 1999. Ruth Kedar was hired by the founders to create a simple, playful, approachable design.",
-          "importance": "central"
-        },
-        {
-          "claim": "In 2015 Google replaced its serif logo with a custom modern geometric sans-serif typeface it authored itself, Product Sans, exemplifying famous sites' convergence toward proprietary geometric sans-serif typography.",
-          "quote": "They authored their own typeface called Product Sans -- a modern, geometric, sans-serif font.",
-          "importance": "central"
-        },
-        {
-          "claim": "Google's search-navigation chrome evolved from a tabbed interface above the search bar (introduced 2001 for web/images/groups/directories) to left-sidebar navigation in 2010, showing a documented shift in navigation placement conventions on the most-visited website.",
-          "quote": "In 2010, Google moved the links to access different types of search results to the left side of the page.",
-          "importance": "supporting"
-        },
-        {
-          "claim": "By 2019 Google's homepage used a rounded-corner (pill-shaped) text box as the search entry field, a concrete, dateable border-radius design-token change on the world's most-visited page.",
-          "quote": "The 2019 homepage has a rounded-corner textbox as the search entry field.",
-          "importance": "supporting"
-        }
-      ]
-    },
-    {
-      "publishDate": "2013-04-27 (CHI 2013 proceedings, Paris, April 27-May 2, 2013)",
-      "sourceQuality": "primary",
-      "claimCount": 5,
-      "claims": [
-        {
-          "claim": "Computational models of a website's perceived visual complexity and colorfulness, combined with demographic variables (education level, age), explain about 48% of the variance in aesthetic appeal ratings that users give after viewing a website screenshot for only 500ms.",
-          "quote": "In combination with demographic variables such as a user's education level and age, these models explain approximately half of the variance in the ratings of aesthetic appeal given after viewing a website for 500ms only. ... The model accounts for 48% of the variation in aesthetic preferences (adj. R2 = .48).",
-          "importance": "central"
-        },
-        {
-          "claim": "Visual complexity is the dominant driver of first-impression appeal: appeal drops sharply for high-complexity websites and only slightly for low-complexity ones (a weak, asymmetric inverted-U with a moderate-complexity optimum), and complexity matters far more than colorfulness.",
-          "quote": "Our results show that ratings of appeal are significantly negatively affected by an increase in visual complexity. As shown in Figure 5, we observed a strong decrease in ratings of appeal for websites with a high level of complexity, as well as a slight decline in the ratings for websites with lower levels of complexity. ... They also demonstrate that colorfulness plays a role, but is not nearly as important as the overall visual complexity of a site.",
-          "importance": "central"
-        },
-        {
-          "claim": "Perceived colorfulness and perceived visual complexity of website screenshots can be predicted from low-level image statistics with high accuracy: the colorfulness regression model achieves r = .88 (R2 = .78) and the complexity model r = .80 (R2 = .65) against mean human ratings, based on ratings of 450 websites from 548 volunteers on the LabintheWild platform.",
-          "quote": "The final regression model is highly predictive of participants' mean ratings of colorfulness (r = .88, p < .001, R2 = .78, adj. R2 = .77). ... The final model as shown in Table 3 is highly correlated with participants' mean ratings on visual complexity (r = .80, p < .001, R2 = .65, adj. R2 = .64).",
-          "importance": "supporting"
-        },
-        {
-          "claim": "Aesthetic first impressions are not demographically universal: age significantly interacted with complexity (participants over 45 preferred low visual complexity more than other age groups), education level interacted with colorfulness (PhD holders were most negatively affected by high colorfulness), while gender showed no significant interaction with either factor.",
-          "quote": "Age did not significantly interact with colorfulness, but with complexity (F(4) = 6.53, p < .001). In particular, participants older than 45 years liked websites with a low visual complexity level more than other age groups. ... Participants with a PhD were most negatively affected by a high colorfulness ... Gender did not show significant interaction effects with colorfulness and complexity.",
-          "importance": "supporting"
-        },
-        {
-          "claim": "Award-winning 'best practice' designs are not universally preferred: the 20 Webby Award websites in the study received average appeal ratings between 4.21 and 6.57 on a 9-point scale (versus an overall mean of 4.73 for other sites) with a high standard deviation of 1.69, arguing against a single universal design guideline set.",
-          "quote": "Yet the 20 Webby Award websites in our study received average ratings between 4.21 and 6.57 (across all participants on a 9-point scale, and as compared to the overall mean of 4.73 for all the other sites). A relatively high average standard deviation of 1.69 across all participants and Webby sites indicates a high dispersion of participants' preferences for these sites.",
-          "importance": "supporting"
-        }
-      ]
-    },
-    {
-      "publishDate": "2000 (Interacting with Computers 13(2000) 127-145; received 10 January 1999, accepted 24 March 2000)",
-      "sourceQuality": "primary",
-      "claimCount": 5,
-      "claims": [
-        {
-          "claim": "Before using the system, participants' perceptions of an ATM interface's aesthetics and its usability were highly correlated (r = 0.66), replicating Kurosu & Kashimura (1995) and Tractinsky (1997).",
-          "quote": "Pre experimental perceptions of ATM aesthetics and their perceived usability were highly correlated (r = 0.66). The high correlation resembles those obtained by Kurosu and Kashimura [11] and Tractinsky [12].",
-          "importance": "central"
-        },
-        {
-          "claim": "After actual use, post-experimental perceptions of both aesthetics and usability were driven by the interface's aesthetics level, while the actual (manipulated) usability of the system had no significant effect on any post-use perception; the aesthetics-usability correlation remained high after use (r = 0.71).",
-          "quote": "A multivariate analysis of covariance revealed that the degree of system's aesthetics affected the post-use perceptions of both aesthetics and usability, whereas the degree of actual usability had no such effect.",
-          "importance": "central"
-        },
-        {
-          "claim": "Post-use satisfaction with the system was very strongly correlated with perceived usability (r = 0.87) and also strongly with post-use perceived aesthetics (r = 0.71), meaning visual appeal substantially predicts user satisfaction.",
-          "quote": "post-experimental satisfaction with the ATM was highly correlated not only with its perceived usability (as predicted by the usability literature), but also with post-experimental perceptions of aesthetics (r = 0.87 and .71, respectively).",
-          "importance": "supporting"
-        },
-        {
-          "claim": "The experiment used 132 third-year Industrial Engineering students (average age 25, ~67% male) interacting with nine ATM screen layouts (three high-aesthetics, three medium, three low) that contained identical objects differing only in arrangement, crossed with two levels of manipulated actual usability, which limits generalizability to a homogeneous Israeli student sample.",
-          "quote": "Participants were 132 third year Industrial Engineering (IE) students... Three of the nine layouts were rated as highly aesthetic in that study, three layouts were rated low in terms of aesthetics and the other three were rated in between. All of the layouts contained the same objects, and differed only in terms of the way those objects were arranged on the screen.",
-          "importance": "supporting"
-        },
-        {
-          "claim": "The authors conclude that because users treat aesthetically appealing interfaces as a cue that the system is usable, and the interface 'facade' taints perceptions of subsequent interactions, interface design should integrate aesthetics and usability rather than prioritize usability alone.",
-          "quote": "The fact that users perceive aesthetically appealing interfaces as indicative of usable systems calls for an integrative approach to interface design which will take simultaneous account of the two seemingly unrelated properties.",
-          "importance": "central"
-        }
-      ]
-    },
-    {
-      "publishDate": "2021-05-08",
-      "sourceQuality": "primary",
-      "claimCount": 5,
-      "claims": [
-        {
-          "claim": "Website visual designs measurably homogenized after 2007: across a 227,802-image dataset (2003-2019), average layout distance between sites declined roughly 43-44% between 2010 and 2019, color distance declined 32% between 2008 and 2019, and CNN-based visual distance declined about 30% between 2007 and 2019.",
-          "quote": "We find that the average difference between website layouts in our datasets declined significantly—43%—between 2010 and 2019, providing the first—to our knowledge—quantitative evidence that website designs are becoming more similar to each other. [...] Color distance declines 32% between 2008 and 2019. Layout distance declines 44% from 2010 to 2019. The CNN distance roughly follows the color distance metric with a decline of 30% between 2007 and 2019.",
-          "importance": "central"
-        },
-        {
-          "claim": "The convergence in appearance is driven by shared front-end libraries rather than by converging bespoke code: similarity of library usage (measured by Wappalyzer-detected libraries, Jaccard index) rose sharply after 2007 and correlates 0.77 with CNN visual similarity, while sites' native source code actually became LESS similar over the same period.",
-          "quote": "average similarity according to library usage has increased over time, especially after 2007, mirroring the results we found for visual similarity; the correlation between our CNN's measure of visual similarity and our measure of library similarity is 0.77 (p < 0.001). [...] we found that the content of websites (including their native CSS and JavaScript code) have become less similar over time, despite that visual appearance has become more similar.",
-          "importance": "central"
-        },
-        {
-          "claim": "Bootstrap is the single library most strongly associated with layout homogenization: in a multiple regression over 65,703 site pairs using the 16 most common libraries, Bootstrap had the largest negative normalized coefficient (-0.410) for layout distance, i.e., two sites sharing Bootstrap are most likely to have similar layouts (followed by Font Awesome at -0.190 and jQuery UI at -0.187), whereas SWFObject (Flash embedding, +0.373) and jQuery Tools (+0.562) correlate with more varied layouts.",
-          "quote": "The regression coefficients in Table 2 suggest that, yes, particular libraries are associated with increased similarity of web page layouts. Bootstrap correlates strongly with decreased layout distance, relative to other libraries. Other libraries, like SWFObject, which is used to embed Adobe Flash content, and jQuery tools, a Javascript user interface library, correlate with more varied layouts.",
-          "importance": "central"
-        },
-        {
-          "claim": "Mobile support is tightly coupled to visual convergence: the abrupt homogenization onset after 2007 coincides with the first iPhone's release, the monthly rate of mobile support correlates 0.84 (p < 0.001) with average CNN visual similarity, and responsive/mobile-first design became industry standard partly because of Google SEO policies such as the 2015 'Mobilegeddon' update prioritizing mobile-friendly results.",
-          "quote": "We observed that the abrupt change in web design visual similarity after 2007 (Figure 3) coincides with the release of Apple's first-generation iPhone. [...] The correlation between the average website CNN similarity in each month and the corresponding rate of mobile support is 0.84 (p < 0.001), which suggests that websites which support mobile tend to look more similar than websites which do not. [...] P4 and P6 point to Google search's 2015 \"Mobilegeddon\" update, which suddenly prioritized search results which would display well on mobile, as the reason the web adopted responsive design.",
-          "importance": "central"
-        },
-        {
-          "claim": "Color-scheme homogenization consists of a specific palette shift: year-by-year color-distance histograms converged from a bimodal distribution (modes near 0 and 90) to a single mode near 10, reflecting a move from colored and pure-white/black backgrounds toward off-white, dark, and photographic image backgrounds; in all three datasets (Russell, Alexa, Webby) between 2004 and 2016, dark and off-white pixel area increased while pure white and black decreased.",
-          "quote": "the homogenization in color schemes is related to the shift from monochromatic, usually white backgrounds to more off-white backgrounds and image backgrounds [...] the color distances start as a bimodal distribution with modes around 0 and 90, then converge to a single mode around 10 (see Figure 5). [...] In each dataset, the amount of dark and off-white increases and the amount of white and black decreases.",
-          "importance": "supporting"
-        }
-      ]
-    },
-    {
-      "publishDate": "January 2010 (Int. J. Human-Computer Studies, Vol. 68, Issues 1-2, pp. 1-21; accepted 21 August 2009)",
-      "sourceQuality": "primary",
-      "claimCount": 5,
-      "claims": [
-        {
-          "claim": "In a controlled experiment, website colour appeal was a statistically significant determinant of both user trust and satisfaction (H1: t=7.89, p<0.001; H2: t=9.69, p<0.001), and trust and satisfaction in turn significantly predicted e-loyalty (t=4.91 and t=9.53, p<0.001).",
-          "quote": "Results reveal that website colour appeal is a significant determinant for website trust and satisfaction with differences noted across cultures.",
-          "importance": "central"
-        },
-        {
-          "claim": "A yellow website colour scheme was disliked by participants from all three cultures studied (Canada, Germany, Japan); e.g., Canadians rated both grey and blue schemes significantly more appealing than yellow (p<0.01 and p<0.001).",
-          "quote": "In terms of colour appeal, it is interesting to note that all three cultures tend to dislike the yellow websites.",
-          "importance": "central"
-        },
-        {
-          "claim": "Colour preferences varied by culture: German participants showed a pronounced preference for the blue colour scheme, while Canadians found the grey scheme significantly more appealing than Germans did (p<0.001).",
-          "quote": "As predicted survey results reveal a pronounced liking of the blue colour scheme among the German participants. ... For the grey colour scheme, Canadians found the colour more appealing than Germans (p<0.001).",
-          "importance": "central"
-        },
-        {
-          "claim": "The study tested three colour treatments (grey, blue, yellow) of an e-commerce electronics website (modeled on SonyStyle) with 90 participants, 30 each from Canada, Germany, and Japan, using eye-tracking, a survey, and interviews.",
-          "quote": "Ninety participants from three countries (30 each from Canada, Germany, and Japan) took part in a laboratory experiment. ... Three versions of an e-commerce website featuring electronics were created to represent three colour schemes (grey, blue, and yellow).",
-          "importance": "supporting"
-        },
-        {
-          "claim": "Despite per-culture preference differences, culture did not statistically moderate the effect of colour appeal on trust or satisfaction (interaction t=1.802 for trust, t=1.629 for satisfaction, both short of significance), suggesting colour appeal's positive effect generalizes across cultures.",
-          "quote": "Therefore, based on the sample in this research, the influence of colour appeal on trust and satisfaction is not statistically moderated by culture.",
-          "importance": "supporting"
-        }
-      ]
-    },
-    {
-      "publishDate": "Undated, continuously updated timeline (site copyright 2026); content extracted from Wayback Machine snapshot dated 2026-07-04 because the live page returns a Cloudflare 403",
-      "sourceQuality": "secondary",
-      "claimCount": 5,
-      "claims": [
-        {
-          "claim": "The term and technique 'Responsive Web Design' originates from Ethan Marcotte's article of that name published in A List Apart on May 25, 2010, and its three foundational techniques are fluid grids, flexible images, and CSS3 media queries - the basis of the mobile-first layout convergence across major websites.",
-          "quote": "Web designer Ethan Marcotte published an article entitled \"Responsive Web Design\" in the online magazine A List Apart. The author describes a new way of styling HTML documents which allows for an optimization of website content display with regard to resolution or display size. Basic responsive web design techniques include fluid grid, flexible images, and CSS3 module media queries.",
-          "importance": "central"
-        },
-        {
-          "claim": "Bootstrap, the CSS framework that standardized grid-based responsive layout across the web, was created at Twitter by Mark Otto and Jacob Thornton to keep Twitter's HTML/CSS/JS consistent, open-sourced in August 2011; Bootstrap 2 (January 2012) added responsive layout, and Bootstrap 3 (August 19, 2013) made mobile-first and flat design the default.",
-          "quote": "Web developers Mark Otto and Jacob Thornton of Twitter began creating the CSS framework Bootstrap in mid-2011. The framework was originally developed to help maintain the HTML/CSS and JavaScript code consistency in Twitter applications. In August 2011, Bootstrap 1 was released as an open source tool ... In January 2012, Bootstrap 2 was released, supporting a responsive web layout. [On Bootstrap 3:] The new Bootstrap version consistently applied a responsive web layout and mobile-first access. The layout of templates and components was redesigned in flat design style.",
-          "importance": "central"
-        },
-        {
-          "claim": "Google introduced Material Design at Google I/O on June 25, 2014, and from 2015 redesigned most of its applications and services (i.e., several of the world's most-visited properties, including Google and YouTube) in that single consistent visual language.",
-          "quote": "Google introduced a new graphic style called Material Design at the Google I/O conference. Since 2015, Google has redesigned most of its applications and services using the consistent visual style of Material Design.",
-          "importance": "central"
-        },
-        {
-          "claim": "Flat design entered mainstream UI via Microsoft hardware/OS products - the Zune player (first sold November 14, 2006) is considered one of its first uses and Windows Phone 7 (launched October 21, 2010) used a fully flat UI - and it became one of the dominant visual trends in web design after 2010, alongside skeuomorphism and material design.",
-          "quote": "Microsoft launched Windows Phone 7, a mobile phone whose user interface was created using flat design. ... Flat design has also gained considerable popularity among web designers and has become one of the major visual trends in web design after 2010 along with skeuomorphism and material design styles. [On Zune:] The simple and clean design of Zune control features is considered to be one of the first uses of flat design in user interface.",
-          "importance": "supporting"
-        },
-        {
-          "claim": "The first web banner ad in history was placed by AT&T on the HotWired magazine website on October 27, 1994; it measured 476x56 px and read 'Have You Ever Clicked Your Mouse Right Here?' - the origin point of the ad-slot layout conventions later standardized across high-traffic sites like Yahoo.",
-          "quote": "The AT&T Telecommunications Company placed the first web banner in Internet history on the HotWired magazine website. The first web banner in the world was 476×56 px and contained only the phrase \"Have You Ever Clicked Your Mouse Right Here?\".",
-          "importance": "supporting"
-        }
-      ]
-    }
-  ]
+ "note": "Raw claims from the deep-research fetch phase, grouped per source document. URL attribution: see the sources array in claims-verified.json (24 sources); per-group URLs were not persisted by the harness. Claims here are NOT adversarially verified unless they also appear in claims-verified.json.",
+ "sourceGroups": 24,
+ "totalClaims": 118,
+ "groups": [
+ {
+ "publishDate": "2018-09-05",
+ "sourceQuality": "primary",
+ "claimCount": 5,
+ "claims": [
+ {
+ "claim": "In a user test of a fictional news site with two variants (skeleton screens vs. spinners during loading), the skeleton-screen version scored higher on average on both perceived speed and perceived ease of navigation.",
+ "quote": "The results show that the page using skeleton screens, scored higher on average on both perceived speed and ease of navigation.",
+ "importance": "central"
+ },
+ {
+ "claim": "Despite better perception scores for skeleton screens, users on the spinner version were objectively faster at finding a specified article when entering the site for the first time.",
+ "quote": "However, people using the page with spinners were faster at finding the article when entering the site for the first time.",
+ "importance": "central"
+ },
+ {
+ "claim": "None of the measured differences between the skeleton-screen page and the spinner page reached statistical significance, so this study provides only directional (not confirmed) evidence for skeleton screens' perceptual advantage.",
+ "quote": "The results of this paper cannot show any significant differences in any of the comparisons between the web pages.",
+ "importance": "central"
+ },
+ {
+ "claim": "The study's method combined a subjective questionnaire with objective task timing (time to find a specified article on first visit) on a fictional news site, comparing skeleton screens against the long-standing norm of progress bars and spinners.",
+ "quote": "Both a questionnaire and measuring timing while finding a specified article when entering a website for the first time was used.",
+ "importance": "supporting"
+ },
+ {
+ "claim": "The paper is a 4-page peer-reviewed ACM conference paper authored by Thomas Mejtoft, Arvid Långström and Ulrik Söderström (Umeå University Digital Media Lab), published at ECCE'18 (Utrecht) on September 5, 2018, not by 'Kraft & Hurtienne' as the search-result title suggested.",
+ "quote": "Proceedings of the 36th European Conference on Cognitive Ergonomics ... Authors: Thomas Mejtoft ... Arvid Långström ... Ulrik Söderström ... Published Date: September 5, 2018 ... Pages: 1-4",
+ "importance": "tangential"
+ }
+ ]
+ },
+ {
+ "publishDate": "2017-10-19",
+ "sourceQuality": "primary",
+ "claimCount": 5,
+ "claims": [
+ {
+ "claim": "In a controlled experiment with 136 participants viewing three loading animations of identical duration, the skeleton screen produced the LONGEST average perceived wait time (2.82 seconds) compared to a loading spinner (2.41 s) and a blank screen (2.29 s), contradicting the common assumption that skeleton screens reduce perceived load time.",
+ "quote": "We gave the test to 136 people, and the skeleton screen performed the worst by all metrics. ... Average perceived wait time (seconds): Skeleton screen 2.82, Loading spinner 2.41, Blank screen 2.29",
+ "importance": "central"
+ },
+ {
+ "claim": "Skeleton screens scored lowest on user-perceived speed satisfaction: only 59% of participants agreed the content 'loaded quickly' after a skeleton screen, versus 74% after a loading spinner and 66% after a blank screen.",
+ "quote": "Percentage who agreed with the statement, 'The meals loaded quickly for me.' Skeleton screen 59%, Loading spinner 74%, Blank screen 66%",
+ "importance": "central"
+ },
+ {
+ "claim": "Participants also completed the post-load task slowest after the skeleton screen condition (10.54 s) compared with the spinner (9.49 s) and blank screen (9.50 s), suggesting skeleton screens did not aid post-load orientation in this study.",
+ "quote": "Post-load task completion: Skeleton screen 10.54 sec, Loading spinner 9.49 sec, Blank screen 9.50 sec (the skeleton screen performed the worst by all metrics)",
+ "importance": "supporting"
+ },
+ {
+ "claim": "The authors propose boundary conditions for skeleton screens rather than a blanket recommendation: they may work better in familiar interfaces and only when wait times are very short, and they explicitly caution against treating skeleton screens as a default best practice.",
+ "quote": "Skeleton screens work better in familiar interfaces and can be off-putting in new settings. ... Skeleton screens work best when wait times are very short. ... Either way, skeleton screens aren't a silver bullet for increasing perceived performance and should be used thoughtfully.",
+ "importance": "central"
+ },
+ {
+ "claim": "The study's evidential strength is limited: roughly half the sample (70 of 136) came from Amazon Mechanical Turk (the rest from Viget's social channels), stimuli were animated GIFs tested via Chalkmark, and the authors themselves state the causal explanations are unconfirmed hunches requiring more testing.",
+ "quote": "Roughly half (70) of the participants were sourced through Amazon Mechanical Turk and paid for their participation. ... Our hunch is that each of these reasons has some merit, but more testing is needed to know for certain.",
+ "importance": "supporting"
+ }
+ ]
+ },
+ {
+ "publishDate": "2016-06-26",
+ "sourceQuality": "primary",
+ "claimCount": 5,
+ "claims": [
+ {
+ "claim": "In NN/g's quantitative study of 179 participants completing tasks on 6 live websites (on smartphones and desktops), desktop users engaged with hidden hamburger-style navigation in only 27% of cases, roughly half the usage rate of visible (50%) or combo (48%) navigation.",
+ "quote": "On desktop, people used the hidden menus in only 27% of the cases, while they used visible or combo navigation almost twice as much: in 48% and 50% of the cases, respectively.",
+ "importance": "central"
+ },
+ {
+ "claim": "On mobile, hidden navigation was used in 57% of cases versus 86% for combo (partially visible) navigation, meaning even on small screens fully hiding navigation reduces its use by about 1.5x.",
+ "quote": "On mobile people used the hidden navigation in 57% of the cases, and the combo navigation in 86% of the cases, 1.5 times more.",
+ "importance": "central"
+ },
+ {
+ "claim": "Hiding a site's main navigation reduced content discoverability by more than 20% compared with sites using visible or combo navigation.",
+ "quote": "This measure showed a more than 20% drop in discoverability on sites with hidden navigation, compared with sites with visible or combo navigation.",
+ "importance": "central"
+ },
+ {
+ "claim": "Hidden navigation made tasks measurably slower: at least 39% slower task times on desktop and 15% slower on mobile compared with visible navigation.",
+ "quote": "On the desktop, people were at least 39% slower when the navigation was hidden.",
+ "importance": "supporting"
+ },
+ {
+ "claim": "NN/g's concrete design recommendations: never use hamburger/hidden navigation on desktop, and on mobile show top-level links visibly when there are 4 or fewer; users also rated tasks 21% more difficult with hidden navigation than with visible navigation.",
+ "quote": "Do not use hidden navigation (such as hamburger icons) in desktop user interfaces.",
+ "importance": "central"
+ }
+ ]
+ },
+ {
+ "publishDate": "2025-05-06 (latest republication of WCAG 2.1; originally published 2018-06-05)",
+ "sourceQuality": "primary",
+ "claimCount": 5,
+ "claims": [
+ {
+ "claim": "WCAG 2.1 Level AA (Success Criterion 1.4.3) requires text and images of text to have a contrast ratio of at least 4.5:1, while large-scale text (at least 18 point, or 14 point bold) need only reach 3:1.",
+ "quote": "The visual presentation of text and images of text has a contrast ratio of at least 4.5:1 ... Large-scale text and images of large-scale text have a contrast ratio of at least 3:1",
+ "importance": "central"
+ },
+ {
+ "claim": "WCAG 2.1 Level AA (Success Criterion 1.4.11 Non-text Contrast) requires user interface components and meaningful graphical objects to have a contrast ratio of at least 3:1 against adjacent colors.",
+ "quote": "The visual presentation of the following have a contrast ratio of at least 3:1 against adjacent color(s): User Interface Components",
+ "importance": "central"
+ },
+ {
+ "claim": "WCAG 2.1 (Success Criterion 1.4.1 Use of Color, Level A) prohibits using color as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.",
+ "quote": "Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.",
+ "importance": "supporting"
+ },
+ {
+ "claim": "WCAG 2.1 (Success Criterion 1.4.12 Text Spacing, Level AA) requires content to lose no functionality when users set line height to at least 1.5x font size, paragraph spacing to 2x, letter spacing to 0.12x, and word spacing to 0.16x, which gives concrete minimum typography token values.",
+ "quote": "Line height (line spacing) to at least 1.5 times the font size; Spacing following paragraphs to at least 2 times the font size; Letter spacing (tracking) to at least 0.12 times the font size; Word spacing to at least 0.16 times the font size.",
+ "importance": "supporting"
+ },
+ {
+ "claim": "WCAG 2.1 constrains motion and loaders: any auto-starting moving/blinking content lasting more than five seconds must be pausable/stoppable/hideable (2.2.2, Level A), and interaction-triggered motion animation must be disableable unless essential (2.3.3, Level AAA).",
+ "quote": "For any moving, blinking or scrolling information that (1) starts automatically, (2) lasts more than five seconds, and (3) is presented in parallel with other content, there is a mechanism for the user to pause, stop, or hide it",
+ "importance": "supporting"
+ }
+ ]
+ },
+ {
+ "publishDate": "2018-10-19",
+ "sourceQuality": "blog",
+ "claimCount": 5,
+ "claims": [
+ {
+ "claim": "In the author's study (n=80), skeleton screens used as full-page loading indicators were perceived as shorter in duration than both a blank screen and a spinner, though the margin was small.",
+ "quote": "Skeleton screens (as splash screens), when used to indicate that a screen is loading, are perceived as being shorter in duration when compared against a blank screen (our control) and a spinner, but not by much",
+ "importance": "central"
+ },
+ {
+ "claim": "Left-to-right wave/shimmer animation is perceived as shorter in duration than pulsing animation: 65% of 20 testers judged the wave shorter than the pulse, and 68% judged left-to-right shorter than right-to-left, in fixed 5-second comparisons.",
+ "quote": "Skeleton screens that leverage motion that moves from left to right (e.g. a wave or shimmer like animation) are perceived as shorter in duration than skeletons that pulse",
+ "importance": "central"
+ },
+ {
+ "claim": "Slow, steady skeleton animation is perceived as shorter than fast/rapid animation (60% of 20 testers judged the slow wave shorter), leading to the recommendation of slow shimmer motion like the Google iOS app rather than fast pulses.",
+ "quote": "Skeleton screens using motion that is slow and steady are perceived as shorter in duration than skeleton screens that use fast or rapid motion",
+ "importance": "central"
+ },
+ {
+ "claim": "A 2017 Viget study reached the opposite conclusion, finding skeleton screens performed worst on perceived duration compared with spinners and blank screens, so the evidence base for skeletons is contested.",
+ "quote": "skeleton screens performed the worst in terms of perceived duration of time",
+ "importance": "supporting"
+ },
+ {
+ "claim": "Most skeleton screens in production are static splash screens rather than Luke Wroblewski's original concept of progressive loading, and the author recommends replacing skeleton placeholders with real content as soon as each piece is available; he also concedes his samples are too small for definitive conclusions.",
+ "quote": "The vast majority of skeleton screens in use today are splash screens, and not skeleton screens in the original way described by Luke Wroblewski",
+ "importance": "supporting"
+ }
+ ]
+ },
+ {
+ "publishDate": "2015-11-15",
+ "sourceQuality": "secondary",
+ "claimCount": 5,
+ "claims": [
+ {
+ "claim": "Mobile tab bars and top navigation bars should contain at most 5 navigation options; beyond 5, items cannot be fit while maintaining optimum touch-target size.",
+ "quote": "If your site has more than 5 options, it's hard to fit them in a tab or navigation bar and still keep an optimum touch-target size.",
+ "importance": "central"
+ },
+ {
+ "claim": "Tab bars are persistent (remain visible during scrolling) and platform conventions place them at the bottom of the screen on iOS and at the top on Android.",
+ "quote": "Tab bars are persistent, that is, they are always visible on the screen, whether the user scrolls down the page or not. ... The tab was positioned in accordance with official operating-systems guidelines: at the bottom on iPhone and at the top of the page on Android.",
+ "importance": "central"
+ },
+ {
+ "claim": "Hidden navigation menus (hamburger menus) make navigation options the least discoverable of the mobile navigation patterns and are best suited to content-heavy, browse-mostly sites, because many users simply do not think to open them.",
+ "quote": "The navigation menu makes the navigation options least discoverable and is best suited for content-heavy, browse-mostly sites and apps. ... Many people still simply don't think to open it.",
+ "importance": "central"
+ },
+ {
+ "claim": "Third-party research suggests that labeling the hidden menu with the word 'Menu' performs slightly better with users than using the hamburger icon alone.",
+ "quote": "In fact, third-party research seems to suggest that using the word Menu instead of the hamburger icon is slightly more popular with users.",
+ "importance": "supporting"
+ },
+ {
+ "claim": "Non-sticky top navigation bars typically disappear once the user scrolls down one or more screens, and they consume valuable above-the-fold screen real estate on mobile.",
+ "quote": "Navigation bars usually start out being present at the top of the page but disappear once the user has scrolled one or more screens down. ... It takes up valuable real estate above the fold.",
+ "importance": "supporting"
+ }
+ ]
+ },
+ {
+ "publishDate": "2020-05-21 (last updated 2025-05-07)",
+ "sourceQuality": "primary",
+ "claimCount": 5,
+ "claims": [
+ {
+ "claim": "Google defines the Largest Contentful Paint (LCP) 'good' threshold as 2.5 seconds and the 'poor' threshold as 4 seconds, giving a concrete loading-performance budget for pages.",
+ "quote": "Thus, we conclude that 2.5 seconds is a reasonable \"good\" threshold, and 4 seconds is a reasonable \"poor\" threshold for Largest Contentful Paint.",
+ "importance": "central"
+ },
+ {
+ "claim": "Core Web Vitals thresholds are assessed at the 75th percentile of page loads, meaning a site passes only if at least 3 of 4 visits meet the target, which is the percentile a performance budget should be measured against.",
+ "quote": "By using the 75th percentile, we know that most visits to the site (3 of 4) experienced the target level of performance or better.",
+ "importance": "central"
+ },
+ {
+ "claim": "The Cumulative Layout Shift 'good' threshold of 0.1 is grounded in Chrome's internal perception testing, which found layout shifts of 0.15 and higher consistently disruptive while shifts of 0.1 and lower were noticeable but tolerable; this directly motivates reserving space for content (e.g., skeleton placeholders) instead of letting layout jump.",
+ "quote": "In our internal testing, we found that levels of shift from 0.15 and higher were consistently perceived as disruptive, while shifts of 0.1 and lower were noticeable but not excessively disruptive.",
+ "importance": "central"
+ },
+ {
+ "claim": "Interaction responsiveness has a 'good' threshold of 200 ms and a 'poor' threshold of 500 ms (INP), informed by HCI research such as Nielsen's 0.1-second limit for perceived instantaneous reaction; this bounds acceptable UI response and motion/feedback latency.",
+ "quote": "For this reason we conclude a 200 ms is a reasonable \"good\" threshold for most sites, and greater than 500 ms is a reasonable \"poor\" threshold.",
+ "importance": "central"
+ },
+ {
+ "claim": "The thresholds were not chosen from perception research alone: Google additionally required that each 'good' threshold be achievable by at least 10% of existing origins (verified against CrUX field data), so the budgets are empirically attainable targets rather than aspirational ones.",
+ "quote": "To confirm that a threshold is achievable, we require that at least 10% of origins meet the \"good\" threshold.",
+ "importance": "supporting"
+ }
+ ]
+ },
+ {
+ "publishDate": "2025-05-14",
+ "sourceQuality": "secondary",
+ "claimCount": 5,
+ "claims": [
+ {
+ "claim": "Under WCAG 2.2 Level AA (SC 1.4.3 Contrast Minimum), regular-size text must have a contrast ratio of at least 4.5:1 against its background, applying to all text below 18.66px regardless of weight and to text between 18.66px and 24px that is not bold.",
+ "quote": "Minimum 4.5:1 contrast ratio. This applies to \"all text below 18.66px, irrespective of weight\" or text between 18.66-24px with font-weight lower than bold.",
+ "importance": "supporting"
+ },
+ {
+ "claim": "WCAG 2.2 AA permits a lower 3:1 contrast ratio for 'large text', defined as text at least 18.66px AND bold, or text at least 24px at any font weight.",
+ "quote": "\"Text that is both of a size of at least 18.66px and has a font weight of bold\" ... \"Text that has a font size of at least 24px (any font-weight is permitted)\"",
+ "importance": "supporting"
+ },
+ {
+ "claim": "SC 1.4.11 Non-text Contrast requires a minimum 3:1 contrast ratio against adjacent colors for meaningful non-text elements, including informative icons, component-identifying borders, focus indicators on interactive elements, and data visualizations.",
+ "quote": "Minimum 3:1 against adjacent pixels. Applies to \"icons that provide information or meaning,\" \"borders that are required to identify a component,\" \"focus indicators on interactive elements,\" and \"data visualizations.\"",
+ "importance": "supporting"
+ },
+ {
+ "claim": "Logos, text within inactive (disabled) user interface components, and incidental text in photographs are exempt from WCAG contrast requirements.",
+ "quote": "\"Text that forms part of an inactive user interface component,\" logos (which \"don't have to pass any contrast requirements\"), and incidental text in photographs are exempt.",
+ "importance": "tangential"
+ },
+ {
+ "claim": "Visible focus indicators added to interactive elements must themselves meet the 3:1 non-text contrast minimum under WCAG 2.2 AA.",
+ "quote": "Focus indicators must maintain contrast, the guide states: \"if we are adding something... this is the SC that we need\" to pass 3:1 minimum for visible focus rings or other added graphical features.",
+ "importance": "supporting"
+ }
+ ]
+ },
+ {
+ "publishDate": "2021-04-22 (last updated 2025-03-16; original article circa 2012-2013 per comment timestamps)",
+ "sourceQuality": "blog",
+ "claimCount": 5,
+ "claims": [
+ {
+ "claim": "There is no universally best-converting CTA button color; conversion impact comes from how much the button's color contrasts with its surroundings (visual hierarchy), not from the hue itself.",
+ "quote": "No single color is better than another. Ultimately, what matters is how much a button color contrasts with the area around it.",
+ "importance": "central"
+ },
+ {
+ "claim": "In HubSpot's widely cited A/B test (2,000+ visits on a client site), a red CTA button outperformed a green one by 21%, but the article attributes this to the green button failing to stand out on a green-dominant page rather than to red being inherently better.",
+ "quote": "Their result? The red button outperformed the green button by 21%. ... Green is one of the main colors of the site! And what happens when you add a green button to the mix? It won’t stand out.",
+ "importance": "central"
+ },
+ {
+ "claim": "Blue is the world's most preferred color, ranked as top choice by 57% of men and 35% of women, and is the most common logo color, used by 33% of top brands.",
+ "quote": "Blue is the world’s favorite color, 57% of men and 35% of women rank it as their top choice. It’s also the most common logo color, used by 33% of top brands.",
+ "importance": "central"
+ },
+ {
+ "claim": "Bing increased annual revenue by $80 million by optimizing the exact shade of blue used for its links, an effect the article attributes to the power of established web conventions (blue as the historical link color) rather than intrinsic color psychology.",
+ "quote": "Bing increased their revenue by $80 million by finding the exact color of blue for their links. People are used to seeing blue links. When the World Wide Web first came to be, blue was the color of links.",
+ "importance": "supporting"
+ },
+ {
+ "claim": "Consumers form a like/dislike judgment of a product within 90 seconds of first viewing, and up to 90% of that assessment is based on color alone.",
+ "quote": "Studies have shown that consumers decide whether they like a product within 90 seconds of viewing it, with up to 90% of that assessment based on color alone.",
+ "importance": "supporting"
+ }
+ ]
+ },
+ {
+ "publishDate": "2010-04-26",
+ "sourceQuality": "primary",
+ "claimCount": 5,
+ "claims": [
+ {
+ "claim": "Color preferences are caused by people's average affective responses to the objects associated with each color (the ecological valence theory), rather than by purely low-level visual mechanisms.",
+ "quote": "In this article we articulate an ecological valence theory in which color preferences arise from people's average affective responses to color-associated objects.",
+ "importance": "central"
+ },
+ {
+ "claim": "A single predictor, the weighted affective valence estimate (WAVE) of color-associated objects, explains 80% of the variance in average color preference ratings.",
+ "quote": "accounting for 80% of the variance with a single predictor",
+ "importance": "central"
+ },
+ {
+ "claim": "Average human hue preferences peak broadly at blue and dip most sharply at chartreuse (yellow-green), measured with 48 participants rating 32 chromatic colors.",
+ "quote": "a broad peak at blue and a narrow trough at chartreuse",
+ "importance": "central"
+ },
+ {
+ "claim": "People like colors strongly associated with liked objects (blues with clear skies and clean water) and dislike colors strongly associated with disliked objects (browns with feces and rotten food).",
+ "quote": "People like colors strongly associated with objects they like (e.g., blues with clear skies and clean water) and dislike colors strongly associated with objects they dislike (e.g., browns with feces and rotten food).",
+ "importance": "supporting"
+ },
+ {
+ "claim": "Competing theories fit the same color-preference data substantially worse than the WAVE: the cone-contrast model explains 37% of the variance, the color-appearance model 60%, and the color-emotion model 55%.",
+ "quote": "the cone-contrast model accounted for only 37% of the variance",
+ "importance": "supporting"
+ }
+ ]
+ },
+ {
+ "publishDate": "2012",
+ "sourceQuality": "primary",
+ "claimCount": 5,
+ "claims": [
+ {
+ "claim": "Visual complexity and prototypicality of a website affect users' aesthetic judgments within the first 50 milliseconds of exposure, based on an experiment using 119 screenshots of real websites rated at 50ms, 500ms, and 1000ms presentation times.",
+ "quote": "119 screenshots of real websites varying in VC (low vs. medium vs. high) and PT (low vs. high) were rated on perceived aes- thetics. Screenshot presentation time was varied as a between-subject factor (50 ms vs. 500 ms vs. 1000 ms). Results reveal that VC and PT affect participants' aesthet- ics ratings within the first 50 ms of exposure.",
+ "importance": "central"
+ },
+ {
+ "claim": "Websites combining low visual complexity with high prototypicality were rated as the most aesthetically appealing, supporting a design rule favoring simple, conventional layouts.",
+ "quote": "Overall, websites with low VC and high PT were perceived as highly appealing.",
+ "importance": "central"
+ },
+ {
+ "claim": "Aesthetic perception of websites is affected by visual complexity and prototypicality even at 17ms exposure, with the prototypicality effect weaker than the visual-complexity effect at that duration.",
+ "quote": "In the second study presentation times were shortened to 17, 33 and 50ms. Results suggest that VC and PT affect aesthetic perception even within 17ms, though the effect of PT is less pronounced than the one of VC.",
+ "importance": "central"
+ },
+ {
+ "claim": "As presentation time increases, the influence of prototypicality on aesthetic judgment grows until it equals that of visual complexity, consistent with Leder et al.'s (2004) stage model in which complexity is processed earlier than prototypicality.",
+ "quote": "With increasing presentation time the effect of PT becomes as influential as the VC effect. This supports the reasoning of the information-processing stage model of aesthetic processing (Leder et al., 2004), where VC is processed at an earlier stage than PT.",
+ "importance": "supporting"
+ },
+ {
+ "claim": "The study was published in 2012 in the International Journal of Human-Computer Studies (vol. 70, issue 11, pp. 794-811) by Tuch, Presslaber, Stoecklin, Opwis, and Bargas-Avila, with Google-affiliated authorship, making it peer-reviewed primary research.",
+ "quote": "Authors: Alexandre N. Tuch, Eva Presslaber, Markus Stoecklin, Klaus Opwis, Javier Bargas-Avila ... International Journal of Human-Computer Studies, 70(11), pp. 794-811",
+ "importance": "supporting"
+ }
+ ]
+ },
+ {
+ "publishDate": "2015-09-24 (online); print September 2016, Cognitive Science 40(7):1590-1616",
+ "sourceQuality": "primary",
+ "claimCount": 5,
+ "claims": [
+ {
+ "claim": "U.S. and Japanese color preferences share the same broad structure: preference peaks around blue, troughs around dark-yellow, and a general preference for saturated colors, supporting the cross-cultural robustness of blue-preference and dark-yellow avoidance.",
+ "quote": "Japanese and U.S. color preferences have both similarities (e.g., peaks around blue, troughs around dark-yellow, and preferences for saturated colors)",
+ "importance": "central"
+ },
+ {
+ "claim": "There is a measurable cultural difference in lightness preference: Japanese participants like darker colors less than U.S. participants do.",
+ "quote": "and differences (Japanese participants like darker colors less than U.S. participants do)",
+ "importance": "central"
+ },
+ {
+ "claim": "The Ecological Valence Theory prediction that within-culture WAVE-preference correlations exceed between-culture correlations was tested using Palmer and Schloss's (2010) weighted affective valence estimate (WAVE) procedure and was only partially supported.",
+ "quote": "Palmer and Schloss's (2010) weighted affective valence estimate (WAVE) procedure was used to test the Ecological Valence Theory's (EVT's) prediction that within-culture WAVE-preference correlations should be higher than between-culture WAVE-preference correlations. The results supported several, but not all, predictions.",
+ "importance": "central"
+ },
+ {
+ "claim": "Bilingual Japanese-U.S. multicultural participants showed color preferences intermediate between the two monocultural groups, indicating that lifetime culturally specific experience (not fixed innate factors alone) shapes color preferences.",
+ "quote": "Multicultural color preferences were intermediate between U.S. and Japanese preferences, consistent with the hypothesis that culturally specific personal experiences during one's lifetime influence color preferences.",
+ "importance": "supporting"
+ },
+ {
+ "claim": "Gender differences in color preference were complex and did not replicate previously reported gender effects, cautioning against hard-coding simple gender-based color rules.",
+ "quote": "Complex gender differences were also evident that did not conform to previously reported effects.",
+ "importance": "supporting"
+ }
+ ]
+ },
+ {
+ "publishDate": "2014-02-26",
+ "sourceQuality": "primary",
+ "claimCount": 5,
+ "claims": [
+ {
+ "claim": "The pattern of sex differences in color preference was nearly identical in an industrialized culture (Poland) and a remote nonindustrialized culture (the Yali of Papua): the correlation between the two cultures' sexual contrasts was r = .93, explaining 86% of common variance.",
+ "quote": "The correlation between the Polish and Papuan sexual contrasts explained 86 % of the common variance, r = .93, p < .01.",
+ "importance": "central"
+ },
+ {
+ "claim": "Across both cultures, women most preferred red (21%) while men most preferred blue (19%), a sexual dimorphism the authors describe as transcending extreme differences in culture and ecology.",
+ "quote": "Women preferred red (21 %), while men preferred blue (19 %).",
+ "importance": "central"
+ },
+ {
+ "claim": "Overall color preferences differed significantly between the two cultures (Polish observers most preferred blue at 17.5%, while Yali observers most preferred red at 15.7% and yellow at 14.8%), which challenges claims of a universal human blue preference in nonindustrialized populations.",
+ "quote": "Not surprisingly, we found that color preferences clearly differed between the two communities and also between sexes.",
+ "importance": "central"
+ },
+ {
+ "claim": "The observed male-female contrast in color preference was not attributable to biological (low-level) components of color vision, suggesting the sex difference arises from constraints beyond retinal biology.",
+ "quote": "At the same time, this sexual contrast was not specific to biological components of color vision. Our results reveal a pattern of sexual dimorphism that transcends extreme differences in culture and ecology.",
+ "importance": "supporting"
+ },
+ {
+ "claim": "The study directly compared color preferences of men and women from Poland and from the Yali people of Papua, Indonesia (108 Yali participants and 200 Polish participants choosing most- and least-preferred hues from a 12-color wheel), making it one of the few color-preference studies including a remote, non-Western, nonindustrialized sample.",
+ "quote": "The present study compares color preferences of women and men from an industrialized and a remote, nonindustrialized culture. In particular, we investigated preferences in observers from Poland and from the Yali in Papua, respectively.",
+ "importance": "supporting"
+ }
+ ]
+ },
+ {
+ "publishDate": "2009-10-13",
+ "sourceQuality": "secondary",
+ "claimCount": 5,
+ "claims": [
+ {
+ "claim": "Marissa Mayer confirmed at the 2009 AIGA national conference that Google really did test 41 shades of blue: Google had been using two different blues (one on the homepage, one on Gmail), and to pick a single standardized, more effective link color it A/B-tested an imperceptible range of blues between the two; the winning blue was 'not too green, not too red.'",
+ "quote": "About the now-notorious claim that she once tested 41 shades of blue? All true. Turns out Google was using two different colors of blue, one on the homepage, one on the Gmail page. To find out which was more effective so they could standardize it across the system, they tested an imperceptible range of blues between the two. The winning color, according to dozens of charts and graphs, was not too green, not too red.",
+ "importance": "central"
+ },
+ {
+ "claim": "As of 2009, Google's stated design methodology was that visual design decisions were made by user-testing data rather than designer intuition, and Mayer claimed such testing revealed non-intuitive effects on user response.",
+ "quote": "every decision at Google comes from data testing, not the reasoning of a creative mind. ... “It’s interesting to see how you can change the way that people respond to the Web in ways that are not intuitive,” she said.",
+ "importance": "central"
+ },
+ {
+ "claim": "Designer Doug Bowman publicly left Google in 2009 over its data-driven design culture, citing being asked to prove with data whether a border should be 3, 4, or 5 pixels wide.",
+ "quote": "This kind of over-analytical testing was exactly why designer Doug Bowman made a very public break from Google earlier this year. “I had a recent debate over whether a border should be 3, 4, or 5 pixels wide and was asked to prove my case,” he wrote in a post after his departure.",
+ "importance": "supporting"
+ },
+ {
+ "claim": "Google's famously minimal homepage did not originate as a deliberate aesthetic choice: Mayer (keeper of the homepage since 1998) said design was never the primary concern in developing the site, and co-founder Sergey Brin declined to embellish the early homepage, saying 'I don't do HTML.'",
+ "quote": "Mayer acknowledged that design was never the primary concern when developing the site. When she mentioned to founder Sergey Brin that he might want to do something to spiff up the brand-new homepage for users, his response was almost poetically eloquent: “I don’t do HTML.”",
+ "importance": "supporting"
+ },
+ {
+ "claim": "As of October 2009, the most significant recent change to the Google homepage was widening the search box by a few pixels, illustrating how conservatively Google evolved its highest-traffic page.",
+ "quote": "someone won a recent battle to widen the search box by a few pixels, the most major change for the homepage in quite some time.",
+ "importance": "tangential"
+ }
+ ]
+ },
+ {
+ "publishDate": "2019-07-03",
+ "sourceQuality": "primary",
+ "claimCount": 4,
+ "claims": [
+ {
+ "claim": "Across three studies, blue consistently increased trust more than red, providing empirical support for using blue where trustworthiness matters (e.g., brand logos and interface accents).",
+ "quote": "The results across three studies consistently show that blue increases trust more than red, contributing to the current literature by providing solid empirical evidence of the relationship between colors and trust and insight for brand managers into brand logo design and redesign.",
+ "importance": "central"
+ },
+ {
+ "claim": "Blue is the most frequently used color in brand logo designs, with red the second most used.",
+ "quote": "In marketing practice, blue, followed by red, is the most used color in brand logo designs.",
+ "importance": "supporting"
+ },
+ {
+ "claim": "Before this paper, the empirical literature linking blue (vs. red) to trust was mixed/inconclusive, so the blue-trust association should not be treated as long-settled prior to 2019.",
+ "quote": "Academic studies have shown that blue is related more to trust than red, but extant empirical results are somewhat inconclusive.",
+ "importance": "supporting"
+ },
+ {
+ "claim": "The blue-over-red trust advantage was found with both implicit and explicit measurement methods, not just self-report, strengthening the robustness of the effect.",
+ "quote": "This article further explores this notion using both implicit and explicit methods to test the influence of blue and red on trust.",
+ "importance": "tangential"
+ }
+ ]
+ },
+ {
+ "publishDate": "unknown (no dates on page; documented histories extend through 2020, suggesting last major update circa 2020)",
+ "sourceQuality": "secondary",
+ "claimCount": 5,
+ "claims": [
+ {
+ "claim": "Facebook has used blue as its primary brand/interface color continuously since its earliest versions (site documents Facebook's visual history 2004-2020), supporting the pattern that famous sites converge on stable blue-dominant palettes.",
+ "quote": "Facebook's love of the color blue goes back to its earliest versions",
+ "importance": "central"
+ },
+ {
+ "claim": "Yahoo adopted purple as its signature brand color before its acquisition by Verizon, an example of a top-traffic site committing to a single distinctive hue (Yahoo.com visual history documented 1994-2020).",
+ "quote": "discovered a love of the color purple before it was acquired by Verizon",
+ "importance": "supporting"
+ },
+ {
+ "claim": "Version Museum provides screenshot-based visual design histories of the most-visited websites spanning roughly 25 years, e.g. Amazon.com 1995-2020 (34 images), Apple.com 1994-2020 (39 images), Google Search 1996-2020 (41 images), Wikipedia 2001-2020 (17 images), YouTube 2005-2020 (39 images), making it a usable evidence base for tracing layout/palette/navigation evolution of famous sites.",
+ "quote": "showcases the visual history of popular websites, operating systems, applications, and games that have shaped our lives",
+ "importance": "central"
+ },
+ {
+ "claim": "A YouTube design/engineering decision contributed to the phase-out of the Internet Explorer 6 browser, illustrating how flagship sites' frontend choices set de facto web platform baselines.",
+ "quote": "one design decision led to the demise of the IE6 browser",
+ "importance": "supporting"
+ },
+ {
+ "claim": "Google Search predates its brand name, originally operating as 'BackRub' before its 1996-onward documented design evolution toward the famously minimal homepage.",
+ "quote": "Did you know it used to be called BackRub?",
+ "importance": "tangential"
+ }
+ ]
+ },
+ {
+ "publishDate": "2007-08-21",
+ "sourceQuality": "secondary",
+ "claimCount": 5,
+ "claims": [
+ {
+ "claim": "Blue is the single most-preferred (universal favorite) hue across both sexes and across the British and Chinese groups studied, supporting the blue-preference universality relevant to default UI palette choices.",
+ "quote": "The universal favorite color for all people appears to be blue.",
+ "importance": "central"
+ },
+ {
+ "claim": "Women's color preference shifts toward the red end of the red-green axis relative to men, which pulls female preference away from pure blue toward pinks and lilacs; this is a robust gender difference in color preference.",
+ "quote": "Females have a preference for the red end of the red-green axis, and this shifts their color preference slightly away from blue towards red, which tends to make pinks and lilacs the most preferred colors.",
+ "importance": "central"
+ },
+ {
+ "claim": "Preferences map onto the two cone-opponent second-stage mechanisms of color vision: all observers favored the bluish pole of the S-(L+M) axis and the greenish pole of the L-M axis, and the sex difference was concentrated on the L-M (red-green) axis (women reddish, men greenish).",
+ "quote": "preferred colors at the greenish pole of the L-M component and at the bluish pole of the S-(L+M) component ... sexual contrasts were mainly based on the fact that women preferred colors toward the reddish and men toward the greenish pole of the L-M component",
+ "importance": "supporting"
+ },
+ {
+ "claim": "The direction of the male-female color-preference difference was consistent across two very different cultures (171 British Caucasian and a Han Chinese sample, ~208 total), which the authors argue reflects a biological rather than purely cultural component.",
+ "quote": "Although color preferences differed between English and Chinese, the way in which color preferences differed between women and men was similar in both groups.",
+ "importance": "supporting"
+ },
+ {
+ "claim": "The authors propose an evolutionary (hunter-gatherer / ripe-fruit foraging) explanation for the female bias toward reddish hues, framing color preference as partly innate and then amplified by culture.",
+ "quote": "Evolution may have driven females to prefer reddish colors - reddish fruits, healthy, reddish faces. Culture may exploit and compound this natural female preference.",
+ "importance": "tangential"
+ }
+ ]
+ },
+ {
+ "publishDate": "2006-01-03 (online; journal issue March 2006, Behaviour & Information Technology 25(2))",
+ "sourceQuality": "primary",
+ "claimCount": 4,
+ "claims": [
+ {
+ "claim": "Web page visual appeal can be assessed by viewers within a 50 millisecond exposure, meaning first aesthetic impressions of a site form in about 50 ms.",
+ "quote": "Thus, visual appeal can be assessed within 50 ms, suggesting that web designers have about 50 ms to make a good first impression.",
+ "importance": "central"
+ },
+ {
+ "claim": "Visual appeal ratings given after 50 ms exposures were highly correlated with ratings given after 500 ms exposures, and ratings were highly reliable across repeated phases, indicating first impressions are stable rather than artifacts of brief viewing.",
+ "quote": "Throughout, visual appeal ratings were highly correlated from one phase to the next as were the correlations between the 50 ms and 500 ms conditions.",
+ "importance": "central"
+ },
+ {
+ "claim": "Overall visual appeal judgments of homepages were closely related to most of seven specific design dimensions that participants rated in the second study.",
+ "quote": "The second study replicated the first, but participants also rated each web page on seven specific design dimensions. Visual appeal was found to be closely related to most of these.",
+ "importance": "supporting"
+ },
+ {
+ "claim": "The finding rests on three studies in which participants rated real web homepages presented for 500 ms (studies 1-2) plus an added 50 ms condition with the same stimuli (study 3), designed to test whether the first impression is a 'mere exposure effect'.",
+ "quote": "Study 3 again replicated the 500 ms condition as well as adding a 50 ms condition using the same stimuli to determine whether the first impression may be interpreted as a 'mere exposure effect' (Zajonc 1980).",
+ "importance": "supporting"
+ }
+ ]
+ },
+ {
+ "publishDate": null,
+ "sourceQuality": "secondary",
+ "claimCount": 5,
+ "claims": [
+ {
+ "claim": "Google's 1998 logo (which still included an exclamation point) already established the primary-color scheme (blue/red/yellow/green letterforms) that Google continues to use, making the primary palette a stable brand token for roughly 25+ years.",
+ "quote": "This logo showcased the hallmark primary color scheme still very much in use today. But naturally, the exclamation point at the end sticks out like a sore thumb.",
+ "importance": "central"
+ },
+ {
+ "claim": "Google adopted the modern foundation of its logo, based on the serif Catull typeface, on May 31, 1999, with designer Ruth Kedar briefed to create a simple, playful, approachable design.",
+ "quote": "Google transitioned to the modern foundation of the logo based on the Catull font on May 31, 1999. Ruth Kedar was hired by the founders to create a simple, playful, approachable design.",
+ "importance": "central"
+ },
+ {
+ "claim": "In 2015 Google replaced its serif logo with a custom modern geometric sans-serif typeface it authored itself, Product Sans, exemplifying famous sites' convergence toward proprietary geometric sans-serif typography.",
+ "quote": "They authored their own typeface called Product Sans -- a modern, geometric, sans-serif font.",
+ "importance": "central"
+ },
+ {
+ "claim": "Google's search-navigation chrome evolved from a tabbed interface above the search bar (introduced 2001 for web/images/groups/directories) to left-sidebar navigation in 2010, showing a documented shift in navigation placement conventions on the most-visited website.",
+ "quote": "In 2010, Google moved the links to access different types of search results to the left side of the page.",
+ "importance": "supporting"
+ },
+ {
+ "claim": "By 2019 Google's homepage used a rounded-corner (pill-shaped) text box as the search entry field, a concrete, dateable border-radius design-token change on the world's most-visited page.",
+ "quote": "The 2019 homepage has a rounded-corner textbox as the search entry field.",
+ "importance": "supporting"
+ }
+ ]
+ },
+ {
+ "publishDate": "2013-04-27 (CHI 2013 proceedings, Paris, April 27-May 2, 2013)",
+ "sourceQuality": "primary",
+ "claimCount": 5,
+ "claims": [
+ {
+ "claim": "Computational models of a website's perceived visual complexity and colorfulness, combined with demographic variables (education level, age), explain about 48% of the variance in aesthetic appeal ratings that users give after viewing a website screenshot for only 500ms.",
+ "quote": "In combination with demographic variables such as a user's education level and age, these models explain approximately half of the variance in the ratings of aesthetic appeal given after viewing a website for 500ms only. ... The model accounts for 48% of the variation in aesthetic preferences (adj. R2 = .48).",
+ "importance": "central"
+ },
+ {
+ "claim": "Visual complexity is the dominant driver of first-impression appeal: appeal drops sharply for high-complexity websites and only slightly for low-complexity ones (a weak, asymmetric inverted-U with a moderate-complexity optimum), and complexity matters far more than colorfulness.",
+ "quote": "Our results show that ratings of appeal are significantly negatively affected by an increase in visual complexity. As shown in Figure 5, we observed a strong decrease in ratings of appeal for websites with a high level of complexity, as well as a slight decline in the ratings for websites with lower levels of complexity. ... They also demonstrate that colorfulness plays a role, but is not nearly as important as the overall visual complexity of a site.",
+ "importance": "central"
+ },
+ {
+ "claim": "Perceived colorfulness and perceived visual complexity of website screenshots can be predicted from low-level image statistics with high accuracy: the colorfulness regression model achieves r = .88 (R2 = .78) and the complexity model r = .80 (R2 = .65) against mean human ratings, based on ratings of 450 websites from 548 volunteers on the LabintheWild platform.",
+ "quote": "The final regression model is highly predictive of participants' mean ratings of colorfulness (r = .88, p < .001, R2 = .78, adj. R2 = .77). ... The final model as shown in Table 3 is highly correlated with participants' mean ratings on visual complexity (r = .80, p < .001, R2 = .65, adj. R2 = .64).",
+ "importance": "supporting"
+ },
+ {
+ "claim": "Aesthetic first impressions are not demographically universal: age significantly interacted with complexity (participants over 45 preferred low visual complexity more than other age groups), education level interacted with colorfulness (PhD holders were most negatively affected by high colorfulness), while gender showed no significant interaction with either factor.",
+ "quote": "Age did not significantly interact with colorfulness, but with complexity (F(4) = 6.53, p < .001). In particular, participants older than 45 years liked websites with a low visual complexity level more than other age groups. ... Participants with a PhD were most negatively affected by a high colorfulness ... Gender did not show significant interaction effects with colorfulness and complexity.",
+ "importance": "supporting"
+ },
+ {
+ "claim": "Award-winning 'best practice' designs are not universally preferred: the 20 Webby Award websites in the study received average appeal ratings between 4.21 and 6.57 on a 9-point scale (versus an overall mean of 4.73 for other sites) with a high standard deviation of 1.69, arguing against a single universal design guideline set.",
+ "quote": "Yet the 20 Webby Award websites in our study received average ratings between 4.21 and 6.57 (across all participants on a 9-point scale, and as compared to the overall mean of 4.73 for all the other sites). A relatively high average standard deviation of 1.69 across all participants and Webby sites indicates a high dispersion of participants' preferences for these sites.",
+ "importance": "supporting"
+ }
+ ]
+ },
+ {
+ "publishDate": "2000 (Interacting with Computers 13(2000) 127-145; received 10 January 1999, accepted 24 March 2000)",
+ "sourceQuality": "primary",
+ "claimCount": 5,
+ "claims": [
+ {
+ "claim": "Before using the system, participants' perceptions of an ATM interface's aesthetics and its usability were highly correlated (r = 0.66), replicating Kurosu & Kashimura (1995) and Tractinsky (1997).",
+ "quote": "Pre experimental perceptions of ATM aesthetics and their perceived usability were highly correlated (r = 0.66). The high correlation resembles those obtained by Kurosu and Kashimura [11] and Tractinsky [12].",
+ "importance": "central"
+ },
+ {
+ "claim": "After actual use, post-experimental perceptions of both aesthetics and usability were driven by the interface's aesthetics level, while the actual (manipulated) usability of the system had no significant effect on any post-use perception; the aesthetics-usability correlation remained high after use (r = 0.71).",
+ "quote": "A multivariate analysis of covariance revealed that the degree of system's aesthetics affected the post-use perceptions of both aesthetics and usability, whereas the degree of actual usability had no such effect.",
+ "importance": "central"
+ },
+ {
+ "claim": "Post-use satisfaction with the system was very strongly correlated with perceived usability (r = 0.87) and also strongly with post-use perceived aesthetics (r = 0.71), meaning visual appeal substantially predicts user satisfaction.",
+ "quote": "post-experimental satisfaction with the ATM was highly correlated not only with its perceived usability (as predicted by the usability literature), but also with post-experimental perceptions of aesthetics (r = 0.87 and .71, respectively).",
+ "importance": "supporting"
+ },
+ {
+ "claim": "The experiment used 132 third-year Industrial Engineering students (average age 25, ~67% male) interacting with nine ATM screen layouts (three high-aesthetics, three medium, three low) that contained identical objects differing only in arrangement, crossed with two levels of manipulated actual usability, which limits generalizability to a homogeneous Israeli student sample.",
+ "quote": "Participants were 132 third year Industrial Engineering (IE) students... Three of the nine layouts were rated as highly aesthetic in that study, three layouts were rated low in terms of aesthetics and the other three were rated in between. All of the layouts contained the same objects, and differed only in terms of the way those objects were arranged on the screen.",
+ "importance": "supporting"
+ },
+ {
+ "claim": "The authors conclude that because users treat aesthetically appealing interfaces as a cue that the system is usable, and the interface 'facade' taints perceptions of subsequent interactions, interface design should integrate aesthetics and usability rather than prioritize usability alone.",
+ "quote": "The fact that users perceive aesthetically appealing interfaces as indicative of usable systems calls for an integrative approach to interface design which will take simultaneous account of the two seemingly unrelated properties.",
+ "importance": "central"
+ }
+ ]
+ },
+ {
+ "publishDate": "2021-05-08",
+ "sourceQuality": "primary",
+ "claimCount": 5,
+ "claims": [
+ {
+ "claim": "Website visual designs measurably homogenized after 2007: across a 227,802-image dataset (2003-2019), average layout distance between sites declined roughly 43-44% between 2010 and 2019, color distance declined 32% between 2008 and 2019, and CNN-based visual distance declined about 30% between 2007 and 2019.",
+ "quote": "We find that the average difference between website layouts in our datasets declined significantly, 43%, between 2010 and 2019, providing the first, to our knowledge, quantitative evidence that website designs are becoming more similar to each other. [...] Color distance declines 32% between 2008 and 2019. Layout distance declines 44% from 2010 to 2019. The CNN distance roughly follows the color distance metric with a decline of 30% between 2007 and 2019.",
+ "importance": "central"
+ },
+ {
+ "claim": "The convergence in appearance is driven by shared front-end libraries rather than by converging bespoke code: similarity of library usage (measured by Wappalyzer-detected libraries, Jaccard index) rose sharply after 2007 and correlates 0.77 with CNN visual similarity, while sites' native source code actually became LESS similar over the same period.",
+ "quote": "average similarity according to library usage has increased over time, especially after 2007, mirroring the results we found for visual similarity; the correlation between our CNN's measure of visual similarity and our measure of library similarity is 0.77 (p < 0.001). [...] we found that the content of websites (including their native CSS and JavaScript code) have become less similar over time, despite that visual appearance has become more similar.",
+ "importance": "central"
+ },
+ {
+ "claim": "Bootstrap is the single library most strongly associated with layout homogenization: in a multiple regression over 65,703 site pairs using the 16 most common libraries, Bootstrap had the largest negative normalized coefficient (-0.410) for layout distance, i.e., two sites sharing Bootstrap are most likely to have similar layouts (followed by Font Awesome at -0.190 and jQuery UI at -0.187), whereas SWFObject (Flash embedding, +0.373) and jQuery Tools (+0.562) correlate with more varied layouts.",
+ "quote": "The regression coefficients in Table 2 suggest that, yes, particular libraries are associated with increased similarity of web page layouts. Bootstrap correlates strongly with decreased layout distance, relative to other libraries. Other libraries, like SWFObject, which is used to embed Adobe Flash content, and jQuery tools, a Javascript user interface library, correlate with more varied layouts.",
+ "importance": "central"
+ },
+ {
+ "claim": "Mobile support is tightly coupled to visual convergence: the abrupt homogenization onset after 2007 coincides with the first iPhone's release, the monthly rate of mobile support correlates 0.84 (p < 0.001) with average CNN visual similarity, and responsive/mobile-first design became industry standard partly because of Google SEO policies such as the 2015 'Mobilegeddon' update prioritizing mobile-friendly results.",
+ "quote": "We observed that the abrupt change in web design visual similarity after 2007 (Figure 3) coincides with the release of Apple's first-generation iPhone. [...] The correlation between the average website CNN similarity in each month and the corresponding rate of mobile support is 0.84 (p < 0.001), which suggests that websites which support mobile tend to look more similar than websites which do not. [...] P4 and P6 point to Google search's 2015 \"Mobilegeddon\" update, which suddenly prioritized search results which would display well on mobile, as the reason the web adopted responsive design.",
+ "importance": "central"
+ },
+ {
+ "claim": "Color-scheme homogenization consists of a specific palette shift: year-by-year color-distance histograms converged from a bimodal distribution (modes near 0 and 90) to a single mode near 10, reflecting a move from colored and pure-white/black backgrounds toward off-white, dark, and photographic image backgrounds; in all three datasets (Russell, Alexa, Webby) between 2004 and 2016, dark and off-white pixel area increased while pure white and black decreased.",
+ "quote": "the homogenization in color schemes is related to the shift from monochromatic, usually white backgrounds to more off-white backgrounds and image backgrounds [...] the color distances start as a bimodal distribution with modes around 0 and 90, then converge to a single mode around 10 (see Figure 5). [...] In each dataset, the amount of dark and off-white increases and the amount of white and black decreases.",
+ "importance": "supporting"
+ }
+ ]
+ },
+ {
+ "publishDate": "January 2010 (Int. J. Human-Computer Studies, Vol. 68, Issues 1-2, pp. 1-21; accepted 21 August 2009)",
+ "sourceQuality": "primary",
+ "claimCount": 5,
+ "claims": [
+ {
+ "claim": "In a controlled experiment, website colour appeal was a statistically significant determinant of both user trust and satisfaction (H1: t=7.89, p<0.001; H2: t=9.69, p<0.001), and trust and satisfaction in turn significantly predicted e-loyalty (t=4.91 and t=9.53, p<0.001).",
+ "quote": "Results reveal that website colour appeal is a significant determinant for website trust and satisfaction with differences noted across cultures.",
+ "importance": "central"
+ },
+ {
+ "claim": "A yellow website colour scheme was disliked by participants from all three cultures studied (Canada, Germany, Japan); e.g., Canadians rated both grey and blue schemes significantly more appealing than yellow (p<0.01 and p<0.001).",
+ "quote": "In terms of colour appeal, it is interesting to note that all three cultures tend to dislike the yellow websites.",
+ "importance": "central"
+ },
+ {
+ "claim": "Colour preferences varied by culture: German participants showed a pronounced preference for the blue colour scheme, while Canadians found the grey scheme significantly more appealing than Germans did (p<0.001).",
+ "quote": "As predicted survey results reveal a pronounced liking of the blue colour scheme among the German participants. ... For the grey colour scheme, Canadians found the colour more appealing than Germans (p<0.001).",
+ "importance": "central"
+ },
+ {
+ "claim": "The study tested three colour treatments (grey, blue, yellow) of an e-commerce electronics website (modeled on SonyStyle) with 90 participants, 30 each from Canada, Germany, and Japan, using eye-tracking, a survey, and interviews.",
+ "quote": "Ninety participants from three countries (30 each from Canada, Germany, and Japan) took part in a laboratory experiment. ... Three versions of an e-commerce website featuring electronics were created to represent three colour schemes (grey, blue, and yellow).",
+ "importance": "supporting"
+ },
+ {
+ "claim": "Despite per-culture preference differences, culture did not statistically moderate the effect of colour appeal on trust or satisfaction (interaction t=1.802 for trust, t=1.629 for satisfaction, both short of significance), suggesting colour appeal's positive effect generalizes across cultures.",
+ "quote": "Therefore, based on the sample in this research, the influence of colour appeal on trust and satisfaction is not statistically moderated by culture.",
+ "importance": "supporting"
+ }
+ ]
+ },
+ {
+ "publishDate": "Undated, continuously updated timeline (site copyright 2026); content extracted from Wayback Machine snapshot dated 2026-07-04 because the live page returns a Cloudflare 403",
+ "sourceQuality": "secondary",
+ "claimCount": 5,
+ "claims": [
+ {
+ "claim": "The term and technique 'Responsive Web Design' originates from Ethan Marcotte's article of that name published in A List Apart on May 25, 2010, and its three foundational techniques are fluid grids, flexible images, and CSS3 media queries - the basis of the mobile-first layout convergence across major websites.",
+ "quote": "Web designer Ethan Marcotte published an article entitled \"Responsive Web Design\" in the online magazine A List Apart. The author describes a new way of styling HTML documents which allows for an optimization of website content display with regard to resolution or display size. Basic responsive web design techniques include fluid grid, flexible images, and CSS3 module media queries.",
+ "importance": "central"
+ },
+ {
+ "claim": "Bootstrap, the CSS framework that standardized grid-based responsive layout across the web, was created at Twitter by Mark Otto and Jacob Thornton to keep Twitter's HTML/CSS/JS consistent, open-sourced in August 2011; Bootstrap 2 (January 2012) added responsive layout, and Bootstrap 3 (August 19, 2013) made mobile-first and flat design the default.",
+ "quote": "Web developers Mark Otto and Jacob Thornton of Twitter began creating the CSS framework Bootstrap in mid-2011. The framework was originally developed to help maintain the HTML/CSS and JavaScript code consistency in Twitter applications. In August 2011, Bootstrap 1 was released as an open source tool ... In January 2012, Bootstrap 2 was released, supporting a responsive web layout. [On Bootstrap 3:] The new Bootstrap version consistently applied a responsive web layout and mobile-first access. The layout of templates and components was redesigned in flat design style.",
+ "importance": "central"
+ },
+ {
+ "claim": "Google introduced Material Design at Google I/O on June 25, 2014, and from 2015 redesigned most of its applications and services (i.e., several of the world's most-visited properties, including Google and YouTube) in that single consistent visual language.",
+ "quote": "Google introduced a new graphic style called Material Design at the Google I/O conference. Since 2015, Google has redesigned most of its applications and services using the consistent visual style of Material Design.",
+ "importance": "central"
+ },
+ {
+ "claim": "Flat design entered mainstream UI via Microsoft hardware/OS products - the Zune player (first sold November 14, 2006) is considered one of its first uses and Windows Phone 7 (launched October 21, 2010) used a fully flat UI - and it became one of the dominant visual trends in web design after 2010, alongside skeuomorphism and material design.",
+ "quote": "Microsoft launched Windows Phone 7, a mobile phone whose user interface was created using flat design. ... Flat design has also gained considerable popularity among web designers and has become one of the major visual trends in web design after 2010 along with skeuomorphism and material design styles. [On Zune:] The simple and clean design of Zune control features is considered to be one of the first uses of flat design in user interface.",
+ "importance": "supporting"
+ },
+ {
+ "claim": "The first web banner ad in history was placed by AT&T on the HotWired magazine website on October 27, 1994; it measured 476x56 px and read 'Have You Ever Clicked Your Mouse Right Here?' - the origin point of the ad-slot layout conventions later standardized across high-traffic sites like Yahoo.",
+ "quote": "The AT&T Telecommunications Company placed the first web banner in Internet history on the HotWired magazine website. The first web banner in the world was 476×56 px and contained only the phrase \"Have You Ever Clicked Your Mouse Right Here?\".",
+ "importance": "supporting"
+ }
+ ]
+ }
+ ]
 }
