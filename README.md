@@ -5,6 +5,8 @@ from a component library alone: what does good look like for this audience, and
 why. The answers are backed by empirical research, distilled into machine-
 readable profiles, and proven with reference templates that pass their own tests.
 
+**Live site:** [velofy.github.io/experentia](https://velofy.github.io/experentia/) (landing page and browsable reference templates).
+
 experentia is one of three layers a velofy agent builds with:
 
 - **summit.js** (velofy/summit) is the runtime: performant components, tokens,

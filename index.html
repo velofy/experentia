@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>experentia · a taste-engine for frontends</title>
+<meta name="description" content="Evidence-backed design rules, machine-readable taste profiles, and verified reference templates that AI agents consult alongside summit.js and ui-atlas.">
+<style>
+  :root {
+    --bg: #fbfaf8;
+    --panel: #ffffff;
+    --ink: #1a1613;
+    --muted: #6b635b;
+    --faint: #94897d;
+    --hair: #e7e1d8;
+    --accent: #a1381f;
+    --shadow: 0 1px 2px rgba(26, 22, 19, 0.05), 0 8px 24px rgba(26, 22, 19, 0.06);
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #100e0c; --panel: #17140f; --ink: #ede8e2; --muted: #a99f92;
+      --faint: #7d7365; --hair: #2b2620; --accent: #e0765a;
+      --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 10px 30px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #100e0c; --panel: #17140f; --ink: #ede8e2; --muted: #a99f92;
+    --faint: #7d7365; --hair: #2b2620; --accent: #e0765a;
+    --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 10px 30px rgba(0,0,0,0.35);
+  }
+  :root[data-theme="light"] {
+    --bg: #fbfaf8; --panel: #ffffff; --ink: #1a1613; --muted: #6b635b;
+    --faint: #94897d; --hair: #e7e1d8; --accent: #a1381f;
+    --shadow: 0 1px 2px rgba(26,22,19,0.05), 0 8px 24px rgba(26,22,19,0.06);
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--sans); line-height: 1.6; -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  /* Header */
+  header { border-bottom: 1px solid var(--hair); position: sticky; top: 0; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(8px); z-index: 5; }
+  .bar { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .brand { font-family: var(--serif); font-weight: 600; font-size: 1.15rem; letter-spacing: -0.01em; }
+  .brand span { color: var(--accent); }
+  .nav { display: flex; gap: 22px; align-items: center; font-size: 0.9rem; }
+  .nav a { color: var(--muted); text-decoration: none; }
+  .nav a:hover { color: var(--ink); }
+  .ghlink { display: inline-flex; align-items: center; gap: 7px; border: 1px solid var(--hair); border-radius: 8px; padding: 6px 12px; text-decoration: none; color: var(--ink); font-weight: 550; }
+  .ghlink:hover { border-color: var(--accent); }
+
+  /* Hero */
+  .hero { padding: 92px 0 64px; }
+  .eyebrow { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin: 0 0 18px; }
+  h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(2.6rem, 6vw, 4.4rem); line-height: 1.03; letter-spacing: -0.02em; margin: 0 0 22px; text-wrap: balance; max-width: 15ch; }
+  .lede { font-size: clamp(1.05rem, 2vw, 1.3rem); color: var(--muted); max-width: 54ch; margin: 0 0 34px; }
+  .lede b { color: var(--ink); font-weight: 600; }
+  .stack { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip { font-size: 0.82rem; border: 1px solid var(--hair); border-radius: 999px; padding: 6px 14px; color: var(--muted); background: var(--panel); }
+  .chip b { color: var(--ink); font-weight: 600; }
+
+  /* Section heads */
+  .sec { padding: 40px 0 8px; }
+  .sec h2 { font-family: var(--serif); font-weight: 600; font-size: 1.9rem; letter-spacing: -0.015em; margin: 0 0 6px; }
+  .sec p.sub { color: var(--muted); margin: 0 0 26px; max-width: 60ch; }
+
+  /* Template gallery */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; padding-bottom: 20px; }
+  .card { display: flex; flex-direction: column; border: 1px solid var(--hair); border-radius: 14px; overflow: hidden; background: var(--panel); text-decoration: none; color: inherit; box-shadow: var(--shadow); transition: transform .18s ease, border-color .18s ease; }
+  .card:hover { transform: translateY(-3px); border-color: color-mix(in srgb, var(--card-accent) 60%, var(--hair)); }
+  .card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .swatch { height: 132px; background: var(--card-bg); color: var(--card-ink); position: relative; padding: 16px 18px; display: flex; flex-direction: column; justify-content: space-between; }
+  .swatch .genre { font-family: var(--serif); font-size: 1.15rem; font-weight: 600; letter-spacing: -0.01em; }
+  .swatch .dots { display: flex; gap: 7px; }
+  .swatch .dots i { width: 13px; height: 13px; border-radius: 50%; display: block; }
+  .swatch .tag { align-self: flex-start; font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 8px; border-radius: 6px; background: var(--card-accent); color: var(--card-bg); font-weight: 600; }
+  .card .body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+  .card .body p { margin: 0; font-size: 0.92rem; color: var(--muted); }
+  .card .go { margin-top: auto; font-size: 0.86rem; font-weight: 600; color: var(--ink); display: inline-flex; align-items: center; gap: 6px; }
+  .card:hover .go { color: var(--card-accent); }
+
+  /* Pipeline */
+  .pipe { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1px; background: var(--hair); border: 1px solid var(--hair); border-radius: 14px; overflow: hidden; margin-bottom: 8px; }
+  .step { background: var(--panel); padding: 22px 20px; }
+  .step .n { font-family: var(--mono); font-size: 0.72rem; color: var(--accent); letter-spacing: 0.1em; }
+  .step h3 { font-size: 1rem; margin: 8px 0 6px; }
+  .step p { margin: 0; font-size: 0.88rem; color: var(--muted); }
+
+  /* Footer */
+  footer { border-top: 1px solid var(--hair); margin-top: 72px; padding: 34px 0 52px; }
+  .foot { display: flex; flex-wrap: wrap; gap: 20px 40px; justify-content: space-between; align-items: baseline; }
+  .foot a { color: var(--muted); text-decoration: none; }
+  .foot a:hover { color: var(--ink); }
+  .foot .note { font-size: 0.85rem; color: var(--faint); }
+  .foot .links { display: flex; gap: 22px; font-size: 0.9rem; }
+
+  @media (max-width: 640px) {
+    .nav .navtext { display: none; }
+    .hero { padding: 64px 0 44px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .card { transition: none; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <div class="brand">experen<span>tia</span></div>
+    <nav class="nav">
+      <a class="navtext" href="#templates">Templates</a>
+      <a class="navtext" href="#how">How it works</a>
+      <a class="ghlink" href="https://github.com/velofy/experentia">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">A taste-engine for frontends</p>
+      <h1>What good looks like, and why.</h1>
+      <p class="lede">experentia answers the two questions an AI agent cannot get from a component library alone. The answers are backed by <b>empirical research</b>, distilled into <b>machine-readable taste profiles</b>, and proven with <b>reference templates that pass their own tests</b>.</p>
+      <div class="stack">
+        <span class="chip"><b>summit.js</b> &nbsp;the runtime</span>
+        <span class="chip"><b>ui-atlas</b> &nbsp;the precedent</span>
+        <span class="chip"><b>experentia</b> &nbsp;the taste</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="templates">
+    <div class="wrap">
+      <h2>Verified reference templates</h2>
+      <p class="sub">One per genre, nav to footer, mobile-friendly at a true 390px, self-contained, each passing the pass/fail assertions in its taste profile. Open any one full-screen.</p>
+      <div class="grid">
+
+        <a class="card" href="templates/dark-cinematic-lab.html" style="--card-bg:#0A0B0A; --card-ink:#F2F1EC; --card-accent:#8ab4ff;">
+          <div class="swatch">
+            <span class="tag">dark</span>
+            <div>
+              <div class="genre">Dark Cinematic Lab</div>
+              <div class="dots"><i style="background:#0A0B0A;border:1px solid #333"></i><i style="background:#F2F1EC"></i><i style="background:#8ab4ff"></i></div>
+            </div>
+          </div>
+          <div class="body">
+            <p>Dark cinematic minimalism with terminal affordances. One image carries the emotion; the UI layer stays typographic, hairline, and flat.</p>
+            <span class="go">View template &rarr;</span>
+          </div>
+        </a>
+
+        <a class="card" href="templates/warm-light-editorial.html" style="--card-bg:#F8EFE3; --card-ink:#241E1A; --card-accent:#7A1E2D;">
+          <div class="swatch">
+            <span class="tag">light</span>
+            <div>
+              <div class="genre">Warm Light Editorial</div>
+              <div class="dots"><i style="background:#F8EFE3"></i><i style="background:#241E1A"></i><i style="background:#7A1E2D"></i></div>
+            </div>
+          </div>
+          <div class="body">
+            <p>A design-led studio journal: characterful serif display, humanist body, generous whitespace, hairline rules, one restrained oxblood accent.</p>
+            <span class="go">View template &rarr;</span>
+          </div>
+        </a>
+
+        <a class="card" href="templates/app-dashboard.html" style="--card-bg:#0E1116; --card-ink:#E8EBF0; --card-accent:#5FA8FF;">
+          <div class="swatch">
+            <span class="tag">dark</span>
+            <div>
+              <div class="genre">App Dashboard</div>
+              <div class="dots"><i style="background:#0E1116;border:1px solid #333"></i><i style="background:#E8EBF0"></i><i style="background:#5FA8FF"></i></div>
+            </div>
+          </div>
+          <div class="body">
+            <p>A data-dense product UI, scanned and operated rather than read. Summary before detail; state encoded in form: pills, chips, severity stripes, sparklines.</p>
+            <span class="go">View template &rarr;</span>
+          </div>
+        </a>
+
+        <a class="card" href="templates/developer-docs.html" style="--card-bg:#FCFCFD; --card-ink:#1B1F28; --card-accent:#1A5CD1;">
+          <div class="swatch">
+            <span class="tag">light</span>
+            <div>
+              <div class="genre">Developer Docs</div>
+              <div class="dots"><i style="background:#FCFCFD;border:1px solid #ddd"></i><i style="background:#1B1F28"></i><i style="background:#1A5CD1"></i></div>
+            </div>
+          </div>
+          <div class="body">
+            <p>A calm, high-legibility reading surface: persistent left sidebar, a ~65ch prose column, one blue accent, code surfaces clearly set apart from prose.</p>
+            <span class="go">View template &rarr;</span>
+          </div>
+        </a>
+
+        <a class="card" href="templates/commerce-marketing.html" style="--card-bg:#FAF6F0; --card-ink:#1C1714; --card-accent:#C15330;">
+          <div class="swatch">
+            <span class="tag">light</span>
+            <div>
+              <div class="genre">Commerce Marketing</div>
+              <div class="dots"><i style="background:#FAF6F0"></i><i style="background:#1C1714"></i><i style="background:#C15330"></i></div>
+            </div>
+          </div>
+          <div class="body">
+            <p>Warm boutique commerce on a light cream ground: a terracotta accent, an editorial serif display, one signature floating-product moment, an ink CTA that wins on contrast.</p>
+            <span class="go">View template &rarr;</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="how">
+    <div class="wrap">
+      <h2>How the taste is made</h2>
+      <p class="sub">Every rule downstream traces back to the evidence base. Nothing ships on opinion alone.</p>
+      <div class="pipe">
+        <div class="step"><div class="n">01 / RESEARCH</div><h3>Evidence</h3><p>Color, style, and pattern doctrine with citations, plus raw and adversarially verified claim sets.</p></div>
+        <div class="step"><div class="n">02 / TASTE</div><h3>Profiles</h3><p>One JSON per genre: tokens with precomputed contrast pairs, type roles, layout grammar, and assertions as pass/fail tests.</p></div>
+        <div class="step"><div class="n">03 / TEMPLATES</div><h3>References</h3><p>A verified implementation per genre that passes its own assertions, from nav to footer.</p></div>
+        <div class="step"><div class="n">04 / CHECKLISTS</div><h3>Pre-ship</h3><p>The defect classes found in real shipped work. An agent walks it before calling any build done.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span class="note">experentia &middot; the taste layer of the velofy stack</span>
+    <div class="links">
+      <a href="https://github.com/velofy/experentia">Repository</a>
+      <a href="https://velofy.github.io/summit/">summit.js</a>
+      <a href="https://github.com/velofy/ui-atlas">ui-atlas</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Respect a saved theme toggle if one is ever added; harmless otherwise.
+  try {
+    var t = localStorage.getItem("experentia-theme");
+    if (t) document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+</script>
+</body>
+</html>
