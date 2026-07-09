@@ -1,0 +1,1074 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Developer Docs / experentia reference template</title>
+<meta name="description" content="Reference implementation of the developer-docs genre from the experentia taste-engine. Persistent sidebar, 65ch prose column, on-this-page rail. Placeholder content, system fonts, no external requests.">
+<script>
+/* JS-added marker: gates the mobile sidebar-collapse CSS. With scripts
+   stripped, this class is absent, so the sidebar and rail stay visible.
+   Runs in <head> to avoid a flash of the collapsed state. */
+document.documentElement.className += ' has-js';
+</script>
+<style>
+/*
+  experentia reference template: developer-docs
+  Tokens, type roles, layout grammar and assertions live in
+  ../taste/developer-docs.json. This file implements that grammar.
+  Self-contained: no external requests, system fonts only, no em-dashes.
+  Committed look: light. One accent (trust-blue) for links and active state.
+*/
+
+:root {
+  color-scheme: light;
+
+  /* grounds */
+  --ground-0: #FCFCFD;     /* page ground, near-white */
+  --ground-1: #F5F6F8;     /* sidebar, rail, table header rows */
+  --ground-2: #F1F2F5;     /* fenced code-block surface */
+  --code-inline: #EDEFF3;  /* inline code chip background */
+  --accent-soft: #E8EEFB;  /* active sidebar item fill */
+
+  /* text */
+  --ink: #1B1F28;          /* primary text and headings */
+  --code-text: #252A34;    /* monospace glyphs */
+  --muted: #586074;        /* secondary text */
+
+  /* strokes */
+  --hairline: #E3E5EC;     /* decorative 1px borders */
+  --edge: #767D8E;         /* interactive borders, holds the 3:1 UI floor */
+
+  /* the one accent */
+  --accent: #1A5CD1;       /* links, active state, focus ring */
+  --accent-hover: #123F97; /* darker accent for hover/active */
+  --cta-surface: #1A5CD1;  /* filled Sign in button */
+  --cta-ink: #FFFFFF;
+
+  /* admonitions, each hue distinct from the accent */
+  --note-bg: #E4F3F4;  --note-ink: #0B6E75;  --note-edge: #0E7C86;
+  --warn-bg: #FBEFD6;  --warn-ink: #8A5A00;  --warn-edge: #A06E00;
+
+  /* type roles */
+  --font-head: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", "Roboto Mono", monospace;
+
+  /* rhythm */
+  --maxw: 1320px;
+  --sidebar-w: 264px;
+  --rail-w: 216px;
+  --pad-x: clamp(1rem, 4vw, 2rem);
+  --gap: clamp(1.5rem, 3.5vw, 2.75rem);
+  --measure: 65ch;
+  --radius: 8px;
+  --topnav-h: 60px;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--topnav-h) + 16px);
+}
+
+body {
+  margin: 0;
+  background: var(--ground-0);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.68;
+  font-weight: 400;
+  overflow-x: hidden; /* belt and braces; content is built to fit, not clip */
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* every anchor has an explicit color; components override below */
+a { color: var(--accent); text-decoration: none; }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+/* pointer clicks do not paint the ring; only keyboard focus does */
+:focus:not(:focus-visible) { outline: none; }
+
+img, svg { max-width: 100%; }
+svg { display: block; }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--pad-x);
+}
+
+.label {
+  font-family: var(--font-head);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+/* ============================================================ top nav */
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  min-height: var(--topnav-h);
+  background: color-mix(in srgb, var(--ground-0) 90%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--hairline);
+}
+.topnav__row {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.75rem, 2vw, 1.75rem);
+  min-height: var(--topnav-h);
+  flex-wrap: wrap;
+  padding-block: 8px;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--ink);
+  flex: 0 0 auto;
+  min-width: 0;
+}
+.brand__mark { color: var(--accent); flex: 0 0 auto; }
+.brand__name {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 1.02rem;
+  letter-spacing: -0.01em;
+}
+.brand__tag {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  border-left: 1px solid var(--hairline);
+  padding-left: 0.55rem;
+}
+.topnav__links {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 1.6vw, 1.4rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+.topnav__link {
+  font-family: var(--font-head);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink);
+  padding: 6px 2px;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+.topnav__link:hover { color: var(--accent); }
+.topnav__link[aria-current="page"] {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+.topnav__spacer { flex: 1 1 auto; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-family: var(--font-head);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--cta-ink);
+  background: var(--cta-surface);
+  border: 1px solid var(--cta-surface);
+  border-radius: var(--radius);
+  padding: 8px 16px;
+  text-decoration: none;
+  white-space: nowrap;
+  flex: 0 0 auto;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.btn:hover { color: var(--cta-ink); background: var(--accent-hover); border-color: var(--accent-hover); }
+
+/* ============================================================ docs shell */
+.shell {
+  display: grid;
+  grid-template-columns: var(--sidebar-w) minmax(0, 1fr) var(--rail-w);
+  gap: var(--gap);
+  align-items: start;
+}
+
+/* ============================================================ sidebar */
+.sidebar {
+  position: sticky;
+  top: var(--topnav-h);
+  align-self: start;
+  max-height: calc(100vh - var(--topnav-h));
+  overflow-y: auto;
+  padding: 1.5rem 0 2rem;
+  min-width: 0;
+  border-right: 1px solid var(--hairline);
+}
+.search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--edge);
+  background: var(--ground-0);
+  border-radius: var(--radius);
+  padding: 7px 10px;
+  margin: 0 1rem 1.5rem 0;
+}
+.search svg { color: var(--muted); flex: 0 0 auto; }
+.search input {
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 0.9rem;
+  color: var(--ink);
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+}
+.search input::placeholder { color: var(--muted); }
+.search input:focus-visible { outline: none; }
+.search:focus-within { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft); }
+
+.side-group { margin-bottom: 1.4rem; }
+.side-group__title {
+  margin: 0 0 0.55rem;
+  padding: 0 1rem;
+}
+.side-list { list-style: none; margin: 0; padding: 0; }
+.side-link {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 6px 1rem 6px calc(1rem - 3px);
+  border-left: 3px solid transparent;
+  border-radius: 0 4px 4px 0;
+}
+.side-link:hover { color: var(--ink); background: var(--ground-1); }
+.side-link[aria-current="page"] {
+  color: var(--accent);
+  font-weight: 600;
+  background: var(--accent-soft);
+  border-left-color: var(--accent);
+}
+
+/* ============================================================ content column */
+.content { min-width: 0; padding-block: 1.75rem 3rem; }
+
+.docs-toggle {
+  display: none; /* only shown with JS at phone width */
+  align-items: center;
+  gap: 0.5em;
+  font-family: var(--font-head);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--ground-1);
+  border: 1px solid var(--edge);
+  border-radius: var(--radius);
+  padding: 8px 12px;
+  margin-bottom: 1.25rem;
+  cursor: pointer;
+}
+.docs-toggle:hover { border-color: var(--accent); color: var(--accent); }
+.docs-toggle svg { color: currentColor; }
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-head);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.breadcrumb a { color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.breadcrumb .sep { color: var(--hairline); }
+.breadcrumb .here { color: var(--ink); }
+
+/* ============================================================ prose */
+.prose { min-width: 0; }
+.prose > * { max-width: var(--measure); }
+.prose h1 {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: clamp(1.9rem, 3.4vw, 2.5rem);
+  line-height: 1.14;
+  letter-spacing: -0.015em;
+  margin: 0 0 0.75rem;
+  text-wrap: balance;
+}
+.prose .lede {
+  color: var(--muted);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin: 0 0 2rem;
+}
+.prose h2 {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: -0.011em;
+  line-height: 1.25;
+  margin: 2.75rem 0 0.9rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--hairline);
+  scroll-margin-top: calc(var(--topnav-h) + 16px);
+}
+.prose h3 {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: -0.008em;
+  margin: 1.9rem 0 0.7rem;
+  scroll-margin-top: calc(var(--topnav-h) + 16px);
+}
+.prose p { margin: 0 0 1.1rem; }
+.prose ul, .prose ol { margin: 0 0 1.1rem; padding-left: 1.3rem; }
+.prose li { margin: 0.35rem 0; }
+.prose strong { font-weight: 600; color: var(--ink); }
+
+/* inline prose links: the one intentional container-scoped anchor rule.
+   The pager and breadcrumb live OUTSIDE .prose so this never outranks them. */
+.prose a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  word-break: break-word;
+}
+.prose a:hover { color: var(--accent-hover); }
+
+/* heading anchor: higher specificity than .prose a so it keeps its own look */
+.prose .h-anchor {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 400;
+  margin-left: 0.35em;
+  opacity: 0;
+  transition: opacity 0.12s ease, color 0.12s ease;
+}
+.prose h2:hover .h-anchor,
+.prose h3:hover .h-anchor,
+.prose .h-anchor:focus-visible { opacity: 1; }
+.prose .h-anchor:hover { color: var(--accent); }
+
+/* inline code */
+.prose code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  color: var(--code-text);
+  background: var(--code-inline);
+  border: 1px solid var(--hairline);
+  border-radius: 5px;
+  padding: 0.1em 0.36em;
+  word-break: break-word;
+}
+
+/* ============================================================ code blocks */
+.code {
+  max-width: var(--measure);
+  min-width: 0;
+  margin: 0 0 1.4rem;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  background: var(--ground-2);
+  overflow: hidden;
+}
+.code__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 6px 10px 6px 14px;
+  border-bottom: 1px solid var(--hairline);
+  background: var(--ground-1);
+}
+.code__lang {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+.code__copy {
+  font-family: var(--font-head);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--ground-0);
+  border: 1px solid var(--edge);
+  border-radius: 6px;
+  padding: 4px 9px;
+  cursor: pointer;
+  flex: 0 0 auto;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.code__copy:hover { color: var(--accent); border-color: var(--accent); }
+/* long lines scroll inside this container; they never widen the page */
+.code__pre {
+  margin: 0;
+  padding: 14px;
+  overflow-x: auto;
+  min-width: 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+.code__pre code {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--code-text);
+  white-space: pre;
+  display: block;
+}
+.code__pre .tok-comment { color: var(--muted); }
+.code__pre .tok-str { color: var(--note-ink); }
+.code__pre .tok-prompt { color: var(--muted); user-select: none; }
+
+/* ============================================================ admonitions */
+.admonition {
+  max-width: var(--measure);
+  border: 1px solid var(--hairline);
+  border-left-width: 3px;
+  border-radius: var(--radius);
+  padding: 0.95rem 1.1rem;
+  margin: 0 0 1.4rem;
+}
+.admonition__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  font-family: var(--font-head);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  font-size: 0.72rem;
+  margin-bottom: 0.4rem;
+}
+.admonition__title svg { flex: 0 0 auto; }
+.admonition p { margin: 0; color: var(--ink); }
+.admonition p + p { margin-top: 0.6rem; }
+.admonition--note {
+  background: var(--note-bg);
+  border-color: var(--hairline);
+  border-left-color: var(--note-edge);
+}
+.admonition--note .admonition__title { color: var(--note-ink); }
+.admonition--warn {
+  background: var(--warn-bg);
+  border-color: var(--hairline);
+  border-left-color: var(--warn-edge);
+}
+.admonition--warn .admonition__title { color: var(--warn-ink); }
+
+/* ============================================================ on-this-page rail */
+.rail {
+  position: sticky;
+  top: calc(var(--topnav-h) + 1.75rem);
+  align-self: start;
+  min-width: 0;
+  padding-top: 1.75rem;
+  font-size: 0.85rem;
+}
+.rail__title { margin: 0 0 0.7rem; }
+.rail__list { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--hairline); }
+.rail__list--sub { margin-left: 0.85rem; }
+.toc__link {
+  display: block;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 4px 0 4px 0.85rem;
+  margin-left: -1px;
+  border-left: 2px solid transparent;
+  line-height: 1.4;
+}
+.toc__link:hover { color: var(--ink); }
+.toc__link.is-active {
+  color: var(--accent);
+  font-weight: 600;
+  border-left-color: var(--accent);
+}
+
+/* ============================================================ pager (outside .prose) */
+.pager {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  max-width: var(--measure);
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--hairline);
+}
+.pager__card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  color: var(--ink);
+  text-decoration: none;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 0.85rem 1rem;
+  min-width: 0;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.pager__card:hover { border-color: var(--accent); background: var(--ground-1); }
+.pager__card--next { text-align: right; }
+.pager__dir { font-family: var(--font-head); font-size: 0.75rem; color: var(--muted); }
+.pager__title { font-family: var(--font-head); font-weight: 600; font-size: 0.98rem; color: var(--ink); }
+.pager__card:hover .pager__title { color: var(--accent); }
+
+/* ============================================================ footer */
+.footer {
+  border-top: 1px solid var(--hairline);
+  background: var(--ground-1);
+  margin-top: 1rem;
+}
+.footer__cols {
+  display: grid;
+  grid-template-columns: 1.6fr repeat(3, 1fr);
+  gap: var(--gap);
+  padding-block: clamp(2rem, 5vh, 3rem);
+}
+.footer__brand { display: flex; flex-direction: column; gap: 0.8rem; min-width: 0; }
+.footer__mark { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--ink); }
+.footer__mission { color: var(--muted); max-width: 34ch; font-size: 0.9rem; margin: 0; line-height: 1.55; }
+.footer__col { display: flex; flex-direction: column; gap: 0.55rem; min-width: 0; }
+.footer__col h3 { margin: 0 0 0.35rem; }
+.footer__link {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+.footer__link:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.footer__bar {
+  border-top: 1px solid var(--hairline);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-block: 1.1rem 1.4rem;
+}
+.footer__copy { font-family: var(--font-head); font-size: 0.8rem; color: var(--muted); }
+.footer__legal { display: flex; gap: 1.1rem; flex-wrap: wrap; }
+.footer__legal a { font-family: var(--font-head); font-size: 0.8rem; color: var(--muted); text-decoration: none; }
+.footer__legal a:hover { color: var(--accent); }
+
+/* ============================================================ page-transition loader */
+/* additive only: starts hidden via [hidden], so no-JS renders full content */
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+  background: color-mix(in srgb, var(--ground-0) 86%, transparent);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  transition: opacity 0.18s ease;
+}
+.loader[hidden] { display: none; }
+.loader.is-on { opacity: 1; }
+.loader__ring {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--hairline);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+.loader__mark { display: none; color: var(--accent); }
+.loader__label {
+  font-family: var(--font-head);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* reduced motion: no spin, a static mark stands in for the ring */
+@media (prefers-reduced-motion: reduce) {
+  .loader__ring { display: none; }
+  .loader__mark { display: block; }
+}
+
+/* ============================================================ responsive */
+
+/* drop the on-this-page rail first */
+@media (max-width: 1080px) {
+  .shell { grid-template-columns: var(--sidebar-w) minmax(0, 1fr); }
+  .rail { display: none; }
+}
+
+/* single column with a collapsible sidebar */
+@media (max-width: 900px) {
+  .shell { grid-template-columns: minmax(0, 1fr); }
+  .sidebar {
+    position: static;
+    max-height: none;
+    border-right: 0;
+    border-bottom: 1px solid var(--hairline);
+    padding-top: 1.25rem;
+  }
+  .search { margin-right: 0; }
+  /* collapse behavior only exists when JS is present, so no-JS shows content */
+  .has-js .sidebar { display: none; }
+  .has-js .sidebar.is-open { display: block; }
+  .has-js .docs-toggle { display: inline-flex; }
+}
+
+@media (max-width: 560px) {
+  .topnav__spacer { display: none; }
+  .topnav__links { order: 3; flex-basis: 100%; gap: 1rem; }
+  .brand__tag { display: none; }
+  .footer__cols { grid-template-columns: 1fr 1fr; }
+  .footer__brand { grid-column: 1 / -1; }
+  .pager { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 380px) {
+  .footer__cols { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ================= top nav ================= -->
+<header class="topnav">
+  <div class="wrap topnav__row">
+    <a class="brand" href="./index.html" data-demo aria-label="Example docs home">
+      <svg class="brand__mark" width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
+        <rect x="1.5" y="1.5" width="19" height="19" rx="5" fill="none" stroke="currentColor" stroke-width="1.7"></rect>
+        <path d="M7 7.5h8M7 11h8M7 14.5h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path>
+      </svg>
+      <span class="brand__name">Example</span>
+      <span class="brand__tag">Docs</span>
+    </a>
+
+    <span class="topnav__spacer" aria-hidden="true"></span>
+
+    <ul class="topnav__links">
+      <li><a class="topnav__link" href="./product.html" data-demo>Product</a></li>
+      <li><a class="topnav__link" href="./docs.html" data-demo aria-current="page">Docs</a></li>
+      <li><a class="topnav__link" href="./api.html" data-demo>API</a></li>
+      <li><a class="topnav__link" href="./blog.html" data-demo>Blog</a></li>
+    </ul>
+
+    <a class="btn" href="./signin.html" data-demo>Sign in</a>
+  </div>
+</header>
+
+<!-- ================= docs shell ================= -->
+<div class="wrap">
+  <div class="shell">
+
+    <!-- ---------- left sidebar ---------- -->
+    <aside class="sidebar" id="doc-sidebar" aria-label="Documentation sections">
+      <form class="search" role="search" action="./search.html" method="get" data-demo-form>
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+          <circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6"></circle>
+          <path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+        </svg>
+        <input type="search" name="q" placeholder="Search docs" aria-label="Search documentation">
+      </form>
+
+      <nav class="side-group" aria-label="Get started">
+        <h2 class="label side-group__title">Get started</h2>
+        <ul class="side-list">
+          <li><a class="side-link" href="./introduction.html" data-demo>Introduction</a></li>
+          <li><a class="side-link" href="./quickstart.html" data-demo aria-current="page">Quickstart</a></li>
+          <li><a class="side-link" href="./core-concepts.html" data-demo>Core concepts</a></li>
+        </ul>
+      </nav>
+
+      <nav class="side-group" aria-label="Guides">
+        <h2 class="label side-group__title">Guides</h2>
+        <ul class="side-list">
+          <li><a class="side-link" href="./configuration.html" data-demo>Configuration</a></li>
+          <li><a class="side-link" href="./authentication.html" data-demo>Authentication</a></li>
+          <li><a class="side-link" href="./deployments.html" data-demo>Deployments</a></li>
+        </ul>
+      </nav>
+
+      <nav class="side-group" aria-label="Reference">
+        <h2 class="label side-group__title">Reference</h2>
+        <ul class="side-list">
+          <li><a class="side-link" href="./cli.html" data-demo>CLI</a></li>
+          <li><a class="side-link" href="./api-reference.html" data-demo>API</a></li>
+          <li><a class="side-link" href="./sdk.html" data-demo>SDK</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- ---------- main content ---------- -->
+    <main class="content">
+      <button class="docs-toggle" type="button" aria-expanded="false" aria-controls="doc-sidebar">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path>
+        </svg>
+        Browse docs
+      </button>
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="./docs.html" data-demo>Docs</a>
+        <span class="sep" aria-hidden="true">/</span>
+        <a href="./get-started.html" data-demo>Get started</a>
+        <span class="sep" aria-hidden="true">/</span>
+        <span class="here" aria-current="page">Quickstart</span>
+      </nav>
+
+      <article class="prose">
+        <h1>Quickstart</h1>
+        <p class="lede">This guide takes a new project from an empty folder to a running local server in about five minutes. Every command below is copyable, and every heading links to itself, so you can share an exact spot in the page.</p>
+
+        <h2 id="install">Install the toolkit <a class="h-anchor" href="#install" data-anchor aria-label="Copy link to Install the toolkit">#</a></h2>
+        <p>Install the packages with your usual package manager. The install line pins exact versions, so a fresh checkout resolves the same dependency tree every time.</p>
+
+        <div class="code">
+          <div class="code__bar">
+            <span class="code__lang">bash</span>
+            <button class="code__copy" type="button" data-copy="npm install @example/ui-kit @example/tokens @example/icons --save-exact --registry=https://registry.example.com/npm/" aria-label="Copy install command">Copy</button>
+          </div>
+          <pre class="code__pre"><code><span class="tok-prompt">$ </span>npm install @example/ui-kit @example/tokens @example/icons --save-exact --registry=https://registry.example.com/npm/</code></pre>
+        </div>
+
+        <p>Prefer to keep a lockfile in source control. If you use a different client, swap <code>npm install</code> for the equivalent, for example <code>pnpm add</code> or <code>yarn add</code>.</p>
+
+        <h2 id="initialize">Initialize a project <a class="h-anchor" href="#initialize" data-anchor aria-label="Copy link to Initialize a project">#</a></h2>
+        <p>Run the initializer from the folder you want to use as the project root. It writes a config file and a starter entry point, and it never overwrites files you already have.</p>
+
+        <h3 id="create-the-config">Create the config <a class="h-anchor" href="#create-the-config" data-anchor aria-label="Copy link to Create the config">#</a></h3>
+        <p>The initializer drops an <code>example.config.js</code> at the root. Open it and set the source and output folders to match your layout.</p>
+
+        <div class="code">
+          <div class="code__bar">
+            <span class="code__lang">example.config.js</span>
+            <button class="code__copy" type="button" data-copy='export default {
+  root: "./src",
+  output: "./dist",
+  tokens: "@example/tokens",
+  strict: true,
+}' aria-label="Copy config">Copy</button>
+          </div>
+          <pre class="code__pre"><code><span class="tok-comment">// example.config.js</span>
+export default {
+  root: <span class="tok-str">"./src"</span>,
+  output: <span class="tok-str">"./dist"</span>,
+  tokens: <span class="tok-str">"@example/tokens"</span>,
+  strict: true,
+}</code></pre>
+        </div>
+
+        <div class="admonition admonition--note" role="note">
+          <div class="admonition__title">
+            <svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true">
+              <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.5"></circle>
+              <path d="M8 7v4.5M8 4.6v0.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+            </svg>
+            Note
+          </div>
+          <p>The config is plain JavaScript, so you can compute values at load time. Keep it free of secrets, and read credentials from the environment instead. See the <a href="./configuration.html" data-demo>Configuration guide</a> for every option.</p>
+        </div>
+
+        <h2 id="run">Run the dev server <a class="h-anchor" href="#run" data-anchor aria-label="Copy link to Run the dev server">#</a></h2>
+        <p>Start the local server. It watches the source folder and reloads the page whenever a file changes.</p>
+
+        <div class="code">
+          <div class="code__bar">
+            <span class="code__lang">bash</span>
+            <button class="code__copy" type="button" data-copy="npm run dev -- --host 0.0.0.0 --port 4173 --open" aria-label="Copy dev command">Copy</button>
+          </div>
+          <pre class="code__pre"><code><span class="tok-prompt">$ </span>npm run dev -- --host 0.0.0.0 --port 4173 --open</code></pre>
+        </div>
+
+        <p>The server prints a local URL and a network URL. Open either one in a browser to see the starter page.</p>
+
+        <div class="admonition admonition--warn" role="note">
+          <div class="admonition__title">
+            <svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M8 1.8l6.4 11.4H1.6L8 1.8z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+              <path d="M8 6.4v3.4M8 11.6v0.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+            </svg>
+            Warning
+          </div>
+          <p>Binding to <code>0.0.0.0</code> exposes the dev server to your local network. Use it only on networks you trust, and never as a production server.</p>
+        </div>
+
+        <h2 id="next-steps">Next steps <a class="h-anchor" href="#next-steps" data-anchor aria-label="Copy link to Next steps">#</a></h2>
+        <p>Once the server is running, keep going:</p>
+        <ul>
+          <li>Read <a href="./core-concepts.html" data-demo>Core concepts</a> to learn how the pieces fit together.</li>
+          <li>Follow the <a href="./configuration.html" data-demo>Configuration guide</a> for the full option reference.</li>
+          <li>Set up <a href="./authentication.html" data-demo>Authentication</a> before you deploy.</li>
+        </ul>
+      </article>
+
+      <!-- prev/next pager: sibling of .prose so container rules never touch it -->
+      <nav class="pager" aria-label="Pagination">
+        <a class="pager__card pager__card--prev" href="./introduction.html" data-demo>
+          <span class="pager__dir"><span aria-hidden="true">&#8592;</span> Previous</span>
+          <span class="pager__title">Introduction</span>
+        </a>
+        <a class="pager__card pager__card--next" href="./core-concepts.html" data-demo>
+          <span class="pager__dir">Next <span aria-hidden="true">&#8594;</span></span>
+          <span class="pager__title">Core concepts</span>
+        </a>
+      </nav>
+    </main>
+
+    <!-- ---------- on this page rail ---------- -->
+    <aside class="rail" aria-label="On this page">
+      <h2 class="label rail__title">On this page</h2>
+      <ul class="rail__list">
+        <li><a class="toc__link is-active" href="#install">Install the toolkit</a></li>
+        <li>
+          <a class="toc__link" href="#initialize">Initialize a project</a>
+          <ul class="rail__list rail__list--sub">
+            <li><a class="toc__link" href="#create-the-config">Create the config</a></li>
+          </ul>
+        </li>
+        <li><a class="toc__link" href="#run">Run the dev server</a></li>
+        <li><a class="toc__link" href="#next-steps">Next steps</a></li>
+      </ul>
+    </aside>
+
+  </div>
+</div>
+
+<!-- ================= footer ================= -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__cols">
+      <div class="footer__brand">
+        <span class="footer__mark">
+          <svg class="brand__mark" width="20" height="20" viewBox="0 0 22 22" aria-hidden="true">
+            <rect x="1.5" y="1.5" width="19" height="19" rx="5" fill="none" stroke="currentColor" stroke-width="1.7"></rect>
+            <path d="M7 7.5h8M7 11h8M7 14.5h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path>
+          </svg>
+          <span class="brand__name">Example</span>
+        </span>
+        <p class="footer__mission">Placeholder documentation for a reference template. No real product implied; every name here is a generic stand-in.</p>
+      </div>
+
+      <nav class="footer__col" aria-label="Product">
+        <h3 class="label">Product</h3>
+        <a class="footer__link" href="./overview.html" data-demo>Overview</a>
+        <a class="footer__link" href="./changelog.html" data-demo>Changelog</a>
+        <a class="footer__link" href="./pricing.html" data-demo>Pricing</a>
+      </nav>
+
+      <nav class="footer__col" aria-label="Resources">
+        <h3 class="label">Resources</h3>
+        <a class="footer__link" href="./docs.html" data-demo>Docs</a>
+        <a class="footer__link" href="./guides.html" data-demo>Guides</a>
+        <a class="footer__link" href="./api-reference.html" data-demo>API reference</a>
+      </nav>
+
+      <nav class="footer__col" aria-label="Company">
+        <h3 class="label">Company</h3>
+        <a class="footer__link" href="./blog.html" data-demo>Blog</a>
+        <a class="footer__link" href="./careers.html" data-demo>Careers</a>
+        <a class="footer__link" href="./contact.html" data-demo>Contact</a>
+      </nav>
+    </div>
+
+    <div class="footer__bar">
+      <span class="footer__copy">Example, 2026</span>
+      <div class="footer__legal">
+        <a href="./privacy.html" data-demo>Privacy</a>
+        <a href="./terms.html" data-demo>Terms</a>
+        <a href="./status.html" data-demo>Status</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= page-transition loader ================= -->
+<div class="loader" id="nav-loader" role="status" aria-live="polite" aria-label="Loading the next page" hidden>
+  <div class="loader__ring" aria-hidden="true"></div>
+  <svg class="loader__mark" width="34" height="34" viewBox="0 0 22 22" aria-hidden="true">
+    <rect x="1.5" y="1.5" width="19" height="19" rx="5" fill="none" stroke="currentColor" stroke-width="1.7"></rect>
+    <path d="M7 7.5h8M7 11h8M7 14.5h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path>
+  </svg>
+  <span class="loader__label">Loading</span>
+</div>
+
+<script>
+/* ---- sidebar toggle (mobile) ---------------------------------------
+   The .has-js class (added in <head>) is what enables the collapse CSS,
+   so with scripts stripped the sidebar is always shown. */
+(function () {
+  var toggle = document.querySelector('.docs-toggle');
+  var sidebar = document.getElementById('doc-sidebar');
+  if (!toggle || !sidebar) return;
+  toggle.addEventListener('click', function () {
+    var open = sidebar.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  /* close the sidebar after picking a page on mobile */
+  sidebar.addEventListener('click', function (e) {
+    if (e.target.closest('a') && window.matchMedia('(max-width: 900px)').matches) {
+      sidebar.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
+
+/* ---- page-transition loader ----------------------------------------
+   Rule (research/patterns.md): the best loading state is not needing one.
+   Under a 300ms threshold we show nothing; only a genuinely pending
+   navigation reveals a single centered indeterminate ring on the ground.
+
+   In production (a real multi-page site) you keep only the "real
+   navigation" branch below and delete the data-demo attributes: the
+   browser's own navigation drives show(), and pageshow/popstate drive
+   cancel(). The data-demo branch lets this ONE standalone file
+   demonstrate the exact same loader without a server. */
+(function () {
+  var overlay = document.getElementById('nav-loader');
+  if (!overlay) return;
+
+  var DELAY = 300;        // threshold below which no loader is shown
+  var DEMO_SETTLE = 1400; // stand-in for a real navigation completing
+  var timer = null;
+
+  function show() {
+    overlay.hidden = false;
+    void overlay.offsetWidth; // reflow so the opacity transition runs
+    overlay.classList.add('is-on');
+  }
+  function schedule() {
+    clearTimeout(timer);
+    timer = setTimeout(show, DELAY);
+  }
+  function cancel() {
+    clearTimeout(timer);
+    overlay.classList.remove('is-on');
+    var hide = function () { overlay.hidden = true; overlay.removeEventListener('transitionend', hide); };
+    if (getComputedStyle(overlay).opacity === '0') { overlay.hidden = true; }
+    else { overlay.addEventListener('transitionend', hide); }
+  }
+
+  document.addEventListener('click', function (e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var a = e.target.closest('a[href]');
+    if (!a) return;
+    if (a.target && a.target !== '_self') return;               // opens a new tab
+    var url;
+    try { url = new URL(a.getAttribute('href'), location.href); } catch (err) { return; }
+    if (url.origin !== location.origin) return;                 // external link
+    if (url.pathname === location.pathname && url.hash) return; // same-page anchor
+
+    if (a.hasAttribute('data-demo')) {
+      // standalone demonstration: same loader, no real navigation
+      e.preventDefault();
+      schedule();
+      setTimeout(cancel, DELAY + DEMO_SETTLE);
+      return;
+    }
+    schedule(); // real cross-document navigation; browser unload takes over
+  });
+
+  window.addEventListener('pageshow', cancel);  // covers bfcache restore
+  window.addEventListener('popstate', cancel);
+})();
+
+/* ---- copy buttons and heading-anchor copy --------------------------- */
+(function () {
+  function flash(el, label) {
+    var prev = el.textContent;
+    el.textContent = label;
+    setTimeout(function () { el.textContent = prev; }, 1400);
+  }
+  function copy(text, done) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, done);
+    } else { done(); }
+  }
+  document.querySelectorAll('[data-copy]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      copy(btn.getAttribute('data-copy'), function () { flash(btn, 'Copied'); });
+    });
+  });
+  /* heading anchors also copy the full deep link; the hash still updates
+     for keyboard and no-clipboard users, so the affordance never depends
+     on the clipboard API. */
+  document.querySelectorAll('[data-anchor]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var href = a.getAttribute('href');
+      copy(location.origin + location.pathname + href, function () {});
+    });
+  });
+})();
+
+/* ---- on-this-page scrollspy (progressive enhancement) --------------
+   No-JS default: the first rail item is marked active in the HTML and
+   every heading link still works. This just moves the active marker. */
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll('.toc__link'));
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  var byId = {};
+  var targets = [];
+  links.forEach(function (l) {
+    var id = l.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if (el) { byId[id] = l; targets.push(el); }
+  });
+  var visible = new Set();
+  function setActive() {
+    links.forEach(function (l) { l.classList.remove('is-active'); });
+    var first = targets.find(function (t) { return visible.has(t.id); });
+    if (first && byId[first.id]) byId[first.id].classList.add('is-active');
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) visible.add(en.target.id);
+      else visible.delete(en.target.id);
+    });
+    setActive();
+  }, { rootMargin: '-72px 0px -66% 0px', threshold: 0 });
+  targets.forEach(function (t) { io.observe(t); });
+})();
+</script>
+</body>
+</html>

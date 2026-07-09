@@ -1,0 +1,259 @@
+{
+  "name": "commerce-marketing",
+  "version": "1.0.0",
+  "genre": "The conversion-focused storefront landing page: warm boutique commerce on a light cream ground. Prototypical in structure so it parses as a store in 50ms, differentiated in surface by a terracotta brand accent, an editorial serif display, and one signature floating-product moment. The primary CTA is a filled ink block that wins on contrast, never on hue.",
+  "provenance": {
+    "sample": "genre defined for experentia; no single sample file",
+    "research": ["research/color.md", "research/style.md", "research/patterns.md"],
+    "checklist": "checklists/pre-ship.md",
+    "evidence_note": "Low visual complexity plus high prototypicality wins the first impression (style.md), so the storefront keeps the familiar nav, hero, trust strip, grid, testimonials, pricing, footer order and spends its novelty budget once on the warm palette and one floating hero product. There is no universally best CTA hue: button performance tracks contrast against the surrounding page, not color (patterns.md, isolation effect), so the CTA is a near-ink fill that reads as the highest-contrast element on the cream ground, and the terracotta brand accent is deliberately held below the CTA in contrast. Semantic value/positive signals use a green family kept distinct from the terracotta accent so a status never reads as brand. Light warm ground is an audience choice for broad consumer warmth (color.md), the opposite parameter from the dark developer genre."
+  },
+  "tokens": {
+    "grounds": {
+      "ground-0": {
+        "value": "#FAF6F0",
+        "role": "page ground: a warm cream, never pure #FFF, gives the white product cards something to sit on"
+      },
+      "surface": {
+        "value": "#FFFFFF",
+        "role": "raised product-card and pricing-card surface; pops as pure white against the cream ground"
+      },
+      "ground-2": {
+        "value": "#F3ECE1",
+        "role": "alternating band ground: trust strip, testimonial band, footer; a deeper cream for section rhythm"
+      }
+    },
+    "ink": {
+      "value": "#1C1714",
+      "role": "primary text, focus ring, and the CTA fill; a warm near-black, never pure #000"
+    },
+    "muted": {
+      "value": "#6B6157",
+      "role": "secondary text, subcopy, captions, footer body, strikethrough compare-at prices; warm gray-brown"
+    },
+    "hairline": {
+      "value": "#E6DDD0",
+      "role": "decorative 1px borders: card outlines, section rules, footer dividers. Decorative only, carries no meaning alone, exempt from the 3:1 UI floor"
+    },
+    "edge": {
+      "value": "#8F8068",
+      "role": "interactive border: outlined secondary buttons, quantity steppers, any stroke that must read as a control; holds the 3:1 UI-component floor on every ground"
+    },
+    "cta": {
+      "surface": "#1C1714",
+      "ink": "#FBF7F1",
+      "role": "THE primary action surface. A filled near-ink block with off-white text. CTA emphasis comes from contrast against the cream ground (16.5:1 fill), not from hue (patterns.md isolation effect); it must remain the highest-contrast interactive element in its viewport and must never be recolored or underlined by a container rule"
+    },
+    "accent": {
+      "value": "#C15330",
+      "text": "#A23A1C",
+      "on-accent": "#FFFFFF",
+      "role": "terracotta brand accent: eyebrows, section index numerals, brand mark, rating stars, hero glow, hover accents, and the Most-popular plan ribbon (brand emphasis, not a status). value is used for fills, large text, and meaningful graphics (>=3:1); text (#A23A1C) is the darker cut for small terracotta text on light (>=4.5:1); on-accent (#FFFFFF) is the only text allowed on an accent fill (4.62:1). Held BELOW the CTA in contrast on purpose"
+    },
+    "semantic": {
+      "success": "#2F7D4F",
+      "success-text": "#1E6B3E",
+      "success-tint": "#E0EEE4",
+      "role": "green value/positive family, kept visibly distinct from the terracotta accent so a status never reads as brand: in-stock dots, free-shipping and secure-checkout marks, and Save-amount labels. success is the graphic/large cut (>=3:1 on light), success-text the small-text cut (>=4.5:1), success-tint the soft pill ground for in-stock and save badges"
+    },
+    "accent-tint": {
+      "value": "#F6E3DA",
+      "role": "soft terracotta wash for product-thumbnail grounds and quiet accent pills; decorative. Only ink (14.3:1) or accent-text (5.4:1) may sit on it"
+    },
+    "contrast_pairs_precomputed": {
+      "ink_on_ground-0": "16.50:1",
+      "ink_on_surface": "17.77:1",
+      "ink_on_ground-2": "15.14:1",
+      "muted_on_ground-0": "5.62:1",
+      "muted_on_surface": "6.05:1",
+      "muted_on_ground-2": "5.15:1",
+      "edge_on_ground-0": "3.58:1",
+      "edge_on_surface": "3.85:1",
+      "edge_on_ground-2": "3.28:1",
+      "cta-ink_on_cta-surface": "16.65:1",
+      "cta-surface_on_ground-0": "16.50:1",
+      "cta-surface_on_surface": "17.77:1",
+      "accent_on_ground-0": "4.29:1",
+      "accent-text_on_ground-0": "6.18:1",
+      "on-accent_on_accent": "4.62:1",
+      "success_on_ground-0": "4.68:1",
+      "success-text_on_ground-0": "6.04:1",
+      "focus-ring-ink_on_ground-0": "16.50:1"
+    }
+  },
+  "type_roles": {
+    "display_serif": {
+      "stack": "'Hoefler Text', 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif",
+      "weight": 700,
+      "letter_spacing": "-0.01em",
+      "case": "sentence case, one confident promise, no exclamation",
+      "size": "clamp(2.5rem, 6vw, 4.5rem)",
+      "role": "the confident display face: hero headline and the largest section headers. An editorial serif is the surface differentiator against the mostly-sans commerce category"
+    },
+    "body_humanist": {
+      "stack": "ui-sans-serif, system-ui, -apple-system, 'Seravek', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+      "weight": 400,
+      "size": "1rem",
+      "line_height": 1.6,
+      "role": "clean humanist body: subcopy, paragraphs, testimonial quotes, product descriptions, feature copy, footer prose"
+    },
+    "utility_mono": {
+      "stack": "ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace",
+      "transform": "uppercase for labels, none for prices",
+      "weight": 500,
+      "numeric": "font-variant-numeric: tabular-nums for every price, rating, count, and plan figure so digits align in columns",
+      "sizes_and_tracking": {
+        "eyebrow": { "size": "0.75rem", "letter_spacing": "0.16em" },
+        "microlabel": { "size": "0.6875rem", "letter_spacing": "0.12em" },
+        "nav_item": { "size": "0.8125rem", "letter_spacing": "0.02em" },
+        "price": { "size": "1.25rem", "letter_spacing": "0" }
+      },
+      "role": "the utility face: prices, unit labels, badges, ratings, counts, eyebrows, nav items, and footer link labels. If it is a number a shopper compares or a label that wayfinds, it is mono with tabular figures"
+    }
+  },
+  "layout_grammar": {
+    "note": "Ordered top to bottom, nav to footer. Slot names are the section ids. The order is deliberately the prototypical storefront sequence; novelty is spent on surface only. Mobile-first: the product grid and the pricing columns both collapse to one column at 390px, and no row may cause page-level horizontal scroll.",
+    "slots": [
+      {
+        "order": 1,
+        "name": "top-nav",
+        "contract": "Left: wordmark (serif brand cut) with a small geometric mark. Center or right: at most 5 primary destinations as plain mono links, all visible with no hamburger at any width. Far right: a cart affordance with a tabular item count, then exactly one filled ink CTA. At phone width the destinations wrap to a visible second row; never a hamburger, never more than 5 destinations. Every anchor has an explicit color; the CTA never inherits a container link rule."
+      },
+      {
+        "order": 2,
+        "name": "hero",
+        "contract": "A value headline in the serif display face, a two-line humanist subcopy, a primary filled ink CTA (the highest-contrast element in the viewport) plus one quiet secondary text link, and a generated product visual built from CSS and inline SVG (no external asset). The product is the one signature moment: a slow float under normal motion, static under reduced motion, sitting on a soft terracotta radial glow. The hero adds no second filled block."
+      },
+      {
+        "order": 3,
+        "name": "trust-strip",
+        "contract": "A single band on ground-2: rating stars rendered in the terracotta accent, a tabular rating figure and review count, and three to five neutral placeholder marks (invented generic wordmarks, no real brands, no logos of real companies). Reads as social proof without a single real brand name."
+      },
+      {
+        "order": 4,
+        "name": "product-grid",
+        "contract": "A responsive grid of product cards on white surfaces. Each card carries a generated inline-SVG product image on a tinted ground, a product name, a price in the mono tabular face (with an optional strikethrough compare-at price and a green Save label), an optional green in-stock dot, and an add-to-cart CTA styled as the filled ink control. Three columns on desktop, two at mid width, ONE column at 390px. Price and button rows wrap and never overflow."
+      },
+      {
+        "order": 5,
+        "name": "testimonial-band",
+        "contract": "A social-proof band of placeholder quotes, each with an attributed placeholder shopper name and a small role line, plus per-quote rating stars in the accent. Humanist body for the quote, mono for the attribution label. All names and companies are obviously generic placeholders."
+      },
+      {
+        "order": 6,
+        "name": "pricing-offer",
+        "contract": "Two or three offer or plan cards. Exactly one primary plan is emphasized with a terracotta accent border and a Most-popular ribbon (brand emphasis, a separate decision from the CTA) and carries the filled ink CTA; the others carry outlined secondary buttons. Every figure is mono tabular so plans compare cleanly. Columns collapse to one at 390px; nothing in a price row overflows."
+      },
+      {
+        "order": 7,
+        "name": "footer",
+        "contract": "Top hairline. A brand column with mark, wordmark, and a one-line mission, then up to four mono link columns with microlabel headers. A bottom bar with copyright, legal links, and generated payment or trust marks drawn as inline SVG generic card and lock shapes (no real payment-network names or logos). Every anchor has an explicit color."
+      }
+    ]
+  },
+  "assertions": {
+    "note": "The genre rules and the hard floors restated as machine-checkable tests. Every assertion is phrased so a script or audit can pass or fail it.",
+    "rules": [
+      {
+        "id": "cta-highest-contrast",
+        "source": "patterns.md isolation effect",
+        "assert": "the primary CTA is a filled block whose contrast against the surrounding ground is the highest of any interactive element in its viewport; CTA fill contrast against ground-0 >= 12:1 and strictly greater than the accent fill contrast against ground-0"
+      },
+      {
+        "id": "cta-not-recolored",
+        "source": "pre-ship.md specificity",
+        "assert": "no container-scoped anchor selector (for example .nav a, .card a, .footer a) exists; the CTA class keeps its color, background, and text-decoration:none in every container it appears in"
+      },
+      {
+        "id": "accent-below-cta",
+        "source": "patterns.md brand vs CTA separation",
+        "assert": "the terracotta brand accent is never the primary CTA fill; accent fill contrast against ground-0 is lower than CTA fill contrast against ground-0"
+      },
+      {
+        "id": "semantic-distinct-from-accent",
+        "source": "checklists/pre-ship.md semantics of color",
+        "assert": "no status/semantic color equals the accent value; the success/value hue is visibly distinct from the terracotta accent in hue and is used only for positive/value signals"
+      },
+      {
+        "id": "prices-tabular",
+        "source": "genre type role",
+        "assert": "every price, rating figure, count, and plan number computes to a monospace family with font-variant-numeric: tabular-nums"
+      },
+      {
+        "id": "nav-budget",
+        "source": "patterns.md NN/g",
+        "assert": "primary nav destinations <= 5; hamburger/disclosure menus == 0 at every width including 390px; the wordmark, links, cart, and CTA are all visible without a toggle"
+      },
+      {
+        "id": "one-column-mobile",
+        "source": "pre-ship.md mobile",
+        "assert": "at 390px the product grid and the pricing columns each render exactly one column; no product card or price row causes page-level horizontal scroll"
+      },
+      {
+        "id": "mobile-truth",
+        "source": "pre-ship.md",
+        "assert": "document.scrollingElement.scrollWidth <= 390 at a true 390px viewport measured inside a 390px iframe host, not a clamped headless window"
+      },
+      {
+        "id": "generated-imagery",
+        "source": "genre self-contained rule",
+        "assert": "every product and hero image is built from CSS or inline SVG; count of <img>, external image URLs, and background-image url() references to remote assets == 0"
+      },
+      {
+        "id": "self-contained",
+        "source": "patterns.md LCP budget",
+        "assert": "external network requests == 0; @font-face count == 0; all font-family values are system stacks"
+      },
+      {
+        "id": "contrast-floors",
+        "source": "color.md WCAG 2.1 AA",
+        "assert": "contrast >= 4.5:1 for all body text; >= 3:1 for large text, interactive borders, and meaningful graphics; the primary CTA clears these floors on its own surface"
+      },
+      {
+        "id": "no-chartreuse",
+        "source": "color.md",
+        "assert": "no ground or accent token falls in the chartreuse/dark-yellow hue band (hue 60-90 with lightness < 60%)"
+      },
+      {
+        "id": "focus-visible",
+        "source": "pre-ship.md",
+        "assert": "every interactive element paints a visible outline on :focus-visible with contrast >= 3:1 against its surroundings; :focus:not(:focus-visible) paints no ring so pointer clicks stay clean"
+      },
+      {
+        "id": "loader-discipline",
+        "source": "patterns.md loading states",
+        "assert": "the page-transition loader appears only after >= 300ms of pending navigation; it is a single centered indeterminate ring on the page ground; it starts hidden via the [hidden] attribute; under prefers-reduced-motion it is a static mark; it is visibly populated in every animation phase; loaders shown < 300ms == 0"
+      },
+      {
+        "id": "reduced-motion",
+        "source": "pre-ship.md",
+        "assert": "under prefers-reduced-motion: reduce, running animations == 0 (including the hero product float and the loader spin) and all content renders"
+      },
+      {
+        "id": "no-js-content",
+        "source": "pre-ship.md",
+        "assert": "with scripts stripped, all page content is visible and every anchor still navigates; the loader stays hidden"
+      },
+      {
+        "id": "anchor-color",
+        "source": "pre-ship.md",
+        "assert": "count of <a> elements without an explicit color rule in scope == 0; button-styled anchors set text-decoration:none explicitly"
+      },
+      {
+        "id": "vars-resolve",
+        "source": "pre-ship.md",
+        "assert": "every var(--x) referenced in the stylesheet has a matching custom-property definition; no rule renders transparent because a token is undefined"
+      },
+      {
+        "id": "no-emdash",
+        "source": "pre-ship.md",
+        "assert": "count of U+2014 characters and mdash HTML entities in every shipped file == 0"
+      },
+      {
+        "id": "placeholder-neutral",
+        "source": "genre content rule",
+        "assert": "no real brand, company, or payment-network name appears; all products, testimonials, trust marks, and payment marks are invented generic placeholders"
+      }
+    ]
+  }
+}

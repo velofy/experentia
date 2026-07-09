@@ -1,0 +1,872 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Warm Light Editorial / experentia reference template</title>
+<meta name="description" content="Reference implementation of the warm-light-editorial genre from the experentia taste-engine. A warm paper ground, a serif display voice, and one oxblood accent. Placeholder content, system fonts, no external requests.">
+<style>
+/*
+  experentia reference template: warm-light-editorial
+  Tokens, type roles, layout grammar and assertions live in
+  ../taste/warm-light-editorial.json. This file implements that grammar.
+  Self-contained: no external requests, system fonts only, no em-dashes.
+*/
+
+:root {
+  color-scheme: light;
+
+  /* warm paper grounds */
+  --paper: #F8EFE3;    /* page ground, a warm vellum off-white (not #F4F1EA) */
+  --paper-2: #F1E6D4;  /* raised or sunk warm panel: note band, signup, hover */
+
+  /* text */
+  --ink: #241E1A;      /* primary text, serif display, focus ring, warm near-black */
+  --muted: #5E5246;    /* deks, bylines, dates, metadata, footer links */
+
+  /* the single warm accent: oxblood */
+  --accent: #7A1E2D;      /* links, kickers, Subscribe outline, the one filled CTA */
+  --accent-deep: #611624; /* hover and pressed step of the accent */
+
+  /* strokes */
+  --hairline: #DBCBB3; /* decorative 1px rules, exempt from the 3:1 UI floor */
+  --edge: #8A7A66;     /* interactive border, holds the 3:1 UI floor on both grounds */
+
+  /* semantic status, kept distinct from the accent */
+  --success: #2E5D3A;  /* deep forest, newsletter confirmation */
+  --warn: #8A5510;     /* dark ochre, inline validation */
+
+  /* type roles */
+  --serif: "Hoefler Text", "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, "Times New Roman", serif;
+  --sans: Seravek, "Gill Sans Nova", "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* rhythm */
+  --pad-x: clamp(1.1rem, 4vw, 3rem);
+  --maxw: 1180px;
+  --gap: clamp(1.1rem, 3vw, 2.25rem);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  font-weight: 400;
+  /* the page must never scroll sideways; content is built to fit, not clipped */
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
+
+/* every anchor has an explicit color; button-styled anchors never underline */
+a { color: var(--ink); text-decoration: none; }
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+/* pointer clicks do not paint the ring; only keyboard focus does */
+:focus:not(:focus-visible) { outline: none; }
+
+img, svg { max-width: 100%; display: block; }
+
+.shell {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--pad-x);
+}
+
+/* ============================================================= utility type */
+.kicker {
+  font-family: var(--mono);
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  margin: 0;
+}
+.meta {
+  font-family: var(--mono);
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.14em;
+  font-size: 0.6875rem;
+  line-height: 1.5;
+}
+.meta .dot { color: var(--hairline); padding: 0 0.5em; }
+.serif { font-family: var(--serif); }
+.arrow { display: inline-block; transform: translateY(0.02em); }
+
+/* an inline text link inside prose reads in the warm accent */
+.link {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+.link:hover { color: var(--accent-deep); }
+
+/* a plain accent arrow link, no underline */
+.link-arrow {
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+}
+.link-arrow:hover { color: var(--accent-deep); }
+.link-arrow:hover .arrow { transform: translate(0.2em, 0.02em); }
+.link-arrow .arrow { transition: transform 0.15s ease; }
+
+/* ============================================================= masthead nav */
+.masthead {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  border-bottom: 1px solid var(--hairline);
+  background: color-mix(in srgb, var(--paper) 90%, transparent);
+  backdrop-filter: blur(8px);
+}
+.masthead__row {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  min-height: 68px;
+  padding-block: 12px;
+  flex-wrap: wrap;
+}
+.brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  flex: 0 0 auto;
+  color: var(--ink);
+  min-width: 0;
+}
+.brand__name {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: -0.01em;
+}
+.brand__issue {
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.625rem;
+  color: var(--muted);
+}
+.masthead__spacer { flex: 1 1 auto; }
+
+.sections {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.6rem, 2vw, 1.5rem);
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+.section-link {
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  color: var(--ink);
+  padding-block: 4px;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.section-link:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+.masthead__actions { flex: 0 0 auto; }
+
+/* Subscribe CTA: accent-outlined, NOT filled; the filled accent is the signup submit */
+.btn {
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 9px 15px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+  border-radius: 2px;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.btn:hover { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+
+/* the one strong accent moment: a filled oxblood button */
+.btn--fill {
+  background: var(--accent);
+  color: var(--paper);
+  border-color: var(--accent);
+}
+.btn--fill:hover { background: var(--accent-deep); color: var(--paper); border-color: var(--accent-deep); }
+
+/* ============================================================= lead hero */
+.lead {
+  border-bottom: 1px solid var(--hairline);
+  padding-block: clamp(2.5rem, 7vw, 5rem);
+}
+.lead__grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: clamp(1.75rem, 5vw, 4rem);
+}
+.lead__body { min-width: 0; }
+.lead__kicker { margin-bottom: 1.1rem; }
+.lead__title {
+  font-family: var(--serif);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.02;
+  font-size: clamp(2.6rem, 6vw, 4.75rem);
+  margin: 0;
+  max-width: 15ch;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+.lead__dek {
+  margin: 1.35rem 0 0;
+  max-width: 46ch;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  line-height: 1.6;
+}
+.lead__byline {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.75rem;
+  margin-top: 1.6rem;
+}
+.lead__actions { margin-top: 1.9rem; }
+
+/* the single generated editorial image, built from inline SVG, no external asset */
+.lead__figure { min-width: 0; margin: 0; }
+.figure {
+  border: 1px solid var(--hairline);
+  border-radius: 3px;
+  overflow: hidden;
+  background: var(--paper-2);
+  aspect-ratio: 4 / 5;
+}
+.figure svg { width: 100%; height: 100%; }
+.figure__caption {
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.625rem;
+  color: var(--muted);
+  margin: 0.7rem 0 0;
+}
+
+/* ============================================================= story grid */
+.stories { padding-block: clamp(2.5rem, 6vw, 4rem); }
+.stories__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 1rem;
+  margin-bottom: 1.75rem;
+}
+.stories__label {
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  color: var(--ink);
+  margin: 0;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 0;
+  color: var(--ink);
+  border-top: 1px solid var(--hairline);
+  padding-top: 1.1rem;
+}
+.card__kicker { color: var(--accent); }
+.card__title {
+  font-family: var(--serif);
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  line-height: 1.14;
+  font-size: clamp(1.35rem, 2.4vw, 1.7rem);
+  margin: 0;
+  overflow-wrap: anywhere;
+  transition: color 0.15s ease;
+}
+.card:hover .card__title { color: var(--accent); }
+.card__dek {
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.55;
+  margin: 0;
+}
+.card__byline { margin-top: auto; padding-top: 0.4rem; }
+
+/* ============================================================= editor's note band */
+.note {
+  background: var(--paper-2);
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  padding-block: clamp(3rem, 8vw, 5.5rem);
+}
+.note__inner { max-width: 40ch; }
+.note__mark {
+  font-family: var(--serif);
+  color: var(--accent);
+  font-size: clamp(3.5rem, 9vw, 6rem);
+  line-height: 0.6;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.note__quote {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: -0.005em;
+  line-height: 1.22;
+  font-size: clamp(1.7rem, 4vw, 2.9rem);
+  color: var(--ink);
+  margin: 0;
+  text-wrap: balance;
+}
+.note__by { margin-top: 1.5rem; }
+
+/* ============================================================= newsletter row */
+.signup {
+  background: var(--paper-2);
+  border-bottom: 1px solid var(--hairline);
+  padding-block: clamp(2.5rem, 6vw, 4rem);
+}
+.signup__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+.signup__copy { min-width: 0; }
+.signup__title {
+  font-family: var(--serif);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+  margin: 0.6rem 0 0;
+}
+.signup__sub {
+  color: var(--muted);
+  margin: 0.75rem 0 0;
+  max-width: 42ch;
+}
+.form { min-width: 0; }
+.form__label {
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.6875rem;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 0.55rem;
+}
+.form__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.field {
+  flex: 1 1 220px;
+  min-width: 0;
+  font-family: var(--sans);
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--edge);
+  border-radius: 2px;
+  padding: 12px 14px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.field::placeholder { color: var(--muted); opacity: 1; }
+/* a clearly visible focus state on the light ground: accent border plus ink ring */
+.field:focus-visible {
+  border-color: var(--accent);
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+.form__submit { flex: 0 0 auto; }
+.form__note {
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.625rem;
+  color: var(--muted);
+  margin: 0.85rem 0 0;
+}
+/* validation and confirmation states use status colors, never the accent */
+.form__msg { font-size: 0.9rem; margin: 0.75rem 0 0; min-height: 1.2em; }
+.form__msg.is-warn { color: var(--warn); }
+.form__msg.is-ok { color: var(--success); }
+
+/* ============================================================= footer */
+.footer { padding-block: clamp(2.5rem, 6vw, 3.5rem) 0; border-top: 1px solid var(--hairline); }
+.footer__cols {
+  display: grid;
+  grid-template-columns: 1.6fr repeat(3, 1fr);
+  gap: var(--gap);
+  padding-bottom: clamp(2rem, 5vw, 3rem);
+}
+.footer__brand { display: flex; flex-direction: column; gap: 0.85rem; min-width: 0; }
+.footer__mission { color: var(--muted); max-width: 34ch; font-size: 0.98rem; margin: 0; }
+.footer__col { display: flex; flex-direction: column; gap: 0.7rem; min-width: 0; }
+.footer__col h3 {
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.6875rem;
+  color: var(--ink);
+  margin: 0 0 0.3rem;
+}
+.footer__col a {
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+.footer__col a:hover { color: var(--accent); }
+.footer__bar {
+  border-top: 1px solid var(--hairline);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-block: 1.3rem 1.6rem;
+}
+.footer__colophon {
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.66rem;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.footer__legal { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+.footer__legal a {
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.66rem;
+  color: var(--muted);
+}
+.footer__legal a:hover { color: var(--accent); }
+
+/* ============================================================= page-transition loader */
+/* additive only: starts hidden via [hidden], so no-JS renders full content */
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  gap: 1.1rem;
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  opacity: 0;
+  transition: opacity 0.18s ease;
+}
+.loader[hidden] { display: none; }
+.loader.is-on { opacity: 1; }
+/* the ring keeps a full muted border in every phase (never an all-erased frame);
+   the accent segment rides on top so it always reads as populated */
+.loader__ring {
+  width: 44px;
+  height: 44px;
+  border: 3px solid var(--muted);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+.loader__label {
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.625rem;
+  color: var(--muted);
+}
+.loader__mark { display: none; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* reduced motion: no spin, a static populated mark stands in for the ring */
+@media (prefers-reduced-motion: reduce) {
+  .loader__ring { display: none; }
+  .loader__mark { display: block; }
+}
+
+/* ============================================================= responsive */
+@media (max-width: 900px) {
+  .lead__grid { grid-template-columns: 1fr; }
+  .lead__figure { order: -1; max-width: 460px; }
+  .signup__grid { grid-template-columns: 1fr; }
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .footer__cols { grid-template-columns: 1fr 1fr; }
+  .footer__brand { grid-column: 1 / -1; }
+}
+
+@media (max-width: 600px) {
+  .masthead__row { min-height: 60px; row-gap: 10px; }
+  .masthead__spacer { display: none; }
+  /* section links wrap to a visible second row, never a hamburger */
+  .sections { order: 3; flex-basis: 100%; gap: 0.5rem 1.1rem; }
+  .grid { grid-template-columns: 1fr; }
+  .footer__cols { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ================= masthead nav ================= -->
+<header class="masthead">
+  <div class="shell masthead__row">
+    <a class="brand" href="./index.html" data-demo aria-label="The Warm Signal home">
+      <span class="brand__name">The Warm Signal</span>
+      <span class="brand__issue" aria-hidden="true">Iss. 14</span>
+    </a>
+
+    <span class="masthead__spacer" aria-hidden="true"></span>
+
+    <nav aria-label="Primary">
+      <ul class="sections">
+        <li><a class="section-link" href="./features.html" data-demo>Features</a></li>
+        <li><a class="section-link" href="./culture.html" data-demo>Culture</a></li>
+        <li><a class="section-link" href="./design.html" data-demo>Design</a></li>
+        <li><a class="section-link" href="./field-notes.html" data-demo>Field Notes</a></li>
+        <li><a class="section-link" href="./archive.html" data-demo>Archive</a></li>
+      </ul>
+    </nav>
+
+    <div class="masthead__actions">
+      <a class="btn" href="./subscribe.html" data-demo>Subscribe</a>
+    </div>
+  </div>
+</header>
+
+<!-- ================= lead hero ================= -->
+<section class="lead" aria-labelledby="lead-title">
+  <div class="shell lead__grid">
+    <div class="lead__body">
+      <p class="kicker lead__kicker">Feature <span class="dot" aria-hidden="true">&middot;</span> The Long Read</p>
+      <h1 class="lead__title" id="lead-title">The quiet argument for slower pages.</h1>
+      <p class="lead__dek">A studio spends a decade paring its layouts down to paper, ink, and a single warm mark. What is left when there is nothing left to remove, and why does the reading feel faster.</p>
+      <p class="lead__byline meta">By A. Marlowe <span class="dot" aria-hidden="true">&middot;</span> <time datetime="2026-07">July 2026</time> <span class="dot" aria-hidden="true">&middot;</span> 12 min read</p>
+      <p class="lead__actions">
+        <a class="link-arrow" href="./features/slower-pages.html" data-demo>Read the feature <span class="arrow" aria-hidden="true">&#8594;</span></a>
+      </p>
+    </div>
+
+    <figure class="lead__figure">
+      <div class="figure">
+        <!-- the single generated editorial image: a warm risograph composition, no external asset -->
+        <svg viewBox="0 0 400 500" role="img" aria-label="Abstract risograph composition of overlapping warm shapes.">
+          <defs>
+            <linearGradient id="wash" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#F5E9D6"></stop>
+              <stop offset="1" stop-color="#EFE1CC"></stop>
+            </linearGradient>
+            <clipPath id="frame"><rect x="0" y="0" width="400" height="500"></rect></clipPath>
+          </defs>
+          <g clip-path="url(#frame)">
+            <rect x="0" y="0" width="400" height="500" fill="url(#wash)"></rect>
+            <!-- large oxblood disc -->
+            <circle cx="150" cy="205" r="128" fill="#7A1E2D" opacity="0.9"></circle>
+            <!-- ochre disc, overlapping to build a riso layer -->
+            <circle cx="268" cy="300" r="112" fill="#8A5510" opacity="0.82"></circle>
+            <!-- forest arc band -->
+            <path d="M40 420 Q200 320 360 420 L360 500 L40 500 Z" fill="#2E5D3A" opacity="0.85"></path>
+            <!-- fine ink concentric rules, hairline register marks -->
+            <g fill="none" stroke="#241E1A" stroke-opacity="0.5" stroke-width="1">
+              <circle cx="150" cy="205" r="150"></circle>
+              <circle cx="150" cy="205" r="168"></circle>
+            </g>
+            <!-- a struck rule across the plate -->
+            <line x1="0" y1="150" x2="400" y2="150" stroke="#241E1A" stroke-opacity="0.35" stroke-width="1"></line>
+            <!-- small paper dot for print registration -->
+            <circle cx="322" cy="96" r="14" fill="#F8EFE3"></circle>
+            <circle cx="322" cy="96" r="14" fill="none" stroke="#241E1A" stroke-opacity="0.5" stroke-width="1"></circle>
+          </g>
+        </svg>
+      </div>
+      <figcaption class="figure__caption">Fig. 01 <span aria-hidden="true">&middot;</span> Plate for the lead essay, set in three warm inks.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ================= story grid ================= -->
+<section class="stories" aria-labelledby="stories-label">
+  <div class="shell">
+    <div class="stories__head">
+      <h2 class="stories__label" id="stories-label">In this issue</h2>
+      <span class="meta">6 stories</span>
+    </div>
+
+    <div class="grid">
+      <a class="card" href="./stories/hairline.html" data-demo>
+        <p class="kicker card__kicker">Design</p>
+        <h3 class="card__title">What a hairline rule knows that a shadow does not.</h3>
+        <p class="card__dek">On the discipline of separating things with a single line instead of a soft glow.</p>
+        <p class="card__byline meta">By R. Okonkwo</p>
+      </a>
+
+      <a class="card" href="./stories/margins.html" data-demo>
+        <p class="kicker card__kicker">Craft</p>
+        <h3 class="card__title">In defense of the enormous margin.</h3>
+        <p class="card__dek">Whitespace is not empty. It is the pause that lets a headline land.</p>
+        <p class="card__byline meta">By S. Delacroix</p>
+      </a>
+
+      <a class="card" href="./stories/one-color.html" data-demo>
+        <p class="kicker card__kicker">Color</p>
+        <h3 class="card__title">A studio that uses exactly one accent, on purpose.</h3>
+        <p class="card__dek">How a single oxblood mark carries a whole publication without ever shouting.</p>
+        <p class="card__byline meta">By N. Ferreira</p>
+      </a>
+
+      <a class="card" href="./stories/serif-voice.html" data-demo>
+        <p class="kicker card__kicker">Type</p>
+        <h3 class="card__title">The serif is the voice, the sans is the hand.</h3>
+        <p class="card__dek">Pairing a characterful display face with a plainspoken humanist body.</p>
+        <p class="card__byline meta">By A. Marlowe</p>
+      </a>
+
+      <a class="card" href="./stories/paper-not-cream.html" data-demo>
+        <p class="kicker card__kicker">Field Notes</p>
+        <h3 class="card__title">Why the paper is warm but never quite cream.</h3>
+        <p class="card__dek">Chasing a ground that reads as light and warm without collapsing into cliche.</p>
+        <p class="card__byline meta">By K. Aaltonen</p>
+      </a>
+
+      <a class="card" href="./stories/reading-speed.html" data-demo>
+        <p class="kicker card__kicker">Research</p>
+        <h3 class="card__title">The first fifty milliseconds decide the rest.</h3>
+        <p class="card__dek">Readers judge a page before they read a word, so the front page has one job.</p>
+        <p class="card__byline meta">By M. Haddad</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= editor's note band ================= -->
+<section class="note" aria-labelledby="note-quote">
+  <div class="shell note__inner">
+    <span class="note__mark" aria-hidden="true">&ldquo;</span>
+    <blockquote class="note__quote" id="note-quote">A page earns attention the same way a good letter does, by respecting the reader's time and saying one thing clearly.</blockquote>
+    <p class="note__by meta">From the editor's note <span class="dot" aria-hidden="true">&middot;</span> Issue 14</p>
+  </div>
+</section>
+
+<!-- ================= newsletter signup row ================= -->
+<section class="signup" aria-labelledby="signup-title">
+  <div class="shell signup__grid">
+    <div class="signup__copy">
+      <p class="kicker">The Dispatch</p>
+      <h2 class="signup__title" id="signup-title">One warm letter, every other Sunday.</h2>
+      <p class="signup__sub">A short reading list and one essay, sent to your inbox. No tracking pixels, no noise, unsubscribe in a click.</p>
+    </div>
+
+    <form class="form" action="#" method="post" novalidate>
+      <label class="form__label" for="email">Email address</label>
+      <div class="form__row">
+        <input class="field" id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required>
+        <button class="btn btn--fill form__submit" type="submit">Subscribe</button>
+      </div>
+      <p class="form__msg" id="form-msg" role="status" aria-live="polite"></p>
+      <p class="form__note">We keep your address to ourselves. Two letters a month, no more.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ================= footer ================= -->
+<footer class="footer">
+  <div class="shell">
+    <div class="footer__cols">
+      <div class="footer__brand">
+        <span class="brand__name">The Warm Signal</span>
+        <p class="footer__mission">A studio journal about slower pages, warm ink, and reading well. Placeholder copy for a reference template, no real publication implied.</p>
+      </div>
+
+      <nav class="footer__col" aria-label="Sections">
+        <h3>Sections</h3>
+        <a href="./features.html" data-demo>Features</a>
+        <a href="./culture.html" data-demo>Culture</a>
+        <a href="./design.html" data-demo>Design</a>
+      </nav>
+
+      <nav class="footer__col" aria-label="The journal">
+        <h3>The Journal</h3>
+        <a href="./about.html" data-demo>About</a>
+        <a href="./masthead.html" data-demo>Masthead</a>
+        <a href="./archive.html" data-demo>Archive</a>
+      </nav>
+
+      <nav class="footer__col" aria-label="Elsewhere">
+        <h3>Elsewhere</h3>
+        <a href="./contact.html" data-demo>Contact</a>
+        <a href="./rss.html" data-demo>RSS</a>
+        <a href="./ethics.html" data-demo>Ethics</a>
+      </nav>
+    </div>
+
+    <div class="footer__bar">
+      <span class="footer__colophon">The Warm Signal, Issue 14, 2026 <span aria-hidden="true">&middot;</span> hello@warmsignal.example</span>
+      <div class="footer__legal">
+        <a href="./privacy.html" data-demo>Privacy</a>
+        <a href="./terms.html" data-demo>Terms</a>
+        <a href="./rss.html" data-demo>RSS</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= page-transition loader ================= -->
+<div class="loader" id="nav-loader" role="status" aria-live="polite" aria-label="Loading the next page" hidden>
+  <div class="loader__ring" aria-hidden="true"></div>
+  <svg class="loader__mark" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+    <!-- static populated mark for reduced motion: a full oxblood ring, no spin -->
+    <circle cx="20" cy="20" r="15" fill="none" stroke="#7A1E2D" stroke-width="3"></circle>
+    <circle cx="20" cy="20" r="4" fill="#7A1E2D"></circle>
+  </svg>
+  <span class="loader__label">Loading</span>
+</div>
+
+<script>
+/*
+  Page-transition loader.
+  Rule (research/patterns.md): the best loading state is not needing one.
+  Under a 300ms threshold we show nothing; only a genuinely pending
+  navigation reveals a single centered indeterminate ring on the warm ground.
+
+  In production (a real multi-page site) you keep only the "real navigation"
+  branch below and delete the data-demo attributes: the browser's own
+  navigation drives show(), and pageshow/popstate drive cancel().
+  The data-demo branch exists so this ONE standalone file can demonstrate
+  the exact same loader without a server.
+*/
+(function () {
+  var overlay = document.getElementById('nav-loader');
+  if (!overlay) return;
+
+  var DELAY = 300;        // threshold below which no loader is shown
+  var DEMO_SETTLE = 1400; // stand-in for a real navigation completing
+  var timer = null;
+
+  function show() {
+    overlay.hidden = false;
+    void overlay.offsetWidth; // reflow so the opacity transition runs
+    overlay.classList.add('is-on');
+  }
+  function schedule() {
+    clearTimeout(timer);
+    timer = setTimeout(show, DELAY);
+  }
+  function cancel() {
+    clearTimeout(timer);
+    overlay.classList.remove('is-on');
+    // hide after the fade so it never flashes an empty box
+    var hide = function () { overlay.hidden = true; overlay.removeEventListener('transitionend', hide); };
+    if (getComputedStyle(overlay).opacity === '0') { overlay.hidden = true; }
+    else { overlay.addEventListener('transitionend', hide); }
+  }
+
+  document.addEventListener('click', function (e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var a = e.target.closest('a[href]');
+    if (!a) return;
+    if (a.target && a.target !== '_self') return;               // opens a new tab
+    var url;
+    try { url = new URL(a.getAttribute('href'), location.href); } catch (err) { return; }
+    if (url.origin !== location.origin) return;                 // external link
+    if (url.pathname === location.pathname && url.hash) return; // same-page anchor
+
+    if (a.hasAttribute('data-demo')) {
+      // standalone demonstration: same loader, no real navigation
+      e.preventDefault();
+      schedule();
+      setTimeout(cancel, DELAY + DEMO_SETTLE);
+      return;
+    }
+    schedule(); // real cross-document navigation; browser unload takes over
+  });
+
+  window.addEventListener('pageshow', cancel);  // covers bfcache restore
+  window.addEventListener('popstate', cancel);
+})();
+
+/* newsletter signup: inline validation only, no navigation, status colors not the accent */
+(function () {
+  var form = document.querySelector('.form');
+  if (!form) return;
+  var field = form.querySelector('#email');
+  var msg = form.querySelector('#form-msg');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var value = (field.value || '').trim();
+    var ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    msg.classList.remove('is-warn', 'is-ok');
+    if (!ok) {
+      msg.textContent = 'Please enter a valid email address.';
+      msg.classList.add('is-warn');
+      field.focus();
+      return;
+    }
+    msg.textContent = 'Thank you. Your first letter arrives on Sunday.';
+    msg.classList.add('is-ok');
+    form.reset();
+  });
+})();
+</script>
+</body>
+</html>

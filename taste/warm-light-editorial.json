@@ -1,0 +1,249 @@
+{
+  "name": "warm-light-editorial",
+  "version": "1.0.0",
+  "genre": "The design-led editorial or studio-journal home page: a warm light ground, a characterful serif display voice, a humanist body, generous whitespace, and hairline rules. Type carries the hierarchy; a single restrained warm accent (oxblood) marks the one strong moment. The light-plus-warm counterpoint to the dark cinematic lab.",
+  "provenance": {
+    "sample": "samples/generic-studio-journal.md",
+    "research": ["research/color.md", "research/style.md", "research/patterns.md"],
+    "checklist": "checklists/pre-ship.md",
+    "evidence_note": "color.md establishes light/dark and accent-warmth as first-class audience knobs, not laws; this profile exercises the warm-light setting deliberately. The accent is oxblood (#7A1E2D), a saturated-but-restrained warm red-wine that color.md's preference-over-muddy guidance favors, chosen to avoid the AI-generated cliche of a #F4F1EA cream ground plus a terracotta accent plus a generic serif. Blue is the lowest-risk trust default (color.md), so departing from it is an explicit audience choice: an editorial publication trades default-trust neutrality for a warm literary voice, and oxblood reads as heritage-print rather than generic terracotta while still being deep enough to hold 4.5:1 as link text and to fill the one CTA with paper-colored text. The warn hue is a dark ochre and the success hue a deep forest, both kept clearly distinct from the oxblood accent; none sits in the chartreuse or dark-yellow band color.md flags as an anti-pattern. style.md: low visual complexity plus high prototypicality wins the 50ms first impression, so the page stays a prototypical magazine front (masthead, lead story, story grid, note band, signup, footer) and spends its novelty once, on the serif voice and the single accent."
+  },
+  "tokens": {
+    "grounds": {
+      "paper": {
+        "value": "#F8EFE3",
+        "role": "page ground; a warm vellum off-white, deliberately warmer and slightly more golden than the #F4F1EA cliche, never pure #FFFFFF"
+      },
+      "paper-2": {
+        "value": "#F1E6D4",
+        "role": "raised or sunk warm panel: the editor's-note band, the newsletter row, card hover fills"
+      }
+    },
+    "ink": {
+      "value": "#241E1A",
+      "role": "primary text, serif display, and the focus ring; a deep warm ink (near-black brown), never pure #000000"
+    },
+    "muted": {
+      "value": "#5E5246",
+      "role": "secondary text: deks, bylines, dates, metadata, footer links; a warm taupe that still clears 4.5:1 on both grounds so it is safe at any text size"
+    },
+    "accent": {
+      "value": "#7A1E2D",
+      "deep": "#611624",
+      "role": "THE single warm accent: inline links, kickers, the nav Subscribe outline, and the one filled CTA (the newsletter submit). Its .deep step is the pressed and hover state. Emphasis comes from being the only saturated color on a quiet warm ground (patterns.md, isolation effect)"
+    },
+    "hairline": {
+      "value": "#DBCBB3",
+      "role": "decorative 1px rules: masthead underline, card separators, band edges, footer divider. Decorative only, carries no meaning alone, so it is exempt from the 3:1 UI floor"
+    },
+    "edge": {
+      "value": "#8A7A66",
+      "role": "interactive border: the email input and any outlined control; holds the 3:1 UI-component floor on both grounds"
+    },
+    "status": {
+      "success": "#2E5D3A",
+      "warn": "#8A5510",
+      "role": "semantic status colors, defined and kept visibly distinct from the oxblood accent: a deep forest success (newsletter confirmation) and a dark ochre warn (inline validation). Neither equals the accent; neither is chartreuse or dark-yellow"
+    },
+    "contrast_pairs_precomputed": {
+      "note": "WCAG relative-luminance formula: linearize each channel, L = 0.2126R + 0.7152G + 0.0722B, ratio = (Lhi+0.05)/(Llo+0.05). Text floor 4.5:1; large text, interactive borders, and meaningful graphics floor 3:1.",
+      "ink_on_paper": "14.46:1",
+      "ink_on_paper-2": "13.33:1",
+      "muted_on_paper": "6.66:1",
+      "muted_on_paper-2": "6.14:1",
+      "accent_on_paper": "8.99:1",
+      "accent_on_paper-2": "8.29:1",
+      "paper_on_accent": "8.99:1",
+      "paper_on_accent-deep": "11.19:1",
+      "edge_on_paper": "3.65:1",
+      "edge_on_paper-2": "3.36:1",
+      "focus-ring_on_paper": "14.46:1",
+      "success_on_paper": "6.73:1",
+      "warn_on_paper": "5.45:1",
+      "hairline_on_paper": "1.40:1 (decorative rule, exempt from the 3:1 UI floor)"
+    }
+  },
+  "type_roles": {
+    "serif_display": {
+      "stack": "'Hoefler Text', 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, 'Times New Roman', serif",
+      "weight": 600,
+      "case": "sentence case; quiet authority, no exclamation",
+      "letter_spacing": "-0.01em",
+      "sizes": {
+        "hero_headline": "clamp(2.6rem, 6vw, 4.75rem)",
+        "card_headline": "clamp(1.35rem, 2.4vw, 1.7rem)",
+        "band_quote": "clamp(1.7rem, 4vw, 2.9rem)"
+      },
+      "role": "the characterful serif that carries every headline and the pull-quote; the publication's voice. Never used for body copy or metadata"
+    },
+    "body_humanist": {
+      "stack": "Seravek, 'Gill Sans Nova', 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif",
+      "weight": 400,
+      "size": "1.0625rem",
+      "line_height": 1.65,
+      "role": "deks (standfirsts), body paragraphs, the colophon; a clean humanist sans set generously against the serif headlines"
+    },
+    "mono_utility": {
+      "stack": "ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace",
+      "transform": "uppercase",
+      "weight": 500,
+      "sizes_and_tracking": {
+        "kicker": { "size": "0.72rem", "letter_spacing": "0.18em" },
+        "meta": { "size": "0.6875rem", "letter_spacing": "0.14em" },
+        "nav_item": { "size": "0.72rem", "letter_spacing": "0.1em" },
+        "footer_link": { "size": "0.72rem", "letter_spacing": "0.1em" }
+      },
+      "role": "the caps utility face: every kicker, byline label, date, section header, nav item, and footer link. If it labels, wayfinds, or timestamps, it is mono, uppercase, and tracked"
+    }
+  },
+  "layout_grammar": {
+    "note": "Ordered top to bottom, nav to footer. Slot names are the section ids. A prototypical magazine front so it parses in the first 50ms (style.md); differentiation lives in the serif voice and the one warm accent, not in the structure.",
+    "slots": [
+      {
+        "order": 1,
+        "name": "masthead-nav",
+        "contract": "Left: serif wordmark plus a mono issue tag. Center or right: at most 5 primary section links in mono caps, all visible with no hamburger at any width. Far right: exactly one Subscribe CTA rendered as an accent-outlined button (accent border and text, no fill) so the single filled accent is reserved for the newsletter submit. Bottom hairline rule. At phone width the section links wrap to a visible second row: never a hamburger, never more than 5 primary items."
+      },
+      {
+        "order": 2,
+        "name": "lead-hero",
+        "contract": "The featured lead story. A mono kicker, a large serif headline, a humanist dek (standfirst), a byline plus date row in mono, and one generated editorial image built from CSS or inline SVG (a warm risograph composition, no external asset). The image sits beside the copy on wide screens and stacks below it at phone width. No filled button here; the read link is a plain accent arrow link."
+      },
+      {
+        "order": 3,
+        "name": "story-grid",
+        "contract": "Hairline-separated article cards, each a whole-card link carrying a mono kicker, a serif headline, and a mono byline. Three columns on desktop, two on tablet, one column at 390px. Separation is 1px hairline rules, no shadows. Header row carries a mono section label and an honest card count that equals the rendered cells."
+      },
+      {
+        "order": 4,
+        "name": "editors-note-band",
+        "contract": "A full-width warm panel (paper-2) holding a large serif pull-quote or editor's note, opened with an oversized accent quotation mark, attributed in mono caps below. One typographic idea, generous whitespace, top and bottom hairline rules."
+      },
+      {
+        "order": 5,
+        "name": "newsletter-row",
+        "contract": "A signup row on a warm panel with a real <input type=email>: a visible edge border on the light ground, a clearly visible accent focus state, and a submit button that is the one strong filled accent moment of the page (oxblood fill, paper-colored text). Includes a label and a mono privacy microline; validation feedback uses the warn status color, never the accent."
+      },
+      {
+        "order": 6,
+        "name": "footer",
+        "contract": "Top hairline. A serif wordmark and one-line mission, then up to three mono link columns with mono caps headers. Bottom hairline row: a colophon line (issue, year, contact) left and legal links right. Every anchor carries an explicit color."
+      }
+    ]
+  },
+  "assertions": {
+    "note": "The genre rules restated as machine-checkable tests, plus the hard accessibility floors. Each is phrased so a script or audit can pass or fail it.",
+    "rules": [
+      {
+        "id": "warm-light-ground",
+        "source": "genre + color.md audience knob",
+        "assert": "the page ground is a warm off-white with relative luminance >= 0.75, is not #FFFFFF, and is not #F4F1EA; R > G > B so the ground reads warm"
+      },
+      {
+        "id": "ink-warm-dark",
+        "source": "genre",
+        "assert": "body text color is not #000000 and contrast(ink, every ground) >= 4.5"
+      },
+      {
+        "id": "single-accent",
+        "source": "genre + patterns.md isolation effect",
+        "assert": "exactly one hue family is used as the saturated accent (oxblood); the only opaque accent-filled interactive element on the page is the newsletter submit; the nav Subscribe CTA is accent-outlined, not filled"
+      },
+      {
+        "id": "status-distinct",
+        "source": "pre-ship.md semantics of color",
+        "assert": "tokens.status.success and tokens.status.warn are each a different value from tokens.accent.value and from each other; none is chartreuse or dark-yellow"
+      },
+      {
+        "id": "serif-carries-headlines",
+        "source": "genre type roles",
+        "assert": "every headline and the pull-quote compute to the serif_display family; body copy and metadata never use it"
+      },
+      {
+        "id": "mono-wayfinding",
+        "source": "genre type roles",
+        "assert": "every kicker, byline label, date, nav item, section header, and footer link computes to a monospace family with text-transform uppercase and letter-spacing >= 0.1em"
+      },
+      {
+        "id": "generated-image",
+        "source": "genre lead-hero",
+        "assert": "the lead hero contains exactly one generated editorial image built from CSS or inline SVG; the page makes zero requests for raster or remote imagery"
+      },
+      {
+        "id": "honest-numbers",
+        "source": "sample rule",
+        "assert": "the story-grid header count equals the number of rendered cards; any numeric label binds to a countable fact, never decoration"
+      },
+      {
+        "id": "real-email-input",
+        "source": "genre newsletter-row",
+        "assert": "the newsletter row contains a real <input type=email> with an associated <label>, a visible border of contrast >= 3:1 against its panel, and a visible :focus-visible state"
+      },
+      {
+        "id": "flat-hairline",
+        "source": "genre",
+        "assert": "computed box-shadow == none on all non-focus elements; separation is 1px hairline rules; border-radius stays small (<= 4px) on boxes and controls"
+      },
+      {
+        "id": "nav-budget",
+        "source": "patterns.md NN/g",
+        "assert": "primary nav destinations <= 5; hamburger or disclosure menus == 0 at every width including 390px; the Subscribe CTA is additional to the 5 and also visible"
+      },
+      {
+        "id": "mobile-truth",
+        "source": "pre-ship.md",
+        "assert": "document.scrollingElement.scrollWidth <= 390 at a true 390px viewport (measured inside a 390px iframe host, not a clamped headless window)"
+      },
+      {
+        "id": "contrast-floors",
+        "source": "color.md WCAG 2.1 AA",
+        "assert": "contrast >= 4.5:1 for all body text; >= 3:1 for large text, interactive borders, and meaningful graphics, each against its ACTUAL background"
+      },
+      {
+        "id": "no-chartreuse",
+        "source": "color.md",
+        "assert": "no ground, accent, or status token falls in the chartreuse or dark-yellow hue band (hue 60-90 with lightness < 60%)"
+      },
+      {
+        "id": "self-contained",
+        "source": "patterns.md LCP budget",
+        "assert": "external network requests == 0; @font-face count == 0; all font-family values are system stacks; no remote images"
+      },
+      {
+        "id": "focus-visible",
+        "source": "pre-ship.md",
+        "assert": "every interactive element paints a visible outline on :focus-visible with contrast >= 3:1 against its surroundings; :focus:not(:focus-visible) paints no ring so pointer clicks stay quiet"
+      },
+      {
+        "id": "loader-discipline",
+        "source": "patterns.md loading states",
+        "assert": "the page-transition loader starts with the [hidden] attribute; it appears only after >= 300ms of pending navigation; it is a single centered indeterminate ring on the warm ground with a border visible in every animation phase; under prefers-reduced-motion it is a static mark with no spin"
+      },
+      {
+        "id": "reduced-motion",
+        "source": "pre-ship.md",
+        "assert": "under prefers-reduced-motion: reduce, running animations == 0 and all content renders"
+      },
+      {
+        "id": "no-js-content",
+        "source": "pre-ship.md",
+        "assert": "with scripts stripped, all page content is visible, the loader overlay never shows (it stays [hidden]), and anchors still navigate"
+      },
+      {
+        "id": "anchor-color",
+        "source": "pre-ship.md",
+        "assert": "count of <a> elements without an explicit color rule in scope == 0; no container selector outranks a component rule to recolor or underline a button-styled anchor"
+      },
+      {
+        "id": "vars-resolve",
+        "source": "pre-ship.md",
+        "assert": "every var(--x) referenced in the stylesheet has a matching definition; no rule composes a token of the wrong shape"
+      },
+      {
+        "id": "no-emdash",
+        "source": "pre-ship.md",
+        "assert": "count of U+2014 characters in every shipped file == 0"
+      }
+    ]
+  }
+}

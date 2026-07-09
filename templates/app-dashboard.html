@@ -1,0 +1,1016 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>App Dashboard / experentia reference template</title>
+<meta name="description" content="Reference implementation of the app-dashboard genre from the experentia taste-engine. Data-dense operator UI, placeholder content, system fonts, no external requests.">
+<style>
+/*
+  experentia reference template: app-dashboard
+  Tokens, type roles, layout grammar and assertions live in
+  ../taste/app-dashboard.json. This file implements that grammar.
+  Self-contained: no external requests, system fonts only, no em-dashes.
+  Committed look: DARK. A cool neutral ground, one blue accent for
+  interaction, three status colors held distinct from it for data state.
+*/
+
+:root {
+  color-scheme: dark;
+
+  /* grounds */
+  --ground-0: #0E1116;   /* app ground, content column, top bar */
+  --ground-1: #161A21;   /* raised: sidebar, cards, table, footer */
+  --ground-2: #1D222B;   /* hover, active nav, row hover, input well */
+
+  /* text */
+  --ink: #E8EBF0;        /* primary text, big figures, focus ring */
+  --muted: #9AA4B2;      /* secondary text, labels, placeholders */
+
+  /* strokes */
+  --hairline: #262B33;   /* decorative 1px borders and chart grid */
+  --edge: #6B7686;       /* interactive borders, holds the 3:1 floor */
+
+  /* the single brand accent, reserved for interaction */
+  --accent: #5FA8FF;
+  --accent-ink: #0E1116; /* dark text on an accent fill */
+
+  /* three semantic status colors, distinct in hue from the accent */
+  --success: #3DDC97;  --success-bg: #10281E;
+  --warning: #F5B841;  --warning-bg: #2E2410;
+  --danger:  #FF6B72;  --danger-bg:  #34181B;
+
+  /* type roles */
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* rhythm */
+  --sidebar-w: 236px;
+  --pad: clamp(1rem, 2.5vw, 1.75rem);
+  --gap: clamp(0.85rem, 2vw, 1.25rem);
+  --radius: 10px;
+  --topbar-h: 60px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--ground-0);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  /* the page must never scroll sideways; content is contained, not clipped */
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
+
+/* every anchor has an explicit color; component classes sit on the anchor
+   itself so no container selector can outrank a component rule */
+a { color: var(--accent); text-decoration: none; }
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+/* pointer clicks do not paint the ring; only keyboard focus does */
+:focus:not(:focus-visible) { outline: none; }
+
+img, svg { max-width: 100%; display: block; }
+
+.num, .tnum { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* ============================================================= caps microlabel */
+.label {
+  font-family: var(--sans);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  font-size: 0.6875rem;
+  color: var(--muted);
+  line-height: 1.3;
+}
+
+/* ============================================================= app shell */
+.app {
+  display: grid;
+  grid-template-columns: var(--sidebar-w) 1fr;
+  min-height: 100vh;
+}
+
+/* ---- sidebar ---- */
+.sidebar {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  overflow-y: auto;
+  background: var(--ground-1);
+  border-right: 1px solid var(--hairline);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0 var(--pad);
+  min-height: var(--topbar-h);
+  border-bottom: 1px solid var(--hairline);
+  color: var(--ink);
+  flex: 0 0 auto;
+}
+.brand__mark {
+  width: 26px; height: 26px; flex: 0 0 auto;
+  display: grid; place-items: center;
+  border: 1px solid var(--edge);
+  border-radius: 7px;
+  color: var(--accent);
+}
+.brand__name { font-weight: 600; letter-spacing: 0.01em; font-size: 0.95rem; color: var(--ink); }
+.brand__sub { color: var(--muted); font-size: 0.95rem; font-weight: 400; }
+
+.side-nav { list-style: none; margin: 0; padding: 0.75rem 0.6rem; display: flex; flex-direction: column; gap: 2px; flex: 1 1 auto; }
+.side-nav__section { padding: 1rem 0.65rem 0.4rem; }
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.55rem 0.65rem;
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  border-left: 3px solid transparent;
+  transition: background 0.14s ease, color 0.14s ease;
+  min-width: 0;
+}
+.nav-link svg { width: 18px; height: 18px; flex: 0 0 auto; }
+.nav-link span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.nav-link:hover { background: var(--ground-2); color: var(--ink); }
+.nav-link[aria-current="page"] {
+  background: var(--ground-2);
+  color: var(--ink);
+  border-left-color: var(--accent);
+}
+.nav-link[aria-current="page"] svg { color: var(--accent); }
+.side-foot {
+  border-top: 1px solid var(--hairline);
+  padding: 0.85rem var(--pad);
+  display: flex; align-items: center; gap: 0.55rem;
+  color: var(--muted); font-size: 0.8rem;
+  flex: 0 0 auto;
+}
+
+/* ---- main column ---- */
+.main { min-width: 0; display: flex; flex-direction: column; }
+
+/* ---- top bar ---- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  min-height: var(--topbar-h);
+  padding: 0 var(--pad);
+  background: color-mix(in srgb, var(--ground-0) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--hairline);
+}
+.nav-toggle {
+  display: none; /* shown only under JS at phone width */
+  align-items: center; justify-content: center;
+  width: 38px; height: 38px; flex: 0 0 auto;
+  background: transparent;
+  border: 1px solid var(--edge);
+  border-radius: 8px;
+  color: var(--ink);
+  cursor: pointer;
+}
+.nav-toggle svg { width: 18px; height: 18px; }
+.page-title { font-size: 1.05rem; font-weight: 600; color: var(--ink); margin: 0; white-space: nowrap; }
+.topbar__spacer { flex: 1 1 auto; }
+
+.search {
+  position: relative;
+  flex: 1 1 320px;
+  min-width: 0;
+  max-width: 380px;
+}
+.search svg {
+  position: absolute; left: 11px; top: 50%; transform: translateY(-50%);
+  width: 16px; height: 16px; color: var(--muted); pointer-events: none;
+}
+.search input {
+  width: 100%;
+  min-width: 0;
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  color: var(--ink);
+  background: var(--ground-2);
+  border: 1px solid var(--edge);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem 0.5rem 2.1rem;
+}
+.search input::placeholder { color: var(--muted); }
+.search input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+/* keep autofill from painting pale blue on the dark well */
+.search input:-webkit-autofill,
+.search input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--ink);
+  -webkit-box-shadow: 0 0 0 40px var(--ground-2) inset;
+  caret-color: var(--ink);
+}
+
+.user {
+  display: flex; align-items: center; gap: 0.55rem;
+  padding: 0.3rem 0.35rem;
+  border-radius: 999px;
+  color: var(--ink);
+  flex: 0 0 auto;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+}
+.user:hover { border-color: var(--hairline); background: var(--ground-1); }
+.avatar {
+  width: 30px; height: 30px; flex: 0 0 auto;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--ground-2);
+  border: 1px solid var(--edge);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+.user__name { color: var(--ink); white-space: nowrap; }
+.user__chev { color: var(--muted); }
+
+/* ---- content ---- */
+.content { padding: var(--pad); display: flex; flex-direction: column; gap: var(--gap); min-width: 0; }
+
+.content-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; flex-wrap: wrap;
+}
+.content-head p { margin: 0.15rem 0 0; color: var(--muted); font-size: 0.85rem; }
+.content-head__title { margin: 0; font-size: 1.15rem; font-weight: 600; color: var(--ink); }
+
+/* buttons */
+.btn {
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid var(--edge);
+  background: transparent;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.14s ease, border-color 0.14s ease, opacity 0.14s ease;
+}
+.btn svg { width: 15px; height: 15px; }
+.btn:hover { background: var(--ground-2); border-color: var(--ink); color: var(--ink); }
+.btn--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+.btn--primary:hover { background: var(--accent); color: var(--accent-ink); opacity: 0.88; }
+.content-head__actions { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+
+/* ============================================================= KPI strip */
+.kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--gap); }
+.card {
+  background: var(--ground-1);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 1rem 1.05rem 0.9rem;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.card__label { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
+.card__value {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  font-size: clamp(1.6rem, 3.4vw, 2.1rem);
+  line-height: 1.1;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.card__value small { font-size: 0.9rem; color: var(--muted); font-weight: 400; letter-spacing: 0; }
+.card__foot { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; margin-top: 0.15rem; }
+
+/* delta chip: direction in a glyph AND a semantic color, never color alone */
+.delta {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.78rem;
+  padding: 0.16rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.delta svg { width: 11px; height: 11px; }
+.delta--up { color: var(--success); background: var(--success-bg); border-color: color-mix(in srgb, var(--success) 40%, transparent); }
+.delta--down-bad { color: var(--danger); background: var(--danger-bg); border-color: color-mix(in srgb, var(--danger) 40%, transparent); }
+.delta--warn { color: var(--warning); background: var(--warning-bg); border-color: color-mix(in srgb, var(--warning) 40%, transparent); }
+.delta--flat { color: var(--muted); background: var(--ground-2); border-color: var(--hairline); }
+
+/* sparkline: faint grid, translucent area fill, emphasized endpoint */
+.spark { width: 100%; height: 40px; }
+.spark--success { color: var(--success); }
+.spark--danger { color: var(--danger); }
+.spark--warning { color: var(--warning); }
+.spark__grid { stroke: var(--hairline); stroke-width: 1; }
+.spark__area { fill: currentColor; fill-opacity: 0.16; stroke: none; }
+.spark__line { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.spark__dot { fill: currentColor; stroke: var(--ground-1); stroke-width: 2; }
+
+/* ============================================================= data table */
+.panel {
+  background: var(--ground-1);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.panel__head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 0.75rem; flex-wrap: wrap;
+  padding: 0.85rem var(--pad);
+  border-bottom: 1px solid var(--hairline);
+}
+.panel__head h3 { margin: 0; font-size: 0.95rem; font-weight: 600; color: var(--ink); }
+.panel__head .label { display: inline-flex; align-items: center; gap: 0.4rem; }
+
+/* the table lives in its OWN scroll wrapper; a right-edge fade signals more */
+.table-frame { position: relative; }
+.table-frame::after {
+  content: "";
+  position: absolute; top: 0; right: 0; bottom: 0;
+  width: 34px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, var(--ground-1));
+}
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+table { border-collapse: collapse; width: 100%; min-width: 720px; }
+thead th {
+  text-align: left;
+  font-family: var(--sans);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--muted);
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid var(--hairline);
+  white-space: nowrap;
+  background: var(--ground-1);
+}
+tbody td {
+  padding: 0.7rem 0.9rem;
+  border-bottom: 1px solid var(--hairline);
+  color: var(--ink);
+  font-size: 0.875rem;
+  vertical-align: middle;
+}
+tbody tr:last-child td { border-bottom: none; }
+tbody tr { transition: background 0.12s ease; }
+tbody tr:hover { background: var(--ground-2); }
+.col-num { text-align: right; }
+td.col-num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+th.col-num { text-align: right; }
+.cell-name { display: flex; flex-direction: column; gap: 0.1rem; }
+.cell-name b { font-weight: 600; color: var(--ink); }
+.cell-name span { color: var(--muted); font-size: 0.78rem; font-family: var(--mono); }
+.row-link { color: var(--accent); font-size: 0.8rem; }
+.row-link:hover { text-decoration: underline; text-underline-offset: 2px; }
+
+/* left severity stripe: state encoded in form as well as color */
+td.sev { padding-left: 0.9rem; position: relative; }
+td.sev::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+}
+tr.is-success td.sev::before { background: var(--success); }
+tr.is-warning td.sev::before { background: var(--warning); }
+tr.is-danger  td.sev::before { background: var(--danger); }
+
+/* status pill */
+.pill {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; flex: 0 0 auto; }
+.pill--success { color: var(--success); background: var(--success-bg); border-color: color-mix(in srgb, var(--success) 45%, transparent); }
+.pill--warning { color: var(--warning); background: var(--warning-bg); border-color: color-mix(in srgb, var(--warning) 45%, transparent); }
+.pill--danger  { color: var(--danger);  background: var(--danger-bg);  border-color: color-mix(in srgb, var(--danger) 45%, transparent); }
+
+/* ============================================================= skeletons */
+/* in-place loading state that mirrors the final layout. Default (no JS):
+   real content shown, skeletons hidden. Only [data-loading] flips them. */
+.skel { display: none; }
+[data-loading] .real { display: none; }
+[data-loading] .skel { display: revert; }
+[data-loading] .kpi-grid.skel { display: grid; }
+.sk {
+  display: block;
+  background: linear-gradient(90deg, var(--ground-2) 25%, color-mix(in srgb, var(--ground-2) 55%, var(--muted)) 50%, var(--ground-2) 75%);
+  background-size: 300% 100%;
+  border-radius: 6px;
+  animation: shimmer 1.3s ease-in-out infinite;
+}
+@keyframes shimmer { 0% { background-position: 130% 0; } 100% { background-position: -130% 0; } }
+.sk--label { width: 52%; height: 12px; }
+.sk--value { width: 68%; height: 26px; margin-top: 0.5rem; }
+.sk--spark { width: 100%; height: 40px; margin-top: 0.6rem; }
+.sk--chip  { width: 40%; height: 16px; margin-top: 0.55rem; }
+.sk-row { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr 0.9fr; gap: 0.9rem; padding: 0.75rem var(--pad); border-bottom: 1px solid var(--hairline); }
+.sk-row .sk { height: 14px; }
+/* reduced motion keeps skeletons visible as static blocks (mid, not erased) */
+@media (prefers-reduced-motion: reduce) {
+  .sk { animation: none; background: var(--ground-2); }
+}
+
+/* ============================================================= footer */
+.footer {
+  margin-top: auto;
+  background: var(--ground-1);
+  border-top: 1px solid var(--hairline);
+  padding: 1rem var(--pad);
+  display: flex; align-items: center; gap: 1rem 1.4rem; flex-wrap: wrap;
+}
+.footer__copy { color: var(--muted); font-size: 0.8rem; }
+.footer__links { display: flex; gap: 1.1rem; flex-wrap: wrap; }
+.footer__link { color: var(--muted); font-size: 0.8rem; }
+.footer__link:hover { color: var(--ink); }
+.footer__status { margin-left: auto; display: inline-flex; align-items: center; gap: 0.45rem; color: var(--muted); font-size: 0.8rem; }
+.footer__status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--success); flex: 0 0 auto; }
+
+/* ============================================================= page-transition loader */
+/* additive only: starts hidden via [hidden], so no-JS renders full content */
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+  background: color-mix(in srgb, var(--ground-0) 82%, transparent);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  transition: opacity 0.18s ease;
+}
+.loader[hidden] { display: none; }
+.loader.is-on { opacity: 1; }
+.loader__ring {
+  width: 44px; height: 44px;
+  border: 3px solid var(--hairline);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+.loader__mark { display: none; color: var(--accent); }
+.loader__label { font-family: var(--sans); text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.6875rem; color: var(--muted); }
+@keyframes spin { to { transform: rotate(360deg); } }
+/* reduced motion: no spin, a static populated mark stands in for the ring */
+@media (prefers-reduced-motion: reduce) {
+  .loader__ring { display: none; }
+  .loader__mark { display: block; }
+}
+
+/* ============================================================= responsive */
+@media (max-width: 760px) {
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  [data-loading] .kpi-grid.skel { grid-template-columns: repeat(2, 1fr); }
+  .sk-row { grid-template-columns: 1.6fr 1fr 0.9fr; }
+}
+
+@media (max-width: 900px) {
+  /* single-column app: sidebar stacks above content by default (no JS),
+     so all content stays visible without any script */
+  .app { grid-template-columns: 1fr; }
+  .sidebar {
+    position: static;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .side-nav { flex-direction: row; flex-wrap: wrap; gap: 4px; }
+  .nav-link { border-left: none; border-bottom: 3px solid transparent; }
+  .nav-link[aria-current="page"] { border-left-color: transparent; border-bottom-color: var(--accent); }
+  .side-foot { display: none; }
+  .page-title { font-size: 1rem; }
+
+  /* JS present: the sidebar becomes an off-canvas drawer behind a visible
+     toggle. main content is full-width and visible; toggle reveals the rail. */
+  body.has-js .nav-toggle { display: inline-flex; }
+  body.has-js .sidebar {
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    width: min(80vw, 280px);
+    height: 100vh;
+    overflow-y: auto;
+    border-right: 1px solid var(--hairline);
+    border-bottom: none;
+    transform: translateX(-100%);
+    transition: transform 0.22s ease;
+    z-index: 60;
+  }
+  body.has-js .sidebar .side-nav { flex-direction: column; }
+  body.has-js .sidebar .nav-link { border-bottom: none; border-left: 3px solid transparent; }
+  body.has-js .sidebar .nav-link[aria-current="page"] { border-left-color: var(--accent); }
+  body.has-js .sidebar .side-foot { display: flex; }
+  body.has-js.nav-open .sidebar { transform: translateX(0); }
+  .scrim {
+    position: fixed; inset: 0; z-index: 55;
+    background: color-mix(in srgb, var(--ground-0) 62%, transparent);
+    border: 0; padding: 0; margin: 0;
+  }
+  .scrim[hidden] { display: none; }
+}
+
+@media (max-width: 460px) {
+  .kpi-grid { grid-template-columns: 1fr; }
+  [data-loading] .kpi-grid.skel { grid-template-columns: 1fr; }
+  .sk-row { grid-template-columns: 1.4fr 1fr; }
+  .user__name, .user__chev { display: none; }
+  .topbar__spacer { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ================= sidebar nav ================= -->
+  <aside class="sidebar" id="sidebar" aria-label="Primary">
+    <a class="brand" href="./index.html" data-demo aria-label="Meterline home">
+      <span class="brand__mark" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 16 16">
+          <path d="M1.5 11.5 L5.5 6.5 L8.5 9 L14.5 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </span>
+      <span class="brand__name">Meter<span class="brand__sub">line</span></span>
+    </a>
+
+    <ul class="side-nav">
+      <li>
+        <a class="nav-link" href="./overview.html" data-demo aria-current="page">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7"/></svg>
+          <span>Overview</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" href="./traffic.html" data-demo>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 16 L9 10 L13 13 L20 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 20 H20" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          <span>Traffic</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" href="./services.html" data-demo>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="5" rx="1.5" stroke="currentColor" stroke-width="1.7"/><rect x="3" y="12" width="18" height="5" rx="1.5" stroke="currentColor" stroke-width="1.7"/><circle cx="7" cy="6.5" r="0.9" fill="currentColor"/><circle cx="7" cy="14.5" r="0.9" fill="currentColor"/></svg>
+          <span>Services</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" href="./incidents.html" data-demo>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 L22 20 H2 Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 10 V14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="16.8" r="1" fill="currentColor"/></svg>
+          <span>Incidents</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" href="./reports.html" data-demo>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3 H14 L19 8 V21 H6 Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M14 3 V8 H19" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 13 H15 M9 16.5 H15" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          <span>Reports</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" href="./settings.html" data-demo>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.7"/><path d="M12 2.5 V5 M12 19 V21.5 M4.2 4.2 L6 6 M18 18 L19.8 19.8 M2.5 12 H5 M19 12 H21.5 M4.2 19.8 L6 18 M18 6 L19.8 4.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          <span>Settings</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="side-foot">
+      <span class="avatar" aria-hidden="true">WS</span>
+      <span>Workspace: <span style="color:var(--ink)">Placeholder Co</span></span>
+    </div>
+  </aside>
+
+  <!-- backdrop for the mobile drawer; hidden until JS opens the rail -->
+  <button class="scrim" id="scrim" type="button" aria-label="Close navigation" hidden></button>
+
+  <div class="main">
+
+    <!-- ================= top bar ================= -->
+    <header class="topbar">
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6 H20 M4 12 H20 M4 18 H20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <h1 class="page-title">Overview</h1>
+
+      <span class="topbar__spacer" aria-hidden="true"></span>
+
+      <div class="search" role="search">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="M16.5 16.5 L21 21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <label class="sr-only" for="q">Search services and regions</label>
+        <input id="q" type="search" name="q" placeholder="Search services, regions, incidents" autocomplete="off">
+      </div>
+
+      <button class="user" type="button" aria-label="Account menu for J. Rivera">
+        <span class="avatar" aria-hidden="true">JR</span>
+        <span class="user__name">J. Rivera</span>
+        <svg class="user__chev" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9 L12 15 L18 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </header>
+
+    <!-- ================= content ================= -->
+    <main class="content">
+
+      <div class="content-head">
+        <div>
+          <h2 class="content-head__title">Service health</h2>
+          <p>Last updated <span class="num">14:32</span> local, refreshed every <span class="num">30</span>s</p>
+        </div>
+        <div class="content-head__actions">
+          <button class="btn" id="refresh" type="button">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 11 A8 8 0 1 0 18 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M20 5 V11 H14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Refresh
+          </button>
+          <a class="btn btn--primary" href="./reports.html" data-demo>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5 V19 M5 12 H19" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+            New report
+          </a>
+        </div>
+      </div>
+
+      <!-- ---- KPI strip: summary before detail ---- -->
+      <section aria-label="Key metrics" id="kpi-section">
+        <!-- real cards -->
+        <div class="kpi-grid real">
+
+          <article class="card">
+            <div class="card__label"><span class="label">Active users</span></div>
+            <div class="card__value">24,318</div>
+            <div class="card__foot">
+              <span class="delta delta--up">
+                <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M6 10 V2 M3 5 L6 2 L9 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                12.4% <span class="sr-only">increase</span>
+              </span>
+              <svg class="spark spark--success" viewBox="0 0 128 40" preserveAspectRatio="none" aria-hidden="true">
+                <line class="spark__grid" x1="0" y1="13" x2="128" y2="13"/><line class="spark__grid" x1="0" y1="27" x2="128" y2="27"/>
+                <path class="spark__area" d="M0 40 L0 30 L16 32 L32 25 L48 27 L64 19 L80 21 L96 13 L112 12 L128 6 L128 40 Z"/>
+                <path class="spark__line" d="M0 30 L16 32 L32 25 L48 27 L64 19 L80 21 L96 13 L112 12 L128 6"/>
+                <circle class="spark__dot" cx="128" cy="6" r="3.2"/>
+              </svg>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__label"><span class="label">Avg latency</span></div>
+            <div class="card__value">214<small> ms</small></div>
+            <div class="card__foot">
+              <span class="delta delta--up">
+                <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M6 2 V10 M3 7 L6 10 L9 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                8.1% <span class="sr-only">lower, an improvement</span>
+              </span>
+              <svg class="spark spark--success" viewBox="0 0 128 40" preserveAspectRatio="none" aria-hidden="true">
+                <line class="spark__grid" x1="0" y1="13" x2="128" y2="13"/><line class="spark__grid" x1="0" y1="27" x2="128" y2="27"/>
+                <path class="spark__area" d="M0 40 L0 11 L16 14 L32 12 L48 18 L64 17 L80 23 L96 25 L112 28 L128 31 L128 40 Z"/>
+                <path class="spark__line" d="M0 11 L16 14 L32 12 L48 18 L64 17 L80 23 L96 25 L112 28 L128 31"/>
+                <circle class="spark__dot" cx="128" cy="31" r="3.2"/>
+              </svg>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__label"><span class="label">Error rate</span></div>
+            <div class="card__value">0.42<small> %</small></div>
+            <div class="card__foot">
+              <span class="delta delta--down-bad">
+                <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M6 10 V2 M3 5 L6 2 L9 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                0.14 pt <span class="sr-only">increase, worse</span>
+              </span>
+              <svg class="spark spark--danger" viewBox="0 0 128 40" preserveAspectRatio="none" aria-hidden="true">
+                <line class="spark__grid" x1="0" y1="13" x2="128" y2="13"/><line class="spark__grid" x1="0" y1="27" x2="128" y2="27"/>
+                <path class="spark__area" d="M0 40 L0 28 L16 26 L32 29 L48 24 L64 22 L80 25 L96 16 L112 14 L128 9 L128 40 Z"/>
+                <path class="spark__line" d="M0 28 L16 26 L32 29 L48 24 L64 22 L80 25 L96 16 L112 14 L128 9"/>
+                <circle class="spark__dot" cx="128" cy="9" r="3.2"/>
+              </svg>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__label"><span class="label">Pending reviews</span></div>
+            <div class="card__value">47</div>
+            <div class="card__foot">
+              <span class="delta delta--warn">
+                <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M6 10 V2 M3 5 L6 2 L9 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                6 today <span class="sr-only">increase, needs attention</span>
+              </span>
+              <svg class="spark spark--warning" viewBox="0 0 128 40" preserveAspectRatio="none" aria-hidden="true">
+                <line class="spark__grid" x1="0" y1="13" x2="128" y2="13"/><line class="spark__grid" x1="0" y1="27" x2="128" y2="27"/>
+                <path class="spark__area" d="M0 40 L0 24 L16 22 L32 25 L48 20 L64 23 L80 18 L96 21 L112 17 L128 15 L128 40 Z"/>
+                <path class="spark__line" d="M0 24 L16 22 L32 25 L48 20 L64 23 L80 18 L96 21 L112 17 L128 15"/>
+                <circle class="spark__dot" cx="128" cy="15" r="3.2"/>
+              </svg>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- skeleton mirror of the KPI cards (shown only while [data-loading]) -->
+        <div class="kpi-grid skel" aria-hidden="true">
+          <article class="card"><span class="sk sk--label"></span><span class="sk sk--value"></span><span class="sk sk--spark"></span></article>
+          <article class="card"><span class="sk sk--label"></span><span class="sk sk--value"></span><span class="sk sk--spark"></span></article>
+          <article class="card"><span class="sk sk--label"></span><span class="sk sk--value"></span><span class="sk sk--spark"></span></article>
+          <article class="card"><span class="sk sk--label"></span><span class="sk sk--value"></span><span class="sk sk--spark"></span></article>
+        </div>
+      </section>
+
+      <!-- ---- primary data table ---- -->
+      <section class="panel" id="table-section" aria-label="Services">
+        <div class="panel__head">
+          <h3>Services by region</h3>
+          <span class="label">8 monitored</span>
+        </div>
+
+        <!-- real table -->
+        <div class="real">
+          <div class="table-frame">
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Service</th>
+                    <th scope="col">Region</th>
+                    <th scope="col" class="col-num">Requests /min</th>
+                    <th scope="col" class="col-num">p95</th>
+                    <th scope="col" class="col-num">Error rate</th>
+                    <th scope="col">Status</th>
+                    <th scope="col"><span class="sr-only">Actions</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="is-success">
+                    <td class="sev"><span class="cell-name"><b>Gateway node</b><span>svc-gw-01</span></span></td>
+                    <td>us-east</td>
+                    <td class="col-num">18,204</td>
+                    <td class="col-num">186 ms</td>
+                    <td class="col-num">0.11%</td>
+                    <td><span class="pill pill--success">Operational</span></td>
+                    <td><a class="row-link" href="./services.html" data-demo>View</a></td>
+                  </tr>
+                  <tr class="is-success">
+                    <td class="sev"><span class="cell-name"><b>Auth service</b><span>svc-auth-02</span></span></td>
+                    <td>eu-west</td>
+                    <td class="col-num">9,876</td>
+                    <td class="col-num">142 ms</td>
+                    <td class="col-num">0.04%</td>
+                    <td><span class="pill pill--success">Operational</span></td>
+                    <td><a class="row-link" href="./services.html" data-demo>View</a></td>
+                  </tr>
+                  <tr class="is-warning">
+                    <td class="sev"><span class="cell-name"><b>Media pipeline</b><span>svc-media-04</span></span></td>
+                    <td>ap-south</td>
+                    <td class="col-num">6,540</td>
+                    <td class="col-num">512 ms</td>
+                    <td class="col-num">1.28%</td>
+                    <td><span class="pill pill--warning">Degraded</span></td>
+                    <td><a class="row-link" href="./services.html" data-demo>View</a></td>
+                  </tr>
+                  <tr class="is-success">
+                    <td class="sev"><span class="cell-name"><b>Billing worker</b><span>svc-bill-07</span></span></td>
+                    <td>us-west</td>
+                    <td class="col-num">2,310</td>
+                    <td class="col-num">205 ms</td>
+                    <td class="col-num">0.09%</td>
+                    <td><span class="pill pill--success">Operational</span></td>
+                    <td><a class="row-link" href="./services.html" data-demo>View</a></td>
+                  </tr>
+                  <tr class="is-danger">
+                    <td class="sev"><span class="cell-name"><b>Search index</b><span>svc-search-03</span></span></td>
+                    <td>eu-central</td>
+                    <td class="col-num">4,102</td>
+                    <td class="col-num">1,340 ms</td>
+                    <td class="col-num">6.71%</td>
+                    <td><span class="pill pill--danger">Down</span></td>
+                    <td><a class="row-link" href="./incidents.html" data-demo>View</a></td>
+                  </tr>
+                  <tr class="is-warning">
+                    <td class="sev"><span class="cell-name"><b>Notification bus</b><span>svc-notify-05</span></span></td>
+                    <td>us-east</td>
+                    <td class="col-num">7,884</td>
+                    <td class="col-num">377 ms</td>
+                    <td class="col-num">0.94%</td>
+                    <td><span class="pill pill--warning">Degraded</span></td>
+                    <td><a class="row-link" href="./services.html" data-demo>View</a></td>
+                  </tr>
+                  <tr class="is-success">
+                    <td class="sev"><span class="cell-name"><b>Asset cache</b><span>svc-cache-09</span></span></td>
+                    <td>global</td>
+                    <td class="col-num">31,540</td>
+                    <td class="col-num">44 ms</td>
+                    <td class="col-num">0.02%</td>
+                    <td><span class="pill pill--success">Operational</span></td>
+                    <td><a class="row-link" href="./services.html" data-demo>View</a></td>
+                  </tr>
+                  <tr class="is-success">
+                    <td class="sev"><span class="cell-name"><b>Export service</b><span>svc-export-06</span></span></td>
+                    <td>ap-north</td>
+                    <td class="col-num">1,208</td>
+                    <td class="col-num">263 ms</td>
+                    <td class="col-num">0.18%</td>
+                    <td><span class="pill pill--success">Operational</span></td>
+                    <td><a class="row-link" href="./services.html" data-demo>View</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- skeleton mirror of the table rows -->
+        <div class="skel" aria-hidden="true">
+          <div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk"></span><span class="sk"></span><span class="sk"></span></div>
+          <div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk"></span><span class="sk"></span><span class="sk"></span></div>
+          <div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk"></span><span class="sk"></span><span class="sk"></span></div>
+          <div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk"></span><span class="sk"></span><span class="sk"></span></div>
+          <div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk"></span><span class="sk"></span><span class="sk"></span></div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ================= footer bar ================= -->
+    <footer class="footer">
+      <span class="footer__copy">Meterline, 2026. Placeholder reference template, no real company implied.</span>
+      <nav class="footer__links" aria-label="Footer">
+        <a class="footer__link" href="./docs.html" data-demo>Docs</a>
+        <a class="footer__link" href="./status.html" data-demo>Status</a>
+        <a class="footer__link" href="./privacy.html" data-demo>Privacy</a>
+        <a class="footer__link" href="./terms.html" data-demo>Terms</a>
+      </nav>
+      <span class="footer__status">All systems operational</span>
+    </footer>
+
+  </div>
+</div>
+
+<!-- ================= page-transition loader ================= -->
+<div class="loader" id="nav-loader" role="status" aria-live="polite" aria-label="Loading the next page" hidden>
+  <div class="loader__ring" aria-hidden="true"></div>
+  <svg class="loader__mark" width="40" height="40" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <circle cx="12" cy="12" r="9" stroke="var(--hairline)" stroke-width="3"></circle>
+    <path d="M12 3 a9 9 0 0 1 9 9" stroke="currentColor" stroke-width="3" stroke-linecap="round"></path>
+  </svg>
+  <span class="loader__label">Loading</span>
+</div>
+
+<script>
+/* progressive enhancement flag: everything below is additive. With scripts
+   stripped, the sidebar and all content render; the loader stays hidden. */
+document.body.classList.add('has-js');
+
+/* ---- mobile sidebar drawer ---- */
+(function () {
+  var toggle = document.getElementById('nav-toggle');
+  var sidebar = document.getElementById('sidebar');
+  var scrim = document.getElementById('scrim');
+  if (!toggle || !sidebar || !scrim) return;
+
+  function open() {
+    document.body.classList.add('nav-open');
+    scrim.hidden = false;
+    toggle.setAttribute('aria-expanded', 'true');
+  }
+  function close() {
+    document.body.classList.remove('nav-open');
+    scrim.hidden = true;
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+  toggle.addEventListener('click', function () {
+    if (document.body.classList.contains('nav-open')) { close(); } else { open(); }
+  });
+  scrim.addEventListener('click', close);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+  // close the drawer when a destination is chosen
+  sidebar.addEventListener('click', function (e) { if (e.target.closest('a')) close(); });
+})();
+
+/* ---- in-place skeleton refresh (separate from the page-transition loader) ---- */
+(function () {
+  var btn = document.getElementById('refresh');
+  var kpi = document.getElementById('kpi-section');
+  var table = document.getElementById('table-section');
+  if (!btn || !kpi || !table) return;
+
+  btn.addEventListener('click', function () {
+    if (btn.disabled) return;
+    btn.disabled = true;
+    kpi.setAttribute('data-loading', '');
+    table.setAttribute('data-loading', '');
+    setTimeout(function () {
+      kpi.removeAttribute('data-loading');
+      table.removeAttribute('data-loading');
+      btn.disabled = false;
+    }, 1200);
+  });
+})();
+
+/*
+  Page-transition loader.
+  Rule (research/patterns.md): the best loading state is not needing one.
+  Under a 300ms threshold we show nothing; only a genuinely pending
+  navigation reveals a single centered indeterminate ring on the app ground.
+
+  In production (a real multi-page app) you keep only the "real navigation"
+  branch below and delete the data-demo attributes: the browser's own
+  navigation drives show(), and pageshow/popstate drive cancel().
+  The data-demo branch exists so this ONE standalone file can demonstrate
+  the exact same loader without a server.
+*/
+(function () {
+  var overlay = document.getElementById('nav-loader');
+  if (!overlay) return;
+
+  var DELAY = 300;        // threshold below which no loader is shown
+  var DEMO_SETTLE = 1400; // stand-in for a real navigation completing
+  var timer = null;
+
+  function show() {
+    overlay.hidden = false;
+    void overlay.offsetWidth; // reflow so the opacity transition runs
+    overlay.classList.add('is-on');
+  }
+  function schedule() {
+    clearTimeout(timer);
+    timer = setTimeout(show, DELAY);
+  }
+  function cancel() {
+    clearTimeout(timer);
+    overlay.classList.remove('is-on');
+    // hide after the fade so it never flashes an empty box
+    var hide = function () { overlay.hidden = true; overlay.removeEventListener('transitionend', hide); };
+    if (getComputedStyle(overlay).opacity === '0') { overlay.hidden = true; }
+    else { overlay.addEventListener('transitionend', hide); }
+  }
+
+  document.addEventListener('click', function (e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var a = e.target.closest('a[href]');
+    if (!a) return;
+    if (a.target && a.target !== '_self') return;             // opens a new tab
+    var url;
+    try { url = new URL(a.getAttribute('href'), location.href); } catch (err) { return; }
+    if (url.origin !== location.origin) return;               // external link
+    if (url.pathname === location.pathname && url.hash) return; // same-page anchor
+
+    if (a.hasAttribute('data-demo')) {
+      // standalone demonstration: same loader, no real navigation
+      e.preventDefault();
+      schedule();
+      setTimeout(cancel, DELAY + DEMO_SETTLE);
+      return;
+    }
+    schedule(); // real cross-document navigation; browser unload takes over
+  });
+
+  window.addEventListener('pageshow', cancel);  // covers bfcache restore
+  window.addEventListener('popstate', cancel);
+})();
+</script>
+</body>
+</html>

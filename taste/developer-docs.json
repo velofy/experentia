@@ -1,0 +1,298 @@
+{
+  "name": "developer-docs",
+  "version": "1.0.0",
+  "genre": "The prototypical developer documentation site: a calm, high-legibility light reading surface with a persistent left sidebar, a roughly 65ch prose column, one blue accent for links and active state, and code surfaces clearly differentiated from prose. Structure is maximally conventional; novelty is spent only on the reading experience.",
+  "provenance": {
+    "sample": "category convention: documentation sites (persistent left sidebar, prose column, right on-this-page rail); no single-source sample file for this genre",
+    "research": ["research/color.md", "research/style.md", "research/patterns.md"],
+    "checklist": "checklists/pre-ship.md",
+    "evidence_note": "Docs are read, not skimmed, so the whole design serves legibility: high text contrast, a measured reading column, and code that never fights the prose. Low visual complexity plus high prototypicality wins the 50ms first impression (style.md); a docs page should look exactly like a docs page, so all novelty budget goes into typography and one calm accent, not layout invention. Blue is the lowest-risk trust accent (color.md); admonition hues are held distinct from it so a warning never reads as a link. Committed to a light ground for long-form reading comfort; treat light/dark as an audience parameter, not a universal."
+  },
+  "tokens": {
+    "grounds": {
+      "ground-0": {
+        "value": "#FCFCFD",
+        "role": "page ground; near-white with the faintest cool cast, never pure #FFFFFF, so raised panels can still read as raised"
+      },
+      "ground-1": {
+        "value": "#F5F6F8",
+        "role": "raised panel ground: the left sidebar, the on-this-page rail, table header rows"
+      },
+      "ground-2": {
+        "value": "#F1F2F5",
+        "role": "fenced code-block surface; a clearly cooler and darker step so code reads as a distinct surface from prose"
+      },
+      "code-inline": {
+        "value": "#EDEFF3",
+        "role": "inline code chip background; sits inside body text and must still hold 4.5:1 for the code glyphs on top of it"
+      },
+      "accent-soft": {
+        "value": "#E8EEFB",
+        "role": "the active sidebar item fill; a pale accent tint, meaningful only in combination with the accent-colored label and the left accent bar"
+      }
+    },
+    "ink": {
+      "value": "#1B1F28",
+      "role": "primary body text and headings; a warm-neutral near-black, never pure #000, holds well above 4.5:1 on every ground"
+    },
+    "code-text": {
+      "value": "#252A34",
+      "role": "monospace glyphs inside inline chips and code blocks; a shade lighter than ink so code reads as its own register while still exceeding 4.5:1"
+    },
+    "muted": {
+      "value": "#586074",
+      "role": "secondary text: lede support, breadcrumb, sidebar section headers, on-this-page title, footer copy; holds 4.5:1 as real body-scale text, not just large text"
+    },
+    "hairline": {
+      "value": "#E3E5EC",
+      "role": "decorative 1px borders: sidebar edge, section rules, table cell walls, code-block frame. Decorative only; carries no meaning alone, so it is exempt from the 3:1 UI floor"
+    },
+    "edge": {
+      "value": "#767D8E",
+      "role": "interactive border: the search field, the sidebar toggle, the copy button, any stroke that must read as a control; holds the 3:1 UI-component floor on ground-0, ground-1 and ground-2"
+    },
+    "accent": {
+      "value": "#1A5CD1",
+      "role": "THE one accent: prose links, sidebar active label, on-this-page active item, focus ring, heading-anchor affordance. A mid trust-blue (color.md); meets 4.5:1 on every ground and on both admonition tints"
+    },
+    "accent-hover": {
+      "value": "#123F97",
+      "role": "darker accent for link and control hover/active; higher contrast still, never lighter than the resting accent"
+    },
+    "cta": {
+      "surface": "#1A5CD1",
+      "ink": "#FFFFFF",
+      "role": "the filled Sign in button in the top nav; white text on the accent surface at 6.01:1. The only filled accent surface in the chrome; emphasis is contrast, not a second hue (patterns.md, isolation effect)"
+    },
+    "note": {
+      "bg": "#E4F3F4",
+      "ink": "#0B6E75",
+      "edge": "#0E7C86",
+      "role": "the note admonition: a calm teal, deliberately off the blue accent so a note never reads as a link. Ink holds 4.5:1 on the note tint; the 3px left edge holds 3:1 on the page ground as a meaningful graphic"
+    },
+    "warn": {
+      "bg": "#FBEFD6",
+      "ink": "#8A5A00",
+      "edge": "#A06E00",
+      "role": "the warning admonition: an amber, distinct from both accent and note. Amber sits at hue ~40, well clear of the chartreuse/dark-yellow trough (color.md). Ink holds 4.5:1 on the amber tint; the left edge holds 3:1 on the ground"
+    },
+    "contrast_pairs_precomputed": {
+      "ink_on_ground-0": "16.09:1",
+      "ink_on_ground-1": "15.25:1",
+      "ink_on_ground-2": "14.73:1",
+      "ink_on_code-inline": "14.33:1",
+      "code-text_on_ground-2": "12.85:1",
+      "code-text_on_code-inline": "12.50:1",
+      "muted_on_ground-0": "6.13:1",
+      "muted_on_ground-1": "5.81:1",
+      "muted_on_ground-2": "5.62:1",
+      "accent_on_ground-0": "5.86:1",
+      "accent_on_ground-1": "5.56:1",
+      "accent_on_ground-2": "5.37:1",
+      "accent_on_code-inline": "5.22:1",
+      "accent_on_accent-soft": "5.16:1",
+      "accent_on_note-bg": "5.27:1",
+      "accent_on_warn-bg": "5.27:1",
+      "cta-ink_on_cta-surface": "6.01:1",
+      "edge_on_ground-0": "4.02:1",
+      "edge_on_ground-1": "3.81:1",
+      "edge_on_ground-2": "3.68:1",
+      "note-ink_on_note-bg": "5.26:1",
+      "note-edge_on_ground-0": "4.82:1",
+      "warn-ink_on_warn-bg": "5.20:1",
+      "warn-edge_on_ground-0": "4.33:1",
+      "focus-ring_on_ground-0": "5.86:1",
+      "focus-ring_on_ground-1": "5.56:1"
+    }
+  },
+  "type_roles": {
+    "heading_sans": {
+      "stack": "ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+      "weight": 600,
+      "letter_spacing": "-0.011em",
+      "case": "sentence case",
+      "sizes": {
+        "h1": "clamp(1.9rem, 3.4vw, 2.5rem)",
+        "h2": "1.5rem",
+        "h3": "1.15rem"
+      },
+      "role": "the clear sans for the top nav, the page h1, and every h2/h3. Sentence case, quiet weight; headings anchor the document, they do not shout"
+    },
+    "body_sans": {
+      "stack": "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, Roboto, 'Noto Sans', 'Helvetica Neue', Arial, sans-serif",
+      "weight": 400,
+      "size": "1rem",
+      "line_height": 1.68,
+      "measure": "65ch",
+      "role": "the humanist sans for prose. Paragraphs cap at roughly 65ch so the eye can return to the next line without hunting; this measure is the core of the reading experience"
+    },
+    "mono_code": {
+      "stack": "ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', 'Roboto Mono', monospace",
+      "transform": "none",
+      "letter_spacing": "0",
+      "sizes": {
+        "inline": "0.9em",
+        "block": "0.875rem"
+      },
+      "role": "literal code, inline and block; never tracked, never uppercased. Inline code sits on a tinted chip; block code sits on the ground-2 surface with its own frame and a copy control"
+    },
+    "label": {
+      "stack": "ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+      "transform": "uppercase",
+      "weight": 600,
+      "letter_spacing": "0.06em",
+      "size": "0.72rem",
+      "role": "microlabels: sidebar section headers, the ON THIS PAGE title, the admonition titles, breadcrumb separators. Tracked uppercase sans; it labels, it does not read as prose"
+    }
+  },
+  "layout_grammar": {
+    "note": "Ordered nav to footer in document reading order. Slot names are the section ids. The shell is a three-column grid at desktop (sidebar / prose / rail) that degrades to a single column at phone width, where the sidebar collapses behind a visible toggle whose default no-JS state is open.",
+    "slots": [
+      {
+        "order": 1,
+        "name": "top-nav",
+        "contract": "A sticky top bar, always visible, no hamburger at any width. Left: brand mark plus wordmark. Right: at most four primary destinations (Product, Docs active, API, Blog) as sentence-case sans links with a visible active state, then exactly one filled accent CTA (Sign in). Five items maximum. At phone width the destinations stay visible by wrapping or condensing; they never collapse into a disclosure menu."
+      },
+      {
+        "order": 2,
+        "name": "left-sidebar",
+        "contract": "A persistent left column listing doc sections as uppercase-label group headers, each with its pages as sans links. Exactly one page carries the active state: accent label, accent-soft fill, and a 3px accent left bar. A search field sits at the top with a real interactive border. The sidebar collapses behind a single visible toggle at phone width; the default no-JS state SHOWS the sidebar, and any hiding CSS is gated behind a JS-added marker class."
+      },
+      {
+        "order": 3,
+        "name": "prose-column",
+        "contract": "The reading column, capped near 65ch. A breadcrumb, an h1, a one-paragraph lede in muted ink, then h2 and h3 headings that are ANCHORED: each has an id and reveals a copy-link affordance on hover and on keyboard focus. Body paragraphs, lists, an inline-code chip style, and fenced code blocks that EITHER soft-wrap or scroll inside their own overflow-x:auto container. At least one realistically long install command proves the code line does not clip or widen the page at 390px."
+      },
+      {
+        "order": 4,
+        "name": "admonition",
+        "contract": "A callout component with a note variant (teal) and a warning variant (amber). Each has a tracked uppercase title, an icon built from inline SVG, a 3px left edge in its own hue, and a soft tinted background. Both hues are held distinct from the accent so neither reads as a link; links inside a callout still take the accent color and stay above 4.5:1 on the tint."
+      },
+      {
+        "order": 5,
+        "name": "on-this-page-rail",
+        "contract": "A right rail titled ON THIS PAGE listing the h2/h3 headings of the current document as in-page anchor links, with the current section marked active. Sticky within the viewport on desktop; hidden below the desktop breakpoint, which is acceptable because the same headings are reachable from the prose and the sidebar."
+      },
+      {
+        "order": 6,
+        "name": "pager-and-footer",
+        "contract": "A previous/next pager at the foot of the prose column: two bordered cards, each a whole-card link with a muted direction label and a sans page title, one or both present. Then a page footer with a top hairline: a brand column with a one-line mission, up to three link columns under uppercase-label headers, and a bottom bar with copyright and legal links. Every anchor has an explicit color."
+      }
+    ]
+  },
+  "assertions": {
+    "note": "The docs genre rules restated as machine-checkable tests, plus the hard accessibility floors. Every assertion is phrased so a script or audit can pass or fail it.",
+    "rules": [
+      {
+        "id": "light-ground-committed",
+        "source": "genre rule; pre-ship.md dark/light",
+        "assert": "the page commits to one look: every tokens.grounds value has relative luminance >= 0.85 and is not #FFFFFF; no dark-scheme token family is left undefined"
+      },
+      {
+        "id": "ink-not-black",
+        "source": "genre rule",
+        "assert": "body text color is not #000000 and contrast(ink, every ground including code-inline) >= 4.5"
+      },
+      {
+        "id": "reading-measure",
+        "source": "genre rule; style.md",
+        "assert": "the prose paragraph column max-width computes to roughly 60ch to 72ch; body line-height >= 1.6"
+      },
+      {
+        "id": "code-differentiated",
+        "source": "genre rule",
+        "assert": "fenced code-block surface (ground-2) and inline-code chip (code-inline) are distinct color values from the prose ground-0; code glyphs on each surface hold contrast >= 4.5"
+      },
+      {
+        "id": "code-block-wrap-or-scroll",
+        "source": "pre-ship.md mobile",
+        "assert": "every fenced code block EITHER sets white-space:pre-wrap with word-break OR sets overflow-x:auto on its own container; a realistically long command line neither clips nor widens the page at 390px"
+      },
+      {
+        "id": "heading-anchors",
+        "source": "genre rule",
+        "assert": "every h2 and h3 in the prose column has an id and a focusable copy-link affordance revealed on hover and on :focus-within/:focus-visible"
+      },
+      {
+        "id": "sidebar-active-state",
+        "source": "genre rule; patterns.md wayfinding",
+        "assert": "exactly one sidebar page link carries the active treatment (accent label plus accent-soft fill plus accent left bar) and it corresponds to the current document"
+      },
+      {
+        "id": "nav-budget",
+        "source": "patterns.md NN/g",
+        "assert": "top-nav primary destinations <= 5; hamburger/disclosure menus in the TOP nav == 0 at every width including 390px (the left sidebar toggle is a docs-sidebar affordance, not the primary nav)"
+      },
+      {
+        "id": "admonition-distinct-from-accent",
+        "source": "pre-ship.md semantics of color",
+        "assert": "note and warning hues are each a different value from the accent; neither equals the accent, so a callout never reads as a link"
+      },
+      {
+        "id": "mobile-truth",
+        "source": "pre-ship.md",
+        "assert": "document.scrollingElement.scrollWidth <= 390 at a true 390px viewport (measured inside an iframe host, not a clamped headless window); flex and grid children set min-width:0"
+      },
+      {
+        "id": "no-js-content",
+        "source": "pre-ship.md",
+        "assert": "with scripts stripped, all content is visible and anchors navigate; the sidebar and on-this-page content are SHOWN, not hidden, because hiding CSS is gated behind a JS-added marker class"
+      },
+      {
+        "id": "contrast-floors",
+        "source": "color.md WCAG 2.1 AA",
+        "assert": "contrast >= 4.5:1 for all text including inline code and code blocks; >= 3:1 for interactive borders and meaningful graphics including admonition edges"
+      },
+      {
+        "id": "accent-link-floor",
+        "source": "color.md; pre-ship.md links",
+        "assert": "the accent link color holds contrast >= 4.5 on ground-0, ground-1, ground-2, code-inline, accent-soft, note-bg and warn-bg wherever a link can appear"
+      },
+      {
+        "id": "no-chartreuse",
+        "source": "color.md",
+        "assert": "no ground or accent or admonition token falls in the chartreuse/dark-yellow hue band (hue 60-90 with lightness < 60%); the warning amber sits below hue 50"
+      },
+      {
+        "id": "self-contained",
+        "source": "patterns.md LCP budget",
+        "assert": "external network requests == 0; @font-face count == 0; all font-family values are system stacks; all imagery is CSS or inline SVG"
+      },
+      {
+        "id": "focus-visible",
+        "source": "pre-ship.md",
+        "assert": "every interactive element paints a visible outline on :focus-visible with contrast >= 3:1 against its surroundings; :focus:not(:focus-visible) suppresses the ring on pointer clicks"
+      },
+      {
+        "id": "anchor-color",
+        "source": "pre-ship.md",
+        "assert": "count of <a> elements without an explicit color rule in scope == 0; button-styled anchors set text-decoration:none"
+      },
+      {
+        "id": "specificity-discipline",
+        "source": "pre-ship.md specificity",
+        "assert": "no container-scoped descendant selector (for example .sidebar a) outranks a component rule that shares that container; components own their color via their own class"
+      },
+      {
+        "id": "var-resolves",
+        "source": "pre-ship.md",
+        "assert": "every var(--x) referenced in the stylesheet has a definition in scope; no interactive element or graphic renders transparent for a missing token"
+      },
+      {
+        "id": "loader-discipline",
+        "source": "patterns.md loading states",
+        "assert": "the page-transition loader appears only after >= 300ms of pending navigation; it is a single centered indeterminate ring on the page ground; it starts hidden via the [hidden] attribute; under prefers-reduced-motion it is a static mark; it is visibly populated in every animation phase"
+      },
+      {
+        "id": "reduced-motion",
+        "source": "pre-ship.md",
+        "assert": "under prefers-reduced-motion: reduce, running animations == 0 and all content renders"
+      },
+      {
+        "id": "no-emdash",
+        "source": "pre-ship.md",
+        "assert": "count of U+2014 characters in every shipped file == 0"
+      }
+    ]
+  }
+}

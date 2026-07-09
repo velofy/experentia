@@ -1,0 +1,261 @@
+{
+  "name": "app-dashboard",
+  "version": "1.0.0",
+  "genre": "The data-dense product dashboard: a considered neutral-dark ground, one brand accent for interaction, and three semantic status colors for data state. A UI that is scanned and operated, not read top to bottom. Summary before detail; state encoded in FORM (pill, chip, severity stripe, sparkline) as well as number.",
+  "provenance": {
+    "sample": "genre synthesized from research; no single sampled site",
+    "research": ["research/color.md", "research/style.md", "research/patterns.md"],
+    "checklist": "checklists/pre-ship.md",
+    "evidence_note": "Low visual complexity plus high prototypicality wins the 50ms first impression (style.md), so the dashboard keeps the canonical shell (left rail, top bar, KPI strip, table) and spends novelty only on the chart and status encoding. Blue is the lowest-risk trust accent (color.md), reserved here for interaction; the three status colors are held distinct from it so a category never goes invisible (pre-ship). Loading follows the mixed evidence in patterns.md: in-place skeletons that mirror final layout for known shapes, plus a single centered page-transition ring only after a 300ms threshold. Dark ground is an audience parameter for an operator tool, not a universal."
+  },
+  "tokens": {
+    "grounds": {
+      "ground-0": {
+        "value": "#0E1116",
+        "role": "app ground; near-black cool slate, never pure #000. Content column and top bar sit here"
+      },
+      "ground-1": {
+        "value": "#161A21",
+        "role": "raised surface: sidebar, KPI cards, table body, footer bar"
+      },
+      "ground-2": {
+        "value": "#1D222B",
+        "role": "second raise: hover fills, active sidebar item, table row hover, input wells"
+      }
+    },
+    "ink": {
+      "value": "#E8EBF0",
+      "role": "primary text, KPI numbers, focus ring; cool off-white, never pure #FFF"
+    },
+    "muted": {
+      "value": "#9AA4B2",
+      "role": "secondary text, labels, inactive nav, table meta, placeholders, neutral deltas"
+    },
+    "hairline": {
+      "value": "#262B33",
+      "role": "decorative 1px borders: card walls, table rules, section dividers, chart grid. Decorative only, exempt from the 3:1 UI floor"
+    },
+    "edge": {
+      "value": "#6B7686",
+      "role": "interactive border: search input, secondary buttons, any stroke that must read as a control; holds the 3:1 UI-component floor on every ground"
+    },
+    "accent": {
+      "surface": "#5FA8FF",
+      "ink": "#0E1116",
+      "role": "THE single brand accent, reserved for interaction: links, primary button fill (dark ink on the accent), sparkline-free chart cues, focus intent, active markers. Distinct in hue from every status color so state never collides with brand"
+    },
+    "status": {
+      "success": {
+        "value": "#3DDC97",
+        "bg": "#10281E",
+        "role": "healthy, up-good deltas, operational pill, positive sparkline. Text on its own soft bg and on ground-1 both clear 4.5:1"
+      },
+      "warning": {
+        "value": "#F5B841",
+        "bg": "#2E2410",
+        "role": "degraded, attention-needed deltas, warning pill, caution sparkline. Amber, deliberately outside the chartreuse/dark-yellow trough (color.md)"
+      },
+      "danger": {
+        "value": "#FF6B72",
+        "bg": "#34181B",
+        "role": "down-bad deltas, error rate, down pill, incident severity stripe, negative sparkline"
+      }
+    },
+    "contrast_pairs_precomputed": {
+      "note": "WCAG relative-luminance formula: linearize each channel, L = 0.2126R + 0.7152G + 0.0722B, ratio = (Lhi+0.05)/(Llo+0.05). Text floor 4.5:1; large-text, interactive-border and meaningful-graphic floor 3:1.",
+      "ink_on_ground-0": "15.83:1",
+      "ink_on_ground-1": "14.60:1",
+      "ink_on_ground-2": "13.35:1",
+      "muted_on_ground-0": "7.50:1",
+      "muted_on_ground-1": "6.92:1",
+      "muted_on_ground-2": "6.33:1",
+      "accent_on_ground-0": "7.68:1",
+      "accent_on_ground-1": "7.09:1",
+      "accent_on_ground-2": "6.48:1",
+      "accent-ink_on_accent-surface": "7.68:1",
+      "edge_on_ground-0": "4.11:1",
+      "edge_on_ground-1": "3.79:1",
+      "success_on_ground-1": "9.87:1",
+      "warning_on_ground-1": "9.81:1",
+      "danger_on_ground-1": "6.31:1",
+      "success_on_success-bg": "8.84:1",
+      "warning_on_warning-bg": "8.59:1",
+      "danger_on_danger-bg": "5.88:1",
+      "focus-ring_ink_on_ground-0": "15.83:1"
+    }
+  },
+  "type_roles": {
+    "ui_sans": {
+      "stack": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif",
+      "weight": 400,
+      "size": "0.9375rem",
+      "line_height": 1.5,
+      "role": "the neutral-grotesque UI voice: nav labels, table headers and text cells, body copy, buttons. Clean and legible at small sizes"
+    },
+    "label_caps": {
+      "stack": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif",
+      "transform": "uppercase",
+      "weight": 600,
+      "size": "0.6875rem",
+      "letter_spacing": "0.06em",
+      "role": "microlabels: KPI card labels, column headers, section eyebrows, footer link group headers. Quiet wayfinding, never shouting"
+    },
+    "figure_mono": {
+      "stack": "ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace",
+      "numeric": "tabular-nums",
+      "role": "ALL figures: KPI values, deltas, every numeric table cell, timestamps. Mono plus font-variant-numeric: tabular-nums so digits align in columns and never jitter as data updates"
+    },
+    "display_figure": {
+      "stack": "ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace",
+      "weight": 500,
+      "numeric": "tabular-nums",
+      "size": "clamp(1.6rem, 3.4vw, 2.1rem)",
+      "role": "the large KPI number; the one place figures go big so the summary reads before the detail"
+    }
+  },
+  "layout_grammar": {
+    "note": "Ordered nav to footer. This is a UI shell, not a document: the persistent chrome (sidebar plus top bar) frames a scrollable content column. Summary (KPI strip) precedes detail (table). Slot names are section ids.",
+    "slots": [
+      {
+        "order": 1,
+        "name": "sidebar-nav",
+        "contract": "Persistent LEFT rail on ground-1, at most 6 destinations, each an icon plus label. Exactly one is marked current (accent left stripe, ground-2 fill, accent icon, ink label); the rest are muted. On desktop it is sticky full-height. At phone width it collapses behind a VISIBLE toggle button in the top bar (a hamburger is acceptable for an app rail): with JS it becomes an off-canvas drawer over a scrim; with NO JS it stacks as a full-width block above the content so all content stays visible. Never a disclosure that hides content by default."
+      },
+      {
+        "order": 2,
+        "name": "top-bar",
+        "contract": "Sticky bar on ground-0 with a bottom hairline. Left: the mobile sidebar toggle (visible only under JS at phone width) plus the page title. Center-right: a search field with an edge border and an inline icon. Right: a user menu (avatar with initials, name, chevron); the name may drop at phone width, the avatar never does. Children carry min-width:0 so the search shrinks instead of pushing the page wide."
+      },
+      {
+        "order": 3,
+        "name": "kpi-row",
+        "contract": "A 4-card summary strip, each card on ground-1 with a hairline border: a caps microlabel, a large tabular figure_mono value, a delta chip in a semantic status color (up-good success, down-bad danger, attention warning, flat muted; direction encoded by a glyph as well as color), and a tiny inline-SVG sparkline with a faint grid, a translucent area fill, and an emphasized endpoint dot colored by the card's state. At <=760px the row collapses to two columns, at <=460px to one. Every flex and grid child gets min-width:0."
+      },
+      {
+        "order": 4,
+        "name": "data-table",
+        "contract": "The primary detail surface. The table scrolls inside its OWN overflow-x:auto wrapper with a visible right-edge fade affordance; it never widens the page. Numeric columns are figure_mono with tabular-nums and right alignment. A status column renders colored pills (soft status bg, status-color text at >=4.5:1, status-color border) and each row carries a left severity stripe in its status color, so what needs attention reads at a glance. A header row above the table can enter a skeleton loading state that mirrors the final row layout."
+      },
+      {
+        "order": 5,
+        "name": "footer-bar",
+        "contract": "A quiet footer bar on ground-1 with a top hairline: a copyright line, a small set of muted utility links, and a system-status indicator (a colored dot plus label). Every anchor has an explicit color; button-styled anchors carry text-decoration:none."
+      }
+    ]
+  },
+  "assertions": {
+    "note": "The genre rules and the hard floors restated so a script or audit can pass or fail each. Numbers bind to real ratios computed with the WCAG formula above.",
+    "rules": [
+      {
+        "id": "self-contained",
+        "source": "patterns.md LCP budget",
+        "assert": "external network requests == 0; @font-face count == 0; every font-family is a system stack; all imagery, charts and sparklines are CSS or inline SVG with no remote asset"
+      },
+      {
+        "id": "single-accent",
+        "source": "genre direction",
+        "assert": "exactly one brand accent hue is used for interaction (links, primary fill, active marker, focus intent); it is not reused as any status color"
+      },
+      {
+        "id": "status-distinct-from-accent",
+        "source": "pre-ship.md semantics of color",
+        "assert": "success, warning and danger are all defined and each is a distinct value from the accent and from each other; no status color equals the accent"
+      },
+      {
+        "id": "no-chartreuse",
+        "source": "color.md",
+        "assert": "no ground or accent or status token falls in the chartreuse/dark-yellow band (hue 60-90 with lightness < 60%); the warning amber sits at hue ~40"
+      },
+      {
+        "id": "text-contrast",
+        "source": "color.md WCAG 2.1 AA",
+        "assert": "body text contrast >= 4.5:1 on its actual ground; every status color used as text clears 4.5:1 on both its soft bg and ground-1 (success 9.87, warning 9.81, danger 6.31 on ground-1)"
+      },
+      {
+        "id": "graphic-contrast",
+        "source": "color.md WCAG 2.1 AA SC 1.4.11",
+        "assert": "interactive borders and meaningful graphics >= 3:1 on their ground (edge 4.11 on ground-0, 3.79 on ground-1; every sparkline stroke and status graphic clears 3:1)"
+      },
+      {
+        "id": "tabular-figures",
+        "source": "genre direction",
+        "assert": "every KPI value, delta and numeric table cell computes to a monospace family with font-variant-numeric: tabular-nums"
+      },
+      {
+        "id": "summary-before-detail",
+        "source": "genre direction",
+        "assert": "the KPI summary strip appears in document order before the detail table"
+      },
+      {
+        "id": "state-in-form",
+        "source": "genre direction",
+        "assert": "each row status is encoded redundantly in form and color: a pill plus a left severity stripe; each KPI delta direction is encoded by a glyph plus a semantic color, never color alone"
+      },
+      {
+        "id": "nav-budget",
+        "source": "patterns.md NN/g",
+        "assert": "sidebar primary destinations <= 6, each icon plus label; the mobile toggle is a single visible control, never a hidden disclosure on desktop"
+      },
+      {
+        "id": "table-scrolls-in-wrapper",
+        "source": "pre-ship.md mobile",
+        "assert": "the data table lives in an overflow-x:auto wrapper with a visible edge-fade affordance; the table never sets document.scrollingElement.scrollWidth above the viewport width"
+      },
+      {
+        "id": "mobile-truth",
+        "source": "pre-ship.md",
+        "assert": "document.scrollingElement.scrollWidth <= 390 at a true 390px viewport (measured inside a 390px iframe host, not a clamped headless window); KPI row and any multi-column layout collapse; no white-space:nowrap on anything that can be long; flex and grid children carry min-width:0"
+      },
+      {
+        "id": "sidebar-no-js-visible",
+        "source": "pre-ship.md states",
+        "assert": "with scripts stripped, the sidebar and all content render; the mobile collapse is a JS-added behavior, so the default state shows content, never hides it"
+      },
+      {
+        "id": "focus-visible",
+        "source": "pre-ship.md",
+        "assert": "every interactive element paints a visible outline on :focus-visible with contrast >= 3:1 against its surroundings; :focus:not(:focus-visible){outline:none} so pointer clicks do not paint the ring"
+      },
+      {
+        "id": "loader-discipline",
+        "source": "patterns.md loading states",
+        "assert": "the page-transition loader appears only after >= 300ms of pending navigation; it is a single centered indeterminate ring on the app ground; under prefers-reduced-motion it is a static mark; it is visibly populated in every animation phase; it starts hidden via the [hidden] attribute so a no-JS visitor never sees the overlay"
+      },
+      {
+        "id": "skeleton-mirrors-layout",
+        "source": "patterns.md loading states",
+        "assert": "the in-place skeleton state mirrors the final card and row layout so nothing jumps; it is a separate optional state from the page-transition loader and is populated in every animation phase"
+      },
+      {
+        "id": "reduced-motion",
+        "source": "pre-ship.md",
+        "assert": "under prefers-reduced-motion: reduce, running animations == 0 (spinner, shimmer, blink) and all content still renders"
+      },
+      {
+        "id": "no-js-content",
+        "source": "pre-ship.md",
+        "assert": "with scripts stripped, all page content is visible and anchors still navigate; the loader stays hidden"
+      },
+      {
+        "id": "anchor-color",
+        "source": "pre-ship.md",
+        "assert": "count of <a> elements without an explicit color rule in scope == 0; button-styled anchors set text-decoration:none; no container selector outranks a component rule"
+      },
+      {
+        "id": "vars-resolve",
+        "source": "pre-ship.md specificity",
+        "assert": "every var(--x) referenced in the stylesheet has a definition; a --ring or shadow token has the shape its consumer expects"
+      },
+      {
+        "id": "single-look",
+        "source": "pre-ship.md dark/light",
+        "assert": "the page commits to one look (dark) and forces every family of tokens, including the three status colors and their soft backgrounds, so a visitor never gets mismatched pastel badges"
+      },
+      {
+        "id": "no-emdash",
+        "source": "pre-ship.md",
+        "assert": "count of U+2014 em-dash characters (and the named HTML entity for it) in every shipped file == 0"
+      }
+    ]
+  }
+}
