@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>Supply Chain / experentia reference template</title>
 <meta name="description" content="A neutral, data-dense supply chain operations dashboard, built on summit.js. Reference template for experentia.">
 <!-- summit.js runtime, inlined so this template stays self-contained (no external requests) -->
@@ -64,54 +65,25 @@
   }));
 </script>
 <style>
+  /* One deliberate light theme. Pure-neutral greys as the ground, a single teal
+     accent, semantic colors reserved for status pills and chips. The canvas sits
+     a step below white so the cards lift; color-scheme keeps native controls
+     (inputs, scrollbars) light for every viewer regardless of their OS setting. */
   :root {
-    --bg: #f7f7f8; --panel: #ffffff; --sidebar: #ffffff; --raise: #fbfbfc;
-    --ink: #0d0d0d; --text: #2a2a2a; --muted: #6e6e6e; --faint: #9a9a9a;
-    --hair: #ececee; --hair-2: #f2f2f4; --hover: #f4f4f6;
-    --accent: #177a63; --accent-soft: #eaf3ef;
-    --btn: #0d0d0d; --btn-ink: #ffffff;
-    --pos: #2f7d5f; --pos-bg: #ebf3ef;
-    --warn: #8a6d1f; --warn-bg: #f6f1e2;
-    --crit: #a4473e; --crit-bg: #f6ece9;
-    --info: #3a5b7a; --info-bg: #eaeef3;
-    --shadow: 0 1px 2px rgba(13,13,13,0.04), 0 1px 3px rgba(13,13,13,0.03);
+    color-scheme: light;
+    --bg: #f0f0f0; --panel: #ffffff; --sidebar: #ffffff; --raise: #f7f7f7;
+    --ink: #121212; --text: #2b2b2b; --muted: #6b6b6b; --faint: #8a8a8a;
+    --hair: #e6e6e6; --hair-2: #eeeeee; --hover: #f2f2f2;
+    --accent: #157a61; --accent-soft: #e7f2ee;
+    --btn: #121212; --btn-ink: #ffffff;
+    --pos: #1f7a54; --pos-bg: #e6f3ec;
+    --warn: #7e6410; --warn-bg: #f4efda;
+    --crit: #9e352d; --crit-bg: #f6eae7;
+    --info: #34597f; --info-bg: #e9edf3;
+    --shadow: 0 1px 2px rgba(18,18,18,0.05), 0 1px 3px rgba(18,18,18,0.04);
     --sans: "OpenAI Sans", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     --mono: "OpenAI Sans Mono", ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
   }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #0b0b0c; --panel: #161618; --sidebar: #101012; --raise: #1b1b1e;
-      --ink: #f4f4f5; --text: #dcdcde; --muted: #9a9aa0; --faint: #66666c;
-      --hair: #262629; --hair-2: #1e1e21; --hover: #1d1d20;
-      --accent: #35a488; --accent-soft: #14251f;
-      --btn: #f4f4f5; --btn-ink: #0d0d0d;
-      --pos: #62a586; --pos-bg: #15241d;
-      --warn: #c2a350; --warn-bg: #241f12;
-      --crit: #d17c72; --crit-bg: #241512;
-      --info: #82a6c6; --info-bg: #131a22;
-      --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 1px 3px rgba(0,0,0,0.3);
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #0b0b0c; --panel: #161618; --sidebar: #101012; --raise: #1b1b1e;
-    --ink: #f4f4f5; --text: #dcdcde; --muted: #9a9aa0; --faint: #66666c;
-    --hair: #262629; --hair-2: #1e1e21; --hover: #1d1d20;
-    --accent: #35a488; --accent-soft: #14251f;
-    --btn: #f4f4f5; --btn-ink: #0d0d0d;
-    --pos: #62a586; --pos-bg: #15241d; --warn: #c2a350; --warn-bg: #241f12;
-    --crit: #d17c72; --crit-bg: #241512; --info: #82a6c6; --info-bg: #131a22;
-    --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 1px 3px rgba(0,0,0,0.3);
-  }
-  :root[data-theme="light"] {
-    --bg: #f7f7f8; --panel: #ffffff; --sidebar: #ffffff; --raise: #fbfbfc;
-    --ink: #0d0d0d; --text: #2a2a2a; --muted: #6e6e6e; --faint: #9a9a9a;
-    --hair: #ececee; --hair-2: #f2f2f4; --hover: #f4f4f6;
-    --accent: #177a63; --accent-soft: #eaf3ef; --btn: #0d0d0d; --btn-ink: #ffffff;
-    --pos: #2f7d5f; --pos-bg: #ebf3ef; --warn: #8a6d1f; --warn-bg: #f6f1e2;
-    --crit: #a4473e; --crit-bg: #f6ece9; --info: #3a5b7a; --info-bg: #eaeef3;
-    --shadow: 0 1px 2px rgba(13,13,13,0.04), 0 1px 3px rgba(13,13,13,0.03);
-  }
-
   * { box-sizing: border-box; }
   html, body { height: 100%; }
   body {
@@ -195,8 +167,7 @@
   .tab span { font-size: 11px; color: var(--faint); background: var(--hair-2); border-radius: 20px; padding: 1px 7px; font-variant-numeric: tabular-nums; }
   .tab:hover { background: var(--hover); color: var(--text); }
   .tab.active { background: var(--ink); color: var(--panel); font-weight: 600; }
-  .tab.active span { background: rgba(255,255,255,0.18); color: var(--panel); }
-  :root[data-theme="dark"] .tab.active span, @media (prefers-color-scheme: dark) { }
+  .tab.active span { background: rgba(255,255,255,0.22); color: var(--panel); }
 
   /* Table */
   .twrap { overflow-x: auto; }
