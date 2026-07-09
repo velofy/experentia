@@ -49,3 +49,10 @@ The research layer is complete and committed. Five genres ship so far, each as a
 profile plus a verified reference template that passes its own assertions:
 dark-cinematic-lab, warm-light-editorial, app-dashboard, developer-docs, and
 commerce-marketing. More genres follow.
+
+Alongside them, `templates/supply-chain.html` is the one template wired live on
+[summit.js](https://velofy.github.io/summit/): a neutral operations control tower
+whose shipments table, KPIs, low-stock alerts, and carrier bars all react from a
+single `s-data` source. It shows the same taste rules driving a reactive interface
+rather than a static page. The summit.js runtime is inlined, so the file stays
+self-contained with no external requests.
