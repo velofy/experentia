@@ -1,0 +1,1006 @@
+{
+ "_source": "refero.design public API (api.refero.design/v1/*/available), scraped 2026-07-18",
+ "_what": "A taxonomy of real, shipped UI, indexed 3 ways: what a screen does (design_patterns), what it is made of (page_elements), and who it is for (categories).",
+ "design_patterns": [
+  {
+   "kind": "page state",
+   "name": "Edit",
+   "description": "A condition of a webpage when it is being modified or edited by a user. This state is often indicated by a change in the webpage's appearance, such as a highlighted menu item or tab.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "page state",
+   "name": "Filter & Sorting",
+   "description": "A feature on a website or application that allows users to narrow down or organize content based on certain criteria. This design pattern is often represented by a drop-down menu or set of checkboxes and may include options for sorting content by date, relevance, or other factors.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "page state",
+   "name": "Success",
+   "description": "A condition of a webpage when an action or process has been completed successfully.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "page state",
+   "name": "Loading & Connecting",
+   "description": "A condition of a webpage when it is in the process of loading or connecting to a server or other resource. This state is often indicated by a change in the webpage's appearance, such as a loading spinner or message.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "page state",
+   "name": "Permission",
+   "description": "A condition of a webpage when a user is being asked to provide permission or consent for an action or process.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "page state",
+   "name": "Confirmation",
+   "description": "A condition of a webpage when a user is being asked to confirm an action or provide further information.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "page state",
+   "name": "Empty State",
+   "description": "A user interface element that is displayed when a list or collection of items is empty or has no data to display. It is typically presented as a placeholder or default view that is displayed when no other content is available.\n\nOther names: blank state, zero data state",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "page state",
+   "name": "Error",
+   "description": "A page state in which an error or problem has occurred on a webpage. This state is often indicated through visual changes, such as an error message or notification. This error could be caused by a variety of issues, including server errors, user input errors, or other technical issues.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "legal & other",
+   "name": "Feedback & Survey",
+   "description": "A feature that allows users to provide feedback or answer questions about a product, service, or experience on a website or application. This pattern may include a survey form or rating system and may be used to gather user insights or improve the user experience.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "legal & other",
+   "name": "Dark Mode",
+   "description": "A design feature that allows users to switch the color scheme of a website or application to a darker hue, typically for the purposes of reducing eye strain or conserving battery life on mobile devices.\n\nNote: The dark mode tag is used to identify websites that offer both a light and dark mode option. It is not applicable to websites that only have a dark appearance.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "legal & other",
+   "name": "FAQ",
+   "description": "A webpage or section that provides answers to common questions about a product, service, or company. This page is often organized by topic and includes a list of questions with corresponding answers.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "commerce & finance",
+   "name": "Payment Method",
+   "description": "A feature that allows users to select and input their preferred method of payment on a website or application. This pattern may include options for credit card, debit card, or other payment methods and may also include options for inputting billing and shipping information.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "legal & other",
+   "name": "Booking",
+   "description": "A feature that allows users to reserve or schedule services or appointments through a website or application. This pattern typically includes options for selecting dates, times, and payment methods.\n\nOther names: reservation, scheduling, appointment booking.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "commerce & finance",
+   "name": "Shopping",
+   "description": "The Shopping design pattern usually appears as a grid or list of product cards, each showing a clear product image, product name, price, and often a short description or key features. Each product card typically includes interactive elements such as an “Add to Cart” or “Buy Now” button, and sometimes icons for favorite, compare, or quick view. Prices may show discounts with original and sale prices side by side. The layout is clean and organized, allowing users to browse multiple products at once. Product cards may also display ratings with stars, availability status, or tags like “New” or “Sale.” At the top or side of the page, there are often filtering and sorting controls to help users narrow down choices by categories, price range, brand, or other attributes. You can identify the Shopping pattern by its consistent display of multiple product items with images, prices, and clear purchase actions arranged in a browsable format.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "marketing",
+   "name": "Email Subscription",
+   "description": "A service that enables a user to receive regular emails from a website or organization. The emails may include news, updates, promotions, or other information relevant to the user.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "social",
+   "name": "Like & Reactions",
+   "description": "A design patterns that allow users to express their approval or support of a piece of content or idea on a website or application. These patterns may include a like button or upvote button that users can click to show their support.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "social",
+   "name": "Chat & Messages",
+   "description": "A feature that allows users to communicate with each other or with customer service representatives through a messaging interface on a website or application. This pattern may include options for text, audio, or video messaging and may also include features for organizing and storing messages.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "social",
+   "name": "Reviews & Rating",
+   "description": "The Reviews & Rating design pattern typically appears as a vertical or horizontal list of user-generated feedback entries, each including a user name or avatar, a star rating (usually 1 to 5 stars), and a written review or comment. Visually, the star rating is often displayed prominently near the top or next to the user’s name to quickly convey the overall score. Each review card may also include the date of the review, and sometimes additional details like pros and cons, photos, or user location. The layout is clean and structured to allow easy scanning of multiple reviews. At the top or side, there’s often an average rating summary with an aggregated star score and total number of reviews.\n\nThis pattern differs from Testimonials, which are usually more curated, longer, and more formal statements from selected users or clients, often highlighted separately with more emphasis on the person or company giving the testimonial. Reviews are typically more numerous, less formal, and come from a wider variety of users, reflecting real and diverse opinions. You can avoid confusing them by remembering that Reviews & Rating sections focus on many short, star-scored opinions displayed together, while Testimonials are fewer, more polished, and treated like endorsements often presented as quotes or featured blocks.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "social",
+   "name": "Achievements & Awards",
+   "description": "A page on a website or application that displays a user's accomplishments or recognition on the site. This page may include badges, trophies, or other symbols of achievement and may also include details about how the achievements were earned.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "social",
+   "name": "Comments",
+   "description": "Comments are a design pattern that allows users to leave their thoughts, opinions, or feedback on a piece of content or idea on a website or application. This pattern may include a comment section or form where users can enter their comments and may also include features for responding to or moderating comments.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "social",
+   "name": "Add & Invite People",
+   "description": "A design pattern that enables users to add or invite others to join a group or project on a website or application. This pattern is often represented by a button or icon and may include options for selecting specific users or sending invitations through email or other channels.\n\nOther names: add member, invite member, join group.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "content",
+   "name": "Files",
+   "description": "Managing, uploading, downloading, or sharing files on a website or application through features for organizing, previewing, and editing files. This pattern may also include options for collaborating with other users.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "content",
+   "name": "Testimonials",
+   "description": "The Testimonials design pattern typically appears as a section featuring one or several highlighted quotes or statements from customers or users, often styled to stand out on the page. Visually, testimonials are usually presented inside distinct cards, blocks, or bubbles with quotation marks to emphasize the quoted text. Each testimonial includes the person’s name, sometimes their photo or avatar, and their title or company affiliation to add credibility. The text is often longer and more detailed than in reviews, written in a more polished, narrative style. Testimonials are usually arranged in a carousel, grid, or vertical list with ample spacing to draw attention to each individual story.\n\nThis pattern differs from Reviews & Rating, which typically shows many short, user-generated comments accompanied by star ratings. Reviews are more numerous, informal, and focus on scores and brief opinions. Reviews are NOT testimonials. \n\nTestimonials can NOT contain only logos without text!",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "content",
+   "name": "Event",
+   "description": "A type of web page that presents information about a planned event, including details such as the date, time, location, and purpose of the event. It may also provide ticketing and registration options, as well as information about the event's organizers.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "content",
+   "name": "Article & Text",
+   "description": "A web page that primarily consists of written content, such as a news article, blog post, or research report. It may include headlines, subheadings, and body text, as well as images and other multimedia elements.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "content",
+   "name": "Audio Player",
+   "description": "A interface that allows users to play audio files. It typically includes controls like play/pause, skip, and volume, as well as a display showing the current track and progress.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "content",
+   "name": "Stats",
+   "description": "Refer to the presentation of numerical data or statistics in a clear and visually appealing way. This can be achieved through the use of various design elements such as graphs, charts, and infographics, which allow for easy interpretation and understanding of the data being presented.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "content",
+   "name": "Video Player",
+   "description": "The Video Player pattern enables users to watch video content within an interface. It typically includes controls such as Play/Pause, volume, timeline scrubber, full-screen toggle, and playback speed adjustment. May also feature subtitles, resolution settings, and chapter markers. The play button is commonly centered and styled prominently, often as a white or black triangle on a circular background. Used across media platforms, tutorials, product demos, and ads.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "utility",
+   "name": "Calling",
+   "description": "A Calling pattern (such as video call, audio call, or phone call) is a user interface layout designed to present live information about an active conversation. It shows details like the participant’s identity, call duration, and controls to mute, hold, or end the call. This pattern creates a focused space for managing communication during the ongoing interaction, commonly found in messaging apps, conferencing software, or phone systems.\n\nDO NOT identify Call as CTA or Call To Action!",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "utility",
+   "name": "Camera & Scanner",
+   "description": "A camera design pattern is a design element that allows users to take photos within an app or website. It may include features such as a viewfinder, flash, or focus controls. A scanner design pattern is a similar element that allows users to scan items such as QR codes or documents.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "utility",
+   "name": "Date & Time",
+   "description": "A feature that allows users to select or input dates and times within an app or website. It may take the form of a calendar view, a dropdown menu, or a text field and may include features such as timezone selection or date formatting options.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "utility",
+   "name": "Location & Address",
+   "description": "A pattern that allows users to input or select a physical location within an app or website. It may be presented as a map view, a search field, or a dropdown menu and may include features such as geolocation or address validation.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "utility",
+   "name": "Calendar",
+   "description": "A tool for users to manage and organize their schedules and tasks. It may take the form of a grid view, a list view, or a timeline view, and may include features such as date navigation, event creation, and reminder notifications.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "utility",
+   "name": "Text Editing",
+   "description": "A process of making changes to written text, including correcting errors, formatting the text, and adding or removing content. This process can be done manually or with software or tools.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "utility",
+   "name": "Timer & Clock",
+   "description": "A tool for users to display and track the current time. It may take the form of a digital display, a dial, or an analog face, and may include features such as date display, alarms, and timezone selection.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "utility",
+   "name": "Timeline & History",
+   "description": "A graphical representation of a sequence of events, displaying them in chronological order and often illustrating the relationships between events. It can be presented in a variety of formats, such as a linear graph, list view, or calendar view.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "marketing",
+   "name": "Ads & Promo Offer",
+   "description": "A marketing materials or promotions designed to advertise a product, service, or event. They may be displayed on websites, social media, email, or other channels, and may include discounts, coupons, or other incentives to encourage the user to take action.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "marketing",
+   "name": "Promo Code",
+   "description": "A design pattern that allows users to enter a special code to receive a discount or other promotion on a website or application. This code is typically entered at checkout or during the purchase process.\n\nOther names: coupon code, discount code, voucher code.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "page state",
+   "name": "Upload & Download",
+   "description": "The Upload & Download design pattern often appears as a clearly defined rectangular or rounded area called a drop zone where users can drag and drop files to upload. This area is usually visually distinct with dashed or solid borders and may include an icon such as a cloud with an arrow pointing up (for upload) or down (for download). Inside or near the drop zone, there is typically instructional text like “Drag files here,” “Click to upload,” or “Drop files to start.” The interface often includes buttons for manually selecting files from the device, usually labeled “Browse” or “Select Files.” When files are uploaded, thumbnails, filenames, or progress bars appear within or below the drop zone, showing upload status or allowing users to cancel or remove files. For downloads, the pattern might show a clear button or link with a download icon and filename, sometimes accompanied by progress indicators. Visually, this pattern stands out with its interactive area dedicated to file transfer, clear icons representing upload or download, and dynamic feedback elements showing the status of the action.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "content",
+   "name": "Wish List & Bookmark",
+   "description": "A design pattern that enables users to save items or content for future reference or purchase. This pattern is commonly represented by a heart icon or a \"wish list\" button. A bookmark is a similar design pattern that allows users to save webpages or content for later reference, often represented by a bookmark icon or a \"bookmark\" button.\n\nOther names: favorite, save for later.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "utility",
+   "name": "Design Editing",
+   "description": "A process of making modifications and refinements to the visual elements of a design. This may include adjusting colors, typography, layout, or other aesthetic elements to enhance the design's appeal and effectiveness.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "utility",
+   "name": "Media Editing",
+   "description": "A process of altering and refining audio, video, or other media content. This may include cutting and splicing together different clips, adding special effects or transitions, and adjusting audio levels or other technical elements.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "legal & other",
+   "name": "Ban & Block",
+   "description": "A design pattern is a feature that allows website or application administrators to prevent certain users from accessing the platform. This feature is often used to enforce rules or policies and can be implemented through the use of IP addresses or account bans.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "social",
+   "name": "Flag & Report",
+   "description": "A feature that enables users to report inappropriate content or issues they have encountered on a website or application. This design pattern is used to help maintain the integrity and quality of the platform.\n\nOther names: report function, flag function, report tool.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "social",
+   "name": "Groups & Community",
+   "description": "The Groups & Community design pattern is an interface element that facilitates user interaction, collaboration, and communication within a shared space, often focused on common interests or goals. It is typically presented as a dedicated section within an app or website where users can join, create, or participate in groups or discussions. This pattern is identifiable by features such as group listings, which often include a name, description, member count, and an option to join or request access. Once inside a group, users usually find a feed or a discussion board for sharing updates, asking questions, or posting content, often accompanied by engagement options like comments, likes, or reactions. It may also include tools for managing group members, such as roles or permissions, as well as features for events, polls, or file sharing to foster collaboration. Groups often display key metrics like activity levels or member contributions to highlight engagement. This pattern is commonly used in social networks, professional platforms, and collaborative tools, providing a clear space for fostering community-driven interactions and shared goals. You can recognize it by its structured approach to organizing users around specific topics or purposes with tools to facilitate communication and participation.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "social",
+   "name": "Share",
+   "description": "A feature that allows users to share content from a website or application with others through social media or other platforms. This pattern is often represented by a button or icon that initiates the sharing process.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "social",
+   "name": "Followers & Following",
+   "description": "A feature found on social media platforms and other websites that allows users to follow other users or content and see updates in their feed. This pattern is often represented by a \"follow\" button or icon and may also include a list of users that a user is following or that are following them.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "page state",
+   "name": "Searching",
+   "description": "A process of using a search to locate specific information, content, or products on a website or application. This process may involve entering a search term or query and filtering the results based on certain criteria.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "content",
+   "name": "Checklist & To Do",
+   "description": "The Checklist & To-Do design pattern typically appears as a vertical list of tasks or items, each accompanied by a checkbox or toggle to mark completion. Visually, each item in the list includes a short label or description of the task, often followed by icons or buttons for actions like editing, deleting, or adding subtasks. When an item is marked as complete, it may show a visual change, such as a checkmark in the box, strikethrough text, or a faded/greyed-out appearance to indicate its completion.\n\nThe list is often preceded by a title or header like “To-Do List” or “Checklist” and may include controls for adding new tasks, such as an input field with a \"+\" button. Some variations may feature progress indicators, such as a percentage bar or a numerical counter showing how many tasks are complete out of the total. You can identify the Checklist & To-Do pattern by its structured format, interactive checkboxes, and the ability to track, manage, and visualize progress through task completion.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "legal & other",
+   "name": "Food & Recipe",
+   "description": "A page on a website that is dedicated to sharing information about food and cooking. This page may include recipes, cooking tips, and information about ingredients and nutrition.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "page state",
+   "name": "Select",
+   "description": "A condition of a webpage when it is actively being chosen or selected by a user. This state is often indicated by a change in the webpage's appearance, such as a highlighted menu item or tab.\n\nOther names: active state, selected state, chosen state.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "commerce & finance",
+   "name": "Money Transfer",
+   "description": "The Money Transfer pattern allows users to transfer money between accounts — either internally (e.g., between a user’s own accounts) or externally (e.g., to another person or bank). It typically involves data input, validation, confirmation, and success/error feedback. It includes inputs like the recipient’s name, account number, transfer amount, and source account. It also features buttons such as “Send” or “Transfer” and may include currency conversion.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "content",
+   "name": "Mini Game",
+   "description": "A compact, interactive game that is incorporated into the website for the user's enjoyment. These games are usually designed to be simple and quick to play, and may be used for entertainment or to engage the user with the website.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "page state",
+   "name": "Add & Create",
+   "description": "A process of adding new content or creating new pages within a website or application. This may involve adding new text, images, or other elements to existing pages, or creating entirely new pages to be added to the website or application.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "page state",
+   "name": "Delete",
+   "description": "A state that allows users to delete or remove items from a list or collection. It is typically triggered by a user action such as clicking a delete button or selecting an item and activating a delete command.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "content",
+   "name": "Trash & Archive",
+   "description": "A page that contains old or past content that is no longer actively displayed or updated. This content may include articles, blog posts, news items, or other types of information that has been superseded by more recent content.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "legal & other",
+   "name": "Chat Bot",
+   "description": "A program that is designed to simulate conversation with human users, often through messaging applications, websites, or mobile apps. Chat bots are often used to provide customer service or offer information to users in a conversational format.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "marketing",
+   "name": "Product Features",
+   "description": "A webpage or section of a website that highlights the specific features or benefits of a product. This page may include details about the product's functionality, performance, or design and may also include images or videos demonstrating the features.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "content",
+   "name": "Templates",
+   "description": "The Templates design pattern usually appears as a grid or list of rectangular cards or thumbnails, each representing a pre-made design, document, or layout that users can select and use. Visually, each template card shows a small preview image or screenshot that gives a quick idea of the style or content. Below or next to the preview, there is often a title or name of the template and sometimes a brief description or category label. The layout is clean and organized, allowing easy browsing and comparison between different options. Templates may be grouped by categories, tags, or filters, with navigation elements like tabs, dropdowns, or search bars nearby to help users find specific types of templates. You can identify this pattern by its repeated cards or thumbnails showing visual previews arranged neatly in rows or columns, designed to help users quickly pick a ready-made option to start from.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "commerce & finance",
+   "name": "Trial & Freemium",
+   "description": "Trial Subscription and Freemium models are ways to allow users to try a service before committing to a paid subscription. A Trial Subscription is a time-limited offer, where as Freemium is a feature limited offer. With Freemium, users can continue to use the service forever with a limited set of features, but with a Trial Subscription users can only use the service for a certain period of time and after that they need to subscribe to continue using the service.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "commerce & finance",
+   "name": "Billing & Plans",
+   "description": "The Billing & Plans pattern displays information about pricing tiers, subscription options, billing history, and payment settings. It often includes cards or tables showing plan names, features, prices, and billing frequency (monthly, yearly). Users can upgrade, downgrade, cancel, or change payment methods. May also show current plan status, invoices, trial periods, and renewal dates. Common in SaaS dashboards, account settings.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "legal & other",
+   "name": "Press",
+   "description": "The Press pattern presents official media coverage, announcements, and mentions of a company or product. It typically includes article headlines, publication names, dates, excerpts, and links to external sources. May be styled as cards, a list, or a grid layout. Often used on corporate or product sites in the press or media section to build trust and credibility. Can include press kits or downloadable assets.",
+   "mobile": false,
+   "desktop": true
+  },
+  {
+   "kind": "content",
+   "name": "Tutorial & Education",
+   "description": "The Tutorial & Education pattern guides users through learning a concept, task, or product. It often includes step-by-step instructions, videos, tooltips, checklists, or interactive elements. Commonly used in onboarding, training modules, and help centers.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "content",
+   "name": "Size Guide",
+   "description": "The Size Guide design pattern typically appears as a clear, organized chart or table that helps users understand sizing information, often for clothing, shoes, or products. Visually, it usually consists of labeled rows and columns with measurements like height, chest, waist, or shoe length, often accompanied by size labels such as S, M, L, XL, or numeric sizes like 6, 7, 8. The guide may include simple icons or illustrations showing how and where measurements are taken on the body or product, such as lines or arrows pointing to specific parts like chest, hips, or foot. Sometimes there are tabs or dropdowns to switch between different sizing systems (e.g., US, UK, EU) or categories like men’s, women’s, or kids’ sizes. The layout is clean and easy to scan, often presented as a grid with clear headings, making it easy for users to compare sizes and choose the right fit. You can identify a Size Guide by its structured table format, measurement labels, and helpful visual cues explaining sizing details.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "content",
+   "name": "Shortcuts",
+   "description": "The Shortcuts pattern provides quick access to frequently used actions, pages, or tools. These can appear as buttons, icons, or tiles—often on the dashboard, homepage, or within a toolbar. Each shortcut typically includes a label and an icon, and is often styled to resemble keyboard keys (e.g., with rounded rectangular shapes, subtle shadows, or borders). May support customization (add/remove/edit) based on user preferences. Used to streamline navigation and reduce the number of steps to reach common tasks.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "content",
+   "name": "Suggestion & Similar Items",
+   "description": "The Suggestion & Similar Items pattern displays recommended content, products, or entries based on user behavior, preferences, or related context. It typically includes thumbnails, titles, brief descriptions, and sometimes pricing or ratings. Often appears in carousels, side panels, or below primary content. Common in blogs, e-commerce, media platforms, and search interfaces.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "content",
+   "name": "Activity & Notification Feed",
+   "description": "The Activity & Notification Feed design pattern appears as a vertical list or column of repeated cards or rows, each representing a separate event or notification. Visually, each item usually includes a small icon or user avatar on the left, a short text description summarizing the activity or notification, and a timestamp indicating when it happened. Different types of notifications may use distinct icons or colors to represent actions like likes, comments, new followers, or system alerts. Each entry often contains the user’s name, a brief message about the event, and sometimes a clickable link to related content. Some notifications also have action buttons such as “reply,” “mark as read,” or “delete” placed on the right side. The overall look is a clean, structured vertical feed with clear separation between items, icons, and timestamps, creating a continuous stream of updates that keep the user informed about recent activity or important alerts.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "content",
+   "name": "News Feed",
+   "description": "The News Feed pattern displays a continuously updating list of content items, typically sorted by time, relevance, or personalization. It includes items like posts, articles, updates, or media. Each item may show a title, image, description, timestamp, and author or source. It often supports infinite scroll or pagination, as well as interactions like like, comment, share, or save. Commonly used in social networks, content platforms, and dashboards.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "content",
+   "name": "Augmented Reality",
+   "description": "The Augmented Reality (AR) pattern integrates digital content into the physical world through the device’s camera view. It overlays 3D objects, labels, instructions, or effects onto real-time video from the user’s environment. Typically includes an AR viewer, interactive controls, placement guides, and sometimes a “View in Your Space” or “Start AR” button. Common in e-commerce (e.g., product try-ons or furniture previews), education, gaming, and navigation.",
+   "mobile": true,
+   "desktop": false
+  },
+  {
+   "kind": "utility",
+   "name": "Task",
+   "description": "The Task pattern represents a single actionable item or objective within a workflow, to-do list, or project. It typically includes a title or name, status indicator (e.g., checkbox, progress bar, tag), due date, and optional metadata like priority, assignee, or subtasks. Tasks may be grouped into lists or boards and support interactions like mark as complete, edit, reorder (often via drag & drop), or assign. Commonly used in productivity apps, dashboards, onboarding flows, and project management tools.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "utility",
+   "name": "Browser",
+   "description": "The Browser pattern provides a contained view for displaying web pages or web-based content within an app or platform. It often mimics a simplified web browser, including elements like an address bar, back/forward buttons, reload control, and loading indicators. May also show security indicators (like a lock icon) and permission prompts. Commonly used in mobile apps, embedded documentation, in-app browsing, or previewing links. Sometimes styled with a browser frame or header to visually separate it from native UI.",
+   "mobile": true,
+   "desktop": false
+  },
+  {
+   "kind": "utility",
+   "name": "Audio & Video Recorder",
+   "description": "The Audio & Video Recorder pattern allows users to capture audio or video directly within the interface using device hardware. It typically includes controls like “Record,” “Stop,” “Pause,” and “Play,” along with visual indicators for recording status (e.g., blinking dot, waveform, or timer). The primary record button is commonly styled in red to signal recording intent clearly. May also include device selection (microphone or camera), preview windows, and re-record options. Common in messaging apps, online forms, educational tools, and content creation platforms.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "legal & other",
+   "name": "Drag & Drop",
+   "description": "The Drag & Drop pattern allows users to click and hold an item, move it across the interface, and place it into a new location. It is used for rearranging, organizing, uploading files, or customizing layouts. Visual feedback includes highlighted drop zones, ghost elements, or cursor changes. A common drag handle icon is three horizontal lines (also known as a “grip” or “hamburger” drag icon), indicating that an element can be moved. Common in dashboards, file managers, builders, and multi-step workflows.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "legal & other",
+   "name": "Draw",
+   "description": "The Draw design pattern is a user interface element that enables freehand drawing or annotation directly on a canvas or surface within an application. It is typically identifiable by the presence of a blank canvas or an image/document over which users can draw, along with a tool palette that provides drawing options.\n\nThe tool palette is often positioned at the top, bottom, or side of the canvas and includes recognizable icons for tools like a pen, pencil, brush, eraser, or shape tools (e.g., lines, rectangles, circles). The palette may also feature options for selecting colors, brush sizes, and opacity levels.\n\nThe canvas itself is interactive, allowing users to draw freeform strokes, often with visible smoothing or pressure sensitivity (if supported). Additional controls, such as undo/redo buttons, a clear/reset canvas button, or the ability to save/export drawings, are commonly included near the workspace.\n\nYou can identify the Draw pattern by its combination of a dedicated canvas for creating visual content and a floating or fixed toolbar with intuitive drawing controls, clearly tailored for freeform interaction.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "legal & other",
+   "name": "Save",
+   "description": "The Save pattern allows users to store their progress, preferences, or selected content for later access. It typically appears as a button or icon labeled “Save,” “Save Changes,” or represented by floppy disk icon. Used in forms, settings, documents, product pages, or user dashboards.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "legal & other",
+   "name": "Pull to Action",
+   "description": "The Pull to Action pattern enables users to trigger an action by pulling or swiping down on the top of a scrollable area—most commonly used for refreshing content (known as “pull to refresh”). It often includes visual cues like a downward arrow, loading spinner, or progress indicator that appears as the user pulls past a threshold. Common in mobile apps and touch interfaces, especially in feeds, inboxes, and lists. Can also trigger non-refresh actions in custom implementations.",
+   "mobile": true,
+   "desktop": false
+  },
+  {
+   "kind": "onboarding",
+   "name": "Quickstart Guide",
+   "description": "The Quickstart Guide pattern provides users with a short, focused set of steps to get started with a product, service, or workflow. It usually appears after signup or onboarding and highlights key actions through steps, cards, or a checklist. May include icons, brief descriptions, progress indicators. Often positioned on dashboards, welcome screens, or modals. Helps users reach early value quickly.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "content",
+   "name": "Kanban Board",
+   "description": "The Kanban Board design pattern has a distinctive visual layout with a series of vertical columns arranged side by side. Each column is typically labeled at the top to represent a specific stage of a workflow, such as \"To Do,\" \"In Progress,\" or \"Done.\" Within each column, you’ll see rectangular cards stacked vertically. These cards are the tasks or items being tracked, and they usually include a title and sometimes additional details like a short description, tags, due dates, or assigned team members (often shown as small avatars).\n\nThe cards are interactive and can be dragged and dropped between columns to indicate their progression through the workflow. Many boards also use color-coded tags or labels on the cards for quick categorization. Columns might show counters at the top, indicating how many cards they contain, or include visual cues like progress bars or limits to the number of cards allowed.\n\nOverall, a Kanban Board looks like a structured grid of labeled vertical sections with movable, stackable cards, making it easy to identify in any image or interface.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "legal & other",
+   "name": "Swipe Actions",
+   "description": "The Swipe Actions pattern allows users to perform quick contextual actions by swiping left or right on a list item, card, or row—most commonly on mobile. Typical actions include delete, archive, mark as read, pin, or snooze. Revealed actions may appear as icons with labels, color-coded for clarity (e.g., red for delete). Often used in email apps, task lists, messaging, and content management. Supports touch gestures and sometimes mouse events on desktop.",
+   "mobile": true,
+   "desktop": false
+  },
+  {
+   "kind": "social",
+   "name": "Leaderboard",
+   "description": "The Leaderboard pattern displays a ranked list of users or entities based on performance, scores, or achievements. It typically includes data points like rank, name or avatar, score/value, and position changes. It may include visual highlights for top positions. Often used in games, contests, learning platforms, or community apps.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "utility",
+   "name": "AI Assistant",
+   "description": "The AI Assistant design pattern is an interface or feature that helps users complete tasks, answer questions, or provide recommendations using artificial intelligence. It is often identified by the presence of a conversational interface, a floating action button, or a dedicated section visually and functionally distinct from other parts of the UI. Typically, it includes a trigger or entry point, such as an icon like a chat bubble, robot, or magic wand, or a button labeled “Ask AI” or “Assistant,” often accessible across the app as a persistent floating button or within a menu. The assistant usually operates through a conversational interface where users can type questions or commands and receive responses in text, voice, or visual elements. It often adapts to the current screen or task, offering context-aware suggestions or answers. Many assistants provide pre-filled prompts or suggestions to guide users in interacting with the feature. Responses can include plain text, cards, or actionable items like quick buttons or links to other app sections. Some assistants support multimodal interaction, such as voice input or image recognition, and integrate with other app features to streamline workflows. This pattern is used to enhance productivity, simplify complex tasks, or provide a personalized experience, and it is recognizable by its dedicated space for AI-driven interactions designed to augment or replace manual effort.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "content",
+   "name": "Mini Player",
+   "description": "The Mini Player design pattern is a compact interface element usually located at the bottom of the screen or in a corner. It takes up very little space and looks like a small bar or rectangle with a minimalist design. The mini player typically shows a small icon or thumbnail of the current media—such as an album cover, video preview, or podcast logo. Next to it, there are basic playback controls like play and pause buttons, sometimes with next or previous track buttons. It often includes a small progress indicator, like a bar or slider, showing how much of the media has played. You’ll also see the title or a brief description of the current track or video. There is usually a button or icon to expand the mini player into a full-sized player with more controls. Visually, the mini player is easy to identify by its small size, clear placement at the bottom or corner of the screen, and the presence of essential playback controls grouped together in a compact block.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "content",
+   "name": "Playlist",
+   "description": "The Playlist pattern presents a curated or user-generated list of audio or video items arranged in sequence. Each item typically includes a title, thumbnail or cover image, duration, and play controls. The playlist interface may support reordering (often via drag & drop), adding/removing items, saving, and continuous playback. Often includes a “Now Playing” indicator and options like shuffle, repeat, or auto-play. Common in music apps, video platforms, learning modules, and media libraries.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "social",
+   "name": "Social Post",
+   "description": "The Social Post design pattern is an interface element designed to allow users to share content, such as text, images, videos, or links, with others in a social or collaborative context. It is typically presented as a card or block that includes the user’s profile picture, name, and timestamp to indicate when the post was created. The main body of the post contains the shared content, which can range from simple text to multimedia elements or embedded links, often formatted for easy viewing. Social Posts also include interactive features like buttons for liking, commenting, sharing, or saving, enabling engagement and further interaction. Additional elements might include hashtags, mentions, or tags to categorize the content and make it discoverable. Posts can also display metrics such as the number of likes, comments, or shares, providing a sense of popularity or engagement. This pattern is common on social media platforms, forums, and collaborative tools, and it is recognizable by its structured layout designed to present user-generated content and encourage interaction.",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "social",
+   "name": "Members",
+   "description": "The Members pattern displays a list or grid of users associated with a team, group, project, or organization. Each member entry typically includes a name, avatar, role or permission level, and sometimes activity status or contact options. May include actions like add/remove member, change role, or message. Often appears in team settings, collaboration tools, or admin dashboards. Can support filters (e.g., by role) and sorting (e.g., alphabetically or by join date).",
+   "mobile": true,
+   "desktop": true
+  },
+  {
+   "kind": "marketing",
+   "name": "Bento Grid",
+   "description": "A Bento Grid is a type of layout used in design where items are arranged in small, flexible rectangles or squares. The unique thing about a Bento Grid is that the items don’t all have to be the same size. Some can be small, while others are big, but they all fit together like puzzle pieces. \n\nA Bento Grid is a layout system that divides content into distinct, modular sections, similar to how a bento box divides food into compartments.\n\nEach section can vary in size and shape but is arranged in a structured tiles-like manner.",
+   "mobile": false,
+   "desktop": true
+  },
+  {
+   "kind": "legal & other",
+   "name": "User Menu",
+   "description": "A User Menu is a design pattern used to give users quick access to account-related actions and settings. It’s typically located in the top-right corner of an interface and is often represented by an avatar, a profile icon, or the user’s name. When clicked or hovered over, it expands to reveal a dropdown or panel with options like viewing or editing the profile, account settings, logout, notifications, or switching accounts.\n\nThis pattern keeps the interface clean by consolidating account-related actions in one place while ensuring they’re easily accessible. Unlike global navigation menus or feature-specific controls, the User Menu focuses solely on personalized or user-specific options. It’s a common pattern in applications with authentication, as it helps maintain a clear separation between general app navigation and user account management.",
+   "mobile": true,
+   "desktop": true
+  }
+ ],
+ "page_elements": [
+  {
+   "kind": "layout",
+   "name": "Media Gallery",
+   "description": "The Media Gallery element displays a collection of media items such as images, videos, or audio clips arranged in a grid, carousel, or masonry layout. Each item typically includes thumbnails, titles, and may support interactions like zoom, play, download, or share. Galleries often provide filtering, sorting, and pagination options to help users browse large media collections efficiently. Used in portfolios, social platforms, e-commerce sites, and content management systems."
+  },
+  {
+   "kind": "overlay",
+   "name": "Dropdown Menu",
+   "description": "Is a list of options that is revealed when the user interacts with it, either by clicking or hovering. The options are then displayed vertically and disappear once the user disengages"
+  },
+  {
+   "kind": "layout",
+   "name": "Nodes",
+   "description": "In a tree or flowchart, nodes are the points where lines intersect or branch off. They signify an element or decision in the tree or flowchart and can be connected to other nodes through lines or arrows."
+  },
+  {
+   "kind": "input controls",
+   "name": "Checkbox & Radio",
+   "description": "A checkbox is a form input that allows the user to choose from a predefined set of options, either as a binary choice (checked/unchecked) or by selecting multiple values from a list."
+  },
+  {
+   "kind": "layout",
+   "name": "Cards & Tiles",
+   "description": "A design element that holds and presents the content of a single entity in a clear and organized manner, such as a contact, article, or task."
+  },
+  {
+   "kind": "helper elements",
+   "name": "QR Code",
+   "description": "A type of barcode that can be scanned with a smartphone or other device to access information or a website. It is often used for marketing, payment, or security purposes, and can contain a variety of data including text, numbers, or URLs"
+  },
+  {
+   "kind": "layout",
+   "name": "Accordion & Collapse",
+   "description": "A vertical stack of interactive headings, an accordion allows users to expand or collapse content with just a short label visible."
+  },
+  {
+   "kind": "graphics",
+   "name": "Avatar",
+   "description": "A visual representation of a user within the user interface, typically taking the form of a photograph, illustration, or initial."
+  },
+  {
+   "kind": "layout",
+   "name": "Carousel",
+   "description": "The Carousel element is a horizontally scrollable container that displays multiple pieces of content, such as images, cards, or products, one at a time or in small groups. Users can navigate through items using swipe gestures, arrows, or pagination dots. Carousels are commonly used on homepages, galleries, and e-commerce sites to showcase featured content while saving screen space."
+  },
+  {
+   "kind": "input controls",
+   "name": "Tabs",
+   "description": "A element that allows users to navigate between different sections or pages of content within a single application or website. Tabs are typically displayed as a row of buttons, each representing a different content area."
+  },
+  {
+   "kind": "input controls",
+   "name": "Button",
+   "description": "The Button element is an interactive UI control that triggers an action or event when clicked or tapped. Buttons can vary in style, size, and shape, and may include text labels, icons, or both. They are used to submit forms, navigate, open dialogs, or perform commands. Buttons provide visual feedback on interaction, such as hover, pressed, or disabled states."
+  },
+  {
+   "kind": "graphics",
+   "name": "3d Illustration",
+   "description": "An artwork that has been created using computer-modeling software to appear as a three-dimensional object within virtual space."
+  },
+  {
+   "kind": "graphics",
+   "name": "Thumbnail",
+   "description": "A small version of an image or video that serves as a visual representation of the content. It is often used in user interface design to allow the user to browse a collection of media, and can be clicked or tapped to access the full-size version."
+  },
+  {
+   "kind": "input controls",
+   "name": "Color Picker",
+   "description": "A tool used to select and display colors for use in design. It often includes a visual interface, allowing users to choose from a range of hues and shades."
+  },
+  {
+   "kind": "overlay",
+   "name": "Bottom Sheet (Expanded)",
+   "description": "The Bottom Sheet (Expanded) element is a full or nearly full-height panel that slides up from the bottom of the screen to present detailed content or interactive elements. It remains anchored to the bottom edge and can cover most of the screen, often used to display forms, filters, media, or secondary flows without navigating away from the current view. Typically includes a drag handle, scrollable content area, and a close or dismiss action. Common in mobile apps to support deep interaction in a compact UI."
+  },
+  {
+   "kind": "graphics",
+   "name": "Product Image",
+   "description": "The Product Image element displays a visual representation of a product, usually as a high-quality photograph or rendered image. It often appears on product detail pages, catalogs, or galleries, showcasing the item from one or multiple angles. May include features like zoom, thumbnails for alternate views, or 360-degree rotation. Used to provide customers with clear, detailed visuals to aid purchasing decisions."
+  },
+  {
+   "kind": "helper elements",
+   "name": "Breadcrumb",
+   "description": "A list of links that display the current page's location within the navigational structure."
+  },
+  {
+   "kind": "graphics",
+   "name": "Hero Image",
+   "description": "Is a banner image placed at the top of a website, designed to be prominent and eye-catching, providing the user with their first impression of the company and its offerings due to its oversized size and full-width placement."
+  },
+  {
+   "kind": "helper elements",
+   "name": "Badge",
+   "description": "A small label, often found near a larger interface component, which displays a status, property, or other metadata."
+  },
+  {
+   "kind": "bars",
+   "name": "Navigation Bar",
+   "description": "A element that displays a list of links or buttons for accessing different pages or sections of a website or application. It is often located at the top or side of the interface, and may include a drop-down menu for sub-pages or categories."
+  },
+  {
+   "kind": "overlay",
+   "name": "Action Sheet",
+   "description": "A list of options or actions that the user can take. It is typically displayed as a modal window or dropdown menu, and may include buttons, checkboxes, or other interactive elements. Action sheets are often used to present a set of choices or to allow the user to perform an action within a specific context.\n\nOther names: options sheet, action menu, options menu."
+  },
+  {
+   "kind": "layout",
+   "name": "Pie & Donut Chart",
+   "description": "A pie chart is a user interface element that displays data points as slices of a circular pie, with each slice representing a percentage of the total. Pie charts are often used to visualize proportions or percentages. A donut chart is a variant of the pie chart that has a hole in the center, creating a donut shape."
+  },
+  {
+   "kind": "helper elements",
+   "name": "Skeleton",
+   "description": "A element that is used to display the basic structure or layout of a page or component before the actual content is loaded. It is often displayed as a series of placeholders or outlines that mimic the layout of the final content, and is used to improve the perceived performance of the page by providing some visual feedback to the user while the content is being loaded.\n\nOther names: placeholder, content outline, loading skeleton."
+  },
+  {
+   "kind": "graphics",
+   "name": "Animation",
+   "description": "The Animation element introduces motion into the interface to enhance user experience, communicate state changes, or provide visual feedback. It can be used for transitions (e.g., opening modals, sliding panels), micro-interactions (e.g., button taps, loading spinners), or decorative effects (e.g., hover glows, pulsing elements). Animations may include movement, scaling, opacity changes, or timing effects (e.g., easing). Often implemented using CSS, JavaScript, or animation libraries. Used across interfaces to improve flow, draw attention, and make interactions feel responsive and intuitive."
+  },
+  {
+   "kind": "layout",
+   "name": "Line & Bar Chart",
+   "description": "A graphical element in user interface design that displays data points connected by lines, with the x-axis representing the independent variable and the y-axis representing the dependent variable. Line charts are commonly used to visualize trends over time or to compare multiple data sets."
+  },
+  {
+   "kind": "bars",
+   "name": "Tabbar",
+   "description": "The Tabbar element provides a horizontal navigation row that allows users to switch between different views or content sections within the same interface. Each tab typically includes a label, and sometimes an icon, and visually highlights the active state (e.g., underline, bold text, color change). The Tabbar is often fixed at the top or bottom of the screen, especially in mobile apps. It supports smooth transitions between tabs and may preserve the scroll position or state of each tab."
+  },
+  {
+   "kind": "input controls",
+   "name": "Date & Time Picker",
+   "description": "Is a tool used to select a specific date and time from a calendar or clock-style interface within a user interface. This element is commonly found in online forms or scheduling applications, and is designed to help the user input a valid and correctly formatted date and time."
+  },
+  {
+   "kind": "input controls",
+   "name": "Search Field",
+   "description": "A element that allows to enter a search query and retrieve relevant results from a database or website. It is typically a text field with a search icon or button, and may include additional features such as autocomplete or filters.\n\nOther names: search bar, search box, search input."
+  },
+  {
+   "kind": "overlay",
+   "name": "Dialog & Modal Window",
+   "description": "A modal window appears on top of the main interface, requiring the user to take some sort of action before they can continue using the application or website. Modal windows are commonly used to display important or urgent information, or to prompt the user to confirm or cancel an action."
+  },
+  {
+   "kind": "bars",
+   "name": "Sidebar & Drawer",
+   "description": "Sidebar a narrow vertical panel, often located on the left or right side of the screen, used to display additional content or options. Drawer is a panel that slides out from the edge of the screen, revealing additional content or options."
+  },
+  {
+   "kind": "graphics",
+   "name": "Gradient",
+   "description": "A smooth transition between two or more colors. It is often used in graphic design or user interface design to create a sense of depth or to add visual interest. Gradients can be linear, radial, or conical, and can be applied to text, shapes, or images."
+  },
+  {
+   "kind": "overlay",
+   "name": "Bottom Sheet",
+   "description": "The Bottom Sheet element is a panel that slides up from the bottom of the screen to display contextual content, actions, or menus without navigating away from the current view. It can be modal (blocking interaction with the background) or persistent (remaining partially visible and interactive). Typically includes a drag handle, scrollable content area, and a close or swipe-to-dismiss action. Commonly used in mobile interfaces for actions, filters, forms, or previews. Often animated smoothly for open/close transitions."
+  },
+  {
+   "kind": "input controls",
+   "name": "Text Field",
+   "description": "A text field is a user interface element that allows the user to input and edit text. It is typically a rectangular box with a placeholder or default text, and may include additional features such as a character limit or formatting options."
+  },
+  {
+   "kind": "helper elements",
+   "name": "Progress Bar",
+   "description": "A element that shows the progress of an extended computer operation, such as a download, file transfer, or installation, visually. It is often displayed as a horizontal bar that fills up with color as the task progresses, and may include a numeric display of the current progress or a range of acceptable values."
+  },
+  {
+   "kind": "overlay",
+   "name": "Radial Menu",
+   "description": "The Radial Menu element presents a circular or semi-circular menu layout where options radiate outward from a central point. Each item is arranged around a center hub, often activated by a tap, click, or long press. It typically includes icons or labels for each option and may use animation for expanding and collapsing. This element emphasizes spatial relationships and fast access to grouped actions. Common in creative tools, mobile games, and interfaces requiring compact yet visually distinctive menus."
+  },
+  {
+   "kind": "overlay",
+   "name": "Tooltip",
+   "description": "A element that provides context or clarification for an element or feature through a small pop-up window. Triggered by hover, click, or tap depending on the device and configuration. Example: A tooltip may appear when the user clicks on a button in a form, providing a brief explanation of the function or input required.\n\nOther names: info tip, hint."
+  },
+  {
+   "kind": "helper elements",
+   "name": "Stepper",
+   "description": "A element that allows users to increment or decrement a value through a set of predefined steps. It is typically represented as a pair of arrow buttons or icons that the user can click to increase or decrease the value of a field or a parameter."
+  },
+  {
+   "kind": "helper elements",
+   "name": "Tags & Chips",
+   "description": "Tags are user interface elements that are used to categorize or label content or data points. They are often displayed as small boxes or labels with a specific text or color, and can be used to filter or search for related content. Chips are similar to tags, but are typically more interactive and can be clicked or tapped to perform an action or display additional information.\n\nOther names: label, category, tag name."
+  },
+  {
+   "kind": "helper elements",
+   "name": "Step Indicator",
+   "description": "A type of user interface element that shows the progress of a task or process in discrete steps. It is often used to visualize the current stage of a multi-step process, and may include features such as navigation buttons or a display of the current step."
+  },
+  {
+   "kind": "helper elements",
+   "name": "Currency",
+   "description": "The Currency element displays or accepts monetary values, typically formatted with a currency symbol (e.g., $, €, ¥) and standardized decimal notation. It may appear in forms (e.g., input fields), transaction summaries, price tags, or dashboards. Often includes features like currency formatting based on locale, symbol placement (before or after amount), and input validation (allowing only numbers and decimals). May be paired with dropdowns or selectors for changing currency types. Used in pricing, billing, financial data, and e-commerce interfaces."
+  },
+  {
+   "kind": "graphics",
+   "name": "Logo Wall",
+   "description": "The Logo Wall UI element appears as a clean, organized grid or row of multiple company or brand logos displayed together. Visually, it consists of many small to medium-sized logo images arranged evenly with consistent spacing between them, often aligned horizontally or in neat columns. The logos are usually presented without additional text, or with minimal labeling, allowing the brand images themselves to stand out clearly. The background is typically simple and neutral to keep the focus on the logos. This element is often found on landing pages, about sections, or partnership pages to showcase clients, sponsors, or technology partners. You can identify the Logo Wall by its repetitive pattern of distinct logos grouped tightly together in a balanced, uniform layout that emphasizes brand recognition."
+  },
+  {
+   "kind": "layout",
+   "name": "List",
+   "description": "A layout in which a series of items are presented in a vertical list, with each item occupying its own row. List layouts are often used to display items that have a clear hierarchy or order, such as a list of emails or a list of search results."
+  },
+  {
+   "kind": "layout",
+   "name": "Code Snippet",
+   "description": "An element that allows users to write and edit code in different programming languages. It commonly includes features like syntax highlighting, code completion, and error checking to aid the user in writing and debugging code effectively."
+  },
+  {
+   "kind": "input controls",
+   "name": "Floating Button",
+   "description": "A element that is fixed to a specific location on a screen, typically in a corner, and remains visible even as the user scrolls. Floating buttons are often used to provide quick access to important features or actions.\n\nOther names: sticky button, fixed button."
+  },
+  {
+   "kind": "bars",
+   "name": "Footer",
+   "description": "A section of a website or document that appears at the bottom of the page. It often contains information like the copyright notice, contact information, and links to related content or legal documents."
+  },
+  {
+   "kind": "layout",
+   "name": "Table",
+   "description": "A structured set of data arranged in rows and columns. It is used to present information in a clear and organized manner. A spreadsheet is a digital document that contains tables and other elements like charts and formulas. It is used for data analysis and management."
+  },
+  {
+   "kind": "bars",
+   "name": "Toolbar",
+   "description": "A set of icons and buttons for performing actions related to the current screen. It is usually located at the top or bottom of the interface. Toolbars are commonly used to provide quick access to frequently used functions or to navigate between pages or sections of a website or application."
+  },
+  {
+   "kind": "layout",
+   "name": "Map",
+   "description": "An element that allows users to interact with a map application or website. It includes features like zoom controls, search bar, and legend that enable the user to navigate and use the map."
+  },
+  {
+   "kind": "overlay",
+   "name": "Side Sheet",
+   "description": "The Side Sheet element is a panel that slides in from the left or right side of the screen to present additional content, settings, or contextual tools without leaving the main view. It can be modal (blocking the background) or non-modal (allowing interaction with the rest of the UI). Typically includes a close button, title/header, and scrollable content area. May support resizing or nesting. Common in dashboards, admin panels, multi-step flows, or detail previews. Often includes smooth slide-in/out animations."
+  },
+  {
+   "kind": "layout",
+   "name": "Tree View",
+   "description": "The Tree View element displays hierarchical data in a nested, expandable structure, allowing users to explore parent-child relationships. Items can be expanded or collapsed to reveal or hide sub-items. Often includes icons to indicate folders, files, or node types, along with indentation to visually signal hierarchy levels. Supports interactions like selection, drag & drop, right-click actions, and inline editing. Commonly used in file explorers, content management systems, settings panels, and organizational structures. Useful for managing large datasets or complex structures in a compact space."
+  },
+  {
+   "kind": "overlay",
+   "name": "iOS Alert",
+   "description": "The iOS Alert element is a system-styled modal dialog used in Apple’s iOS interfaces to present critical information, warnings, or decisions that require user acknowledgment or action. It typically appears in the center of the screen with a dimmed background, containing a title, optional message, and one or more action buttons (e.g., OK, Cancel). Alerts are non-dismissible without user interaction. Commonly used for confirmations, errors, and important prompts."
+  },
+  {
+   "kind": "graphics",
+   "name": "Illustration",
+   "description": "The Illustration element is a visual graphic, often custom or stylized, used to support content, convey ideas, or enhance aesthetic appeal in a user interface. It may appear as vector art, flat design, or hand-drawn artwork. Commonly used in onboarding screens, empty states, hero sections, or educational content to make interfaces more engaging and communicative. Illustrations can be static or animated and are usually thematically aligned with the brand or feature they support."
+  },
+  {
+   "kind": "input controls",
+   "name": "Slider",
+   "description": "The Slider element is an interactive control that allows users to select a value or range by dragging a handle along a track. It can be horizontal or vertical and may display markers, labels, or tooltips to indicate current values. Sliders are commonly used for adjusting settings like volume, brightness, price filters, or time ranges. They provide an intuitive way to make continuous or step-based selections and often appear in forms, media players, and filter panels."
+  },
+  {
+   "kind": "graphics",
+   "name": "Icon",
+   "description": "The Icon element is a small graphical symbol used to represent actions, objects, or concepts within a user interface. Icons are designed to be simple and easily recognizable, often used as buttons, indicators, or navigational aids. They help improve usability by providing visual cues and saving space compared to text labels. Icons can be static or interactive and are commonly found in toolbars, menus, buttons, and links."
+  },
+  {
+   "kind": "overlay",
+   "name": "Popover",
+   "description": "A general marker tag applied to any screen where some kind of overlay element appears on top of the main page content, regardless of the overlay's size, type, or purpose. This tag is not exclusive and is meant to be applied together with more specific overlay tags, such as Dialog, Modal Window, Bottom Sheet, or Dropdown, whenever those are also present. Use Popover as a signal that something has appeared on top of the page, while the specific tag describes what that something actually is.\nApply this tag in these cases: any screen showing a tooltip, callout, contextual bubble, dropdown menu, modal window, dialog, bottom sheet, or any other element rendered above the base page content, applied in combination with the corresponding specific tag for that element.\nDo not apply this tag in these cases: pages where no overlay element is currently visible, even if the page is capable of triggering one; persistent UI elements that are part of the base layout and not rendered on top of other content, such as a fixed header, sidebar, or footer"
+  },
+  {
+   "kind": "graphics",
+   "name": "Sticker",
+   "description": "The Sticker element is a small, often decorative or informative graphic used to highlight content, convey emotions, or add personality to messages and interfaces. Stickers can be static images, animated GIFs, or SVGs, commonly used in chat apps, social media, or digital scrapbooking. They may represent emojis, icons, mascots, or themed visuals, and can be placed inline with text or freely positioned. Often selectable from a sticker library or marketplace and sometimes customizable by users."
+  },
+  {
+   "kind": "overlay",
+   "name": "Edit Menu",
+   "description": "The Edit Menu element provides a set of commands related to modifying content, such as cut, copy, paste, undo, redo, delete, and select all. It typically appears as a dropdown or context menu triggered by right-click, toolbar button, or keyboard shortcut. The menu may include icons alongside text labels and sometimes groups related actions for easier navigation. Commonly found in text editors, design tools, file managers, and rich content interfaces."
+  },
+  {
+   "kind": "helper elements",
+   "name": "Bounding Box",
+   "description": "The Bounding Box element is a rectangular outline used to visually define and select an area or object within a user interface. It typically appears as a resizable and draggable frame around images, text blocks, or other elements. Commonly includes handles or corners for resizing and may support rotation or movement. Used in image editors, annotation tools, design software, and interactive diagrams to specify focus, cropping, or selection areas."
+  },
+  {
+   "kind": "helper elements",
+   "name": "Map Pin",
+   "description": "The Map Pin element is a marker used on maps to indicate a specific location or point of interest. It usually appears as a small icon or pin-shaped graphic placed precisely on map coordinates. Often interactive, map pins can display additional information via tooltips, pop-ups, or details panels when clicked or hovered. Commonly used in location-based services, navigation apps, real estate sites, and event maps to visually highlight places."
+  },
+  {
+   "kind": "overlay",
+   "name": "Full-Screen Overlay",
+   "description": "The Full-Screen Overlay element is a UI layer that covers the entire screen, typically used to focus user attention on a specific action, message, or interactive component. It often appears when modals, navigation menus, or onboarding steps are triggered. The background is usually dimmed or blurred to isolate the overlay content, which may include buttons, forms, media, or alerts."
+  },
+  {
+   "kind": "input controls",
+   "name": "Page Control & Pagination",
+   "description": "The Page Control & Pagination element allows users to navigate through segmented content by dividing it across multiple pages or views. Page Control typically appears as a series of dots, often used in carousels or onboarding flows, indicating the number of pages and the current active one. Pagination, on the other hand, is commonly seen in data tables, search results, or article lists, represented by numbered page links, next/previous buttons, or load more options. Both types improve usability by managing large sets of information without overwhelming the user."
+  },
+  {
+   "kind": "input controls",
+   "name": "Switch & Toggle",
+   "description": "The Switch & Toggle element is a binary control that allows users to turn a setting or feature on or off. It typically appears as a sliding button or rocker that visually changes state between active and inactive. Switches are used in forms, settings panels, and preference screens to enable or disable options quickly. They provide clear visual feedback and are designed for touch-friendly interfaces."
+  },
+  {
+   "kind": "overlay",
+   "name": "Overlay Window",
+   "description": "The Overlay Window element is a UI layer that appears on top of the main content, partially or fully obscuring the background to focus user attention. It often contains dialogs, forms, notifications, or media and can be modal (blocking interaction with the underlying content) or non-modal. Overlays typically include close buttons or actions to dismiss, and the background may be dimmed or blurred. Common in web and mobile apps for alerts, popups, and secondary workflows."
+  },
+  {
+   "kind": "input controls",
+   "name": "Onscreen Keyboard",
+   "description": "The Onscreen Keyboard element is a virtual keyboard displayed on the screen to enable text input without a physical keyboard. It typically appears on mobile devices, tablets, or touch-enabled desktops when users focus on text fields. The keyboard includes alphabetic, numeric, and special character keys, and may support predictive text, autocorrect, and language switching. It is designed for easy touch interaction and adapts layout based on input context."
+  },
+  {
+   "kind": "input controls",
+   "name": "Wheel Picker",
+   "description": "The Wheel Picker element is a scrolling selector that allows users to choose from a list of options by rotating a wheel-like interface. It usually appears as a vertically scrollable cylinder with visible items arranged in a circular fashion. Commonly used for selecting dates, times, quantities, or categories in mobile apps and touch interfaces. The design provides an intuitive, tactile experience mimicking physical wheels or dials."
+  },
+  {
+   "kind": "overlay",
+   "name": "Notifications & Toast",
+   "description": "The Notifications & Toast element provides brief, temporary messages to inform users about system events, updates, or actions. Toasts typically appear as small, non-intrusive popups that auto-dismiss after a few seconds, often positioned at the bottom or top of the screen. Notifications can be more persistent and may require user interaction to dismiss. Both are used to give feedback without disrupting the user’s current workflow."
+  },
+  {
+   "kind": "input controls",
+   "name": "Dropdown",
+   "description": "A element that allows the user to choose from a list of options by clicking or hovering over it. The options are usually displayed in a dropdown menu, and the user can select one or multiple options depending on the configuration. Dropdowns are often used to filter or sort data, or to select from a list of predefined options."
+  },
+  {
+   "kind": "overlay",
+   "name": "Mega Menu",
+   "description": "The Mega Menu element is a large, expandable navigation panel that displays multiple categories and subcategories at once, typically triggered by hovering or clicking a top-level menu item. It often appears as a wide dropdown across the full or partial width of the screen. Content is organized into columns or grids, and may include links, icons, images, or brief descriptions. Commonly found on landing pages or homepages, where users can switch between major sections of the site quickly. Designed for content-heavy sites like e-commerce, enterprise dashboards, or news platforms."
+  },
+  {
+   "kind": "graphics",
+   "name": "Photo",
+   "description": "A Photo element appears as a real photographic image—never an illustration or icon—embedded directly into the interface. Visually, it is typically displayed in a rectangular or square frame (sometimes circular for avatars), with crisp edges and natural colors. You can recognize it by its lifelike details, photographic lighting and textures, and the fact that it conveys real-world content such as people, places, or objects rather than abstract graphics."
+  }
+ ],
+ "categories": [
+  "AI Tool",
+  "Utility",
+  "Dating & Relationships",
+  "Fundraising",
+  "Development Tools",
+  "Electronic & Devices",
+  "Home & Decor",
+  "Kids",
+  "Paperwork",
+  "Photo Stock",
+  "Transport",
+  "Business",
+  "Education",
+  "Finance",
+  "Food & Drink",
+  "Magazines & Newspapers",
+  "News",
+  "Productivity",
+  "Reference",
+  "Social Networking",
+  "Sports",
+  "Weather",
+  "Entertainment",
+  "Books",
+  "Health & Wellness",
+  "Fitness",
+  "Travel & Booking",
+  "Video Streaming",
+  "Project Management",
+  "Communication Tools",
+  "Collaboration Tools",
+  "Food Delivery",
+  "Job Search",
+  "Real Estate",
+  "Web3 & Crypto",
+  "Scheduling Tools",
+  "Map & Navigation",
+  "Inspiration Board",
+  "Marketplace",
+  "Music Streaming",
+  "Lifestyle",
+  "Design & Media Editing"
+ ]
+}

@@ -1,0 +1,1061 @@
+{
+  "source": "vercel.com/geist (CSS custom properties, prefix --ds-*). Light = :root, Dark = [data-theme=dark].",
+  "colors_light": {
+    "background": {
+      "100": {
+        "hsl": "0, 0%, 100%",
+        "hex": "#ffffff"
+      },
+      "200": {
+        "hsl": "0, 0%, 98%",
+        "hex": "#fafafa"
+      }
+    },
+    "gray": {
+      "100": {
+        "hsl": "0, 0%, 95%",
+        "hex": "#f2f2f2"
+      },
+      "200": {
+        "hsl": "0, 0%, 92%",
+        "hex": "#ebebeb"
+      },
+      "300": {
+        "hsl": "0, 0%, 90%",
+        "hex": "#e6e6e6"
+      },
+      "400": {
+        "hsl": "0, 0%, 92%",
+        "hex": "#ebebeb"
+      },
+      "500": {
+        "hsl": "0, 0%, 79%",
+        "hex": "#c9c9c9"
+      },
+      "600": {
+        "hsl": "0, 0%, 66%",
+        "hex": "#a8a8a8"
+      },
+      "700": {
+        "hsl": "0, 0%, 56%",
+        "hex": "#8f8f8f"
+      },
+      "800": {
+        "hsl": "0, 0%, 49%",
+        "hex": "#7d7d7d"
+      },
+      "900": {
+        "hsl": "0, 0%, 30%",
+        "hex": "#4c4c4c"
+      },
+      "1000": {
+        "hsl": "0, 0%, 9%",
+        "hex": "#171717"
+      }
+    },
+    "gray-alpha": {
+      "100": {
+        "hex": "#0000000d"
+      },
+      "200": {
+        "hex": "#00000014"
+      },
+      "300": {
+        "hex": "#0000001a"
+      },
+      "400": {
+        "hex": "#00000014"
+      },
+      "500": {
+        "hex": "#00000036"
+      },
+      "600": {
+        "hex": "#00000057"
+      },
+      "700": {
+        "hex": "#00000070"
+      },
+      "800": {
+        "hex": "#00000082"
+      },
+      "900": {
+        "hex": "#000000b3"
+      },
+      "1000": {
+        "hex": "#000000e8"
+      }
+    },
+    "blue": {
+      "100": {
+        "hsl": "212, 100%, 97%",
+        "hex": "#f0f7ff"
+      },
+      "200": {
+        "hsl": "210, 100%, 96%",
+        "hex": "#ebf5ff"
+      },
+      "300": {
+        "hsl": "210, 100%, 94%",
+        "hex": "#e0f0ff"
+      },
+      "400": {
+        "hsl": "209, 100%, 90%",
+        "hex": "#cce6ff"
+      },
+      "500": {
+        "hsl": "209, 100%, 80%",
+        "hex": "#99ceff"
+      },
+      "600": {
+        "hsl": "208, 100%, 66%",
+        "hex": "#52aeff"
+      },
+      "700": {
+        "hsl": "212, 100%, 48%",
+        "hex": "#0072f5"
+      },
+      "800": {
+        "hsl": "212, 100%, 41%",
+        "hex": "#0062d1"
+      },
+      "900": {
+        "hsl": "211, 100%, 42%",
+        "hex": "#0068d6"
+      },
+      "1000": {
+        "hsl": "211, 100%, 15%",
+        "hex": "#00254c"
+      }
+    },
+    "red": {
+      "100": {
+        "hsl": "0, 100%, 97%",
+        "hex": "#fff0f0"
+      },
+      "200": {
+        "hsl": "0, 100%, 96%",
+        "hex": "#ffebeb"
+      },
+      "300": {
+        "hsl": "0, 100%, 95%",
+        "hex": "#ffe5e5"
+      },
+      "400": {
+        "hsl": "0, 90%, 92%",
+        "hex": "#fdd8d8"
+      },
+      "500": {
+        "hsl": "0, 82%, 85%",
+        "hex": "#f8b9b9"
+      },
+      "600": {
+        "hsl": "359, 90%, 71%",
+        "hex": "#f87275"
+      },
+      "700": {
+        "hsl": "358, 75%, 59%",
+        "hex": "#e5484d"
+      },
+      "800": {
+        "hsl": "358, 70%, 52%",
+        "hex": "#da2f35"
+      },
+      "900": {
+        "hsl": "358, 66%, 48%",
+        "hex": "#cb2a2f"
+      },
+      "1000": {
+        "hsl": "355, 49%, 15%",
+        "hex": "#391417"
+      }
+    },
+    "amber": {
+      "100": {
+        "hsl": "39, 100%, 95%",
+        "hex": "#fff6e5"
+      },
+      "200": {
+        "hsl": "44, 100%, 92%",
+        "hex": "#fff4d6"
+      },
+      "300": {
+        "hsl": "43, 96%, 90%",
+        "hex": "#fef0cd"
+      },
+      "400": {
+        "hsl": "42, 100%, 78%",
+        "hex": "#ffdd8f"
+      },
+      "500": {
+        "hsl": "38, 100%, 71%",
+        "hex": "#ffc96b"
+      },
+      "600": {
+        "hsl": "36, 90%, 62%",
+        "hex": "#f5b047"
+      },
+      "700": {
+        "hsl": "39, 100%, 57%",
+        "hex": "#ffb224"
+      },
+      "800": {
+        "hsl": "35, 100%, 52%",
+        "hex": "#ff990a"
+      },
+      "900": {
+        "hsl": "30, 100%, 32%",
+        "hex": "#a35200"
+      },
+      "1000": {
+        "hsl": "20, 79%, 17%",
+        "hex": "#4e2009"
+      }
+    },
+    "green": {
+      "100": {
+        "hsl": "120, 60%, 96%",
+        "hex": "#effbef"
+      },
+      "200": {
+        "hsl": "120, 60%, 95%",
+        "hex": "#ebfaeb"
+      },
+      "300": {
+        "hsl": "120, 60%, 91%",
+        "hex": "#daf6da"
+      },
+      "400": {
+        "hsl": "122, 60%, 86%",
+        "hex": "#c6f1c7"
+      },
+      "500": {
+        "hsl": "124, 60%, 75%",
+        "hex": "#99e69e"
+      },
+      "600": {
+        "hsl": "125, 60%, 64%",
+        "hex": "#6cda75"
+      },
+      "700": {
+        "hsl": "131, 41%, 46%",
+        "hex": "#45a557"
+      },
+      "800": {
+        "hsl": "132, 43%, 39%",
+        "hex": "#398e4a"
+      },
+      "900": {
+        "hsl": "133, 50%, 32%",
+        "hex": "#297a3a"
+      },
+      "1000": {
+        "hsl": "128, 29%, 15%",
+        "hex": "#1b311e"
+      }
+    },
+    "teal": {
+      "100": {
+        "hsl": "169, 70%, 96%",
+        "hex": "#eefcf9"
+      },
+      "200": {
+        "hsl": "167, 70%, 94%",
+        "hex": "#e5faf6"
+      },
+      "300": {
+        "hsl": "168, 70%, 90%",
+        "hex": "#d4f7f0"
+      },
+      "400": {
+        "hsl": "170, 70%, 85%",
+        "hex": "#bef4eb"
+      },
+      "500": {
+        "hsl": "170, 70%, 72%",
+        "hex": "#86ead9"
+      },
+      "600": {
+        "hsl": "170, 70%, 57%",
+        "hex": "#45dec5"
+      },
+      "700": {
+        "hsl": "173, 80%, 36%",
+        "hex": "#12a594"
+      },
+      "800": {
+        "hsl": "173, 83%, 30%",
+        "hex": "#0d8c7d"
+      },
+      "900": {
+        "hsl": "174, 91%, 25%",
+        "hex": "#067a6e"
+      },
+      "1000": {
+        "hsl": "171, 80%, 13%",
+        "hex": "#073c34"
+      }
+    },
+    "purple": {
+      "100": {
+        "hsl": "276, 100%, 97%",
+        "hex": "#f9f0ff"
+      },
+      "200": {
+        "hsl": "277, 87%, 97%",
+        "hex": "#f9f1fe"
+      },
+      "300": {
+        "hsl": "274, 78%, 95%",
+        "hex": "#f4e8fc"
+      },
+      "400": {
+        "hsl": "276, 71%, 92%",
+        "hex": "#eddcf9"
+      },
+      "500": {
+        "hsl": "274, 70%, 82%",
+        "hex": "#d5b1f1"
+      },
+      "600": {
+        "hsl": "273, 72%, 73%",
+        "hex": "#bf89ec"
+      },
+      "700": {
+        "hsl": "272, 51%, 54%",
+        "hex": "#8e4ec6"
+      },
+      "800": {
+        "hsl": "272, 47%, 45%",
+        "hex": "#763da9"
+      },
+      "900": {
+        "hsl": "274, 71%, 43%",
+        "hex": "#7820bc"
+      },
+      "1000": {
+        "hsl": "276, 100%, 15%",
+        "hex": "#2e004c"
+      }
+    },
+    "pink": {
+      "100": {
+        "hsl": "330, 100%, 96%",
+        "hex": "#ffebf5"
+      },
+      "200": {
+        "hsl": "340, 90%, 96%",
+        "hex": "#feecf2"
+      },
+      "300": {
+        "hsl": "340, 82%, 94%",
+        "hex": "#fce3ec"
+      },
+      "400": {
+        "hsl": "341, 76%, 91%",
+        "hex": "#f9d7e2"
+      },
+      "500": {
+        "hsl": "340, 75%, 84%",
+        "hex": "#f5b8cc"
+      },
+      "600": {
+        "hsl": "341, 75%, 73%",
+        "hex": "#ee87a7"
+      },
+      "700": {
+        "hsl": "336, 80%, 58%",
+        "hex": "#ea3e83"
+      },
+      "800": {
+        "hsl": "336, 74%, 51%",
+        "hex": "#df2670"
+      },
+      "900": {
+        "hsl": "336, 65%, 45%",
+        "hex": "#bd2864"
+      },
+      "1000": {
+        "hsl": "333, 74%, 15%",
+        "hex": "#430a23"
+      }
+    }
+  },
+  "colors_dark": {
+    "background": {
+      "100": {
+        "hsl": "0, 0%, 4%",
+        "hex": "#0a0a0a"
+      },
+      "200": {
+        "hsl": "0, 0%, 0%",
+        "hex": "#000000"
+      }
+    },
+    "gray": {
+      "100": {
+        "hsl": "0, 0%, 10%",
+        "hex": "#1a1a1a"
+      },
+      "200": {
+        "hsl": "0, 0%, 12%",
+        "hex": "#1f1f1f"
+      },
+      "300": {
+        "hsl": "0, 0%, 16%",
+        "hex": "#292929"
+      },
+      "400": {
+        "hsl": "0, 0%, 18%",
+        "hex": "#2e2e2e"
+      },
+      "500": {
+        "hsl": "0, 0%, 27%",
+        "hex": "#454545"
+      },
+      "600": {
+        "hsl": "0, 0%, 53%",
+        "hex": "#878787"
+      },
+      "700": {
+        "hsl": "0, 0%, 56%",
+        "hex": "#8f8f8f"
+      },
+      "800": {
+        "hsl": "0, 0%, 49%",
+        "hex": "#7d7d7d"
+      },
+      "900": {
+        "hsl": "0, 0%, 63%",
+        "hex": "#a1a1a1"
+      },
+      "1000": {
+        "hsl": "0, 0%, 93%",
+        "hex": "#ededed"
+      }
+    },
+    "gray-alpha": {
+      "100": {
+        "hex": "#ffffff0f"
+      },
+      "200": {
+        "hex": "#ffffff17"
+      },
+      "300": {
+        "hex": "#ffffff21"
+      },
+      "400": {
+        "hex": "#ffffff24"
+      },
+      "500": {
+        "hex": "#ffffff3d"
+      },
+      "600": {
+        "hex": "#ffffff82"
+      },
+      "700": {
+        "hex": "#ffffff8a"
+      },
+      "800": {
+        "hex": "#ffffff78"
+      },
+      "900": {
+        "hex": "#ffffff9c"
+      },
+      "1000": {
+        "hex": "#ffffffeb"
+      }
+    },
+    "blue": {
+      "100": {
+        "hsl": "216, 50%, 12%",
+        "hex": "#0f1c2e"
+      },
+      "200": {
+        "hsl": "214, 59%, 15%",
+        "hex": "#10233d"
+      },
+      "300": {
+        "hsl": "213, 71%, 20%",
+        "hex": "#0f2f57"
+      },
+      "400": {
+        "hsl": "212, 78%, 23%",
+        "hex": "#0d3868"
+      },
+      "500": {
+        "hsl": "211, 86%, 27%",
+        "hex": "#0a4380"
+      },
+      "600": {
+        "hsl": "206, 100%, 50%",
+        "hex": "#0090ff"
+      },
+      "700": {
+        "hsl": "212, 100%, 48%",
+        "hex": "#0072f5"
+      },
+      "800": {
+        "hsl": "212, 100%, 41%",
+        "hex": "#0062d1"
+      },
+      "900": {
+        "hsl": "210, 100%, 66%",
+        "hex": "#52a8ff"
+      },
+      "1000": {
+        "hsl": "206, 100%, 96%",
+        "hex": "#ebf6ff"
+      }
+    },
+    "red": {
+      "100": {
+        "hsl": "357, 37%, 12%",
+        "hex": "#2a1314"
+      },
+      "200": {
+        "hsl": "357, 46%, 16%",
+        "hex": "#3c1618"
+      },
+      "300": {
+        "hsl": "356, 54%, 22%",
+        "hex": "#561a1e"
+      },
+      "400": {
+        "hsl": "357, 55%, 26%",
+        "hex": "#671e21"
+      },
+      "500": {
+        "hsl": "357, 60%, 32%",
+        "hex": "#832126"
+      },
+      "600": {
+        "hsl": "358, 75%, 59%",
+        "hex": "#e5484d"
+      },
+      "700": {
+        "hsl": "358, 75%, 59%",
+        "hex": "#e5484d"
+      },
+      "800": {
+        "hsl": "358, 69%, 52%",
+        "hex": "#d93036"
+      },
+      "900": {
+        "hsl": "358, 100%, 69%",
+        "hex": "#ff6166"
+      },
+      "1000": {
+        "hsl": "353, 90%, 96%",
+        "hex": "#feecee"
+      }
+    },
+    "amber": {
+      "100": {
+        "hsl": "35, 100%, 8%",
+        "hex": "#291800"
+      },
+      "200": {
+        "hsl": "32, 100%, 10%",
+        "hex": "#331b00"
+      },
+      "300": {
+        "hsl": "33, 100%, 15%",
+        "hex": "#4c2a00"
+      },
+      "400": {
+        "hsl": "35, 100%, 17%",
+        "hex": "#573300"
+      },
+      "500": {
+        "hsl": "35, 91%, 22%",
+        "hex": "#6b4105"
+      },
+      "600": {
+        "hsl": "39, 85%, 49%",
+        "hex": "#e79d13"
+      },
+      "700": {
+        "hsl": "39, 100%, 57%",
+        "hex": "#ffb224"
+      },
+      "800": {
+        "hsl": "35, 100%, 52%",
+        "hex": "#ff990a"
+      },
+      "900": {
+        "hsl": "39, 90%, 50%",
+        "hex": "#f2a20d"
+      },
+      "1000": {
+        "hsl": "40, 94%, 93%",
+        "hex": "#fef3dc"
+      }
+    },
+    "green": {
+      "100": {
+        "hsl": "136, 50%, 9%",
+        "hex": "#0b2212"
+      },
+      "200": {
+        "hsl": "137, 50%, 12%",
+        "hex": "#0f2e18"
+      },
+      "300": {
+        "hsl": "136, 50%, 14%",
+        "hex": "#12361b"
+      },
+      "400": {
+        "hsl": "135, 70%, 16%",
+        "hex": "#0c451b"
+      },
+      "500": {
+        "hsl": "135, 70%, 23%",
+        "hex": "#126426"
+      },
+      "600": {
+        "hsl": "135, 70%, 34%",
+        "hex": "#1a9338"
+      },
+      "700": {
+        "hsl": "131, 41%, 46%",
+        "hex": "#45a557"
+      },
+      "800": {
+        "hsl": "132, 43%, 39%",
+        "hex": "#398e4a"
+      },
+      "900": {
+        "hsl": "131, 43%, 57%",
+        "hex": "#62c073"
+      },
+      "1000": {
+        "hsl": "136, 73%, 94%",
+        "hex": "#e5fbea"
+      }
+    },
+    "teal": {
+      "100": {
+        "hsl": "169, 78%, 7%",
+        "hex": "#04201b"
+      },
+      "200": {
+        "hsl": "170, 74%, 9%",
+        "hex": "#062822"
+      },
+      "300": {
+        "hsl": "171, 75%, 13%",
+        "hex": "#083a33"
+      },
+      "400": {
+        "hsl": "171, 85%, 13%",
+        "hex": "#053d35"
+      },
+      "500": {
+        "hsl": "172, 85%, 20%",
+        "hex": "#085e53"
+      },
+      "600": {
+        "hsl": "172, 85%, 32%",
+        "hex": "#0c9784"
+      },
+      "700": {
+        "hsl": "173, 80%, 36%",
+        "hex": "#12a594"
+      },
+      "800": {
+        "hsl": "173, 83%, 30%",
+        "hex": "#0d8c7d"
+      },
+      "900": {
+        "hsl": "174, 90%, 41%",
+        "hex": "#0ac7b4"
+      },
+      "1000": {
+        "hsl": "166, 71%, 93%",
+        "hex": "#e0faf4"
+      }
+    },
+    "purple": {
+      "100": {
+        "hsl": "283, 30%, 12%",
+        "hex": "#231528"
+      },
+      "200": {
+        "hsl": "281, 38%, 16%",
+        "hex": "#2e1938"
+      },
+      "300": {
+        "hsl": "279, 44%, 23%",
+        "hex": "#422154"
+      },
+      "400": {
+        "hsl": "277, 46%, 28%",
+        "hex": "#4f2768"
+      },
+      "500": {
+        "hsl": "274, 49%, 35%",
+        "hex": "#5f2e85"
+      },
+      "600": {
+        "hsl": "272, 51%, 54%",
+        "hex": "#8e4ec6"
+      },
+      "700": {
+        "hsl": "272, 51%, 54%",
+        "hex": "#8e4ec6"
+      },
+      "800": {
+        "hsl": "272, 47%, 45%",
+        "hex": "#763da9"
+      },
+      "900": {
+        "hsl": "275, 80%, 71%",
+        "hex": "#bf7af0"
+      },
+      "1000": {
+        "hsl": "281, 73%, 96%",
+        "hex": "#f8edfc"
+      }
+    },
+    "pink": {
+      "100": {
+        "hsl": "335, 32%, 12%",
+        "hex": "#28151d"
+      },
+      "200": {
+        "hsl": "335, 43%, 16%",
+        "hex": "#3a1726"
+      },
+      "300": {
+        "hsl": "335, 47%, 21%",
+        "hex": "#4f1c31"
+      },
+      "400": {
+        "hsl": "335, 51%, 22%",
+        "hex": "#551b33"
+      },
+      "500": {
+        "hsl": "335, 57%, 27%",
+        "hex": "#6c1e3e"
+      },
+      "600": {
+        "hsl": "336, 75%, 40%",
+        "hex": "#b31957"
+      },
+      "700": {
+        "hsl": "336, 80%, 58%",
+        "hex": "#ea3e83"
+      },
+      "800": {
+        "hsl": "336, 74%, 51%",
+        "hex": "#df2670"
+      },
+      "900": {
+        "hsl": "341, 90%, 67%",
+        "hex": "#f75f8f"
+      },
+      "1000": {
+        "hsl": "333, 90%, 96%",
+        "hex": "#feecf4"
+      }
+    }
+  },
+  "radii_px": {
+    "base": 6,
+    "small": 6,
+    "medium": 12,
+    "large": 12,
+    "tooltip": 6,
+    "menu": 12,
+    "modal": 12,
+    "fullscreen": 16
+  },
+  "shadows_and_focus": {
+    "--ds-shadow-background-border": "0 0 0 1px var(--ds-background-200)",
+    "--ds-shadow-border-base": "0 0 0 1px #00000014",
+    "--ds-shadow-border-inset": "inset 0 0 0 1px #00000014",
+    "--ds-shadow-border": "var(--ds-shadow-border-base), var(--ds-shadow-background-border)",
+    "--ds-shadow-2xs": "0px 1px 1px #0000000a",
+    "--ds-shadow-xs": "0px 1px 2px #0000000a",
+    "--ds-shadow-small": "0px 2px 2px #0000000a",
+    "--ds-shadow-border-small": "var(--ds-shadow-border-base), var(--ds-shadow-small), var(--ds-shadow-background-border)",
+    "--ds-shadow-medium": "0px 2px 2px #0000000a, 0px 8px 8px -8px #0000000a",
+    "--ds-shadow-border-medium": "var(--ds-shadow-border-base), var(--ds-shadow-medium), var(--ds-shadow-background-border)",
+    "--ds-shadow-large": "0px 2px 2px #0000000a, 0px 8px 16px -4px #0000000a",
+    "--ds-shadow-border-large": "var(--ds-shadow-border-base), var(--ds-shadow-large), var(--ds-shadow-background-border)",
+    "--ds-shadow-xl": "0px 1px 1px #00000005, 0px 4px 8px -4px #0000000a, 0px 16px 24px -8px #0000000f",
+    "--ds-shadow-2xl": "0px 1px 1px #00000005, 0px 8px 16px -4px #0000000a, 0px 24px 32px -8px #0000000f",
+    "--ds-shadow-tooltip": "var(--ds-shadow-border-base), 0px 1px 1px #00000005, 0px 4px 8px #0000000a, var(--ds-shadow-background-border)",
+    "--ds-shadow-menu": "var(--ds-shadow-border-base), 0px 1px 1px #00000005, 0px 4px 8px -4px #0000000a, 0px 16px 24px -8px #0000000f, var(--ds-shadow-background-border)",
+    "--ds-shadow-modal": "var(--ds-shadow-border-base), 0px 1px 1px #00000005, 0px 8px 16px -4px #0000000a, 0px 24px 32px -8px #0000000f, var(--ds-shadow-background-border)",
+    "--ds-shadow-fullscreen": "var(--ds-shadow-border-base), 0px 1px 1px #00000005, 0px 8px 16px -4px #0000000a, 0px 24px 32px -8px #0000000f, var(--ds-shadow-background-border)",
+    "--ds-focus-ring": "0 0 0 2px var(--ds-background-100), 0 0 0 4px var(--ds-focus-color)",
+    "--ds-focus-ring-outline": "2px solid var(--ds-focus-color)",
+    "--ds-focus-border": "0 0 0 1px var(--ds-gray-alpha-600), 0px 0px 0px 4px #00000029",
+    "--ds-focus-color": "var(--ds-blue-700)"
+  },
+  "type_scale": {
+    "text-heading-16": {
+      "font-size": "16px",
+      "line-height": "24px",
+      "letter-spacing": "-.32px",
+      "font-weight": "var(--font-weight-semibold)"
+    },
+    "text-heading-20": {
+      "font-size": "20px",
+      "line-height": "26px",
+      "letter-spacing": "-.4px",
+      "font-weight": "var(--font-weight-semibold)"
+    },
+    "text-heading-24": {
+      "font-size": "24px",
+      "line-height": "32px",
+      "letter-spacing": "-.96px",
+      "font-weight": "var(--font-weight-semibold)"
+    },
+    "text-heading-32": {
+      "font-size": "32px",
+      "line-height": "40px",
+      "letter-spacing": "-1.28px",
+      "font-weight": "var(--font-weight-semibold)"
+    },
+    "text-heading-14": {
+      "font-size": "14px",
+      "line-height": "20px",
+      "letter-spacing": "-.28px",
+      "font-weight": "var(--font-weight-semibold)"
+    },
+    "text-heading-40": {
+      "font-size": "40px",
+      "line-height": "48px",
+      "letter-spacing": "-2.4px",
+      "font-weight": "var(--font-weight-semibold)"
+    },
+    "text-heading-48": {
+      "font-size": "48px",
+      "line-height": "56px",
+      "letter-spacing": "-2.88px",
+      "font-weight": "var(--font-weight-semibold)"
+    },
+    "text-heading-56": {
+      "font-size": "56px",
+      "line-height": "56px",
+      "letter-spacing": "-3.36px",
+      "font-weight": "var(--font-weight-semibold)"
+    },
+    "text-heading-64": {
+      "font-size": "64px",
+      "line-height": "64px",
+      "letter-spacing": "-3.84px",
+      "font-weight": "var(--font-weight-semibold)"
+    },
+    "text-heading-72": {
+      "font-size": "72px",
+      "line-height": "72px",
+      "letter-spacing": "-4.32px",
+      "font-weight": "var(--font-weight-semibold)"
+    },
+    "text-copy-13": {
+      "font-size": "13px",
+      "line-height": "18px",
+      "letter-spacing": null,
+      "font-weight": "var(--font-weight-normal)"
+    },
+    "text-copy-14": {
+      "font-size": "14px",
+      "line-height": "20px",
+      "letter-spacing": null,
+      "font-weight": "var(--font-weight-normal)"
+    },
+    "text-copy-14-mono": {
+      "font-size": "14px",
+      "line-height": "20px",
+      "letter-spacing": null,
+      "font-weight": "var(--font-weight-normal)"
+    },
+    "text-copy-16": {
+      "font-size": "16px",
+      "line-height": "24px",
+      "letter-spacing": null,
+      "font-weight": "var(--font-weight-normal)"
+    },
+    "text-copy-18": {
+      "font-size": "18px",
+      "line-height": "28px",
+      "letter-spacing": null,
+      "font-weight": "var(--font-weight-normal)"
+    },
+    "text-copy-20": {
+      "font-size": "20px",
+      "line-height": "36px",
+      "letter-spacing": null,
+      "font-weight": "var(--font-weight-normal)"
+    },
+    "text-copy-24": {
+      "font-size": "24px",
+      "line-height": "36px",
+      "letter-spacing": null,
+      "font-weight": "var(--font-weight-normal)"
+    },
+    "text-label-12": {
+      "font-size": "12px",
+      "line-height": "16px",
+      "letter-spacing": null,
+      "font-weight": "var(--font-weight-normal)"
+    },
+    "text-label-13": {
+      "font-size": "13px",
+      "line-height": "16px",
+      "letter-spacing": null,
+      "font-weight": "var(--font-weight-normal)"
+    },
+    "text-label-14": {
+      "font-size": "14px",
+      "line-height": "20px",
+      "letter-spacing": null,
+      "font-weight": "var(--font-weight-normal)"
+    },
+    "text-label-16": {
+      "font-size": "16px",
+      "line-height": "20px",
+      "letter-spacing": null,
+      "font-weight": "var(--font-weight-normal)"
+    },
+    "text-button-12": {
+      "font-size": "12px",
+      "line-height": "16px",
+      "letter-spacing": null,
+      "font-weight": "var(--font-weight-medium)"
+    },
+    "text-button-14": {
+      "font-size": "14px",
+      "line-height": "20px",
+      "letter-spacing": null,
+      "font-weight": "var(--font-weight-medium)"
+    },
+    "text-button-16": {
+      "font-size": "16px",
+      "line-height": "20px",
+      "letter-spacing": null,
+      "font-weight": "var(--font-weight-medium)"
+    },
+    "text-copy-13-mono": {
+      "font-size": "13px",
+      "line-height": "18px",
+      "letter-spacing": null,
+      "font-weight": "var(--font-weight-normal)"
+    },
+    "text-label-12-mono": {
+      "font-size": "12px",
+      "line-height": "16px",
+      "letter-spacing": null,
+      "font-weight": "var(--font-weight-normal)"
+    },
+    "text-label-13-mono": {
+      "font-size": "13px",
+      "line-height": "20px",
+      "letter-spacing": null,
+      "font-weight": "var(--font-weight-normal)"
+    },
+    "text-label-14-mono": {
+      "font-size": "14px",
+      "line-height": "20px",
+      "letter-spacing": null,
+      "font-weight": "var(--font-weight-normal)"
+    },
+    "text-label-18": {
+      "font-size": "18px",
+      "line-height": "20px",
+      "letter-spacing": null,
+      "font-weight": "var(--font-weight-normal)"
+    },
+    "text-label-20": {
+      "font-size": "20px",
+      "line-height": "32px",
+      "letter-spacing": null,
+      "font-weight": "var(--font-weight-normal)"
+    }
+  },
+  "font_weight_tokens": {
+    "--font-weight-normal": "400",
+    "--font-weight-medium": "500",
+    "--font-weight-semibold": "600"
+  },
+  "fonts": {
+    "Geist Sans": {
+      "type": "sans-serif (Swiss/International Typographic Style, geometric)",
+      "weights": [
+        "Thin 100",
+        "ExtraLight 200",
+        "Light 300",
+        "Regular 400",
+        "Medium 500",
+        "SemiBold 600",
+        "Bold 700",
+        "ExtraBold 800",
+        "Black 900"
+      ],
+      "styles": "Upright + matching Italics for every weight; variable font wght 100..900",
+      "use": "body copy, headings, logos, posters, display",
+      "google_fonts_family": "Geist",
+      "google_fonts_css": "https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap",
+      "npm": "geist -> import { GeistSans } from 'geist/font/sans' (CSS var --font-geist-sans)"
+    },
+    "Geist Mono": {
+      "type": "monospace partner to Sans",
+      "weights": [
+        "Thin 100",
+        "ExtraLight 200",
+        "Light 300",
+        "Regular 400",
+        "Medium 500",
+        "SemiBold 600",
+        "Bold 700",
+        "ExtraBold 800",
+        "Black 900"
+      ],
+      "use": "code editors, terminals, diagrams, code UI",
+      "google_fonts_family": "Geist Mono",
+      "google_fonts_css": "https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap",
+      "npm": "import { GeistMono } from 'geist/font/mono' (CSS var --font-geist-mono)"
+    },
+    "Geist Pixel": {
+      "type": "pixel/bitmap display typeface",
+      "variants": [
+        "Square",
+        "Grid",
+        "Circle",
+        "Triangle",
+        "Line"
+      ],
+      "variable_axis": {
+        "vercel_font_page_name": "ELSH (selects the 5 pixel shapes in the variable-font playground)",
+        "oss_repo_axis_tag": "PXSH",
+        "oss_repo_axis_name": "Pixel Shape",
+        "note": "vercel.com/font labels the shape axis 'ELSH'; the open-source geist-pixel-font repo defines the custom axis as tag PXSH / name 'Pixel Shape'. A code search for 'ELSH' in the repo returns 0 hits. The npm package ships the 5 as separate static NextFontWithVariable exports."
+      },
+      "use": "display only: headlines, logos, decorative pixel contexts",
+      "google_fonts_family": "Geist Pixel",
+      "google_fonts_css": "https://fonts.googleapis.com/css2?family=Geist+Pixel&display=swap",
+      "npm_exports": {
+        "GeistPixelSquare": "--font-geist-pixel-square",
+        "GeistPixelGrid": "--font-geist-pixel-grid",
+        "GeistPixelCircle": "--font-geist-pixel-circle",
+        "GeistPixelTriangle": "--font-geist-pixel-triangle",
+        "GeistPixelLine": "--font-geist-pixel-line"
+      },
+      "npm_import": "import { GeistPixelSquare, GeistPixelGrid, GeistPixelCircle, GeistPixelTriangle, GeistPixelLine } from 'geist/font/pixel'"
+    },
+    "license": "SIL Open Font License 1.1 (OFL) for all three families",
+    "authors": "Vercel + Basement Studio (+ Andr\u00e9s Briganti); Pixel QA via Guido Ferreyra",
+    "install": "npm i geist  |  releases at github.com/vercel/geist-font & geist-pixel-font  |  Google Fonts"
+  },
+  "philosophy": [
+    "Swiss / International Typographic Style minimalism",
+    "Three core values: simplicity, minimalism, speed",
+    "Precision, clarity, functionality",
+    "Built for developers and designers",
+    "High-contrast, accessible color system",
+    "Consistency across web experiences (design-system-driven, Geist Core Figma)"
+  ]
+}
