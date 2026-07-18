@@ -6,35 +6,46 @@
 <title>experentia · a taste-engine for frontends</title>
 <meta name="description" content="Evidence-backed design rules, machine-readable taste profiles, and verified reference templates that AI agents consult alongside summit.js and ui-atlas.">
 <style>
+  @font-face{font-family:'Geist';font-weight:400;font-display:swap;src:url('assets/fonts/geist-400.woff2') format('woff2')}
+  @font-face{font-family:'Geist';font-weight:500;font-display:swap;src:url('assets/fonts/geist-500.woff2') format('woff2')}
+  @font-face{font-family:'Geist';font-weight:600;font-display:swap;src:url('assets/fonts/geist-600.woff2') format('woff2')}
+  @font-face{font-family:'Geist';font-weight:700;font-display:swap;src:url('assets/fonts/geist-700.woff2') format('woff2')}
+  @font-face{font-family:'Geist';font-weight:800;font-display:swap;src:url('assets/fonts/geist-800.woff2') format('woff2')}
+  @font-face{font-family:'Geist Mono';font-weight:400;font-display:swap;src:url('assets/fonts/geistmono-400.woff2') format('woff2')}
+  @font-face{font-family:'Geist Mono';font-weight:500;font-display:swap;src:url('assets/fonts/geistmono-500.woff2') format('woff2')}
+  @font-face{font-family:'Geist Pixel';font-weight:400;font-display:swap;src:url('assets/fonts/geistpixel-400.woff2') format('woff2')}
   :root {
-    --bg: #fbfaf8;
-    --panel: #ffffff;
-    --ink: #1a1613;
-    --muted: #6b635b;
-    --faint: #94897d;
-    --hair: #e7e1d8;
-    --accent: #a1381f;
-    --shadow: 0 1px 2px rgba(26, 22, 19, 0.05), 0 8px 24px rgba(26, 22, 19, 0.06);
-    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
-    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+    --bg: #ffffff;
+    --panel: #fafafa;
+    --ink: #171717;
+    --muted: #8f8f8f;
+    --faint: #a8a8a8;
+    --hair: #0000001a;
+    --accent: #a35200;
+    --accent-fill: #ffb224;
+    --on-accent: #171717;
+    --shadow: 0 0 0 1px #00000014, 0px 2px 2px #0000000a, 0px 8px 16px -8px #0000000a;
+    --serif: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --sans: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --mono: "Geist Mono", ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+    --pixel: "Geist Pixel", "Geist", monospace;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #100e0c; --panel: #17140f; --ink: #ede8e2; --muted: #a99f92;
-      --faint: #7d7365; --hair: #2b2620; --accent: #e0765a;
-      --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 10px 30px rgba(0,0,0,0.35);
+      --bg: #0a0a0a; --panel: #1a1a1a; --ink: #ededed; --muted: #8f8f8f;
+      --faint: #7d7d7d; --hair: #ffffff21; --accent: #ffb224; --accent-fill: #ffb224; --on-accent: #171717;
+      --shadow: 0 0 0 1px #ffffff17, 0px 2px 2px rgba(0,0,0,.5), 0px 8px 16px -8px rgba(0,0,0,.5);
     }
   }
   :root[data-theme="dark"] {
-    --bg: #100e0c; --panel: #17140f; --ink: #ede8e2; --muted: #a99f92;
-    --faint: #7d7365; --hair: #2b2620; --accent: #e0765a;
-    --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 10px 30px rgba(0,0,0,0.35);
+    --bg: #0a0a0a; --panel: #1a1a1a; --ink: #ededed; --muted: #8f8f8f;
+    --faint: #7d7d7d; --hair: #ffffff21; --accent: #ffb224; --accent-fill: #ffb224; --on-accent: #171717;
+    --shadow: 0 0 0 1px #ffffff17, 0px 2px 2px rgba(0,0,0,.5), 0px 8px 16px -8px rgba(0,0,0,.5);
   }
   :root[data-theme="light"] {
-    --bg: #fbfaf8; --panel: #ffffff; --ink: #1a1613; --muted: #6b635b;
-    --faint: #94897d; --hair: #e7e1d8; --accent: #a1381f;
-    --shadow: 0 1px 2px rgba(26,22,19,0.05), 0 8px 24px rgba(26,22,19,0.06);
+    --bg: #ffffff; --panel: #fafafa; --ink: #171717; --muted: #8f8f8f;
+    --faint: #a8a8a8; --hair: #0000001a; --accent: #a35200; --accent-fill: #ffb224; --on-accent: #171717;
+    --shadow: 0 0 0 1px #00000014, 0px 2px 2px #0000000a, 0px 8px 16px -8px #0000000a;
   }
 
   * { box-sizing: border-box; }
@@ -49,7 +60,7 @@
   /* Header */
   header { border-bottom: 1px solid var(--hair); position: sticky; top: 0; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(8px); z-index: 5; }
   .bar { display: flex; align-items: center; justify-content: space-between; height: 60px; }
-  .brand { font-family: var(--serif); font-weight: 600; font-size: 1.15rem; letter-spacing: -0.01em; }
+  .brand { font-family: var(--pixel); font-weight: 400; font-size: 1.02rem; letter-spacing: 0.02em; }
   .brand span { color: var(--accent); }
   .nav { display: flex; gap: 22px; align-items: center; font-size: 0.9rem; }
   .nav a { color: var(--muted); text-decoration: none; }
